@@ -11,7 +11,8 @@ class ProductController extends Controller
 {
     public function index()
     {
-        return Product::paginate(6);
+        $input = Request::query('search');
+        return Product::where('name', 'LIKE', "$input%")->paginate(6);
     }
 
     public function store()
@@ -32,6 +33,29 @@ class ProductController extends Controller
     public function show(Product $product)
     {
         return Response::json($product);
+    }
+
+    public function update(Product $product)
+    {
+        $data = Request::validate([
+            'name' => 'required',
+            'description' => 'required',
+            'price' => 'required',
+        ]);
+
+        $image = Request::file('image');
+        if (Request::file('image')) {
+            Storage::delete($product->image_path);
+            $imgPath = $image->store('products');
+            $imgUrl = Storage::url($imgPath);
+            $product->image_url = $imgUrl;
+            $product->image_path = $imgPath;
+        }
+        $product->name = $data['name'];
+        $product->description = $data['description'];
+        $product->price = $data['price'];
+        $product->save();
+        return Response::json(['message' => 'success']);
     }
 
     public function destroy(Product $product)
