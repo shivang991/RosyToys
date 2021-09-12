@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\UserAuthController;
+use App\Http\Controllers\ManualController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -29,4 +30,11 @@ Route::prefix('/product')->group(function () {
     Route::post('/create', [ProductController::class, 'store']);
     Route::post('/update/{product}', [ProductController::class, 'update']);
     Route::delete('/{product}', [ProductController::class, 'destroy']);
+});
+
+Route::prefix('/manual')->group(function () {
+    Route::get('/{manual}', [ManualController::class, 'show']);
+    Route::delete('/{manual}', [ManualController::class, 'destroy']);
+    Route::post('/create', [ManualController::class, 'store']);
+    Route::post('/update/{manual}', [ManualController::class, 'update']);
 });
