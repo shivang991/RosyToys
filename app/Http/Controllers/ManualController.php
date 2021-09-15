@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Manual;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Storage;
+
 
 class ManualController extends Controller
 {
@@ -14,6 +16,11 @@ class ManualController extends Controller
         return Response::json(['message' => 'success']);
     }
 
+    public function index()
+    {
+        $input = Request::query('search');
+        return Manual::where('title', 'ILIKE', "$input%")->paginate(6);
+    }
 
     public function show(Manual $manual)
     {
@@ -39,13 +46,14 @@ class ManualController extends Controller
         return $this->sendSuccessResponse();
     }
 
-    public function update(Manual $manual){
+    public function update(Manual $manual)
+    {
         $data = Request::validate([
             'title' => 'required',
             'description' => 'required',
         ]);
         $pdf = Request::file('pdfFile');
-        if(Request::file('pdfFile')){
+        if (Request::file('pdfFile')) {
             Storage::delete($manual->pdf_path);
             $pdfPath = $pdf->store('manuals');
             $pdfUrl = Storage::url($pdfPath);

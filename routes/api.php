@@ -33,6 +33,7 @@ Route::prefix('/product')->group(function () {
 });
 
 Route::prefix('/manual')->group(function () {
+    Route::get('/all', [ManualController::class, 'index']);
     Route::get('/{manual}', [ManualController::class, 'show']);
     Route::delete('/{manual}', [ManualController::class, 'destroy']);
     Route::post('/create', [ManualController::class, 'store']);

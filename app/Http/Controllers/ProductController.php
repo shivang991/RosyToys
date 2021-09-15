@@ -12,7 +12,7 @@ class ProductController extends Controller
     public function index()
     {
         $input = Request::query('search');
-        return Product::where('name', 'LIKE', "$input%")->paginate(6);
+        return Product::where('name', 'ILIKE', "$input%")->paginate(6);
     }
 
     public function store()
