@@ -11,8 +11,18 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $input = Request::query('search');
-        return Product::where('name', 'ILIKE', "$input%")->paginate(6);
+        $searchInput = Request::query('search');
+        $priceInput = Request::query('price');
+
+        $productBuilder = Product::where('name', 'ILIKE', "$searchInput%");
+
+        if ($priceInput) {
+            if (count($priceInput) > 1)
+                $productBuilder = $productBuilder->whereBetween('price', $priceInput);
+            else $productBuilder = $productBuilder->where('price','>',$priceInput[0]);
+        }
+
+        return $productBuilder->paginate(6);
     }
 
     public function store()
