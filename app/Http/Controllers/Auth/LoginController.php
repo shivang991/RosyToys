@@ -7,14 +7,14 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Response;
 
-class UserAuthController extends Controller
+class LoginController extends Controller
 {
-    // TODO: implement registeration
-    public function store()
-    {}
+    public function __construct()
+    {
+        $this->middleware('guest');
+    }
 
-    // Login method
-    public function update()
+    public function index()
     {
         $validData = Request::validate([
             'email' => 'required',
@@ -25,16 +25,17 @@ class UserAuthController extends Controller
             return Response::json(['message' => 'unauthenticated'], 401);
         }
 
+        $user = Auth::user();
+
+        if ($user->isAdmin()) {
+            $token = $user->createToken('api token', ['server:update']);
+        } else {
+            $token = $user->createToken('api token');
+        }
+
         return Response::json([
             'message' => 'success',
-            'token' => Auth::user()->createToken('api token')->plainTextToken,
+            'token' => $token->plainTextToken,
         ]);
-    }
-
-    // Logout method
-    public function destroy()
-    {
-        Auth::user()->tokens()->delete();
-        return Response::json(['message' => 'success']);
     }
 }

@@ -22,11 +22,11 @@ class UserFactory extends Factory
      */
     public function definition()
     {
-        $genders = collect(['male','female']);
+        $genders = collect(['male', 'female']);
         $gender = $genders->random();
         $profileImage =
         $gender == 'female'
-        ? 'https://scontent.fknu1-2.fna.fbcdn.net/v/t1.6435-9/s180x540/184366654_286392893121552_1078940115487658410_n.jpg?_nc_cat=1&ccb=1-4&_nc_sid=09cbfe&_nc_ohc=08TQKlvJJGAAX_tZ51J&_nc_ht=scontent.fknu1-2.fna&oh=e0bb1592b0b4584997a05a7c7653c2ba&oe=613BC8B7'
+        ? 'https://static0.cbrimages.com/wordpress/wp-content/uploads/2020/09/Tsunade-fan-art-3.jpg'
         : 'https://upload.wikimedia.org/wikipedia/en/6/6b/Death_Note_Ryuk.jpg';
 
         return [
@@ -35,7 +35,7 @@ class UserFactory extends Factory
             'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'remember_token' => Str::random(10),
-            'profile_image' => $profileImage
+            'profile_image' => $profileImage,
         ];
     }
 

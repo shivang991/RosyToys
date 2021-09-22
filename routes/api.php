@@ -1,6 +1,8 @@
 <?php
 
-use App\Http\Controllers\Auth\UserAuthController;
+use App\Http\Controllers\auth\AdminAuthController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\ManualController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Http\Request;
@@ -17,8 +19,8 @@ use Illuminate\Support\Facades\Route;
 |
  */
 
-Route::post('/login', [UserAuthController::class, 'update']);
-Route::post('/logout', [UserAuthController::class, 'destroy'])->middleware('auth:sanctum');
+Route::post('/login', [LoginController::class, 'index']);
+Route::post('/logout', [LogoutController::class, 'index']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
