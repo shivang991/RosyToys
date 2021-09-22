@@ -3,14 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Models\Manual;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Storage;
 
-
 class ManualController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['auth:sanctum', 'admin'])->except(['index', 'show']);
+    }
+
     private function sendSuccessResponse()
     {
         return Response::json(['message' => 'success']);

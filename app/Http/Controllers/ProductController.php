@@ -9,6 +9,11 @@ use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['auth:sanctum', 'admin'])->except(['index', 'show']);
+    }
+
     public function index()
     {
         $searchInput = Request::query('search');
@@ -17,9 +22,12 @@ class ProductController extends Controller
         $productBuilder = Product::where('name', 'ILIKE', "$searchInput%");
 
         if ($priceInput) {
-            if (count($priceInput) > 1)
+            if (count($priceInput) > 1) {
                 $productBuilder = $productBuilder->whereBetween('price', $priceInput);
-            else $productBuilder = $productBuilder->where('price','>',$priceInput[0]);
+            } else {
+                $productBuilder = $productBuilder->where('price', '>', $priceInput[0]);
+            }
+
         }
 
         return $productBuilder->paginate(6);
