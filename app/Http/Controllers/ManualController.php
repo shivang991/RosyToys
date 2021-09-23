@@ -22,7 +22,7 @@ class ManualController extends Controller
     public function index()
     {
         $input = Request::query('search');
-        return Manual::where('title', 'ILIKE', "$input%")->paginate(6);
+        return Manual::where('title', 'LIKE', "$input%")->paginate(6);
     }
 
     public function show(Manual $manual)

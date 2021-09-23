@@ -19,7 +19,7 @@ class ProductController extends Controller
         $searchInput = Request::query('search');
         $priceInput = Request::query('price');
 
-        $productBuilder = Product::where('name', 'ILIKE', "$searchInput%");
+        $productBuilder = Product::where('name', 'LIKE', "$searchInput%");
 
         if ($priceInput) {
             if (count($priceInput) > 1) {
