@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\auth\AdminAuthController;
+use App\Http\Controllers\AdminProfileController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
+use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\ManualController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Http\Request;
@@ -24,6 +25,12 @@ Route::post('/logout', [LogoutController::class, 'index']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+Route::middleware(['auth:sanctum', 'admin'])->prefix('/admin')->group(function () {
+    Route::post('/register', [RegisterController::class, 'index']);
+    Route::post('/update', [AdminProfileController::class, 'update']);
+    Route::post('/delete', [AdminProfileController::class, 'destroy']);
 });
 
 Route::prefix('/product')->group(function () {

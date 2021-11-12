@@ -62,7 +62,7 @@ class ProductController extends Controller
         ]);
 
         $image = Request::file('image');
-        if (Request::file('image')) {
+        if ($image) {
             Storage::delete($product->image_path);
             $imgPath = $image->store('products');
             $imgUrl = Storage::url($imgPath);
