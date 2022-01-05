@@ -36,7 +36,7 @@ class ProductController extends Controller
     public function store()
     {
         $data = collect(Request::validate(
-            collect(['name', 'description', 'price', 'image'])
+            collect(['name', 'description', 'price', 'image','category'])
                 ->mapWithKeys(function ($item, $key) {
                     return [$item => 'required'];
                 })->toArray()
@@ -44,6 +44,7 @@ class ProductController extends Controller
         $imgPath = Request::file('image')->store('products');
         $imgUrl = Storage::url($imgPath);
         $productAttrs = $data->merge(['image_path' => $imgPath, 'image_url' => $imgUrl])->toArray();
+        $productAttrs['category'] = strtolower(trim($productAttrs['category']));
         Product::create($productAttrs);
         return Response::json(['message' => 'success']);
     }
