@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminProfileController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Choices\ProductFieldChoices;
 use App\Http\Controllers\ManualController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Http\Request;
@@ -48,4 +49,10 @@ Route::prefix('/manual')->group(function () {
     Route::delete('/{manual}', [ManualController::class, 'destroy']);
     Route::post('/create', [ManualController::class, 'store']);
     Route::post('/update/{manual}', [ManualController::class, 'update']);
+});
+
+
+Route::prefix('/choices')->group(function () {
+    Route::get('/brands', [ProductFieldChoices::class, 'brands']);
+    Route::get('/applications', [ProductFieldChoices::class, 'applications']);
 });

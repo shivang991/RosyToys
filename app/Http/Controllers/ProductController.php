@@ -18,6 +18,16 @@ class ProductController extends Controller
     {
         $searchInput = Request::query('search');
         $productBuilder = Product::where('code', 'LIKE', "$searchInput%");
+
+        $add_filter = function (string $field) use ($productBuilder) {
+            $input = Request::query($field);
+            if (is_array($input))
+                $productBuilder = $productBuilder->whereIn($field, $input);
+        };
+
+        $add_filter('application');
+        $add_filter('brand');
+
         return $productBuilder->paginate(6);
     }
 
