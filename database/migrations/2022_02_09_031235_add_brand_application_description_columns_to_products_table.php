@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddCategoryColumnToProductsTable extends Migration
+class AddBrandApplicationDescriptionColumnsToProductsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,10 @@ class AddCategoryColumnToProductsTable extends Migration
     public function up()
     {
         Schema::table('products', function (Blueprint $table) {
-            $table->text('category')->default('others');
+            $table->text('brand');
+            $table->renameColumn('name','code');
+            $table->text('application');
+            $table->text('measurements')->nullable();
         });
     }
 
@@ -26,7 +29,10 @@ class AddCategoryColumnToProductsTable extends Migration
     public function down()
     {
         Schema::table('products', function (Blueprint $table) {
-            $table->dropColumn('category');
+            $table->dropColumn('brand');
+            $table->renameColumn('code','name');
+            $table->dropColumn('application');
+            $table->dropColumn('measurements');
         });
     }
 }

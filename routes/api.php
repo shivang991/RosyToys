@@ -4,7 +4,6 @@ use App\Http\Controllers\AdminProfileController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisterController;
-use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ManualController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Http\Request;
@@ -36,7 +35,6 @@ Route::middleware(['auth:sanctum', 'admin'])->prefix('/admin')->group(function (
 
 Route::prefix('/product')->group(function () {
     Route::get('/all', [ProductController::class, 'index']);
-    Route::get('/categories',[CategoryController::class, 'index']);
     Route::get('/{product}', [ProductController::class, 'show']);
     Route::post('/create', [ProductController::class, 'store']);
     Route::post('/update/{product}', [ProductController::class, 'update']);

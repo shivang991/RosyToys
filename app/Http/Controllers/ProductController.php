@@ -17,34 +17,30 @@ class ProductController extends Controller
     public function index()
     {
         $searchInput = Request::query('search');
-        $priceInput = Request::query('price');
-
-        $productBuilder = Product::where('name', 'LIKE', "$searchInput%");
-
-        if ($priceInput) {
-            if (count($priceInput) > 1) {
-                $productBuilder = $productBuilder->whereBetween('price', $priceInput);
-            } else {
-                $productBuilder = $productBuilder->where('price', '>', $priceInput[0]);
-            }
-
-        }
-
+        $productBuilder = Product::where('code', 'LIKE', "$searchInput%");
         return $productBuilder->paginate(6);
     }
 
     public function store()
     {
-        $data = collect(Request::validate(
-            collect(['name', 'description', 'price', 'image','category'])
-                ->mapWithKeys(function ($item, $key) {
-                    return [$item => 'required'];
-                })->toArray()
-        ))->except('image');
+        $data = Request::validate([
+            'code' => 'required',
+            'description' => 'required',
+            'application' => 'required',
+            'brand' => 'required'
+        ]);
         $imgPath = Request::file('image')->store('products');
+
         $imgUrl = Storage::url($imgPath);
-        $productAttrs = $data->merge(['image_path' => $imgPath, 'image_url' => $imgUrl])->toArray();
-        $productAttrs['category'] = strtolower(trim($productAttrs['category']));
+
+        $productAttrs = collect($data)
+            ->merge([
+                'image_path' => $imgPath,
+                'image_url' => $imgUrl,
+                'measurements' => Request::post('measurements')
+            ])
+            ->toArray();
+
         Product::create($productAttrs);
         return Response::json(['message' => 'success']);
     }
@@ -57,9 +53,10 @@ class ProductController extends Controller
     public function update(Product $product)
     {
         $data = Request::validate([
-            'name' => 'required',
+            'code' => 'required',
             'description' => 'required',
-            'price' => 'required',
+            'application' => 'required',
+            'brand' => 'required',
         ]);
 
         $image = Request::file('image');
@@ -70,10 +67,13 @@ class ProductController extends Controller
             $product->image_url = $imgUrl;
             $product->image_path = $imgPath;
         }
-        $product->name = $data['name'];
+        $product->code = $data['code'];
         $product->description = $data['description'];
-        $product->price = $data['price'];
+        $product->application = $data['application'];
+        $product->brand = $data['brand'];
+        $product->measurements = $data['measurements'];
         $product->save();
+
         return Response::json(['message' => 'success']);
     }
 
