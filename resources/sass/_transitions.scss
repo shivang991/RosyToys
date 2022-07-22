@@ -1,0 +1,27 @@
+@mixin _simple-transition($transition-name, $duration: 0.2s) {
+  .#{$transition-name}-enter-active,
+  .#{$transition-name}-leave-active {
+    transition-duration: $duration;
+    transition-timing-function: ease-out;
+  }
+
+  .#{$transition-name}-enter-from,
+  .#{$transition-name}-leave-to {
+    @content;
+  }
+}
+
+@include _simple-transition("rotation") {
+  transform: rotate(180deg) scale(0.5);
+  opacity: 0;
+}
+
+@include _simple-transition("slide-x") {
+  transform: translateX(-100px);
+  opacity: 0;
+}
+
+@include _simple-transition("scale-y",0.5s) {
+  transform: translateY(-100%);
+  opacity: 0;
+}
