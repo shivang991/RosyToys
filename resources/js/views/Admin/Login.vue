@@ -25,19 +25,4 @@ if (store.getters["auth/isAdmin"]) {
 </script>
 
 
-<style lang="scss" scoped>
-.admin-login {
-    &__image {
-        height: 100vh;
-        max-width: 100px;
-        @include media-query(lg) {
-            max-width: 300px;
-        }
-    }
 
-    &__form {
-        flex-grow: 1;
-        align-self: center;
-    }
-}
-</style>

@@ -83,12 +83,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.productos-filters {
-  &__drop-btn {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-}
-</style>
+

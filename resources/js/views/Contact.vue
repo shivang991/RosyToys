@@ -27,19 +27,4 @@ import ContactHead from "@/components/contact/ContactHead.vue";
 import ContactForm from "@/components/contact/ContactForm.vue";
 </script>
 
-<style scoped lang="scss">
-.contact-page {
-    &__side {
-        flex-direction: column;
-        align-items: center;
-        a {
-            color: $text;
-        }
-    }
-    &__ribbon {
-        flex-grow: 1;
-        width: 0.5rem;
-        background-color: $text;
-    }
-}
-</style>
+

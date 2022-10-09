@@ -67,11 +67,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.footer-auth {
-  background: nth($blues, 4);
-  p {
-    color: rgba($secondary, 0.5);
-  }
-}
-</style>
+

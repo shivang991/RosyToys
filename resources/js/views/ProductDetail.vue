@@ -58,20 +58,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.product-detail {
-  padding: 4rem 10vw;
-  min-height: 100vh;
-  display: grid;
-  background-image: linear-gradient(
-    to right,
-    transparent 50%,
-    $translucent 50%
-  );
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  &__image {
-    width: 100%;
-    height: 400px;
-  }
-}
-</style>
+

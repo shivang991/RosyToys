@@ -75,31 +75,4 @@
     </div>
 </template>
 
-<style lang="scss" scoped>
-.tab-3 {
-    $self: &;
-    margin: 0 2rem;
-    color: $text;
-    img {
-        max-height: 300px;
-        width: 100%;
-    }
-    &__people {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr);
-        gap: 4rem;
-        @include responsive-columns(md, 2);
-        #{$self}__card {
-            display: grid;
-            grid-template-columns: 100px auto;
-            img {
-                height: 100px;
-            }
-        }
-    }
-    @include media-query(md) {
-        margin: auto;
-        max-width: 80vw;
-    }
-}
-</style>
+

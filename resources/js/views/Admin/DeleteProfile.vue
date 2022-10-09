@@ -40,8 +40,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.delete-profile {
-  max-width: 72ch;
-}
-</style>
+

@@ -7,11 +7,4 @@
 const logoURL = window.asset('images/logo.png')
 </script>
 
-<style lang="scss" scoped>
-.logo {
-  width: 240px;
-  @include media-query(xl){
-    width: 300px;
-  }
-}
-</style>
+

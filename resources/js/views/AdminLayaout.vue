@@ -84,11 +84,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.admin-layout {
-  @include media-query(lg) {
-    display: grid;
-    grid-template-columns: minmax(20%, 300px) auto;
-  }
-}
-</style>
+

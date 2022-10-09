@@ -39,15 +39,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.productos-list {
-  &__error-msg {
-    grid-column: 1 / span 4;
-    text-align: center;
-    p {
-      max-width: 40ch;
-      margin: 0 auto;
-    }
-  }
-}
-</style>
+

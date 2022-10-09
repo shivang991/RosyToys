@@ -27,8 +27,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.create-manual {
-  max-width: 600px;
-}
-</style>
+

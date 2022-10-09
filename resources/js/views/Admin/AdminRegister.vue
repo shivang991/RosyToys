@@ -35,8 +35,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.admin-register {
-  max-width: 600px;
-}
-</style>
+

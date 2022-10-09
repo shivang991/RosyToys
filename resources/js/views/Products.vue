@@ -49,12 +49,4 @@ axios.get(apiEndPoint).then(({ data }) => {
 });
 </script>
 
-<style lang="scss" scoped>
-.productos-body {
-    display: grid;
-    grid-template-columns: minmax(0, 2fr) minmax(0, 5fr);
-    &__filters {
-        grid-row: 1 / span 2;
-    }
-}
-</style>
+

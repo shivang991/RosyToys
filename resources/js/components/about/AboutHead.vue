@@ -18,9 +18,4 @@
 const bgImgURL = window.asset("images/about-bg.jpg");
 </script>
 
-<style scoped lang="scss">
-.productos-head {
-    background-size: cover;
-    width: 100%;
-}
-</style>
+

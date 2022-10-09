@@ -46,16 +46,4 @@ function handleSubmit() {
 }
 </script>
 
-<style scoped lang="scss">
-.form {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    align-items: flex-end;
-    &__field {
-        &:nth-child(3),
-        &:nth-child(4) {
-            grid-column: 1 / span 2;
-        }
-    }
-}
-</style>
+

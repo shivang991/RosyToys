@@ -131,30 +131,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.img-input {
-  &__drop-ar {
-    min-height: 14rem;
-    border: 1px solid rgba($dark, 0.25);
-    background-color: $secondary;
-    display: grid;
-    place-content: center;
-    &--active {
-      @include pseudo() {
-        background-color: nth($greys, 1);
-        transform: scale(0.9);
-        border: 4px dashed rgba($dark, 0.25);
-        transition: 0.2s;
-        opacity: 0.75;
-      }
-    }
-  }
-  &__upload-icon {
-    display: inline-block;
-    color: rgba($dark, 0.25);
-    border: 2px dashed rgba($dark, 0.25);
-    padding: 1rem;
-    border-radius: 50%;
-  }
-}
-</style>
+

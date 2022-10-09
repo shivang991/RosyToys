@@ -72,21 +72,4 @@ const arrowImgURL = window.asset("images/arrow.svg");
 const logoURL = window.asset("images/logo_rect.png");
 </script>
 
-<style scoped lang="scss">
-.logo-section {
-    &__logo {
-        img {
-            max-width: 200px;
-            @include media-query(lg) {
-                max-width: 400px;
-            }
-        }
-    }
-    &__text {
-        max-width: 90%;
-        @include media-query(sm) {
-            max-width: 75%;
-        }
-    }
-}
-</style>
+

@@ -97,9 +97,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.admin-dashboard {
-  max-width: 512px;
-  margin: 4rem auto;
-}
-</style>
+

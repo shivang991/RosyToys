@@ -48,8 +48,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.update-product {
-  max-width: 600px;
-}
-</style>
+

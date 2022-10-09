@@ -24,14 +24,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.footer-links {
-  background: nth($blues, 2);
-  ul {
-    list-style-type: none;
-  }
-  h5 {
-    color: rgba($secondary, 0.5);
-  }
-}
-</style>
+

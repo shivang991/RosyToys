@@ -43,8 +43,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.update-manual {
-  max-width: 600px;
-}
-</style>
+

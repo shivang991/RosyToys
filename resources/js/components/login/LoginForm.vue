@@ -62,9 +62,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.login-form {
-  width: 456px;
-  margin: auto;
-}
-</style>
+

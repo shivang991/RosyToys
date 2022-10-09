@@ -22,23 +22,4 @@
 export default {};
 </script>
 
-<style lang="scss" scoped>
-.tab-2 {
-  max-width: 80vw;
-  margin: auto;
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  column-gap: 4rem;
-  row-gap: 4rem;
-  color: $text;
 
-  &__icon-card {
-    min-width: 200px;
-    text-align: center;
-  }
-
-  @include media-query(lg) {
-    max-width: 70vw;
-  }
-}
-</style>

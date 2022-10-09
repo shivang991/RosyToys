@@ -59,10 +59,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.manual-item {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-</style>
+

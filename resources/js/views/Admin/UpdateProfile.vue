@@ -30,8 +30,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.update-profile {
-  max-width: 600px;
-}
-</style>
+

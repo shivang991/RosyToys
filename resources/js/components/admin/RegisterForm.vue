@@ -149,12 +149,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.register-form {
-  &__password-field {
-    column-gap: 2rem;
-    align-items: flex-end;
-    @include responsive-columns(md, 2);
-  }
-}
-</style>
+

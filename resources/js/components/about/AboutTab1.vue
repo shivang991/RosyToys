@@ -75,14 +75,4 @@
   </div>
 </template>
 
-<style lang="scss" scoped>
-.content {
-  padding-right: 0 !important;
-  padding-left: 0 !important;
-}
 
-.about h1,svg {
-  color: $text;
-}
-
-</style>

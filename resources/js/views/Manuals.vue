@@ -52,8 +52,4 @@ axios.get(apiEndPoint).then(({ data }) => {
 });
 </script>
 
-<style lang="scss" scoped>
-.manuals-view {
-    max-width: 75vw;
-}
-</style>
+

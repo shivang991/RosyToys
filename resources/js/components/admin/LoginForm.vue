@@ -60,9 +60,4 @@ const login = async () => {
 };
 </script>
 
-<style lang="scss" scoped>
-.login-form {
-    max-width: 512px;
-    margin: auto;
-}
-</style>
+

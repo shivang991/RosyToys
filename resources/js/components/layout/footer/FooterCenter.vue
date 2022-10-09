@@ -24,27 +24,4 @@
 const logoURL = window.asset("images/logo.png");
 </script>
 
-<style lang="scss" scoped>
-.footer-center {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: nth($blues, 3);
 
-    img {
-        transform: translateY(-12px);
-    }
-    a {
-        color: $secondary;
-        font-size: 1.5rem;
-        display: block;
-        padding: 0.5rem;
-        transition: 0.2s;
-        line-height: 1;
-        &:hover {
-            background-color: $secondary;
-            color: $primary;
-        }
-    }
-}
-</style>

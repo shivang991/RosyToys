@@ -77,29 +77,4 @@ const features = [
 const busImgURL = window.asset("images/red_bus.png");
 const arrowImgURL = window.asset("images/arrow.svg");
 </script>
-<style scoped lang="scss">
-.features-section {
-    &__decoration-balls {
-        display: grid;
-        grid-template-rows: repeat(2, 0.5rem);
-        grid-template-columns: 0.5rem;
-        row-gap: 0.25rem;
-    }
 
-    &__text {
-        max-width: 90%;
-        @include media-query(sm) {
-            max-width: 75%;
-        }
-        @include media-query(md) {
-            max-width: 50%;
-        }
-    }
-    &__list {
-        max-width: 90%;
-        @include media-query(md) {
-            max-width: 75%;
-        }
-    }
-}
-</style>

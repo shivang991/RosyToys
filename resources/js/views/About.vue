@@ -51,23 +51,4 @@ import AboutHead from "@/components/about/AboutHead.vue";
 const currentTab = shallowRef(AboutTab1);
 </script>
 
-<style lang="scss" scoped>
-.content {
-    padding-right: 0 !important;
-    padding-left: 0 !important;
-}
 
-
-.nav-about a {
-    text-align: center !important;
-    display: block;
-    border-bottom: 3px solid transparent;
-    cursor: pointer;
-    &:hover {
-        background-color: $translucent;
-    }
-    &.active {
-        border-bottom: 3px solid $primary !important;
-    }
-}
-</style>

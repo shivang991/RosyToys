@@ -80,27 +80,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.product-card {
-  display: grid;
-  grid-template-columns: 240px auto;
-  overflow: hidden;
-  margin-bottom: 4rem;
-  min-width: 0;
-  cursor: pointer;
-  &:hover {
-    background: $translucent;
-  }
-  &__text {
-    min-width: 0;
-  }
-  &__img {
-    display: grid;
-    place-items: center;
-    img {
-      width: 100%;
-      height: 100%;
-    }
-  }
-}
-</style>
+

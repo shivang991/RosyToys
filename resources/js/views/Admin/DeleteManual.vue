@@ -47,8 +47,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.delete-manual{
-  max-width: 600px;
-}
-</style>
+

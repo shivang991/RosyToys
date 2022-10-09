@@ -59,39 +59,4 @@ const store = useStore();
 const user = computed(() => store.state.auth.profile);
 </script>
 
-<style lang="scss" scoped>
-.side-bar {
-    $self: &;
-    position: fixed;
-    min-width: 300px;
-    height: 100vh;
-    z-index: 999;
-    background-color: $dark;
-    top: 0;
-    &__link {
-        display: block;
-        color: rgba($secondary, 0.5);
-        &--active {
-            background-color: rgba($text, 0.5);
-            color: $secondary;
-            border-left: 0.25rem solid $secondary;
-        }
-        &:hover {
-            color: $secondary;
-        }
-    }
-    &__auth-info {
-        flex-grow: 1;
-        min-height: 100px;
-        display: flex;
-        align-items: flex-end;
 
-        #{$self}__user {
-            display: flex;
-            align-items: center;
-            background: $translucent;
-            cursor: pointer;
-        }
-    }
-}
-</style>

@@ -27,8 +27,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.create-product {
-  max-width: 600px;
-}
-</style>
+

@@ -1,6 +1,6 @@
 <template>
     <div v-if="isUserLoaded">
-        <div class="app-wrapper">
+        <div class="bg-red-500">
             <nav-bar v-if="isLayoutEnabled"></nav-bar>
             <router-view />
         </div>
@@ -35,23 +35,4 @@ const route = useRoute();
 const isLayoutEnabled = computed(() => !route.meta.isLayoutDisabled);
 </script>
 
-<style lang="scss">
-@import "~bootstrap/scss/bootstrap";
 
-// fonts
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap");
-
-* {
-    font-family: "Montserrat";
-    font-weight: 400;
-}
-
-.app-wrapper {
-    display: grid;
-    & > * {
-        align-self: start;
-        grid-column: 1;
-        grid-row: 1;
-    }
-}
-</style>

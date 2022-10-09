@@ -124,14 +124,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.update-form {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  column-gap: 1rem;
 
-  & > *:not(#{&}__price, #{&}__name) {
-    grid-column: 1 / span 2;
-  }
-}
-</style>

@@ -18,9 +18,4 @@
 const bgImgURL = window.asset("images/contact.jpg");
 </script>
 
-<style scoped lang="scss">
-.head {
-    background-size: cover;
-    width: 100%;
-}
-</style>
+

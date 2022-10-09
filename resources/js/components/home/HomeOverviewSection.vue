@@ -46,35 +46,4 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
-.overview-section {
-  display: grid;
-  & > * {
-    grid-row: 1;
-    grid-column: 1;
-  }
-  &__card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    small {
-      flex-grow: 1;
-    }
 
-    &--light {
-      background-color: nth($greys, 1);
-      border-bottom: 0.25rem solid $dark;
-    }
-    &--dark {
-      background-color: $dark;
-      color: $secondary;
-      border-bottom: 0.25rem solid $primary;
-      button {
-        color: $secondary;
-        border-bottom: 1px solid $secondary;
-      }
-    }
-  }
-}
-</style>

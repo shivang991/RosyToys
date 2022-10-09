@@ -6,23 +6,9 @@ mix.js("resources/js/app.js", "public/js")
         resolve: {
             alias: {
                 "@": path.resolve(__dirname, "resources", "js"),
-                "@sass": path.resolve(__dirname, "resources", "sass")
             },
         },
-        module:{
-            rules:[
-                {
-                    test:/\.scss$/,
-                    use: [
-                        {
-                            loader:'sass-loader',
-                            options: {
-                                additionalData: '@use "@sass/app.scss" as *;'
-                            }
-                        }
-                    ]
-                }
-            ]
-        }
     })
-    .vue().setPublicPath('public');
+    .vue()
+    .postCss("resources/css/app.css", "public/css", [require("tailwindcss")])
+    .setPublicPath("public");

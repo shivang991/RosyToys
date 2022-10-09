@@ -51,8 +51,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.delete-product {
-  max-width: 600px;
-}
-</style>
+

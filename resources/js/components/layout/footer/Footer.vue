@@ -86,31 +86,4 @@ const socialMediaLinks = [
 const logoURL = window.asset("images/logo_transparent.png");
 </script>
 
-<style lang="scss" scoped>
-.footer-bar {
-    &__decoration-bar {
-        width: 2rem;
-        height: 0.25rem;
-        display: grid;
-        column-gap: 0.25rem;
-        grid-template-columns: repeat(2, minmax(0, 50%));
-    }
-    &__copyright {
-        border-top: 1px solid rgba($secondary, 0.25);
-    }
-    &__social-media-link {
-        background-color: $text;
-        color: rgba($secondary, 0.5);
-        &:hover {
-            color: $secondary;
-        }
-    }
-    &__text {
-        margin-bottom: 4rem;
-        @include media-query(md) {
-            max-width: 40%;
-            margin-bottom: 0;
-        }
-    }
-}
-</style>
+

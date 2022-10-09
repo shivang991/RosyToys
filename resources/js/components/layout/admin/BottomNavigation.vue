@@ -56,21 +56,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.bottom-nav {
-  border-left: 1rem solid nth($blues, 4);
-  background: $primary;
-  color: rgba($secondary, 0.5);
-  a {
-    color: rgba($secondary, 0.75);
-    &.router-link-exact-active {
-      color: $secondary;
-      font-weight: bolder;
-    }
-  }
-  &__links {
-    display: grid;
-    @include responsive-columns(sm, 2);
-  }
-}
-</style>
+
