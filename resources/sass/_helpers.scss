@@ -1,0 +1,26 @@
+@use 'vars';
+@use 'sass:map';
+
+@mixin media-query($size) {
+  $break-pt: map.get(vars.$grid-breakpoints, $size);
+  @media (min-width: $break-pt) {
+    @content;
+  }
+}
+
+@mixin responsive-columns($screen-size, $cols) {
+  @include media-query($screen-size) {
+    grid-template-columns: repeat($cols, minmax(0, 1fr));
+  }
+}
+
+@mixin pseudo {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    @content;
+  }
+}

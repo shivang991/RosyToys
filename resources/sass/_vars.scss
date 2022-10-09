@@ -1,0 +1,35 @@
+// colors:
+$blues: #0e85d0 #1178b9 #0e6fab #0d68a1 #0b3b59;
+$greys: #ffffff #f7f7f7 #323332 #202020;
+
+$primary: nth($blues, 1);
+$secondary: nth($greys, 2);
+$text: nth($greys, 3);
+$dark: nth($greys, 4);
+$translucent: rgba($primary, 0.05);
+
+// typography:
+$font-weight-bold: 500;
+$font-weight-bolder: 700;
+$font-weight-normal: 400;
+
+// breakpoints:
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+
+// spacing
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer * 0.5,
+  2: $spacer,
+  3: $spacer * 1.5,
+  4: $spacer * 2,
+  5: $spacer * 4,
+);
