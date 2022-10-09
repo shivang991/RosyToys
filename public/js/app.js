@@ -24387,7 +24387,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* PROPS */
   , _hoisted_7), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.user.name), 1
   /* TEXT */
-  )])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <router-link\n        v-else\n        :to=\"{ name: 'Login' }\"\n        class=\"w-100 btn btn-outline-primary\"\n      >\n        Login\n      </router-link> ")])]);
+  )])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <router-link\r\n        v-else\r\n        :to=\"{ name: 'Login' }\"\r\n        class=\"w-100 btn btn-outline-primary\"\r\n      >\r\n        Login\r\n      </router-link> ")])]);
 }
 
 /***/ }),

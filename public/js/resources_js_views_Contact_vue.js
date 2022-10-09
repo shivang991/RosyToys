@@ -183,7 +183,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       return $setup.fields.message = $event;
     }),
     rows: "5"
-  }, "\n            ", 512
+  }, "\r\n            ", 512
   /* NEED_PATCH */
   ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.fields.message]])]), _hoisted_8], 40
   /* PROPS, HYDRATE_EVENTS */
