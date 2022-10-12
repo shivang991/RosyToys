@@ -1,7 +1,7 @@
 <template>
-  <div class="nav-links">
+  <div class="space-x-8">
     <template v-for="(link, index) in links" :key="index">
-      <router-link class="nav-links__link small" :to="{ name: link.route }">{{ link.title }}</router-link>
+      <router-link class="text-slate-200 font-semibold hover:underline text-lg" :to="{ name: link.route }">{{ link.title }}</router-link>
     </template>
   </div>
 </template>

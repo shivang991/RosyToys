@@ -1,6 +1,6 @@
 <template>
     <div v-if="isUserLoaded">
-        <div class="bg-red-500">
+        <div>
             <nav-bar v-if="isLayoutEnabled"></nav-bar>
             <router-view />
         </div>

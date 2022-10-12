@@ -1,16 +1,13 @@
 <template>
-    <nav
-        class="d-none d-lg-grid w-75 mx-auto mt-2 nav-bar rounded-bottom-left overflow-hidden bg-white shadow"
-    >
-        <div class="nav-bar__logo py-1">
-            <img :src="logoURL" />
+    <nav class="bg-slate-900">
+        <div class="w-3/4 flex justify-between items-center py-8 mx-auto">
+            <div class="w-40">
+                <img :src="logoURL" class="w-full" />
+            </div>
+            <nav-links class="hidden sm:flex" :links="links"></nav-links>
         </div>
-        <nav-links
-            :links="links"
-            class="d-none d-lg-flex nav-bar__links"
-        ></nav-links>
     </nav>
-    <button @click="shouldShowSideBar = true">
+    <button @click="shouldShowSideBar = true" class="sm:hidden">
         <BIconList></BIconList>
     </button>
     <transition name="slide-x">
@@ -53,5 +50,5 @@ watch(isAdmin, (newVal) => {
     }
 });
 
-const logoURL = window.asset("images/logo_rect.png");
+const logoURL = window.asset("images/logo.png");
 </script>
