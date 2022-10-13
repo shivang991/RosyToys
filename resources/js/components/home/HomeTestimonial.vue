@@ -4,7 +4,8 @@
             <h5 class="text-slate-200 mb-8">Customer Review</h5>
             <div class="grid">
                 <div class="flex space-x-8 row-start-1 col-start-1 w-80">
-                    <img
+                    <BaseImage
+                        is-external
                         src="https://images.unsplash.com/photo-1494790108377-be9c29b29330"
                         class="w-16 h-16 rounded-full object-cover"
                     />
@@ -30,8 +31,8 @@
                     not for Hulk.. Knee and foot cannot be Rotated or flexed..
                 </div>
 
-                <img
-                    :src="dummyTestimonialImage"
+                <BaseImage
+                    src="home_testimonial.jpg"
                     class="row-start-1 row-span-2 col-start-2 col-span-2 w-32 h-32 rounded-xl"
                 />
             </div>
@@ -41,5 +42,5 @@
 
 <script setup>
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-const dummyTestimonialImage = window.asset("images/home_testimonial.jpg");
+import BaseImage from "@/components/global/BaseImage.vue";
 </script>

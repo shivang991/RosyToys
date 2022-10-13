@@ -34,5 +34,3 @@ const route = useRoute();
 
 const isLayoutEnabled = computed(() => !route.meta.isLayoutDisabled);
 </script>
-
-

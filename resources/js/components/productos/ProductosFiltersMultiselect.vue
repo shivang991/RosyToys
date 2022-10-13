@@ -1,12 +1,12 @@
 <template>
   <div>
-    <h5>{{label}}:</h5>
-    <ul class="list-unstyled ps-1 mt-2">
-      <li class="mb-1 form-check" v-for="(option, index) in options" :key="index">
+    <h5 class="font-semibold text-xl mb-4">{{label}}:</h5>
+    <ul class="px-2 space-y-2">
+      <li class="flex items-center space-x-2" v-for="(option, index) in options" :key="index">
         <span>
           <input type="checkbox" class="form-check-input" @change="update($event, option)" />
         </span>
-        <span class="form-check-label">{{ option }}</span>
+        <span>{{ option }}</span>
       </li>
     </ul>
   </div>

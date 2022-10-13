@@ -1,42 +1,34 @@
 <template>
-  <div class="productos-list">
-    <productos-list-item
-      v-for="product in products"
-      :key="product.id"
-      :id="product.id"
-      :imgSrc="product.image_url"
-      :description="product.description"
-      :code="product.code"
-      :brand="product.brand"
-      :measurements="product.measurements"
-      :application="product.application"
-    ></productos-list-item>
-    <div
-      class="productos-list__error-msg p-5 border text-muted"
-      v-if="!products.length"
-    >
-      <p>
-        <BIconExclamationDiamond class="fs-1" />
-      </p>
-      <p class="fw-bold fs-4 mt-4">
-        Lo sentimos, no se pudo encontrar ningún producto.
-      </p>
+    <div class="my-8 grid grid-cols-3 gap-x-12 gap-y-20 py-12">
+        <productos-list-item
+            v-for="product in products"
+            :key="product.id"
+            :id="product.id"
+            :imgSrc="product.image_url"
+            :description="product.description"
+            :code="product.code"
+            :brand="product.brand"
+            :measurements="product.measurements"
+            :application="product.application"
+        ></productos-list-item>
+        <div
+            class="flex space-x-4 text-xl items-center p-4 text-center justify-center bg-slate-100 text-slate-900 rounded-lg shadow-lg"
+            v-if="!products.length"
+        >
+            <FontAwesomeIcon icon="fa-exclamation-triangle" />
+            <p>Lo sentimos, no se pudo encontrar ningún producto.</p>
+        </div>
     </div>
-  </div>
 </template>
 
-<script>
-import ProductosListItem from './ProductosListItem.vue';
+<script setup>
+import ProductosListItem from "./ProductosListItem.vue";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
-export default {
-  components: { ProductosListItem },
-  props: {
+const props = defineProps({
     products: {
-      type: Array,
-      default: () => [],
+        type: Array,
+        default: () => [],
     },
-  },
-};
+});
 </script>
-
-

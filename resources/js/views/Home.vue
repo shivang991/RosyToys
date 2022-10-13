@@ -9,7 +9,7 @@
                     #DATTEBAYO
                 </p>
                 <div class="flex space-x-8 mb-12">
-                    <img
+                    <BaseImage
                         class="w-20 mb-12"
                         v-for="(src, index) in leftDecorationImages"
                         :src="src"
@@ -23,7 +23,7 @@
                 </router-link>
             </div>
             <div class="flex space-x-8 items-center">
-                <img :src="centralImage" width="480" />
+                <BaseImage src="home_central.png" width="480" />
                 <div>
                     <div
                         class="border rounded-md border-amber-500 px-4 py-2 text-slate-200 mb-8"
@@ -36,7 +36,7 @@
                             <span>off</span>
                         </p>
                     </div>
-                    <img :src="rightDecorationImage" class="w-40" />
+                    <BaseImage src="home_dec1.png" class="w-40" />
                 </div>
             </div>
         </div>
@@ -48,16 +48,16 @@
     </div>
     <HomeCarousel></HomeCarousel>
     <div class="grid">
-        <img
-            :src="promotionDecorationBgImage"
+        <BaseImage
+            src="home_promotions_2.png"
             class="justify-self-end row-start-1 col-start-1"
         />
         <div class="w-3/4 justify-self-center py-16 col-start-1 row-start-1">
             <h4 class="text-center text-2xl text-slate-900 mb-4 font-semibold">
                 Don't Miss These Promotions
             </h4>
-            <img
-                :src="promotionDecorationImage"
+            <BaseImage
+                src="home_promotions_1.png"
                 class="block translate-y-12 w-80"
             />
             <div
@@ -72,7 +72,7 @@
                         v-for="(tile, index) in promotionTiles"
                         :key="index"
                     >
-                        <img
+                        <BaseImage
                             :src="tile.image"
                             class="w-64 row-start-1 col-start-1 -translate-y-8 place-self-center z-10"
                         />
@@ -98,11 +98,15 @@
                 <div
                     class="flex shadow-xl items-center group-even:flex-row-reverse p-8 border-b-4 border-amber-500 rounded-xl max-w-lg"
                 >
-                    <p class="text-6xl font-bold text-slate-500">0{{ index + 1 }}</p>
+                    <p class="text-6xl font-bold text-slate-500">
+                        0{{ index + 1 }}
+                    </p>
                     <div
                         class="space-y-4 text-slate-900 ml-8 group-even:mr-8 group-even:ml-0"
                     >
-                        <h5 class="text-xl font-semibold">{{ service.title }}</h5>
+                        <h5 class="text-xl font-semibold">
+                            {{ service.title }}
+                        </h5>
                         <p>{{ service.desc }}</p>
                     </div>
                 </div>
@@ -121,32 +125,29 @@
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import HomeCarousel from "@/components/home/HomeCarousel.vue";
 import HomeTestimonial from "@/components/home/HomeTestimonial.vue";
+import BaseImage from "@/components/global/BaseImage.vue";
 
-const centralImage = window.asset("images/home_central.png");
-const rightDecorationImage = window.asset("images/home_dec1.png");
 const leftDecorationImages = [
-    window.asset("images/home_dec4.png"),
-    window.asset("images/home_dec3.png"),
-    window.asset("images/home_dec2.png"),
+    "home_dec4.png",
+    "home_dec3.png",
+    "home_dec2.png",
 ];
 
-const promotionDecorationImage = window.asset("images/home_promotions_1.png");
-const promotionDecorationBgImage = window.asset("images/home_promotions_2.png");
 const promotionTiles = [
     {
-        image: window.asset("images/home_promotions_tile_1.png"),
+        image: "home_promotions_tile_1.png",
         title: "Spider Man",
     },
     {
-        image: window.asset("images/home_promotions_tile_2.png"),
+        image: "home_promotions_tile_2.png",
         title: "Captain America",
     },
     {
-        image: window.asset("images/home_promotions_tile_3.png"),
+        image: "home_promotions_tile_3.png",
         title: "Hawkeye",
     },
     {
-        image: window.asset("images/home_promotions_tile_4.png"),
+        image: "home_promotions_tile_4.png",
         title: "Black Panther",
     },
 ];

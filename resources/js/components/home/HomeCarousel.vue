@@ -29,11 +29,13 @@
                 ref="carouselEl"
             >
                 <div v-for="(slide, i) in carouselSlides" :key="i" class="">
-                    <img
+                    <BaseImage
                         :src="slide.image"
-                        :alt="slide.title"
+                        is-external
                         class="min-w-full h-64 object-cover rounded block mb-4"
-                    />
+                        :alt="slide.title"
+                    ></BaseImage>
+
                     <p class="text-center text-lg text-slate-900">
                         {{ slide.title }}
                     </p>
@@ -49,6 +51,7 @@
 <script setup>
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { ref, watch } from "vue";
+import BaseImage from "@/components/global/BaseImage.vue";
 
 const marginLeft = ref(0);
 const carouselEl = ref(null);
