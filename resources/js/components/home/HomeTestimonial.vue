@@ -3,7 +3,7 @@
         <div class="w-3/4 mx-auto">
             <h5 class="text-slate-200 mb-8">Customer Review</h5>
             <div class="grid">
-                <div class="flex space-x-8 row-start-1 col-start-1 w-80">
+                <div class="flex space-x-8 row-start-1 col-start-1 w-max sm:w-80">
                     <BaseImage
                         is-external
                         src="https://images.unsplash.com/photo-1494790108377-be9c29b29330"
@@ -33,7 +33,7 @@
 
                 <BaseImage
                     src="home_testimonial.jpg"
-                    class="row-start-1 row-span-2 col-start-2 col-span-2 w-32 h-32 rounded-xl"
+                    class="row-start-1 row-span-2 col-start-2 col-span-2 w-32 h-32 rounded-xl object-cover"
                 />
             </div>
         </div>

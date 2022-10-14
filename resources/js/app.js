@@ -25,7 +25,9 @@ import {
     faFaceSmile,
     faStar,
     faExclamationTriangle,
-    faShoppingCart
+    faShoppingCart,
+    faBars,
+    faTimes,
 } from "@fortawesome/free-solid-svg-icons";
 import {
     faTwitter,
@@ -47,5 +49,7 @@ library.add(
     faYoutube,
     faStar,
     faExclamationTriangle,
-    faShoppingCart
+    faShoppingCart,
+    faBars,
+    faTimes
 );

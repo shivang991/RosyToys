@@ -1,10 +1,10 @@
 <template>
     <div v-if="isUserLoaded">
+        <nav-bar v-if="isLayoutEnabled"></nav-bar>
         <div>
-            <nav-bar v-if="isLayoutEnabled"></nav-bar>
             <router-view />
+            <footer-bar v-if="isLayoutEnabled"></footer-bar>
         </div>
-        <footer-bar v-if="isLayoutEnabled"></footer-bar>
         <base-notification />
     </div>
     <div

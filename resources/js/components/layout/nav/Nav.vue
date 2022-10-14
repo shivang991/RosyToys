@@ -1,30 +1,48 @@
 <template>
     <nav class="bg-slate-900">
         <div
-            class="w-3/4 flex justify-between items-center py-8 mx-auto"
+            class="w-11/12 lg:w-3/4 flex justify-between items-center py-4 lg:py-8 mx-auto"
             v-if="$route.name === 'Home'"
         >
             <BaseImage src="logo.png" class="w-40" />
-            <nav-links class="hidden sm:flex" :links="links"></nav-links>
+            <nav-links class="hidden md:flex" :links="links"></nav-links>
+            <button
+                @click="shouldShowSideBar = !shouldShowSideBar"
+                class="md:hidden text-slate-200 text-xl"
+            >
+                <FontAwesomeIcon
+                    :icon="shouldShowSideBar ? 'fa-times' : 'fa-bars'"
+                ></FontAwesomeIcon>
+            </button>
         </div>
-        <div v-else class="mx-20 py-4 justify-between flex items-center">
+        <div
+            v-else
+            class="mx-8 md:mx-20 py-4 justify-between flex items-center"
+        >
             <BaseImage src="logo.png" class="w-32" />
-            <div class="hidden sm:flex items-center space-x-8">
+            <button
+                @click="shouldShowSideBar = !shouldShowSideBar"
+                class="lg:hidden text-slate-200 text-xl"
+            >
+                <FontAwesomeIcon
+                    :icon="shouldShowSideBar ? 'fa-times' : 'fa-bars'"
+                ></FontAwesomeIcon>
+            </button>
+            <div class="hidden lg:flex items-center space-x-8">
                 <nav-links :links="links"></nav-links>
-                <input type="text" placeholder="Search" class="px-4 py-2 rounded-lg"/>
+                <input
+                    type="text"
+                    placeholder="Search"
+                    class="px-4 py-2 rounded-lg"
+                />
             </div>
         </div>
     </nav>
-    <button @click="shouldShowSideBar = true" class="sm:hidden">
-        <BIconList></BIconList>
-    </button>
-    <transition name="slide-x">
-        <nav-side-bar
-            v-if="shouldShowSideBar"
-            :mobileOnlyLinks="links"
-            @close="shouldShowSideBar = false"
-        ></nav-side-bar>
-    </transition>
+
+    <nav-side-bar
+        :shouldShow="shouldShowSideBar"
+        :links="links"
+    ></nav-side-bar>
 </template>
 
 <script setup>
@@ -33,7 +51,7 @@ import { useStore } from "vuex";
 import NavLinks from "./NavLinks.vue";
 import NavSideBar from "./NavSideBar.vue";
 import BaseImage from "@/components/global/BaseImage.vue";
-import { useRoute } from "vue-router";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
 const shouldShowSideBar = ref(false);
 

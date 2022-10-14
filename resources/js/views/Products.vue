@@ -1,5 +1,5 @@
 <template>
-    <div class="w-3/4 mx-auto py-12">
+    <div class="w-11/12 md:w-3/4 mx-auto py-12">
         <productos-filters
             v-model:queryParams="apiQueryParams"
         ></productos-filters>
@@ -12,6 +12,9 @@
                 v-if="paginatedData && paginatedData.data"
                 :products="dummyProducts"
             ></productos-list>
+            <div v-else class="h-96 flex items-center justify-center">
+                <div class="w-16 h-16 rounded-full border-4 border-amber-500 animate-spin border-b-transparent"></div>
+            </div>
             <base-pagination
                 v-model="paginatedData"
                 :queryParams="apiQueryParams"
@@ -23,7 +26,6 @@
 <script setup>
 import ProductosFilters from "@/components/productos/ProductosFilters.vue";
 import ProductosList from "@/components/productos/ProductosList.vue";
-import ProductosSearch from "@/components/productos/ProductosSearch.vue";
 import { ref, watch } from "vue";
 import { useAxios } from "@/plugins/Axios";
 

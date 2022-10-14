@@ -1,5 +1,5 @@
 <template>
-    <div class="my-8 grid grid-cols-3 gap-x-12 gap-y-20 py-12">
+    <div class="grid sm:grid-cols-2 xl:grid-cols-3 gap-x-12 gap-y-8 md:gap-y-20 py-12">
         <productos-list-item
             v-for="product in products"
             :key="product.id"

@@ -1,7 +1,9 @@
 <template>
     <div class="bg-slate-900">
-        <div class="flex justify-between items-center w-3/4 mx-auto">
-            <div>
+        <div
+            class="flex justify-center md:justify-between items-center w-3/4 mx-auto"
+        >
+            <div class="hidden md:block">
                 <h1 class="text-4xl text-slate-200 mb-4">Naruto Shippuden</h1>
                 <p
                     class="mb-12 text-xl bg-gradient-to-r bg-clip-text text-transparent font-bold from-amber-800 w-max to-amber-500"
@@ -22,9 +24,9 @@
                     >View More
                 </router-link>
             </div>
-            <div class="flex space-x-8 items-center">
+            <div class="lg:flex space-x-8 items-center">
                 <BaseImage src="home_central.png" width="480" />
-                <div>
+                <div class="hidden lg:block">
                     <div
                         class="border rounded-md border-amber-500 px-4 py-2 text-slate-200 mb-8"
                     >
@@ -50,9 +52,11 @@
     <div class="grid">
         <BaseImage
             src="home_promotions_2.png"
-            class="justify-self-end row-start-1 col-start-1"
+            class="justify-self-end row-start-1 col-start-1 hidden sm:block"
         />
-        <div class="w-3/4 justify-self-center py-16 col-start-1 row-start-1">
+        <div
+            class="w-11/12 lg:w-3/4 justify-self-center py-16 col-start-1 row-start-1"
+        >
             <h4 class="text-center text-2xl text-slate-900 mb-4 font-semibold">
                 Don't Miss These Promotions
             </h4>
@@ -66,7 +70,9 @@
                 <h2 class="text-center text-slate-200 text-4xl font-bold mb-8">
                     Marvel
                 </h2>
-                <div class="grid grid-cols-2 gap-y-20">
+                <div
+                    class="md:grid grid-cols-2 gap-y-20 space-y-12 md:space-y-0"
+                >
                     <div
                         class="grid"
                         v-for="(tile, index) in promotionTiles"
@@ -87,8 +93,8 @@
             </div>
         </div>
     </div>
-    <div class="my-16 w-3/4 mx-auto">
-        <h4 class="text-2xl font-semibold text-slate-900 mb-20">Services</h4>
+    <div class="my-16 w-11/12 lg:w-3/4 mx-auto">
+        <h4 class="text-2xl font-semibold text-slate-900 mb-8 sm:mb-20">Services</h4>
         <ul class="space-y-12">
             <li
                 class="flex even:flex-row-reverse group items-center w-full"
@@ -111,7 +117,7 @@
                     </div>
                 </div>
                 <div
-                    class="text-8xl text-slate-500 p-8 rounded border-b-4 border-amber-500 shadow-xl ml-8 group-even:mr-8 group-even:ml-0"
+                    class="hidden md:block text-8xl text-slate-500 p-8 rounded border-b-4 border-amber-500 shadow-xl ml-8 group-even:mr-8 group-even:ml-0"
                 >
                     <FontAwesomeIcon :icon="service.icon"></FontAwesomeIcon>
                 </div>

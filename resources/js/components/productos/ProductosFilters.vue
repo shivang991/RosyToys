@@ -1,6 +1,6 @@
 <template>
     <div class="relative">
-        <div class="flex justify-between">
+        <div class="flex justify-between items-center">
             <h2 class="text-4xl font-semibold text-gray-800">
                 Browse our Products
             </h2>
