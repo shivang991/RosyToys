@@ -1,8 +1,10 @@
 <template>
     <div v-if="isUserLoaded">
         <nav-bar v-if="isLayoutEnabled"></nav-bar>
-        <div>
-            <router-view />
+        <div class="min-h-screen flex flex-col">
+            <div class="flex-grow">
+                <router-view />
+            </div>
             <footer-bar v-if="isLayoutEnabled"></footer-bar>
         </div>
         <base-notification />

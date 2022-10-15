@@ -1,15 +1,14 @@
 <template>
-    <div class="grid sm:grid-cols-2 xl:grid-cols-3 gap-x-12 gap-y-8 md:gap-y-20 py-12">
+    <div
+        class="grid sm:grid-cols-2 xl:grid-cols-3 gap-x-12 gap-y-8 md:gap-y-20 py-12"
+    >
         <productos-list-item
             v-for="product in products"
             :key="product.id"
             :id="product.id"
             :imgSrc="product.image_url"
-            :description="product.description"
-            :code="product.code"
-            :brand="product.brand"
-            :measurements="product.measurements"
-            :application="product.application"
+            :price="product.price"
+            :title="product.title"
         ></productos-list-item>
         <div
             class="flex space-x-4 text-xl items-center p-4 text-center justify-center bg-slate-100 text-slate-900 rounded-lg shadow-lg"

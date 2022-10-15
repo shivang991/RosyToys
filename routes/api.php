@@ -54,5 +54,4 @@ Route::prefix('/manual')->group(function () {
 
 Route::prefix('/choices')->group(function () {
     Route::get('/brands', [ProductFieldChoices::class, 'brands']);
-    Route::get('/applications', [ProductFieldChoices::class, 'applications']);
 });

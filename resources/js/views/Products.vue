@@ -10,12 +10,15 @@
         <div>
             <productos-list
                 v-if="paginatedData && paginatedData.data"
-                :products="dummyProducts"
+                :products="paginatedData.data"
             ></productos-list>
             <div v-else class="h-96 flex items-center justify-center">
-                <div class="w-16 h-16 rounded-full border-4 border-amber-500 animate-spin border-b-transparent"></div>
+                <div
+                    class="w-12 h-12 rounded-full border-4 border-amber-500 animate-spin border-b-transparent"
+                ></div>
             </div>
             <base-pagination
+                class="flex flex-col items-center mt-8"
                 v-model="paginatedData"
                 :queryParams="apiQueryParams"
             ></base-pagination>
@@ -35,19 +38,6 @@ const apiQueryParams = ref(null);
 const isRequestSent = ref(false);
 
 const apiEndPoint = "/api/product/all";
-
-const dummyProducts = Array(9)
-    .fill({
-        image_url:
-            "https://images.unsplash.com/photo-1484406566174-9da000fda645",
-        description:
-            "While sculpting, areas might be hidden behind parts of the mesh or they might be too close to other parts. To work through these, it is useful to isolate parts of a mesh to sculpt on.",
-        code: "0123C",
-        brand: "Brand_X",
-        measurements: "10 by 10",
-        application: "None",
-    })
-    .map((e, id) => ({ ...e, id }));
 
 watch(apiQueryParams, async (newVal) => {
     isRequestSent.value = true;

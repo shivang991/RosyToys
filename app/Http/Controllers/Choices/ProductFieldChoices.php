@@ -18,9 +18,4 @@ class ProductFieldChoices extends Controller
     {
         return $this->_getChoicesFor('brand');
     }
-
-    public function applications()
-    {
-        return $this->_getChoicesFor('application');
-    }
 }

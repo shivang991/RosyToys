@@ -28,6 +28,7 @@ import {
     faShoppingCart,
     faBars,
     faTimes,
+    faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
 import {
     faTwitter,
@@ -38,6 +39,7 @@ import {
 
 library.add(
     faChevronDown,
+    faChevronRight,
     faArrowRight,
     faEnvelope,
     faHeadset,

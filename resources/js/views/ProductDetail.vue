@@ -1,61 +1,104 @@
 <template>
-  <div class="product-detail" v-if="product">
-    <div class="px-4">
-      <img
-        :src="product.image_url"
-        :alt="product.name"
-        class="product-detail__image"
-      />
-      <h4 class="fw-bolder mt-4">{{ product.name }}</h4>
-      <p>{{ product.description }}</p>
-      <p>
-        <span>Precio:</span>
-        <span class="text-primary ms-2">${{ product.price }}</span>
-      </p>
-      <div class="mt-5" v-if="$store.getters['auth/isAdmin']">
-        <p>
-          <span class="me-2">Identificación de producto:</span>
-          <span class="fw-bolder">{{ product.id }}</span>
-        </p>
-        <div class="d-flex">
-          <router-link
-            :to="{ name: 'DeleteProduct', query: { id: product.id } }"
-            class="flex-grow-1 me-2 btn btn-primary"
-          >
-            Eliminar
-          </router-link>
-          <router-link
-            :to="{ name: 'UpdateProduct', query: { id: product.id } }"
-            class="flex-grow-1 mx-2 btn btn-primary"
-          >
-            Editar
-          </router-link>
+    <div v-if="product">
+        <div
+            class="w-11/12 md:w-3/4 mx-auto py-8 sm:py-20 sm:grid grid-cols-2 gap-x-2 lg:gap-x-8"
+        >
+            <div class="w-full mb-8 sm:mb-0">
+                <BaseImage
+                    is-external
+                    :src="product.image_url"
+                    :alt="product.title"
+                    class="w-full h-80 object-cover"
+                />
+            </div>
+            <div>
+                <h1 class="text-4xl font-semibold leading-none mb-4">
+                    {{ product.title }}
+                </h1>
+                <p class="font-semibold text-2xl text-slate-600 mb-4">
+                    ${{ product.price }}
+                </p>
+                <div class="flex items-center space-x-2 mb-4">
+                    <h4 class="text-xl">Quantity:</h4>
+                    <button class="px-4 py-2 bg-slate-200 rounded-md">1</button>
+                </div>
+                <div class="mb-8">
+                    <h4 class="text-xl mb-2">Description:</h4>
+                    <p>{{ product.description }}</p>
+                </div>
+                <div class="space-y-4">
+                    <button
+                        class="w-full py-2 border border-amber-500 text-amber-500 rounded-md"
+                    >
+                        Buy Now
+                    </button>
+                    <button
+                        class="w-full py-2 bg-amber-500 text-white rounded-md"
+                    >
+                        Add to Cart
+                    </button>
+                </div>
+                <div class="mt-8" v-if="$store.getters['auth/isAdmin']">
+                    <p class="flex space-x-2">
+                        <span>Identificación de producto:</span>
+                        <span class="fw-bolder">{{ product.id }}</span>
+                    </p>
+                    <div class="d-flex">
+                        <router-link
+                            :to="{
+                                name: 'DeleteProduct',
+                                query: { id: product.id },
+                            }"
+                            class="flex-grow-1 me-2 btn btn-primary"
+                        >
+                            Eliminar
+                        </router-link>
+                        <router-link
+                            :to="{
+                                name: 'UpdateProduct',
+                                query: { id: product.id },
+                            }"
+                            class="flex-grow-1 mx-2 btn btn-primary"
+                        >
+                            Editar
+                        </router-link>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-    <div class="bg-translucent"></div>
-  </div>
+    <div
+        v-else-if="isNotFound"
+        class="flex flex-col items-center pt-8 justify-center"
+    >
+        <h1 class="text-slate-500 text-6xl font-bold mb-2">404</h1>
+        <p class="text-slate-900">The product could not be found</p>
+    </div>
+    <div v-else class="pt-12 flex justify-center">
+        <div
+            class="w-12 h-12 rounded-full border-4 border-amber-500 animate-spin border-b-transparent"
+        ></div>
+    </div>
 </template>
 
-<script>
-import { ref } from 'vue';
-import { useRoute } from 'vue-router';
-import { useAxios } from '@/plugins/Axios';
+<script setup>
+import { ref } from "vue";
+import { useRoute } from "vue-router";
+import { useAxios } from "@/plugins/Axios";
+import BaseImage from "../components/global/BaseImage.vue";
 
-export default {
-  setup() {
-    const route = useRoute();
-    const axios = useAxios();
-    const product = ref(null);
+const route = useRoute();
+const axios = useAxios();
+const product = ref(null);
 
-    if (route.params.id) {
-      axios.get(`/api/product/${route.params.id}`).then(({ data }) => {
-        product.value = data;
-      });
-    }
-    return { product };
-  },
-};
+const isNotFound = ref(false);
+
+if (route.params.id) {
+    axios
+        .get(`/api/product/${route.params.id}`)
+        .then(({ data }) => (product.value = data))
+        .catch((err) => {
+            if (err.response.status === 404) isNotFound.value = true;
+        });
+}
 </script>
-
-

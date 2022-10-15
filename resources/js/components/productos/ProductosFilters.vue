@@ -9,7 +9,10 @@
                 @click="shouldShowFilters = !shouldShowFilters"
             >
                 <span>Filters</span>
-                <span class="text-sm duration-100" :class="{'rotate-180':shouldShowFilters}">
+                <span
+                    class="text-sm duration-100"
+                    :class="{ 'rotate-180': shouldShowFilters }"
+                >
                     <FontAwesomeIcon icon="fa-chevron-down"></FontAwesomeIcon>
                 </span>
             </button>
@@ -65,7 +68,6 @@ const props = defineProps({
 const emit = defineEmits(["update:queryParams"]);
 
 const input = reactive({
-    application: [],
     brand: [],
 });
 
@@ -76,7 +78,6 @@ function applyFilters() {
 }
 
 function clearFilters() {
-    input.application = [];
     input.brand = [];
     applyFilters();
 }
@@ -86,43 +87,8 @@ const axios = useAxios();
 const filters = reactive({});
 axios.get("/api/choices/brands").then((res) => {
     filters.brand = {
-        // label: "Marcas",
-        label: "Captains",
-        // options: res.data,
-        options: [
-            "Yamamoto",
-            "Soifon",
-            "Ichimaru",
-            "Unohana",
-            "Aizen",
-            "Byakuya",
-            "Kommamura",
-            "Kyoraku",
-            "Kaname",
-            "Toshiro",
-            "Kenpachi",
-            "Mayuri",
-            "Ukitake",
-        ],
-    };
-});
-axios.get("/api/choices/applications").then((res) => {
-    filters.application = {
-        // label: "Applicacion",
-        label: "Hashira",
-
-        // options: res.data,
-        options: [
-            "Rengoku",
-            "Gyomei",
-            "Shinobou",
-            "Mitsuri",
-            "Sanemi",
-            "Tengen",
-            "Giyu",
-            "Obanai",
-            "Muichiro",
-        ],
+        label: "Marcas",
+        options: res.data,
     };
 });
 </script>
