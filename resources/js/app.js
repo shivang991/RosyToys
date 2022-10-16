@@ -11,8 +11,16 @@ import App from "./App.vue";
 import GlobalComponents from "./plugins/GlobalComponents";
 import router from "./router";
 import store from "./store";
+import VueGoogleMaps from "@fawmi/vue-google-maps";
 
-createApp(App).use(store).use(router).use(GlobalComponents).mount("#app");
+createApp(App)
+    .use(store)
+    .use(router)
+    .use(VueGoogleMaps, {
+        load: { key: "AIzaSyB9dc7sKul6Qse_zUQerk7a2yb66j2UNfU" },
+    })
+    .use(GlobalComponents)
+    .mount("#app");
 
 // Icons
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -29,6 +37,8 @@ import {
     faBars,
     faTimes,
     faChevronRight,
+    faPhone,
+    faMapLocation,
 } from "@fortawesome/free-solid-svg-icons";
 import {
     faTwitter,
@@ -53,5 +63,7 @@ library.add(
     faExclamationTriangle,
     faShoppingCart,
     faBars,
-    faTimes
+    faTimes,
+    faPhone,
+    faMapLocation
 );

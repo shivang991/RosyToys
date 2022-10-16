@@ -39,17 +39,17 @@
         </div>
     </nav>
 
-    <nav-side-bar
-        :shouldShow="shouldShowSideBar"
+    <nav-mobile
+        v-model:shouldShow="shouldShowSideBar"
         :links="links"
-    ></nav-side-bar>
+    ></nav-mobile>
 </template>
 
 <script setup>
 import { computed, ref, watch } from "vue";
 import { useStore } from "vuex";
 import NavLinks from "./NavLinks.vue";
-import NavSideBar from "./NavSideBar.vue";
+import NavMobile from "./NavMobile.vue";
 import BaseImage from "@/components/global/BaseImage.vue";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 

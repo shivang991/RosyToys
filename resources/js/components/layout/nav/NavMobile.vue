@@ -1,23 +1,20 @@
 <template>
     <div ref="sideBarEl" class="duration-500 h-0 overflow-hidden">
         <ul class="flex flex-col items-center py-4 space-y-2">
-            <li v-for="(link, index) in links" :key="index" class="text-slate-900">
-                <router-link :to="{ name: link.route }" active-class="text-amber-500 font-semibold">
+            <li
+                v-for="(link, index) in links"
+                :key="index"
+                class="text-slate-900"
+            >
+                <router-link
+                    :to="{ name: link.route }"
+                    active-class="text-amber-500 font-semibold"
+                    @click="emit('update:shouldShow', false)"
+                >
                     {{ link.title }}
                 </router-link>
             </li>
         </ul>
-        <!-- <div class="side-bar__auth-info p-4">
-            <div v-if="user" class="side-bar__user mx-auto py-2 px-4 shadow-lg">
-                <img
-                    :src="$store.getters['auth/profileImage']"
-                    width="50"
-                    height="50"
-                    class="rounded-circle shadow-lg"
-                />
-                <p class="ms-2 text-secondary mb-0">{{ user.name }}</p>
-            </div>
-        </div> -->
     </div>
 </template>
 
@@ -36,6 +33,8 @@ const props = defineProps({
         default: false,
     },
 });
+
+const emit = defineEmits(["update:shouldShow"]);
 
 const store = useStore();
 const user = computed(() => store.state.auth.profile);

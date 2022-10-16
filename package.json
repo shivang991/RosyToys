@@ -10,6 +10,12 @@
         "production": "mix --production"
     },
     "devDependencies": {
+        "@fawmi/vue-google-maps": "^0.9.79",
+        "@fortawesome/fontawesome-svg-core": "^6.2.0",
+        "@fortawesome/free-brands-svg-icons": "^6.2.0",
+        "@fortawesome/free-regular-svg-icons": "^6.2.0",
+        "@fortawesome/free-solid-svg-icons": "^6.2.0",
+        "@fortawesome/vue-fontawesome": "^3.0.1",
         "@popperjs/core": "^2.10.2",
         "autoprefixer": "^10.4.12",
         "axios": "^0.21",
@@ -22,12 +28,7 @@
         "vue": "^3.2.36",
         "vue-loader": "^17.0.0",
         "vue-template-compiler": "^2.6.12",
-        "vuex": "^4.0.2",
-        "@fortawesome/fontawesome-svg-core": "^6.2.0",
-        "@fortawesome/free-brands-svg-icons": "^6.2.0",
-        "@fortawesome/free-regular-svg-icons": "^6.2.0",
-        "@fortawesome/free-solid-svg-icons": "^6.2.0",
-        "@fortawesome/vue-fontawesome": "^3.0.1"
+        "vuex": "^4.0.2"
     },
     "dependencies": {
         "vue-router": "^4.1.2"
