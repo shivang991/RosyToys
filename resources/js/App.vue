@@ -1,10 +1,12 @@
 <template>
     <div v-if="isUserLoaded">
-        <div class="bg-red-500">
-            <nav-bar v-if="isLayoutEnabled"></nav-bar>
-            <router-view />
+        <nav-bar v-if="isLayoutEnabled"></nav-bar>
+        <div class="min-h-screen flex flex-col">
+            <div class="flex-grow">
+                <router-view />
+            </div>
+            <footer-bar v-if="isLayoutEnabled"></footer-bar>
         </div>
-        <footer-bar v-if="isLayoutEnabled"></footer-bar>
         <base-notification />
     </div>
     <div
@@ -23,6 +25,7 @@ import { useAxios } from "@/plugins/Axios";
 import BaseNotification from "@/components/global/BaseNotification.vue";
 import { computed } from "@vue/reactivity";
 import { useRoute } from "vue-router";
+import { useStore } from "vuex";
 
 const isUserLoaded = ref(false);
 const { setUser } = useAxios();
@@ -33,6 +36,7 @@ setUser().then(() => {
 const route = useRoute();
 
 const isLayoutEnabled = computed(() => !route.meta.isLayoutDisabled);
+
+// Initialize product list
+useStore().dispatch("products/refetch");
 </script>
-
-

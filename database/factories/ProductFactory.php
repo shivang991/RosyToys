@@ -22,10 +22,11 @@ class ProductFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->firstName(),
-            'description' => $this->faker->sentence(),
-            'price' => random_int(20, 1000),
-            'image_url' => 'https://www.indiumsoftware.com/wp-content/uploads/2019/01/7-Reasons-Why-Software-Testing-is-Important.jpg',
+            'title' => $this->faker->streetAddress(),
+            'description' => $this->faker->paragraph(),
+            'price' => random_int(500, 10_000),
+            'brand' => collect(["Naruto", "Echi", "StarWars", "Marvel"])->random(),
+            'image_url' => 'https://s3.us-east-2.amazonaws.com/arda.storage/products/2TM431ipQhXXCYuTJTEOVXBU1HXF39T1ZUDC0twG.png',
             'image_path' => '',
         ];
     }

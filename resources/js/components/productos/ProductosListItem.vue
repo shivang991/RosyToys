@@ -1,83 +1,53 @@
 <template>
-  <div class="product-card  shadow-sm rounded" @click="viewProduct">
-    <div class="product-card__img border-end bg-secondary">
-      <img @load="isImgLoaded = true" v-show="isImgLoaded" :src="imgSrc" />
-      <div class="text-center text-primary" v-show="!isImgLoaded">
-        <span class="spinner-grow"></span>
-      </div>
+    <div
+        class="bg-slate-100 flex flex-col items-center px-8 py-12 shadow-sm rounded-tl-md rounded-tr-2xl rounded-bl-2xl rounde-br-md"
+    >
+        <BaseImage
+            isExternal
+            :src="imgSrc"
+            class="w-60 h-40 object-cover mb-4 rounded"
+        />
+        <h5 class="text-xl font-semibold mb-2 text-center leading-none">
+            {{ title }}
+        </h5>
+        <p class="mb-8 text-center">Price: {{ price }}$</p>
+        <button
+            class="flex justify-between w-full items-center py-2 px-4 bg-amber-500 text-white rounded-md"
+            @click="viewProduct"
+        >
+            <span>Add to Cart</span>
+            <FontAwesomeIcon icon="fa-shopping-cart"></FontAwesomeIcon>
+        </button>
     </div>
-    <div class="product-card__text d-flex flex-column py-4 px-5">
-      <h5 class="text-truncate">
-        {{ description }}
-      </h5>
-      <p class="d-flex text-muted">
-        <span class="me-1">Medidas:</span>
-        <small>{{ measurements }}</small>
-      </p>
-      <div class="flex-grow-1"></div>
-      <table class="mt-2 w-max align-self-start">
-        <tr v-for="(value, key) in productStats" :key="key">
-          <td class="text-muted pe-1">{{ key }}:</td>
-          <td>{{ value }}</td>
-        </tr>
-      </table>
-    </div>
-  </div>
 </template>
 
-<script>
-import { ref } from 'vue';
-import { useRouter } from 'vue-router';
+<script setup>
+import { useRouter } from "vue-router";
+import BaseImage from "../global/BaseImage.vue";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
-export default {
-  props: {
+const props = defineProps({
     id: {
-      type: Number,
-      required: true,
+        type: Number,
+        required: true,
     },
     imgSrc: {
-      type: String,
-      required: true,
+        type: String,
+        required: true,
     },
-    measurements: {
-      type: String,
-      required: false,
+    title: {
+        type: String,
+        required: true,
     },
-    description: {
-      type: String,
-      required: true,
+    price: {
+        type: Number,
+        required: true,
     },
-    code: {
-      type: String,
-      required: true,
-    },
-    brand: {
-      type: String,
-      required: true,
-    },
-    application: {
-      type: String,
-      required: true,
-    },
-  },
-  setup(props) {
-    const router = useRouter();
-    const isImgLoaded = ref(false);
+});
 
-    const productStats = {
-      Marca: props.brand,
-      Aplicacion: props.application,
-      Codigo: props.code,
-    };
+const router = useRouter();
 
-    function viewProduct() {
-      console.log(router);
-      // router.push({ name: 'ProductDetail', params: { id: props.id } });
-    }
-
-    return { isImgLoaded, viewProduct, productStats };
-  },
-};
+function viewProduct() {
+    router.push({ name: "ProductDetail", params: { id: props.id } });
+}
 </script>
-
-

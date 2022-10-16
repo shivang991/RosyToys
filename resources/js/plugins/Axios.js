@@ -83,4 +83,6 @@ export function useAxios() {
     };
 }
 
+export const Axios = axios;
+
 export default useAxios;

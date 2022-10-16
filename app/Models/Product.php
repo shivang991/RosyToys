@@ -12,10 +12,10 @@ class Product extends Model
     protected $fillable = [
         'image_path',
         'image_url',
-        'code',
+        'title',
         'description',
         'brand',
-        'application',
-        'measurements'
+        'price',
+        'is_available',
     ];
 }

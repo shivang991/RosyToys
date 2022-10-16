@@ -1,32 +1,54 @@
 <template>
-    <nav
-        class="d-none d-lg-grid w-75 mx-auto mt-2 nav-bar rounded-bottom-left overflow-hidden bg-white shadow"
-    >
-        <div class="nav-bar__logo py-1">
-            <img :src="logoURL" />
+    <nav class="bg-slate-900">
+        <div
+            class="w-11/12 lg:w-3/4 flex justify-between items-center py-4 lg:py-8 mx-auto"
+            v-if="$route.name === 'Home'"
+        >
+            <BaseImage src="logo.png" class="w-40" />
+            <nav-links class="hidden md:flex" :links="links"></nav-links>
+            <button
+                @click="shouldShowSideBar = !shouldShowSideBar"
+                class="md:hidden text-slate-200 text-xl"
+            >
+                <FontAwesomeIcon
+                    :icon="shouldShowSideBar ? 'fa-times' : 'fa-bars'"
+                ></FontAwesomeIcon>
+            </button>
         </div>
-        <nav-links
-            :links="links"
-            class="d-none d-lg-flex nav-bar__links"
-        ></nav-links>
+        <div
+            v-else
+            class="mx-8 md:mx-20 py-4 justify-between flex items-center"
+        >
+            <BaseImage src="logo.png" class="w-32" />
+            <button
+                @click="shouldShowSideBar = !shouldShowSideBar"
+                class="lg:hidden text-slate-200 text-xl"
+            >
+                <FontAwesomeIcon
+                    :icon="shouldShowSideBar ? 'fa-times' : 'fa-bars'"
+                ></FontAwesomeIcon>
+            </button>
+            <div class="hidden lg:flex items-center space-x-8">
+                <nav-links :links="links"></nav-links>
+                <nav-product-search></nav-product-search>
+            </div>
+        </div>
     </nav>
-    <button @click="shouldShowSideBar = true">
-        <BIconList></BIconList>
-    </button>
-    <transition name="slide-x">
-        <nav-side-bar
-            v-if="shouldShowSideBar"
-            :mobileOnlyLinks="links"
-            @close="shouldShowSideBar = false"
-        ></nav-side-bar>
-    </transition>
+
+    <nav-mobile
+        v-model:shouldShow="shouldShowSideBar"
+        :links="links"
+    ></nav-mobile>
 </template>
 
 <script setup>
 import { computed, ref, watch } from "vue";
 import { useStore } from "vuex";
 import NavLinks from "./NavLinks.vue";
-import NavSideBar from "./NavSideBar.vue";
+import NavMobile from "./NavMobile.vue";
+import NavProductSearch from "./NavProductSearch.vue";
+import BaseImage from "@/components/global/BaseImage.vue";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
 const shouldShowSideBar = ref(false);
 
@@ -35,7 +57,6 @@ const links = ref([
     { route: "Home", title: "Inicio" },
     { route: "About", title: "Acerca de" },
     { route: "Productos", title: "Productos" },
-    { route: "Manuals", title: "Literatura" },
     { route: "Contacto", title: "Contacto" },
 ]);
 
@@ -52,6 +73,4 @@ watch(isAdmin, (newVal) => {
         );
     }
 });
-
-const logoURL = window.asset("images/logo_rect.png");
 </script>

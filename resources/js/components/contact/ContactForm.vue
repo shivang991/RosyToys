@@ -1,42 +1,28 @@
 <template>
-    <form @submit.prevent="handleSubmit" class="form">
-        <div class="form__field">
-            <label class="form-label mb-1">Correo electrónico</label>
-            <input
-                type="email"
-                class="form-control fs-6"
-                placeholder="Email"
-                v-model="fields.email"
-            />
-        </div>
-        <div class="form__field ms-4">
-            <label class="form-label mb-1">Tu nombre</label>
-            <input
-                type="text"
-                class="form-control fs-6"
-                placeholder="Nombre"
-                v-model="fields.name"
-            />
-        </div>
-        <div class="form__field mt-4">
-            <label class="form-label mb-1">Tu mensaje</label>
-            <textarea
-                class="form-control fs-6"
-                placeholder="Mensaje"
+    <form @submit.prevent="handleSubmit" class="flex flex-col items-end">
+        <div class="space-y-8 w-full">
+            <base-text-field v-model="fields.firstName" label="First Name" />
+            <base-text-field v-model="fields.lastName" label="Last Name" />
+            <base-text-field v-model="fields.email" label="Email Id" />
+            <base-text-field
                 v-model="fields.message"
-                rows="5"
-            >
-            </textarea>
+                label="Message"
+                is-text-area
+            />
         </div>
-        <button class="form__field btn my-5 btn-primary fs-6">Continuar</button>
+        <button class="mt-8 bg-amber-500 text-white py-2 px-4 rounded-md">
+            Send Message
+        </button>
     </form>
 </template>
 
 <script setup>
 import { reactive } from "vue";
+import BaseTextField from "../global/BaseTextField.vue";
 
 const fields = reactive({
-    name: "",
+    firstName: "",
+    lastName: "",
     email: "",
     message: "",
 });
@@ -45,5 +31,3 @@ function handleSubmit() {
     console.log("handling form submition");
 }
 </script>
-
-
