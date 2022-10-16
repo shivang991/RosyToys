@@ -79,12 +79,6 @@ const routes = [
     component: () => import('../views/Contact.vue'),
   },
   {
-    // Design pendant
-    path: '/manuals',
-    name: 'Manuals',
-    component: () => import('../views/Manuals.vue'),
-  },
-  {
     // Pendant desgin.
     path: '/login',
     name: 'Login',

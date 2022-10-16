@@ -1,5 +1,6 @@
 <template>
     <div
+        v-if="products"
         class="grid sm:grid-cols-2 xl:grid-cols-3 gap-x-12 gap-y-8 md:gap-y-20 py-12"
     >
         <productos-list-item
@@ -18,16 +19,19 @@
             <p>Lo sentimos, no se pudo encontrar ningún producto.</p>
         </div>
     </div>
+    <div v-else class="h-96 flex items-center justify-center">
+        <div
+            class="w-12 h-12 rounded-full border-4 border-amber-500 animate-spin border-b-transparent"
+        ></div>
+    </div>
 </template>
 
 <script setup>
 import ProductosListItem from "./ProductosListItem.vue";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import { useStore } from "vuex";
+import { computed } from "vue";
 
-const props = defineProps({
-    products: {
-        type: Array,
-        default: () => [],
-    },
-});
+const store = useStore();
+const products = computed(() => store.state.products.data);
 </script>

@@ -56,24 +56,18 @@ import { reactive, ref } from "vue";
 import ProductosFiltersMultiselect from "./ProductosFiltersMultiselect.vue";
 // import ProductosFiltersPrice from './ProductosFiltersPrice.vue';
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import { useStore } from "vuex";
 
 const shouldShowFilters = ref(false);
-
-const props = defineProps({
-    queryParams: {
-        type: Object,
-        default: () => ({}),
-    },
-});
-const emit = defineEmits(["update:queryParams"]);
-
 const input = reactive({
     brand: [],
 });
 
+const store = useStore();
+
 function applyFilters() {
-    const newVal = { ...props.queryParams, ...input };
-    emit("update:queryParams", newVal);
+    store.commit("products/SET_FILTERS", input);
+    store.dispatch("products/refetch");
     shouldShowFilters.value = false;
 }
 
@@ -82,7 +76,7 @@ function clearFilters() {
     applyFilters();
 }
 
-// Fetch choices,filters, etc. from server
+// Fetch choices for filters from server
 const axios = useAxios();
 const filters = reactive({});
 axios.get("/api/choices/brands").then((res) => {

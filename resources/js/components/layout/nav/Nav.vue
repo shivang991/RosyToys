@@ -30,11 +30,7 @@
             </button>
             <div class="hidden lg:flex items-center space-x-8">
                 <nav-links :links="links"></nav-links>
-                <input
-                    type="text"
-                    placeholder="Search"
-                    class="px-4 py-2 rounded-lg"
-                />
+                <nav-product-search></nav-product-search>
             </div>
         </div>
     </nav>
@@ -50,6 +46,7 @@ import { computed, ref, watch } from "vue";
 import { useStore } from "vuex";
 import NavLinks from "./NavLinks.vue";
 import NavMobile from "./NavMobile.vue";
+import NavProductSearch from "./NavProductSearch.vue";
 import BaseImage from "@/components/global/BaseImage.vue";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
@@ -60,7 +57,6 @@ const links = ref([
     { route: "Home", title: "Inicio" },
     { route: "About", title: "Acerca de" },
     { route: "Productos", title: "Productos" },
-    { route: "Manuals", title: "Literatura" },
     { route: "Contacto", title: "Contacto" },
 ]);
 

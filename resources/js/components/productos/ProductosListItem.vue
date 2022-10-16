@@ -46,13 +46,6 @@ const props = defineProps({
 });
 
 const router = useRouter();
-const productStats = {
-    Marca: props.brand,
-    Aplicacion: props.application,
-    Codigo: props.code,
-};
-
-console.log(props.imgSrc);
 
 function viewProduct() {
     router.push({ name: "ProductDetail", params: { id: props.id } });

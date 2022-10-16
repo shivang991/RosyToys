@@ -25,6 +25,7 @@ import { useAxios } from "@/plugins/Axios";
 import BaseNotification from "@/components/global/BaseNotification.vue";
 import { computed } from "@vue/reactivity";
 import { useRoute } from "vue-router";
+import { useStore } from "vuex";
 
 const isUserLoaded = ref(false);
 const { setUser } = useAxios();
@@ -35,4 +36,7 @@ setUser().then(() => {
 const route = useRoute();
 
 const isLayoutEnabled = computed(() => !route.meta.isLayoutDisabled);
+
+// Initialize product list
+useStore().dispatch("products/refetch");
 </script>
