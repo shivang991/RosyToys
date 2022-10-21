@@ -1,10 +1,21 @@
 <template>
     <footer class="px-8 md:px-20 bg-slate-900">
-        <div class="flex flex-col sm:flex-row items-center sm:items-start justify-between py-12">
+        <div
+            class="flex flex-col sm:flex-row items-center sm:items-start justify-between py-12"
+        >
             <div class="mb-8 sm:mb-0">
                 <BaseImage src="logo.png" class="w-40"></BaseImage>
-                <p class="text-slate-200 mt-4 text-center sm:text-left">Terms & Conditions</p>
-                <p class="text-slate-200 text-center sm:text-left">Privacy Policies</p>
+                <p class="text-slate-200 mt-4 text-center sm:text-left">
+                    Terms & Conditions
+                </p>
+                <p class="text-slate-200 text-center sm:text-left mb-8">
+                    Privacy Policies
+                </p>
+                <router-link
+                    :to="{ name: 'AdminLogin' }"
+                    class="text-slate-200 text-center sm:text-left hover:underline"
+                    >Admin Login</router-link
+                >
             </div>
             <div class="sm:block hidden">
                 <h4 class="text-xl font-semibold mb-4 text-slate-200">
