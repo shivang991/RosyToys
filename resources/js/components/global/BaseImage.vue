@@ -33,14 +33,3 @@ const processedSrc = computed(() =>
 
 const isLoaded = ref(false);
 </script>
-
-<style scoped>
-.fade-enter-active,
-.fade-leave-active {
-    @apply duration-100;
-}
-.fade-enter-from,
-.fade-leave-to {
-    @apply opacity-0;
-}
-</style>

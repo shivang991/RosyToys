@@ -34,6 +34,7 @@ export function useAxios() {
         const setProfileMutation = "auth/SET_PROFILE";
         if (!token) {
             commit(setProfileMutation, { profile: null, accessToken: null });
+            commit("auth/SET_READY");
             return;
         }
         commit(setProfileMutation, { accessToken: token });
@@ -43,8 +44,10 @@ export function useAxios() {
                 accessToken: token,
                 profile: response.data,
             });
+            commit("auth/SET_READY");
         } catch (error) {
             commit("auth/CLEAR_STATE");
+            commit("auth/SET_READY");
         }
     };
     const login = async (email, password) => {

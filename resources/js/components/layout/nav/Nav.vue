@@ -30,7 +30,10 @@
             </button>
             <div class="hidden lg:flex items-center space-x-8">
                 <nav-links :links="links"></nav-links>
-                <nav-product-search></nav-product-search>
+                <product-search-box
+                    class="w-60"
+                    shouldRedirectOnSuccess
+                ></product-search-box>
             </div>
         </div>
     </nav>
@@ -46,7 +49,7 @@ import { computed, ref, watch } from "vue";
 import { useStore } from "vuex";
 import NavLinks from "./NavLinks.vue";
 import NavMobile from "./NavMobile.vue";
-import NavProductSearch from "./NavProductSearch.vue";
+import ProductSearchBox from "@/components/global/ProductSearchBox.vue";
 import BaseImage from "@/components/global/BaseImage.vue";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 

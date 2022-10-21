@@ -1,51 +1,55 @@
 <template>
-    <teleport to="#app-modals">
-        <transition name="scale-y">
+    <Teleport to="#app-modals">
+        <Transition name="modal" @afterEnter="shouldShowContent = true">
             <div
-                class="p-2 mt-2 fixed-top w-fit mx-auto bg-secondary shadow-lg border"
-                v-if="modelValue"
+                class="bg-slate-100 z-20 bg-opacity-50 grid"
+                :style="{ height: `${bgHeight}px` }"
+                v-if="shouldShow"
             >
-                <div class="d-flex justify-content-end">
-                    <button
-                        class="btn btn-close text-secondary"
-                        @click.stop="$emit('update:modelValue', false)"
-                    ></button>
-                </div>
-                <div class="v-modal__content">
-                    <slot></slot>
-                </div>
+                <Transition name="modal" @afterLeave="emit('close')">
+                    <div
+                        v-if="shouldShowContent"
+                        class="bg-white mx-auto my-8 shadow-xl rounded-md overflow-hidden max-w-lg h-max"
+                    >
+                        <div class="flex justify-end">
+                            <button
+                                class="text-xl text-slate-900 p-4"
+                                @click="shouldShowContent = false"
+                            >
+                                <FontAwesomeIcon
+                                    icon="fa fa-times"
+                                ></FontAwesomeIcon>
+                            </button>
+                        </div>
+                        <slot></slot>
+                    </div>
+                </Transition>
             </div>
-        </transition>
-    </teleport>
+        </Transition>
+    </Teleport>
 </template>
 
 <script setup>
-import { watch } from "vue";
-
-const emit = defineEmits(["update:modelValue"]);
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import { ref, watch } from "vue";
 
 const props = defineProps({
-    modelValue: {
+    shouldShow: {
         type: Boolean,
         default: false,
     },
-    duration: {
-        type: Number,
-        default: null,
-    },
 });
 
-if (props.duration) {
-    watch(
-        () => props.modelValue,
-        (newVal) => {
-            if (newVal) {
-                window.setTimeout(
-                    () => emit("update:modelValue", false),
-                    props.duration
-                );
-            }
-        },
-    );
-}
+const emit = defineEmits(["close"]);
+
+const shouldShowContent = ref(false);
+
+const bgHeight = ref(0);
+
+watch(
+    () => props.shouldShow,
+    (newVal) => {
+        if (newVal) bgHeight.value = document.body.scrollHeight;
+    }
+);
 </script>

@@ -1,134 +1,110 @@
 <template>
-  <input type="file" v-show="false" ref="inputEl" @change="handleInput" />
-  <div class="img-input">
-    <label class="text-dark-blue">{{ label }}</label>
-    <div class="img-input__preview" v-if="imgSrc || defaultSrc">
-      <p class="text-muted mb-2">
-        <small>Haga clic para cambiar la imagen </small>
-      </p>
-      <img
-        :src="imgSrc || defaultSrc"
-        class="img-fluid d-block"
-        @click="$refs.inputEl.click()"
-      />
-      <button
-        @click.prevent.stop="clearImage"
-        class="btn btn-outline-primary mt-2 btn-sm"
-        :disabled="!modelValue"
-      >
-        Quita la imagen
-      </button>
-    </div>
-    <div
-      class="img-input__drop-ar"
-      :class="{ 'img-input__drop-ar--active': isActive }"
-      v-else
-      @drop.prevent.stop="handleDrop"
-      @dragover="isActive = true"
-      @dragleave="isActive = false"
-      v-on="dragEvtHandlers"
-    >
-      <div class="text-center">
-        <span class="img-input__upload-icon">
-          <BIconUpload class="fs-1" />
-        </span>
-        <p class="mt-3">Suelta un archivo o</p>
-        <button
-          class="btn btn-sm btn-primary"
-          @click.prevent="$refs.inputEl.click()"
+    <div>
+        <input type="file" v-show="false" ref="inputEl" @change="handleInput" />
+        <label class="py-1 px-2 rounded-t-md bg-amber-500 text-white">{{
+            label
+        }}</label>
+        <div v-if="imgSrc || defaultSrc">
+            <p class="my-2 text-slate-500">Haga clic para cambiar la imagen</p>
+            <img
+                :src="imgSrc || defaultSrc"
+                v-bind="attrs"
+                @click="$refs.inputEl.click()"
+            />
+            <button
+                @click.prevent.stop="clearImage"
+                class="py-1 text-amber-500 px-2 border border-amber-500 rounded-md disabled:opacity-50 mt-2"
+                :disabled="!modelValue"
+            >
+                Quita la imagen
+            </button>
+        </div>
+        <div
+            class="py-8 flex flex-col items-center rounded-b-md shadow bg-slate-100 ring-slate-200"
+            :class="{ 'ring-2': isActive }"
+            v-else
+            @drop.prevent.stop="handleDrop"
+            @dragover="isActive = true"
+            @dragleave="isActive = false"
+            v-on="dragEvtHandlers"
         >
-          Haga clic para navegar
-        </button>
-      </div>
+            <p class="text-xl mb-1 text-slate-500">
+                <FontAwesomeIcon icon="fa fa-upload" />
+            </p>
+            <p class="text-slate-500 mb-2">Suelta un archivo o</p>
+            <button
+                class="text-amber-500 hover:underline"
+                @click.prevent="$refs.inputEl.click()"
+            >
+                Haga clic para navegar
+            </button>
+        </div>
     </div>
-  </div>
 </template>
 
 <script>
-import { ref, watch } from 'vue';
-
-function useDragEvensCancellor() {
-  const handlers = [
-    'drag',
-    'dragstart',
-    'dragend',
-    'dragover',
-    'dragenter',
-    'dragleave',
-  ].reduce((prevVal, currentVal) => {
-    const eventHandler = (event) => {
-      event.preventDefault();
-      event.stopPropagation();
-    };
-    if (typeof prevVal === 'string') {
-      return { currentVal: eventHandler, prevVal: eventHandler };
-    }
-    const newVal = { ...prevVal };
-    newVal[currentVal] = eventHandler;
-    return newVal;
-  });
-  return { handlers };
-}
-
-export default {
-  props: {
-    label: {
-      type: String,
-      required: true,
-    },
-    modelValue: {
-      type: Blob,
-      default: null,
-    },
-    defaultSrc: {
-      type: String,
-      default: null,
-    },
-  },
-  setup(props, { emit }) {
-    const { handlers: dragEvtHandlers } = useDragEvensCancellor();
-    const imgSrc = ref(null);
-    const isActive = ref(false);
-
-    function preparePreview(blob) {
-      if (blob.type.startsWith('image')) {
-        emit('update:modelValue', blob);
-        const reader = new FileReader();
-        reader.readAsDataURL(blob);
-        reader.addEventListener('load', (event) => {
-          imgSrc.value = event.target.result;
-        });
-      }
-    }
-    function handleDrop(event) {
-      isActive.value = false;
-      if (event.dataTransfer.files) {
-        preparePreview(event.dataTransfer.files[0]);
-      }
-    }
-    function handleInput(event) {
-      preparePreview(event.target.files[0]);
-    }
-    function clearImage() {
-      emit('update:modelValue', null);
-      imgSrc.value = props.defaultSrc;
-    }
-
-    watch(
-      () => props.modelValue,
-      (newVal) => newVal && preparePreview(newVal),
-    );
-
-    return {
-      dragEvtHandlers,
-      handleDrop,
-      handleInput,
-      clearImage,
-      imgSrc,
-      isActive,
-    };
-  },
-};
+export default { inheritAttrs: false };
 </script>
 
+<script setup>
+import { ref, useAttrs, watch } from "vue";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+const attrs = useAttrs();
+const props = defineProps({
+    label: {
+        type: String,
+        required: true,
+    },
+    modelValue: {
+        type: Blob,
+        default: null,
+    },
+    defaultSrc: {
+        type: String,
+        default: null,
+    },
+});
 
+const emit = defineEmits(["update:modelValue"]);
+
+const dragEvtHandlers = Object.fromEntries(
+    ["drag", "dragstart", "dragend", "dragover", "dragenter", "dragleave"].map(
+        (evName) => [
+            evName,
+            (ev) => {
+                ev.preventDefault();
+                ev.stopPropagation();
+            },
+        ]
+    )
+);
+const imgSrc = ref(null);
+const isActive = ref(false);
+
+function preparePreview(blob) {
+    if (blob && blob.type.startsWith("image")) {
+        emit("update:modelValue", blob);
+        const reader = new FileReader();
+        reader.readAsDataURL(blob);
+        reader.addEventListener("load", (event) => {
+            imgSrc.value = event.target.result;
+        });
+    }
+}
+function handleDrop(event) {
+    isActive.value = false;
+    preparePreview(event.dataTransfer.files?.[0]);
+}
+function handleInput(event) {
+    preparePreview(event.target.files[0]);
+}
+function clearImage() {
+    emit("update:modelValue", null);
+    imgSrc.value = props.defaultSrc;
+}
+
+watch(
+    () => props.modelValue,
+    (newVal) => newVal && preparePreview(newVal)
+);
+</script>

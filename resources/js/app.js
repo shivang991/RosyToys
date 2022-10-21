@@ -25,11 +25,15 @@ createApp(App)
 // Icons
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
+    faRightFromBracket,
+    faPlus,
+    faPen,
     faChevronDown,
     faArrowRight,
     faEnvelope,
     faHeadset,
     faMoneyCheckDollar,
+    faUpload,
     faFaceSmile,
     faStar,
     faExclamationTriangle,
@@ -39,6 +43,7 @@ import {
     faChevronRight,
     faPhone,
     faMapLocation,
+    faCheckSquare
 } from "@fortawesome/free-solid-svg-icons";
 import {
     faTwitter,
@@ -48,6 +53,8 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 
 library.add(
+    faCheckSquare,
+    faRightFromBracket,
     faChevronDown,
     faChevronRight,
     faArrowRight,
@@ -65,5 +72,8 @@ library.add(
     faBars,
     faTimes,
     faPhone,
-    faMapLocation
+    faMapLocation,
+    faPlus,
+    faPen,
+    faUpload,
 );

@@ -7,7 +7,7 @@
             rows="5"
             :value="modelValue"
             @input="(ev) => $emit('update:modelValue', ev.target.value)"
-            type="text"
+            :type="type"
             class="row-start-1 col-start-1 bg-transparent focus:outline-none resize-none"
             @focus="isInputFocused = true"
             @blur="isInputFocused = false"
@@ -39,6 +39,10 @@ const props = defineProps({
     isTextArea: {
         type: Boolean,
         default: false,
+    },
+    type: {
+        type: String,
+        default: "text",
     },
 });
 

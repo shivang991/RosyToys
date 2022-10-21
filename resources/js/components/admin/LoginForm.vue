@@ -1,34 +1,20 @@
 <template>
-    <div class="login-form px-2 px-sm-4">
-        <h1 class="fw-bolder mb-5">Admin Iniciar Sesión</h1>
-        <form @submit.prevent="login">
-            <div class="mb-4">
-                <label class="form-label text-dark-blue mb-1"
-                    >Correo electrónico</label
-                >
-                <input
-                    type="email"
-                    class="form-control"
-                    placeholder="Email"
-                    v-model="email"
-                />
-            </div>
-            <div class="mb-4">
-                <label class="form-label text-dark-blue mb-1">Contraseña</label>
-                <input
-                    type="password"
-                    class="form-control"
-                    placeholder="Password"
-                    v-model="password"
-                />
-            </div>
-            <button class="btn my-4 btn-primary w-100">Enviar</button>
-        </form>
-        <p class="mt-5 mx-auto w-fit">
-            <span class="mb-0 w-fit me-2">¿No eres administrador?</span>
-            <router-link :to="{ name: 'Home' }">Ir al casa</router-link>
-        </p>
-    </div>
+    <form @submit.prevent="login">
+        <div class="space-y-8 mb-12">
+            <base-text-field
+                v-model="email"
+                label="Correo electrónico"
+            ></base-text-field>
+            <base-text-field
+                type="password"
+                v-model="password"
+                label="Contraseña"
+            ></base-text-field>
+        </div>
+        <button class="bg-amber-500 w-full py-2 rounded-md text-white">
+            Enviar
+        </button>
+    </form>
 </template>
 
 <script setup>
@@ -36,6 +22,7 @@ import { ref } from "vue";
 import { useAxios } from "@/plugins/Axios";
 import { NotificationTypes, useNotification } from "@/plugins/Notifications";
 import { useRouter } from "vue-router";
+import BaseTextField from "../global/BaseTextField.vue";
 
 const axios = useAxios();
 const notification = useNotification();
@@ -59,5 +46,3 @@ const login = async () => {
     }
 };
 </script>
-
-

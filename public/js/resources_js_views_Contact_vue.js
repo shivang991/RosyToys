@@ -105,6 +105,10 @@ __webpack_require__.r(__webpack_exports__);
     isTextArea: {
       type: Boolean,
       "default": false
+    },
+    type: {
+      type: String,
+      "default": "text"
     }
   },
   emits: ["update:modelValue"],
@@ -305,7 +309,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onInput: _cache[0] || (_cache[0] = function (ev) {
       return _ctx.$emit('update:modelValue', ev.target.value);
     }),
-    type: "text",
+    type: $props.type,
     "class": "row-start-1 col-start-1 bg-transparent focus:outline-none resize-none",
     onFocus: _cache[1] || (_cache[1] = function ($event) {
       return $setup.isInputFocused = true;
@@ -315,7 +319,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     })
   }, null, 40
   /* PROPS, HYDRATE_EVENTS */
-  , ["value"])), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
+  , ["value", "type"])), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)([{
       'scale-75 -translate-y-6 -translate-x-2 opacity-100': $setup.isInputFocused || $props.modelValue.length
     }, "pointer-events-none origin-top-left col-start-1 row-start-1 duration-200 opacity-50"])
