@@ -20,12 +20,11 @@
 <script setup>
 import { ref } from "vue";
 import { useAxios } from "@/plugins/Axios";
-import { NotificationTypes, useNotification } from "@/plugins/Notifications";
+import { fireNotification, NotificationTypes } from "@/plugins/Notifications";
 import { useRouter } from "vue-router";
 import BaseTextField from "../global/BaseTextField.vue";
 
 const axios = useAxios();
-const notification = useNotification();
 const router = useRouter();
 
 const password = ref("");
@@ -34,14 +33,14 @@ const email = ref("");
 const login = async () => {
     try {
         await axios.adminLogin(email.value, password.value);
-        notification.fire(NotificationTypes.LOGIN_SUCCESS);
+        fireNotification(NotificationTypes.LOGIN_SUCCESS);
         router.push({ name: "AdminDashboard" });
     } catch (error) {
         if (
             error.message === "IsNonAdminUser" ||
             error.response.status === 401
         ) {
-            notification.fire(NotificationTypes.INVALID_CREDENTIALS);
+            fireNotification(NotificationTypes.INVALID_CREDENTIALS);
         }
     }
 };

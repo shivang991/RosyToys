@@ -35,7 +35,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     var expose = _ref.expose;
     expose();
     var axios = (0,_plugins_Axios__WEBPACK_IMPORTED_MODULE_1__.useAxios)();
-    var notification = (0,_plugins_Notifications__WEBPACK_IMPORTED_MODULE_2__.useNotification)();
     var router = (0,vue_router__WEBPACK_IMPORTED_MODULE_4__.useRouter)();
     var password = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)("");
     var email = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)("");
@@ -51,7 +50,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 return axios.adminLogin(email.value, password.value);
 
               case 3:
-                notification.fire(_plugins_Notifications__WEBPACK_IMPORTED_MODULE_2__.NotificationTypes.LOGIN_SUCCESS);
+                (0,_plugins_Notifications__WEBPACK_IMPORTED_MODULE_2__.fireNotification)(_plugins_Notifications__WEBPACK_IMPORTED_MODULE_2__.NotificationTypes.LOGIN_SUCCESS);
                 router.push({
                   name: "AdminDashboard"
                 });
@@ -63,7 +62,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 _context.t0 = _context["catch"](0);
 
                 if (_context.t0.message === "IsNonAdminUser" || _context.t0.response.status === 401) {
-                  notification.fire(_plugins_Notifications__WEBPACK_IMPORTED_MODULE_2__.NotificationTypes.INVALID_CREDENTIALS);
+                  (0,_plugins_Notifications__WEBPACK_IMPORTED_MODULE_2__.fireNotification)(_plugins_Notifications__WEBPACK_IMPORTED_MODULE_2__.NotificationTypes.INVALID_CREDENTIALS);
                 }
 
               case 10:
@@ -81,15 +80,14 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
     var __returned__ = {
       axios: axios,
-      notification: notification,
       router: router,
       password: password,
       email: email,
       login: login,
       ref: vue__WEBPACK_IMPORTED_MODULE_0__.ref,
       useAxios: _plugins_Axios__WEBPACK_IMPORTED_MODULE_1__.useAxios,
+      fireNotification: _plugins_Notifications__WEBPACK_IMPORTED_MODULE_2__.fireNotification,
       NotificationTypes: _plugins_Notifications__WEBPACK_IMPORTED_MODULE_2__.NotificationTypes,
-      useNotification: _plugins_Notifications__WEBPACK_IMPORTED_MODULE_2__.useNotification,
       useRouter: vue_router__WEBPACK_IMPORTED_MODULE_4__.useRouter,
       BaseTextField: _global_BaseTextField_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
     };

@@ -75,6 +75,7 @@
 import { reactive, ref } from 'vue';
 import { useAxios } from '@/plugins/Axios';
 import { useStore } from 'vuex';
+import BaseImageInput from '@/components/global/BaseImageInput.vue';
 
 export default {
   setup(_, { emit }) {

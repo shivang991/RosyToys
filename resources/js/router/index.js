@@ -40,36 +40,6 @@ const routes = [
                 name: "DeleteProfile",
                 component: () => import("../views/Admin/DeleteProfile.vue"),
             },
-            {
-                path: "product/create",
-                name: "CreateProduct",
-                component: () => import("../views/Admin/CreateProduct.vue"),
-            },
-            {
-                path: "product/delete",
-                name: "DeleteProduct",
-                component: () => import("../views/Admin/DeleteProduct.vue"),
-            },
-            {
-                path: "product/update",
-                name: "UpdateProduct",
-                component: () => import("../views/Admin/UpdateProduct.vue"),
-            },
-            {
-                path: "manual/create",
-                name: "CreateManual",
-                component: () => import("../views/Admin/CreateManual.vue"),
-            },
-            {
-                path: "manual/delete",
-                name: "DeleteManual",
-                component: () => import("../views/Admin/DeleteManual.vue"),
-            },
-            {
-                path: "manual/update",
-                name: "UpdateManual",
-                component: () => import("../views/Admin/UpdateManual.vue"),
-            },
         ],
     },
     {

@@ -8,7 +8,6 @@ import "./bootstrap";
 
 import { createApp } from "vue";
 import App from "./App.vue";
-import GlobalComponents from "./plugins/GlobalComponents";
 import router from "./router";
 import store from "./store";
 import VueGoogleMaps from "@fawmi/vue-google-maps";
@@ -19,7 +18,6 @@ createApp(App)
     .use(VueGoogleMaps, {
         load: { key: "AIzaSyB9dc7sKul6Qse_zUQerk7a2yb66j2UNfU" },
     })
-    .use(GlobalComponents)
     .mount("#app");
 
 // Icons
