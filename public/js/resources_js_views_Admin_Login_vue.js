@@ -133,6 +133,10 @@ __webpack_require__.r(__webpack_exports__);
     type: {
       type: String,
       "default": "text"
+    },
+    isInvalid: {
+      type: Boolean,
+      "default": false
     }
   },
   emits: ["update:modelValue"],
@@ -267,11 +271,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
-var _hoisted_1 = {
-  "class": "grid rounded-md border-t border-b-2 border-amber-500 bg-slate-100 px-4 py-1"
-};
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)((0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveDynamicComponent)($setup.inputTag), {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["grid rounded-md border-t border-b-2 px-4 py-1", $props.isInvalid ? 'border-red-600 bg-red-50' : 'border-amber-500 bg-slate-100'])
+  }, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)((0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveDynamicComponent)($setup.inputTag), {
     rows: "5",
     value: $props.modelValue,
     onInput: _cache[0] || (_cache[0] = function (ev) {
@@ -293,7 +296,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     }, "pointer-events-none origin-top-left col-start-1 row-start-1 duration-200 opacity-50"])
   }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.label), 3
   /* TEXT, CLASS */
-  )]);
+  )], 2
+  /* CLASS */
+  );
 }
 
 /***/ }),
@@ -359,62 +364,65 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "NotificationTypes": () => (/* binding */ NotificationTypes),
+/* harmony export */   "fireNotification": () => (/* binding */ fireNotification),
 /* harmony export */   "useNotification": () => (/* binding */ useNotification)
 /* harmony export */ });
 var NotificationTypes = {
   PRODUCT_CREATED: {
-    type: 'success',
-    message: 'Producto creado con éxito'
+    type: "success",
+    message: "Producto creado con éxito"
   },
   PRODUCT_UPDATED: {
-    type: 'success',
-    message: '¡Actualizó con éxito los datos del producto!'
+    type: "success",
+    message: "¡Actualizó con éxito los datos del producto!"
   },
   PRODUCT_DELETED: {
-    type: 'success',
-    message: '¡Eliminado el producto con éxito!'
+    type: "success",
+    message: "¡Eliminado el producto con éxito!"
   },
   MANUAL_CREATED: {
-    type: 'success',
-    message: '¡Manual creado con éxito!'
+    type: "success",
+    message: "¡Manual creado con éxito!"
   },
   MANUAL_DELETED: {
-    type: 'success',
-    message: '¡Manual eliminado correctamente!'
+    type: "success",
+    message: "¡Manual eliminado correctamente!"
   },
   MANUAL_UPDATED: {
-    type: 'success',
-    message: '¡Manual actualizado con éxito!'
+    type: "success",
+    message: "¡Manual actualizado con éxito!"
   },
   LOGIN_SUCCESS: {
-    type: 'success',
-    message: '¡Ingresó exitosamente!'
+    type: "success",
+    message: "¡Ingresó exitosamente!"
   },
   GENERAL_ERROR: {
-    type: 'error',
-    message: '¡Ocurrió un error inesperado!'
+    type: "error",
+    message: "¡Ocurrió un error inesperado!"
   },
   INVALID_CREDENTIALS: {
-    type: 'error',
-    message: 'Verifique sus credenciales y vuelva a intentarlo.'
+    type: "error",
+    message: "Verifique sus credenciales y vuelva a intentarlo."
   },
   USER_EXISTS: {
-    type: 'error',
-    message: 'Este correo electrónico ha sido tomado.'
+    type: "error",
+    message: "Este correo electrónico ha sido tomado."
   }
 };
-var EVENT_NAME = 'notificationreq';
-function useNotification() {
-  function fire(type) {
-    window.dispatchEvent(new CustomEvent(EVENT_NAME, {
-      detail: type
-    }));
-  }
+var EVENT_NAME = "notificationreq";
 
+function fire(type) {
+  window.dispatchEvent(new CustomEvent(EVENT_NAME, {
+    detail: type
+  }));
+}
+
+function useNotification() {
   return {
     fire: fire
   };
 }
+var fireNotification = fire;
 
 /***/ }),
 

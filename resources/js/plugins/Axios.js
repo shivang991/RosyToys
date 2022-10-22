@@ -10,7 +10,9 @@ export function useAxios() {
     const postMultipart = (url, data) => {
         const multipartData = new FormData();
         Object.entries(data).forEach(
-            ([key, value]) => value && multipartData.append(key, value)
+            ([key, value]) =>
+                (typeof value !== "undefined" || value !== null) &&
+                multipartData.append(key, value)
         );
         return axios.post(url, multipartData, {
             headers: {
@@ -25,7 +27,8 @@ export function useAxios() {
         const config = {
             headers: { Authorization: `Bearer ${state.auth.accessToken}` },
         };
-        if (method === axios.get) return method(url, config);
+        if (method === axios.get || method === axios.delete)
+            return method(url, config);
         return method(url, data, config);
     }
     const setUser = async (accessToken) => {
@@ -82,6 +85,7 @@ export function useAxios() {
         delete: axios.delete,
         postMultipart,
         authGet: (url) => authReq(axios.get, url),
+        authDelete: (url) => authReq(axios.delete, url),
         authPost: (url, data) => authReq(axios.post, url, data),
     };
 }

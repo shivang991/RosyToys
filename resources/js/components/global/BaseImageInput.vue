@@ -1,9 +1,11 @@
 <template>
     <div>
         <input type="file" v-show="false" ref="inputEl" @change="handleInput" />
-        <label class="py-1 px-2 rounded-t-md bg-amber-500 text-white">{{
-            label
-        }}</label>
+        <label
+            class="py-1 px-2 rounded-t-md text-white"
+            :class="isInvalid ? 'bg-red-600' : 'bg-amber-500'"
+            >{{ label }}</label
+        >
         <div v-if="imgSrc || defaultSrc">
             <p class="my-2 text-slate-500">Haga clic para cambiar la imagen</p>
             <img
@@ -21,7 +23,10 @@
         </div>
         <div
             class="py-8 flex flex-col items-center rounded-b-md shadow bg-slate-100 ring-slate-200"
-            :class="{ 'ring-2': isActive }"
+            :class="[
+                isInvalid ? 'bg-red-50' : 'bg-slate-100',
+                { 'ring-2': isActive },
+            ]"
             v-else
             @drop.prevent.stop="handleDrop"
             @dragover="isActive = true"
@@ -62,6 +67,10 @@ const props = defineProps({
     defaultSrc: {
         type: String,
         default: null,
+    },
+    isInvalid: {
+        type: Boolean,
+        default: false,
     },
 });
 

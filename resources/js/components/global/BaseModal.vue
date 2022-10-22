@@ -2,14 +2,14 @@
     <Teleport to="#app-modals">
         <Transition name="modal" @afterEnter="shouldShowContent = true">
             <div
-                class="bg-slate-100 z-20 bg-opacity-50 grid"
+                class="bg-gradient-to-b from-transparent to-slate-100 grid"
                 :style="{ height: `${bgHeight}px` }"
                 v-if="shouldShow"
             >
                 <Transition name="modal" @afterLeave="emit('close')">
                     <div
                         v-if="shouldShowContent"
-                        class="bg-white mx-auto my-8 shadow-xl rounded-md overflow-hidden max-w-lg h-max"
+                        class="z-20 bg-white mx-auto my-8 shadow-xl rounded-md overflow-hidden max-w-lg h-max"
                     >
                         <div class="flex justify-end">
                             <button

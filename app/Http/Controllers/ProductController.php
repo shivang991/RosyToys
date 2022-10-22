@@ -38,7 +38,7 @@ class ProductController extends Controller
             'price' => 'required|numeric',
             'brand' => 'required',
             'image' => 'required|image',
-            'is_available' => 'boolean'
+            'isAvailable' => 'required|boolean'
         ]);
         $imgPath = Request::file('image')->store('products');
 
@@ -48,7 +48,9 @@ class ProductController extends Controller
             ->merge([
                 'image_path' => $imgPath,
                 'image_url' => $imgUrl,
+                'is_available' => $data['isAvailable']
             ])
+            ->forget('isAvailable')
             ->toArray();
 
         Product::create($productAttrs);
@@ -67,7 +69,7 @@ class ProductController extends Controller
             'description' => 'required',
             'price' => 'required|numeric',
             'brand' => 'required',
-            'is_available' => 'boolean'
+            'isAvailable' => 'boolean'
         ]);
 
         $image = Request::file('image');
@@ -82,7 +84,8 @@ class ProductController extends Controller
         $product->description = $data['description'];
         $product->price = $data['price'];
         $product->brand = $data['brand'];
-        $product->is_available = $data['is_available'] ?? true;
+        error_log(json_encode($data));
+        $product->is_available = $data['isAvailable'];
         $product->save();
 
         return Response::json(['message' => 'success']);

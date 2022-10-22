@@ -62,7 +62,7 @@
                         <BaseImage
                             :src="product.image_url"
                             is-external
-                            class="w-full h-24 mx-auto"
+                            class="w-full h-24 mx-auto object-cover"
                         ></BaseImage>
                     </td>
                     <td class="px-2">{{ product.title }}</td>
