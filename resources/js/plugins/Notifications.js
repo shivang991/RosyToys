@@ -11,6 +11,18 @@ export const NotificationTypes = {
         type: "success",
         message: "¡Eliminado el producto con éxito!",
     },
+    CAROUSEL_IMAGE_CREATED: {
+        type: "success",
+        message: "¡Artículo agregado!",
+    },
+    CAROUSEL_IMAGE_DELETED: {
+        type: "success",
+        message: "¡Artículo eliminado con éxito!",
+    },
+    CAROUSEL_IMAGE_UPDATED: {
+        type: "success",
+        message: "¡Artículo actualizado con éxito!",
+    },
 
     MANUAL_CREATED: {
         type: "success",

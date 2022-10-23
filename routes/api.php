@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminProfileController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\CarouselImageController;
 use App\Http\Controllers\Choices\ProductFieldChoices;
 use App\Http\Controllers\ProductController;
 use Illuminate\Http\Request;
@@ -39,6 +40,13 @@ Route::prefix('/product')->group(function () {
     Route::post('/create', [ProductController::class, 'store']);
     Route::post('/update/{product}', [ProductController::class, 'update']);
     Route::delete('/{product}', [ProductController::class, 'destroy']);
+});
+
+Route::prefix('/carousel')->group(function () {
+    Route::get('', [CarouselImageController::class, 'index']);
+    Route::post('/create', [CarouselImageController::class, 'store']);
+    Route::post('/update/{item}', [CarouselImageController::class, 'update']);
+    Route::delete('/{item}', [CarouselImageController::class, 'destroy']);
 });
 
 

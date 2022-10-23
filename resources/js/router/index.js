@@ -26,6 +26,11 @@ const routes = [
                 component: () => import("../views/Admin/ProductManager.vue"),
             },
             {
+                path: "/carousel",
+                name: "CarouselManager",
+                component: () => import("../views/Admin/CarouselManager.vue"),
+            },
+            {
                 path: "register",
                 name: "AdminRegister",
                 component: () => import("../views/Admin/AdminRegister.vue"),

@@ -11,13 +11,14 @@
                     class="w-40 h-40 object-contain"
                 ></BaseImage>
             </div>
-            <div
+            <router-link
+                :to="{ name: 'CarouselManager' }"
                 class="px-4 py-8 bg-white rounded-md shadow cursor-pointer transition hover:shadow-xl hover:scale-110"
             >
                 <h5 class="text-xl text-amber-500 text-center">
                     Image Carousel Manager
                 </h5>
-            </div>
+            </router-link>
             <div
                 class="py-8 px-4 bg-white rounded-md shadow cursor-pointer transition hover:shadow-xl hover:scale-110"
             >

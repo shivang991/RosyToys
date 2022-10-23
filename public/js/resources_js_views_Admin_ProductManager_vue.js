@@ -233,12 +233,6 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
         isAvailable: Number(fields.isAvailable)
       })).then(function (response) {
         if (response.data.message === "success") {
-          fields.image = null;
-          fields.title = "";
-          fields.price = "";
-          fields.brand = "";
-          fields.isAvailable = false;
-          fields.description = "";
           lastProductId = null; // Should refetch next time (with updated data)
 
           store.dispatch("products/refetch");
@@ -1584,6 +1578,18 @@ var NotificationTypes = {
   PRODUCT_DELETED: {
     type: "success",
     message: "¡Eliminado el producto con éxito!"
+  },
+  CAROUSEL_IMAGE_CREATED: {
+    type: "success",
+    message: "¡Artículo agregado!"
+  },
+  CAROUSEL_IMAGE_DELETED: {
+    type: "success",
+    message: "¡Artículo eliminado con éxito!"
+  },
+  CAROUSEL_IMAGE_UPDATED: {
+    type: "success",
+    message: "¡Artículo actualizado con éxito!"
   },
   MANUAL_CREATED: {
     type: "success",

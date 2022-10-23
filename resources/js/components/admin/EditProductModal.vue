@@ -125,12 +125,6 @@ function handleSubmit() {
         })
         .then((response) => {
             if (response.data.message === "success") {
-                fields.image = null;
-                fields.title = "";
-                fields.price = "";
-                fields.brand = "";
-                fields.isAvailable = false;
-                fields.description = "";
                 lastProductId = null; // Should refetch next time (with updated data)
                 store.dispatch("products/refetch");
                 emit("update:shouldShow", false);

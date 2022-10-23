@@ -1,5 +1,5 @@
 <template>
-    <div class="py-12">
+    <div class="py-12" v-if="carouselSlides.length">
         <div class="flex justify-between w-3/4 items-center mx-auto mb-8">
             <h4 class="text-slate-900 text-2xl">Trending Right Now</h4>
             <div class="flex space-x-2 text-slate-900">
@@ -28,19 +28,16 @@
                 }"
                 ref="carouselEl"
             >
-                <div v-for="(slide, i) in carouselSlides" :key="i" class="">
+                <div v-for="(slide, i) in carouselSlides" :key="i">
                     <BaseImage
-                        :src="slide.image"
+                        :src="slide.image_url"
                         is-external
                         class="min-w-full h-64 object-cover rounded block mb-4"
-                        :alt="slide.title"
+                        :alt="slide.description"
                     ></BaseImage>
 
                     <p class="text-center text-lg text-slate-900">
-                        {{ slide.title }}
-                    </p>
-                    <p class="text-center text-lg text-slate-900">
-                        Price: ${{ slide.price }}
+                        {{ slide.description }}
                     </p>
                 </div>
             </div>
@@ -52,33 +49,19 @@
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { ref, watch } from "vue";
 import BaseImage from "@/components/global/BaseImage.vue";
+import useAxios from "@/plugins/Axios";
 
 const marginLeft = ref(0);
 const carouselEl = ref(null);
 const minXTranslation = ref(0);
 
-const carouselSlides = [
-    {
-        title: "Star Wars The Clone War: Captain Rex",
-        price: 3376,
-        image: "https://w.wallhaven.cc/full/k9/wallhaven-k9j5gm.jpg",
-    },
-    {
-        title: "Star Wars The Manadalorian Set",
-        price: 3312,
-        image: "https://images.unsplash.com/photo-1472457897821-70d3819a0e24?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80",
-    },
-    {
-        title: "Marvel: Doctor Strange",
-        price: 4125,
-        image: "https://images.unsplash.com/photo-1640499900704-b00dd6a1103a",
-    },
-    {
-        title: "Naruto Part I 3D print",
-        price: 3521,
-        image: "https://images.unsplash.com/photo-1595309959777-08d5da891d7e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1043&q=80",
-    },
-];
+const carouselSlides = ref([]);
+
+const axios = useAxios();
+
+axios.get("/api/carousel").then((res) => {
+    carouselSlides.value = res.data;
+});
 
 watch(carouselEl, (val) => {
     if (val)
