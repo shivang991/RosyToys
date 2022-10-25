@@ -71,15 +71,15 @@
             </table>
         </div>
         <ProductPagination></ProductPagination>
-        <AddProductModal v-model:shouldShow="shouldShowAddProductModal" />
-        <RemoveProductModal
+        <AddModal v-model:shouldShow="shouldShowAddProductModal" />
+        <RemoveModal
             v-model:shouldShow="shouldShowRemoveProductModal"
             :product-id="selectedProductId"
-        ></RemoveProductModal>
-        <EditProductModal
+        ></RemoveModal>
+        <EditModal
             v-model:should-show="shouldShowEditProductModal"
             :product-id="selectedProductId"
-        ></EditProductModal>
+        ></EditModal>
     </div>
 </template>
 
@@ -90,9 +90,9 @@ import { useStore } from "vuex";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import BaseImage from "@/components/global/BaseImage.vue";
 import ProductPagination from "@/components/productos/ProductPagination.vue";
-import AddProductModal from "@/components/admin/AddProductModal.vue";
-import RemoveProductModal from "@/components/admin/RemoveProductModal.vue";
-import EditProductModal from "@/components/admin/EditProductModal.vue";
+import AddModal from "@/components/admin/product/AddModal.vue";
+import RemoveModal from "@/components/admin/product/RemoveModal.vue";
+import EditModal from "@/components/admin/product/EditModal.vue";
 
 const store = useStore();
 const products = computed(() => store.state.products.data);

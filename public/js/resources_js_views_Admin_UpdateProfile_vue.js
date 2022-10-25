@@ -577,17 +577,13 @@ var NotificationTypes = {
     type: "success",
     message: "¡Artículo actualizado con éxito!"
   },
-  MANUAL_CREATED: {
+  STAFF_CREATED: {
     type: "success",
-    message: "¡Manual creado con éxito!"
+    message: "¡Personal creado con éxito!"
   },
-  MANUAL_DELETED: {
+  STAFF_DELETED: {
     type: "success",
-    message: "¡Manual eliminado correctamente!"
-  },
-  MANUAL_UPDATED: {
-    type: "success",
-    message: "¡Manual actualizado con éxito!"
+    message: "¡Personal creado con éxito!"
   },
   LOGIN_SUCCESS: {
     type: "success",

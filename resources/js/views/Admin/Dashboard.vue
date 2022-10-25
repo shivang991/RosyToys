@@ -40,7 +40,8 @@
                     class="w-40 h-40 object-contain"
                 ></BaseImage>
             </router-link>
-            <div
+            <router-link
+                :to="{ name: 'UserManager' }"
                 class="col-span-2 flex py-8 px-4 bg-white rounded-md shadow justify-center space-x-8 cursor-pointer transition hover:shadow-xl hover:scale-110"
             >
                 <h5 class="text-xl text-amber-500">User Manager</h5>
@@ -48,7 +49,7 @@
                     src="admin_user_manager.png"
                     class="w-40 h-40 object-contain"
                 ></BaseImage>
-            </div>
+            </router-link>
         </div>
     </div>
 </template>

@@ -1,7 +1,11 @@
 <template>
     <div class="bg-slate-100 min-h-screen">
         <div class="py-2 bg-slate-900 flex items-center px-2 sm:px-8 md:px-20">
-            <h5 class="font-semibold text-slate-200 ml-2 mr-auto text-xl">Admin</h5>
+            <router-link
+                :to="{ name: 'AdminDashboard' }"
+                class="font-semibold text-slate-200 ml-2 mr-auto text-xl"
+                >Admin</router-link
+            >
             <div class="flex space-x-2">
                 <button
                     @click="logout"

@@ -9,11 +9,14 @@ export function useAxios() {
 
     const postMultipart = (url, data) => {
         const multipartData = new FormData();
-        Object.entries(data).forEach(
-            ([key, value]) =>
-                (typeof value !== "undefined" || value !== null) &&
-                multipartData.append(key, value)
-        );
+        Object.entries(data).forEach(([key, value]) => {
+            if (Array.isArray(value)) {
+                for (let i = 0; i < value.length; i++)
+                    multipartData.append(`${key}`, value[i]);
+            } else if (typeof value !== "undefined" || value !== null)
+                multipartData.append(key, value);
+        });
+        console.log(multipartData.get("permissions"))
         return axios.post(url, multipartData, {
             headers: {
                 "content-type": "multipart/form-data",

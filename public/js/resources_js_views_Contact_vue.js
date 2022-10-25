@@ -110,6 +110,14 @@ __webpack_require__.r(__webpack_exports__);
       type: String,
       "default": "text"
     },
+    min: {
+      type: Number,
+      "default": null
+    },
+    max: {
+      type: Number,
+      "default": null
+    },
     isInvalid: {
       type: Boolean,
       "default": false
@@ -308,12 +316,14 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["grid rounded-md border-t border-b-2 px-4 py-1", $props.isInvalid ? 'border-red-600 bg-red-50' : 'border-amber-500 bg-slate-100'])
   }, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)((0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveDynamicComponent)($setup.inputTag), {
     rows: "5",
+    "class": "row-start-1 col-start-1 bg-transparent focus:outline-none resize-none",
+    type: $props.type,
+    minlength: $props.min,
+    maxlength: $props.max,
     value: $props.modelValue,
     onInput: _cache[0] || (_cache[0] = function (ev) {
       return _ctx.$emit('update:modelValue', ev.target.value);
     }),
-    type: $props.type,
-    "class": "row-start-1 col-start-1 bg-transparent focus:outline-none resize-none",
     onFocus: _cache[1] || (_cache[1] = function ($event) {
       return $setup.isInputFocused = true;
     }),
@@ -322,7 +332,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     })
   }, null, 40
   /* PROPS, HYDRATE_EVENTS */
-  , ["value", "type"])), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
+  , ["type", "minlength", "maxlength", "value"])), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)([{
       'scale-75 -translate-y-6 -translate-x-2 opacity-100': $setup.isInputFocused || $props.modelValue.length
     }, "pointer-events-none origin-top-left col-start-1 row-start-1 duration-200 opacity-50"])

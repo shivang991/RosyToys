@@ -1,10 +1,10 @@
 "use strict";
 (self["webpackChunk"] = self["webpackChunk"] || []).push([["resources_js_views_Admin_CarouselManager_vue"],{
 
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/admin/AddCarouselImageModal.vue?vue&type=script&setup=true&lang=js":
-/*!********************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/admin/AddCarouselImageModal.vue?vue&type=script&setup=true&lang=js ***!
-  \********************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/admin/carousel/AddModal.vue?vue&type=script&setup=true&lang=js":
+/*!****************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/admin/carousel/AddModal.vue?vue&type=script&setup=true&lang=js ***!
+  \****************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -13,7 +13,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _components_global_BaseTextField_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/components/global/BaseTextField.vue */ "./resources/js/components/global/BaseTextField.vue");
 /* harmony import */ var _components_global_BaseImageInput_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/components/global/BaseImageInput.vue */ "./resources/js/components/global/BaseImageInput.vue");
-/* harmony import */ var _global_BaseModal_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../global/BaseModal.vue */ "./resources/js/components/global/BaseModal.vue");
+/* harmony import */ var _components_global_BaseModal_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/components/global/BaseModal.vue */ "./resources/js/components/global/BaseModal.vue");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 /* harmony import */ var _plugins_Axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/plugins/Axios */ "./resources/js/plugins/Axios.js");
 /* harmony import */ var _plugins_Notifications__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/plugins/Notifications */ "./resources/js/plugins/Notifications.js");
@@ -36,7 +36,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  name: 'AddCarouselImageModal',
+  name: 'AddModal',
   props: {
     shouldShow: {
       type: Boolean,
@@ -93,7 +93,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
       handleSubmit: handleSubmit,
       BaseTextField: _components_global_BaseTextField_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
       BaseImageInput: _components_global_BaseImageInput_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
-      BaseModal: _global_BaseModal_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
+      BaseModal: _components_global_BaseModal_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
       reactive: vue__WEBPACK_IMPORTED_MODULE_3__.reactive,
       ref: vue__WEBPACK_IMPORTED_MODULE_3__.ref,
       useAxios: _plugins_Axios__WEBPACK_IMPORTED_MODULE_4__["default"],
@@ -110,10 +110,10 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/admin/EditCarouselImageModal.vue?vue&type=script&setup=true&lang=js":
-/*!*********************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/admin/EditCarouselImageModal.vue?vue&type=script&setup=true&lang=js ***!
-  \*********************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/admin/carousel/EditModal.vue?vue&type=script&setup=true&lang=js":
+/*!*****************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/admin/carousel/EditModal.vue?vue&type=script&setup=true&lang=js ***!
+  \*****************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -122,7 +122,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _components_global_BaseTextField_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/components/global/BaseTextField.vue */ "./resources/js/components/global/BaseTextField.vue");
 /* harmony import */ var _components_global_BaseImageInput_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/components/global/BaseImageInput.vue */ "./resources/js/components/global/BaseImageInput.vue");
-/* harmony import */ var _global_BaseModal_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../global/BaseModal.vue */ "./resources/js/components/global/BaseModal.vue");
+/* harmony import */ var _components_global_BaseModal_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/components/global/BaseModal.vue */ "./resources/js/components/global/BaseModal.vue");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 /* harmony import */ var _plugins_Axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/plugins/Axios */ "./resources/js/plugins/Axios.js");
 /* harmony import */ var _plugins_Notifications__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/plugins/Notifications */ "./resources/js/plugins/Notifications.js");
@@ -133,7 +133,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  name: 'EditCarouselImageModal',
+  name: 'EditModal',
   props: {
     carouselImageObj: {
       type: Object,
@@ -197,7 +197,7 @@ __webpack_require__.r(__webpack_exports__);
       handleSubmit: handleSubmit,
       BaseTextField: _components_global_BaseTextField_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
       BaseImageInput: _components_global_BaseImageInput_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
-      BaseModal: _global_BaseModal_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
+      BaseModal: _components_global_BaseModal_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
       reactive: vue__WEBPACK_IMPORTED_MODULE_3__.reactive,
       ref: vue__WEBPACK_IMPORTED_MODULE_3__.ref,
       watch: vue__WEBPACK_IMPORTED_MODULE_3__.watch,
@@ -215,10 +215,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/admin/RemoveCarouselImageModal.vue?vue&type=script&setup=true&lang=js":
-/*!***********************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/admin/RemoveCarouselImageModal.vue?vue&type=script&setup=true&lang=js ***!
-  \***********************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/admin/carousel/RemoveModal.vue?vue&type=script&setup=true&lang=js":
+/*!*******************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/admin/carousel/RemoveModal.vue?vue&type=script&setup=true&lang=js ***!
+  \*******************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -234,7 +234,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  name: 'RemoveCarouselImageModal',
+  name: 'RemoveModal',
   props: {
     carouselImageId: {
       type: Number,
@@ -485,6 +485,14 @@ __webpack_require__.r(__webpack_exports__);
       type: String,
       "default": "text"
     },
+    min: {
+      type: Number,
+      "default": null
+    },
+    max: {
+      type: Number,
+      "default": null
+    },
     isInvalid: {
       type: Boolean,
       "default": false
@@ -525,10 +533,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _plugins_Axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/plugins/Axios */ "./resources/js/plugins/Axios.js");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
-/* harmony import */ var _components_admin_AddCarouselImageModal_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/components/admin/AddCarouselImageModal.vue */ "./resources/js/components/admin/AddCarouselImageModal.vue");
+/* harmony import */ var _components_admin_carousel_AddModal_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/components/admin/carousel/AddModal.vue */ "./resources/js/components/admin/carousel/AddModal.vue");
 /* harmony import */ var _components_global_BaseImage_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/components/global/BaseImage.vue */ "./resources/js/components/global/BaseImage.vue");
-/* harmony import */ var _components_admin_RemoveCarouselImageModal_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/components/admin/RemoveCarouselImageModal.vue */ "./resources/js/components/admin/RemoveCarouselImageModal.vue");
-/* harmony import */ var _components_admin_EditCarouselImageModal_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/components/admin/EditCarouselImageModal.vue */ "./resources/js/components/admin/EditCarouselImageModal.vue");
+/* harmony import */ var _components_admin_carousel_RemoveModal_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/components/admin/carousel/RemoveModal.vue */ "./resources/js/components/admin/carousel/RemoveModal.vue");
+/* harmony import */ var _components_admin_carousel_EditModal_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/components/admin/carousel/EditModal.vue */ "./resources/js/components/admin/carousel/EditModal.vue");
 
 
 
@@ -580,10 +588,10 @@ __webpack_require__.r(__webpack_exports__);
       handleUpdationSuccess: handleUpdationSuccess,
       useAxios: _plugins_Axios__WEBPACK_IMPORTED_MODULE_0__["default"],
       ref: vue__WEBPACK_IMPORTED_MODULE_1__.ref,
-      AddCarouselImageModal: _components_admin_AddCarouselImageModal_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
+      AddModal: _components_admin_carousel_AddModal_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
       BaseImage: _components_global_BaseImage_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
-      RemoveCarouselImageModal: _components_admin_RemoveCarouselImageModal_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
-      EditCarouselImageModal: _components_admin_EditCarouselImageModal_vue__WEBPACK_IMPORTED_MODULE_5__["default"]
+      RemoveModal: _components_admin_carousel_RemoveModal_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
+      EditModal: _components_admin_carousel_EditModal_vue__WEBPACK_IMPORTED_MODULE_5__["default"]
     };
     Object.defineProperty(__returned__, '__isScriptSetup', {
       enumerable: false,
@@ -595,10 +603,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/admin/AddCarouselImageModal.vue?vue&type=template&id=b88d6290":
-/*!*************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/admin/AddCarouselImageModal.vue?vue&type=template&id=b88d6290 ***!
-  \*************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/admin/carousel/AddModal.vue?vue&type=template&id=648261c0":
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/admin/carousel/AddModal.vue?vue&type=template&id=648261c0 ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -670,10 +678,10 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/admin/EditCarouselImageModal.vue?vue&type=template&id=0fbbfc32":
-/*!**************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/admin/EditCarouselImageModal.vue?vue&type=template&id=0fbbfc32 ***!
-  \**************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/admin/carousel/EditModal.vue?vue&type=template&id=5a4a38bf":
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/admin/carousel/EditModal.vue?vue&type=template&id=5a4a38bf ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -744,10 +752,10 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/admin/RemoveCarouselImageModal.vue?vue&type=template&id=25b2dc21":
-/*!****************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/admin/RemoveCarouselImageModal.vue?vue&type=template&id=25b2dc21 ***!
-  \****************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/admin/carousel/RemoveModal.vue?vue&type=template&id=4f4a2e85":
+/*!************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/admin/carousel/RemoveModal.vue?vue&type=template&id=4f4a2e85 ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -970,12 +978,14 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["grid rounded-md border-t border-b-2 px-4 py-1", $props.isInvalid ? 'border-red-600 bg-red-50' : 'border-amber-500 bg-slate-100'])
   }, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)((0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveDynamicComponent)($setup.inputTag), {
     rows: "5",
+    "class": "row-start-1 col-start-1 bg-transparent focus:outline-none resize-none",
+    type: $props.type,
+    minlength: $props.min,
+    maxlength: $props.max,
     value: $props.modelValue,
     onInput: _cache[0] || (_cache[0] = function (ev) {
       return _ctx.$emit('update:modelValue', ev.target.value);
     }),
-    type: $props.type,
-    "class": "row-start-1 col-start-1 bg-transparent focus:outline-none resize-none",
     onFocus: _cache[1] || (_cache[1] = function ($event) {
       return $setup.isInputFocused = true;
     }),
@@ -984,7 +994,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     })
   }, null, 40
   /* PROPS, HYDRATE_EVENTS */
-  , ["value", "type"])), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
+  , ["type", "minlength", "maxlength", "value"])), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
     "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)([{
       'scale-75 -translate-y-6 -translate-x-2 opacity-100': $setup.isInputFocused || $props.modelValue.length
     }, "pointer-events-none origin-top-left col-start-1 row-start-1 duration-200 opacity-50"])
@@ -1088,7 +1098,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onClick: _cache[0] || (_cache[0] = function ($event) {
       return $setup.shouldShowAddImageModal = true;
     })
-  }, " Add an item ")]))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["AddCarouselImageModal"], {
+  }, " Add an item ")]))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["AddModal"], {
     "should-show": $setup.shouldShowAddImageModal,
     "onUpdate:should-show": _cache[1] || (_cache[1] = function ($event) {
       return $setup.shouldShowAddImageModal = $event;
@@ -1096,7 +1106,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onItemAdded: $setup.fetchData
   }, null, 8
   /* PROPS */
-  , ["should-show"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["RemoveCarouselImageModal"], {
+  , ["should-show"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["RemoveModal"], {
     "carousel-image-id": $setup.imageIdForDeletion,
     onCancel: _cache[2] || (_cache[2] = function ($event) {
       return $setup.imageIdForDeletion = null;
@@ -1104,7 +1114,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onSuccess: $setup.handleDeletionSuccess
   }, null, 8
   /* PROPS */
-  , ["carousel-image-id"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["EditCarouselImageModal"], {
+  , ["carousel-image-id"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["EditModal"], {
     "carousel-image-obj": $setup.imgObjForUpdation,
     onCancel: _cache[3] || (_cache[3] = function ($event) {
       return $setup.imgObjForUpdation = null;
@@ -1154,17 +1164,13 @@ var NotificationTypes = {
     type: "success",
     message: "¡Artículo actualizado con éxito!"
   },
-  MANUAL_CREATED: {
+  STAFF_CREATED: {
     type: "success",
-    message: "¡Manual creado con éxito!"
+    message: "¡Personal creado con éxito!"
   },
-  MANUAL_DELETED: {
+  STAFF_DELETED: {
     type: "success",
-    message: "¡Manual eliminado correctamente!"
-  },
-  MANUAL_UPDATED: {
-    type: "success",
-    message: "¡Manual actualizado con éxito!"
+    message: "¡Personal creado con éxito!"
   },
   LOGIN_SUCCESS: {
     type: "success",
@@ -1200,25 +1206,25 @@ var fireNotification = fire;
 
 /***/ }),
 
-/***/ "./resources/js/components/admin/AddCarouselImageModal.vue":
-/*!*****************************************************************!*\
-  !*** ./resources/js/components/admin/AddCarouselImageModal.vue ***!
-  \*****************************************************************/
+/***/ "./resources/js/components/admin/carousel/AddModal.vue":
+/*!*************************************************************!*\
+  !*** ./resources/js/components/admin/carousel/AddModal.vue ***!
+  \*************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _AddCarouselImageModal_vue_vue_type_template_id_b88d6290__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AddCarouselImageModal.vue?vue&type=template&id=b88d6290 */ "./resources/js/components/admin/AddCarouselImageModal.vue?vue&type=template&id=b88d6290");
-/* harmony import */ var _AddCarouselImageModal_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AddCarouselImageModal.vue?vue&type=script&setup=true&lang=js */ "./resources/js/components/admin/AddCarouselImageModal.vue?vue&type=script&setup=true&lang=js");
+/* harmony import */ var _AddModal_vue_vue_type_template_id_648261c0__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AddModal.vue?vue&type=template&id=648261c0 */ "./resources/js/components/admin/carousel/AddModal.vue?vue&type=template&id=648261c0");
+/* harmony import */ var _AddModal_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AddModal.vue?vue&type=script&setup=true&lang=js */ "./resources/js/components/admin/carousel/AddModal.vue?vue&type=script&setup=true&lang=js");
 /* harmony import */ var C_Users_National_Desktop_programs_WebDevelopment_Projects_AnonymousToys_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,C_Users_National_Desktop_programs_WebDevelopment_Projects_AnonymousToys_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_AddCarouselImageModal_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_AddCarouselImageModal_vue_vue_type_template_id_b88d6290__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/admin/AddCarouselImageModal.vue"]])
+const __exports__ = /*#__PURE__*/(0,C_Users_National_Desktop_programs_WebDevelopment_Projects_AnonymousToys_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_AddModal_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_AddModal_vue_vue_type_template_id_648261c0__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/admin/carousel/AddModal.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -1227,25 +1233,25 @@ if (false) {}
 
 /***/ }),
 
-/***/ "./resources/js/components/admin/EditCarouselImageModal.vue":
-/*!******************************************************************!*\
-  !*** ./resources/js/components/admin/EditCarouselImageModal.vue ***!
-  \******************************************************************/
+/***/ "./resources/js/components/admin/carousel/EditModal.vue":
+/*!**************************************************************!*\
+  !*** ./resources/js/components/admin/carousel/EditModal.vue ***!
+  \**************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _EditCarouselImageModal_vue_vue_type_template_id_0fbbfc32__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./EditCarouselImageModal.vue?vue&type=template&id=0fbbfc32 */ "./resources/js/components/admin/EditCarouselImageModal.vue?vue&type=template&id=0fbbfc32");
-/* harmony import */ var _EditCarouselImageModal_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./EditCarouselImageModal.vue?vue&type=script&setup=true&lang=js */ "./resources/js/components/admin/EditCarouselImageModal.vue?vue&type=script&setup=true&lang=js");
+/* harmony import */ var _EditModal_vue_vue_type_template_id_5a4a38bf__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./EditModal.vue?vue&type=template&id=5a4a38bf */ "./resources/js/components/admin/carousel/EditModal.vue?vue&type=template&id=5a4a38bf");
+/* harmony import */ var _EditModal_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./EditModal.vue?vue&type=script&setup=true&lang=js */ "./resources/js/components/admin/carousel/EditModal.vue?vue&type=script&setup=true&lang=js");
 /* harmony import */ var C_Users_National_Desktop_programs_WebDevelopment_Projects_AnonymousToys_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,C_Users_National_Desktop_programs_WebDevelopment_Projects_AnonymousToys_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_EditCarouselImageModal_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_EditCarouselImageModal_vue_vue_type_template_id_0fbbfc32__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/admin/EditCarouselImageModal.vue"]])
+const __exports__ = /*#__PURE__*/(0,C_Users_National_Desktop_programs_WebDevelopment_Projects_AnonymousToys_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_EditModal_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_EditModal_vue_vue_type_template_id_5a4a38bf__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/admin/carousel/EditModal.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -1254,25 +1260,25 @@ if (false) {}
 
 /***/ }),
 
-/***/ "./resources/js/components/admin/RemoveCarouselImageModal.vue":
-/*!********************************************************************!*\
-  !*** ./resources/js/components/admin/RemoveCarouselImageModal.vue ***!
-  \********************************************************************/
+/***/ "./resources/js/components/admin/carousel/RemoveModal.vue":
+/*!****************************************************************!*\
+  !*** ./resources/js/components/admin/carousel/RemoveModal.vue ***!
+  \****************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _RemoveCarouselImageModal_vue_vue_type_template_id_25b2dc21__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./RemoveCarouselImageModal.vue?vue&type=template&id=25b2dc21 */ "./resources/js/components/admin/RemoveCarouselImageModal.vue?vue&type=template&id=25b2dc21");
-/* harmony import */ var _RemoveCarouselImageModal_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./RemoveCarouselImageModal.vue?vue&type=script&setup=true&lang=js */ "./resources/js/components/admin/RemoveCarouselImageModal.vue?vue&type=script&setup=true&lang=js");
+/* harmony import */ var _RemoveModal_vue_vue_type_template_id_4f4a2e85__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./RemoveModal.vue?vue&type=template&id=4f4a2e85 */ "./resources/js/components/admin/carousel/RemoveModal.vue?vue&type=template&id=4f4a2e85");
+/* harmony import */ var _RemoveModal_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./RemoveModal.vue?vue&type=script&setup=true&lang=js */ "./resources/js/components/admin/carousel/RemoveModal.vue?vue&type=script&setup=true&lang=js");
 /* harmony import */ var C_Users_National_Desktop_programs_WebDevelopment_Projects_AnonymousToys_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,C_Users_National_Desktop_programs_WebDevelopment_Projects_AnonymousToys_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_RemoveCarouselImageModal_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_RemoveCarouselImageModal_vue_vue_type_template_id_25b2dc21__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/admin/RemoveCarouselImageModal.vue"]])
+const __exports__ = /*#__PURE__*/(0,C_Users_National_Desktop_programs_WebDevelopment_Projects_AnonymousToys_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_RemoveModal_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_RemoveModal_vue_vue_type_template_id_4f4a2e85__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/admin/carousel/RemoveModal.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -1389,47 +1395,47 @@ if (false) {}
 
 /***/ }),
 
-/***/ "./resources/js/components/admin/AddCarouselImageModal.vue?vue&type=script&setup=true&lang=js":
-/*!****************************************************************************************************!*\
-  !*** ./resources/js/components/admin/AddCarouselImageModal.vue?vue&type=script&setup=true&lang=js ***!
-  \****************************************************************************************************/
+/***/ "./resources/js/components/admin/carousel/AddModal.vue?vue&type=script&setup=true&lang=js":
+/*!************************************************************************************************!*\
+  !*** ./resources/js/components/admin/carousel/AddModal.vue?vue&type=script&setup=true&lang=js ***!
+  \************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_AddCarouselImageModal_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
+/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_AddModal_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
 /* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_AddCarouselImageModal_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./AddCarouselImageModal.vue?vue&type=script&setup=true&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/admin/AddCarouselImageModal.vue?vue&type=script&setup=true&lang=js");
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_AddModal_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./AddModal.vue?vue&type=script&setup=true&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/admin/carousel/AddModal.vue?vue&type=script&setup=true&lang=js");
  
 
 /***/ }),
 
-/***/ "./resources/js/components/admin/EditCarouselImageModal.vue?vue&type=script&setup=true&lang=js":
-/*!*****************************************************************************************************!*\
-  !*** ./resources/js/components/admin/EditCarouselImageModal.vue?vue&type=script&setup=true&lang=js ***!
-  \*****************************************************************************************************/
+/***/ "./resources/js/components/admin/carousel/EditModal.vue?vue&type=script&setup=true&lang=js":
+/*!*************************************************************************************************!*\
+  !*** ./resources/js/components/admin/carousel/EditModal.vue?vue&type=script&setup=true&lang=js ***!
+  \*************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_EditCarouselImageModal_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
+/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_EditModal_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
 /* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_EditCarouselImageModal_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./EditCarouselImageModal.vue?vue&type=script&setup=true&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/admin/EditCarouselImageModal.vue?vue&type=script&setup=true&lang=js");
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_EditModal_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./EditModal.vue?vue&type=script&setup=true&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/admin/carousel/EditModal.vue?vue&type=script&setup=true&lang=js");
  
 
 /***/ }),
 
-/***/ "./resources/js/components/admin/RemoveCarouselImageModal.vue?vue&type=script&setup=true&lang=js":
-/*!*******************************************************************************************************!*\
-  !*** ./resources/js/components/admin/RemoveCarouselImageModal.vue?vue&type=script&setup=true&lang=js ***!
-  \*******************************************************************************************************/
+/***/ "./resources/js/components/admin/carousel/RemoveModal.vue?vue&type=script&setup=true&lang=js":
+/*!***************************************************************************************************!*\
+  !*** ./resources/js/components/admin/carousel/RemoveModal.vue?vue&type=script&setup=true&lang=js ***!
+  \***************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_RemoveCarouselImageModal_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
+/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_RemoveModal_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
 /* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_RemoveCarouselImageModal_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./RemoveCarouselImageModal.vue?vue&type=script&setup=true&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/admin/RemoveCarouselImageModal.vue?vue&type=script&setup=true&lang=js");
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_RemoveModal_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./RemoveModal.vue?vue&type=script&setup=true&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/admin/carousel/RemoveModal.vue?vue&type=script&setup=true&lang=js");
  
 
 /***/ }),
@@ -1494,47 +1500,47 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/components/admin/AddCarouselImageModal.vue?vue&type=template&id=b88d6290":
-/*!***********************************************************************************************!*\
-  !*** ./resources/js/components/admin/AddCarouselImageModal.vue?vue&type=template&id=b88d6290 ***!
-  \***********************************************************************************************/
+/***/ "./resources/js/components/admin/carousel/AddModal.vue?vue&type=template&id=648261c0":
+/*!*******************************************************************************************!*\
+  !*** ./resources/js/components/admin/carousel/AddModal.vue?vue&type=template&id=648261c0 ***!
+  \*******************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_AddCarouselImageModal_vue_vue_type_template_id_b88d6290__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_AddModal_vue_vue_type_template_id_648261c0__WEBPACK_IMPORTED_MODULE_0__.render)
 /* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_AddCarouselImageModal_vue_vue_type_template_id_b88d6290__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./AddCarouselImageModal.vue?vue&type=template&id=b88d6290 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/admin/AddCarouselImageModal.vue?vue&type=template&id=b88d6290");
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_AddModal_vue_vue_type_template_id_648261c0__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./AddModal.vue?vue&type=template&id=648261c0 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/admin/carousel/AddModal.vue?vue&type=template&id=648261c0");
 
 
 /***/ }),
 
-/***/ "./resources/js/components/admin/EditCarouselImageModal.vue?vue&type=template&id=0fbbfc32":
-/*!************************************************************************************************!*\
-  !*** ./resources/js/components/admin/EditCarouselImageModal.vue?vue&type=template&id=0fbbfc32 ***!
-  \************************************************************************************************/
+/***/ "./resources/js/components/admin/carousel/EditModal.vue?vue&type=template&id=5a4a38bf":
+/*!********************************************************************************************!*\
+  !*** ./resources/js/components/admin/carousel/EditModal.vue?vue&type=template&id=5a4a38bf ***!
+  \********************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_EditCarouselImageModal_vue_vue_type_template_id_0fbbfc32__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_EditModal_vue_vue_type_template_id_5a4a38bf__WEBPACK_IMPORTED_MODULE_0__.render)
 /* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_EditCarouselImageModal_vue_vue_type_template_id_0fbbfc32__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./EditCarouselImageModal.vue?vue&type=template&id=0fbbfc32 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/admin/EditCarouselImageModal.vue?vue&type=template&id=0fbbfc32");
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_EditModal_vue_vue_type_template_id_5a4a38bf__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./EditModal.vue?vue&type=template&id=5a4a38bf */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/admin/carousel/EditModal.vue?vue&type=template&id=5a4a38bf");
 
 
 /***/ }),
 
-/***/ "./resources/js/components/admin/RemoveCarouselImageModal.vue?vue&type=template&id=25b2dc21":
-/*!**************************************************************************************************!*\
-  !*** ./resources/js/components/admin/RemoveCarouselImageModal.vue?vue&type=template&id=25b2dc21 ***!
-  \**************************************************************************************************/
+/***/ "./resources/js/components/admin/carousel/RemoveModal.vue?vue&type=template&id=4f4a2e85":
+/*!**********************************************************************************************!*\
+  !*** ./resources/js/components/admin/carousel/RemoveModal.vue?vue&type=template&id=4f4a2e85 ***!
+  \**********************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_RemoveCarouselImageModal_vue_vue_type_template_id_25b2dc21__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_RemoveModal_vue_vue_type_template_id_4f4a2e85__WEBPACK_IMPORTED_MODULE_0__.render)
 /* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_RemoveCarouselImageModal_vue_vue_type_template_id_25b2dc21__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./RemoveCarouselImageModal.vue?vue&type=template&id=25b2dc21 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/admin/RemoveCarouselImageModal.vue?vue&type=template&id=25b2dc21");
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_RemoveModal_vue_vue_type_template_id_4f4a2e85__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./RemoveModal.vue?vue&type=template&id=4f4a2e85 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/components/admin/carousel/RemoveModal.vue?vue&type=template&id=4f4a2e85");
 
 
 /***/ }),

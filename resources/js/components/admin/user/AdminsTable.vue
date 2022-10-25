@@ -1,0 +1,67 @@
+<template>
+    <div v-if="data">
+        <table>
+            <caption class="text-xl text-slate-900 text-left">Admins:</caption>
+            <tr class="text-slate-900 h-10 px-12">
+                <th></th>
+                <th class="text-left px-4">Name</th>
+                <th class="text-left px-4">Email</th>
+                <th class="text-left px-4">Joined</th>
+            </tr>
+            <tr
+                v-for="(admin, index) in data"
+                :key="index"
+                :class="{
+                    'bg-slate-100 shadow rounded': myUserId === admin.id,
+                }"
+            >
+                <td class="px-4 py-2">
+                    <BaseImage
+                        v-if="admin.profile_image_url"
+                        :src="admin.profile_image_url"
+                        is-external
+                        class="w-10 h-10 rounded-full shadow object-cover"
+                    ></BaseImage>
+                    <BaseImage
+                        v-else
+                        src="/user.jpg"
+                        class="w-10 h-10 rounded-full shadow"
+                    ></BaseImage>
+                </td>
+                <td class="px-4">{{ admin.name }}</td>
+                <td class="px-4">{{ admin.email }}</td>
+                <td class="px-4">
+                    {{ formatDate(admin.created_at) }}
+                </td>
+            </tr>
+        </table>
+        <p class="mt-4 text-amber-500 hover:underline">
+            Register a new account
+        </p>
+    </div>
+</template>
+
+<script setup>
+import BaseImage from "@/components/global/BaseImage.vue";
+import { computed } from "vue";
+import { useStore } from "vuex";
+
+defineProps({
+    data: {
+        type: Array, // {id,name,email,profile_image_url,created_at}[]
+        default: null,
+    },
+});
+
+const store = useStore();
+
+const myUserId = computed(() => store.state.auth.profile?.id);
+
+const formatDate = (dateStr) =>
+    new Date(dateStr).toLocaleDateString("es", {
+        day: "numeric",
+        year: "2-digit",
+        month: "short",
+        time: "full",
+    });
+</script>

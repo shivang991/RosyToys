@@ -3,24 +3,20 @@
         :should-show="shouldShow"
         @close="emit('update:shouldShow', false)"
     >
-        <div class="py-8 flex justify-center w-80" v-if="isFetchingProduct">
-            <div
-                class="w-8 h-8 border-4 border-amber-500 border-b-transparent rounded-full animate-spin"
-            ></div>
-        </div>
-        <form v-else class="px-4 pb-8" @submit.prevent="handleSubmit">
+        <form class="px-4 pb-8" @submit.prevent="handleSubmit">
             <div class="space-y-8">
                 <BaseImageInput
-                    :default-src="productImgSrc"
+                    :is-invalid="invalidFields.has('image')"
+                    v-model="fields.image"
                     class="w-full h-40 object-cover"
                     label="Product Image"
-                    v-model="fields.image"
                 ></BaseImageInput>
                 <div class="flex space-x-4 items-center">
                     <BaseTextField
                         v-model="fields.title"
                         class="flex-grow"
                         label="Product Name"
+                        :is-invalid="invalidFields.has('title')"
                     ></BaseTextField>
                     <div class="flex space-x-2">
                         <input
@@ -32,16 +28,19 @@
                     </div>
                 </div>
                 <BaseTextField
+                    :is-invalid="invalidFields.has('description')"
                     v-model="fields.description"
                     label="Description"
                     is-text-area
                 ></BaseTextField>
                 <div class="flex space-x-4">
                     <BaseTextField
+                        :is-invalid="invalidFields.has('price')"
                         v-model="fields.price"
                         label="Price"
                     ></BaseTextField>
                     <BaseTextField
+                        :is-invalid="invalidFields.has('brand')"
                         v-model="fields.brand"
                         label="Brand"
                     ></BaseTextField>
@@ -49,15 +48,15 @@
             </div>
             <button
                 class="bg-amber-500 py-2 mt-8 text-white rounded-md w-full"
-                :disabled="isFormSubmitting"
+                :disabled="isLoading"
                 type="submit"
             >
                 <span
                     class="h-4 block w-4 border-2 my-1 rounded-full border-b-transparent border-white animate-spin mx-auto"
-                    v-if="isFormSubmitting"
+                    v-if="isLoading"
                 >
                 </span>
-                <span v-else> Update </span>
+                <span v-else> Create </span>
             </button>
         </form>
     </base-modal>
@@ -66,50 +65,38 @@
 <script setup>
 import BaseTextField from "@/components/global/BaseTextField.vue";
 import BaseImageInput from "@/components/global/BaseImageInput.vue";
-import BaseModal from "../global/BaseModal.vue";
-import { reactive, ref, watch } from "vue";
+import BaseModal from "@/components/global/BaseModal.vue";
+import { reactive, ref } from "vue";
 import useAxios from "@/plugins/Axios";
 import { fireNotification, NotificationTypes } from "@/plugins/Notifications";
-import { useStore } from "vuex";
 
-const props = defineProps({
+defineProps({
     shouldShow: {
         type: Boolean,
         default: false,
     },
-    productId: {
-        type: Number,
-        default: null,
-    },
 });
-
-const emit = defineEmits(["update:shouldShow"]);
-
-let lastProductId = null;
 
 const fields = reactive({
     image: null,
     title: "",
+    isAvailable: false,
     description: "",
     price: "",
     brand: "",
-    isAvailable: false,
 });
 
-const isFetchingProduct = ref(false);
-const isFormSubmitting = ref(false);
-const productImgSrc = ref(null);
 const invalidFields = reactive(new Set());
+
+const isLoading = ref(false);
 
 const axios = useAxios();
 
-const store = useStore();
-
 function handleSubmit() {
     invalidFields.clear();
-    // Validation: All fields except image and isAvailable required
+    // Validation: All fields except isAvailable required
     Object.entries(fields).forEach(([key, val]) => {
-        if (key === "image" || key === "isAvailable") return;
+        if (key === "isAvailable") return;
         if (!val) invalidFields.add(key);
     });
     // Validation: Price should be numeric
@@ -117,46 +104,30 @@ function handleSubmit() {
     if (isNaN(price)) invalidFields.add("price");
     if (invalidFields.size) return;
 
-    isFormSubmitting.value = true;
+    isLoading.value = true;
     axios
-        .postMultipart(`/api/product/update/${props.productId}`, {
+        .postMultipart("/api/product/create", {
             ...fields,
             isAvailable: Number(fields.isAvailable),
         })
         .then((response) => {
             if (response.data.message === "success") {
-                lastProductId = null; // Should refetch next time (with updated data)
-                store.dispatch("products/refetch");
+                fields.image = null;
+                fields.title = "";
+                fields.price = "";
+                fields.brand = "";
+                fields.isAvailable = false;
+                fields.description = "";
                 emit("update:shouldShow", false);
-                fireNotification(NotificationTypes.PRODUCT_UPDATED);
+                fireNotification(NotificationTypes.PRODUCT_CREATED);
             }
         })
         .catch((error) => {
             console.log(error.response);
             fireNotification(NotificationTypes.GENERAL_ERROR);
         })
-        .finally(() => (isFormSubmitting.value = false));
+        .finally(() => (isLoading.value = false));
 }
 
-// Update the fields when productId changes
-watch(
-    () => props.shouldShow,
-    async (newVal) => {
-        if (lastProductId === props.productId) return;
-        if (newVal) {
-            isFetchingProduct.value = true;
-            const { data: newProduct } = await axios.get(
-                `/api/product/${props.productId}`
-            );
-            fields.title = newProduct.title;
-            fields.description = newProduct.description;
-            fields.price = String(newProduct.price);
-            fields.brand = newProduct.brand;
-            fields.isAvailable = Boolean(newProduct.is_available);
-            productImgSrc.value = newProduct.image_url;
-            isFetchingProduct.value = false;
-            lastProductId = props.productId;
-        }
-    }
-);
+const emit = defineEmits(["update:shouldShow"]);
 </script>

@@ -4,7 +4,9 @@ use App\Http\Controllers\AdminProfileController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Auth\UserController;
 use App\Http\Controllers\CarouselImageController;
+use App\Http\Controllers\StaffController;
 use App\Http\Controllers\Choices\ProductFieldChoices;
 use App\Http\Controllers\ProductController;
 use Illuminate\Http\Request;
@@ -24,14 +26,19 @@ use Illuminate\Support\Facades\Route;
 Route::post('/login', [LoginController::class, 'index']);
 Route::post('/logout', [LogoutController::class, 'index']);
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
 Route::middleware(['auth:sanctum', 'admin'])->prefix('/admin')->group(function () {
     Route::post('/register', [RegisterController::class, 'index']);
     Route::post('/update', [AdminProfileController::class, 'update']);
     Route::post('/delete', [AdminProfileController::class, 'destroy']);
+});
+
+Route::prefix("/user")->group(function () {
+    Route::middleware('auth:sanctum')->get('', function (Request $request) {
+        return $request->user();
+    });
+    Route::get('/all', [UserController::class, 'index']);
+    Route::post('/staff/create', [StaffController::class, 'store']);
+    Route::delete('/staff/{user}', [StaffController::class, 'destroy']);
 });
 
 Route::prefix('/product')->group(function () {

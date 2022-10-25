@@ -33,7 +33,7 @@
 <script setup>
 import BaseTextField from "@/components/global/BaseTextField.vue";
 import BaseImageInput from "@/components/global/BaseImageInput.vue";
-import BaseModal from "../global/BaseModal.vue";
+import BaseModal from "@/components/global/BaseModal.vue";
 import { reactive, ref, watch } from "vue";
 import useAxios from "@/plugins/Axios";
 import { fireNotification, NotificationTypes } from "@/plugins/Notifications";

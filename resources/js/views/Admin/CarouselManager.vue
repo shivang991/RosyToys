@@ -52,30 +52,30 @@
                 </button>
             </div>
         </div>
-        <AddCarouselImageModal
+        <AddModal
             v-model:should-show="shouldShowAddImageModal"
             @item-added="fetchData"
-        ></AddCarouselImageModal>
-        <RemoveCarouselImageModal
+        ></AddModal>
+        <RemoveModal
             :carousel-image-id="imageIdForDeletion"
             @cancel="imageIdForDeletion = null"
             @success="handleDeletionSuccess"
-        ></RemoveCarouselImageModal>
-        <EditCarouselImageModal
+        ></RemoveModal>
+        <EditModal
             :carousel-image-obj="imgObjForUpdation"
             @cancel="imgObjForUpdation = null"
             @success="handleUpdationSuccess"
-        ></EditCarouselImageModal>
+        ></EditModal>
     </div>
 </template>
 
 <script setup>
 import useAxios from "@/plugins/Axios";
 import { ref } from "vue";
-import AddCarouselImageModal from "@/components/admin/AddCarouselImageModal.vue";
+import AddModal from "@/components/admin/carousel/AddModal.vue";
 import BaseImage from "@/components/global/BaseImage.vue";
-import RemoveCarouselImageModal from "@/components/admin/RemoveCarouselImageModal.vue";
-import EditCarouselImageModal from "@/components/admin/EditCarouselImageModal.vue";
+import RemoveModal from "@/components/admin/carousel/RemoveModal.vue";
+import EditModal from "@/components/admin/carousel/EditModal.vue";
 
 const axios = useAxios();
 const isLoading = ref(true);
