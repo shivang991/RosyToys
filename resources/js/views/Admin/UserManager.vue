@@ -6,24 +6,40 @@
                 <h5 class="text-slate-900 mb-4 text-xl">Your profile:</h5>
                 <div class="flex space-x-4 items-center">
                     <BaseImage
+                        v-if="myProfile.profile_image_url"
+                        :src="myProfile.profile_image_url"
+                        class="w-16 h-16 rounded-full shadow"
+                        is-external
+                    ></BaseImage>
+                    <BaseImage
+                        v-else
                         src="/user.jpg"
                         class="w-16 h-16 rounded-full shadow"
                     ></BaseImage>
                     <div>
                         <p>{{ myProfile.name }}</p>
                         <p class="text-slate-500 mb-2">{{ myProfile.email }}</p>
-                        <p class="text-amber-500 hover:underline">Edit</p>
+                        <button
+                            class="text-amber-500 hover:underline"
+                            @click="shouldShowEditMeModal = true"
+                        >
+                            Edit
+                        </button>
                     </div>
                 </div>
             </div>
             <AdminsTable :data="adminUsers"></AdminsTable>
         </div>
         <StaffTable @update="fetchData" :data="staffUsers"></StaffTable>
+        <EditSelfModal
+            v-model:shouldShow="shouldShowEditMeModal"
+        ></EditSelfModal>
     </div>
 </template>
 
 <script setup>
 import AdminsTable from "@/components/admin/user/AdminsTable.vue";
+import EditSelfModal from "@/components/admin/user/EditSelfModal.vue";
 import StaffTable from "@/components/admin/user/StaffTable.vue";
 import BaseImage from "@/components/global/BaseImage.vue";
 import useAxios from "@/plugins/Axios";
@@ -41,10 +57,11 @@ function fetchData() {
         staffUsers.value = res.data.staff;
     });
 }
-
 fetchData();
 
 const store = useStore();
 
 const myProfile = computed(() => store.state.auth?.profile);
+
+const shouldShowEditMeModal = ref(false);
 </script>

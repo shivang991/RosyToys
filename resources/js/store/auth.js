@@ -9,9 +9,11 @@ export default {
     },
     mutations: {
         SET_PROFILE(state, payload) {
-            localStorage.setItem(LS_TOKEN_KEY, payload.accessToken);
+            if (payload.accessToken) {
+                localStorage.setItem(LS_TOKEN_KEY, payload.accessToken);
+                state.accessToken = payload.accessToken;
+            }
             state.profile = payload.profile;
-            state.accessToken = payload.accessToken;
         },
         CLEAR_STATE(state) {
             localStorage.removeItem(LS_TOKEN_KEY);

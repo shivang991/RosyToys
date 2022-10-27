@@ -1621,6 +1621,10 @@ var NotificationTypes = {
     type: "success",
     message: "¡Administrador registrado con éxito!"
   },
+  ADMIN_UPDATED: {
+    type: "success",
+    message: "¡Administrador actualizado con éxito!"
+  },
   GENERAL_ERROR: {
     type: "error",
     message: "¡Ocurrió un error inesperado!"

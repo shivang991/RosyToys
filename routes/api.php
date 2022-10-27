@@ -38,6 +38,8 @@ Route::prefix("/user")->group(function () {
     });
     Route::get('/all', [AdminController::class, 'index']);
     Route::post('/admin/register',[AdminController::class,'store']);
+    Route::post('/admin/update',[AdminController::class,'update']);
+    Route::delete('/admin/image',[AdminController::class,'destroyImage']);
 
     Route::post('/staff/create', [StaffController::class, 'store']);
     Route::post('/staff/update/{user}', [StaffController::class, 'update']);
