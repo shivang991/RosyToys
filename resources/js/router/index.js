@@ -21,17 +21,17 @@ const routes = [
                 component: () => import("../views/Admin/Dashboard.vue"),
             },
             {
-                path: "/product",
+                path: "product",
                 name: "ProductManager",
                 component: () => import("../views/Admin/ProductManager.vue"),
             },
             {
-                path: "/carousel",
+                path: "carousel",
                 name: "CarouselManager",
                 component: () => import("../views/Admin/CarouselManager.vue"),
             },
             {
-                path: "/user",
+                path: "user",
                 name: "UserManager",
                 component: () => import("../views/Admin/UserManager.vue"),
             },

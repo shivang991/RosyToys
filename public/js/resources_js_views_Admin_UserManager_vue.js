@@ -104,8 +104,8 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
           (0,_plugins_Notifications__WEBPACK_IMPORTED_MODULE_5__.fireNotification)(_plugins_Notifications__WEBPACK_IMPORTED_MODULE_5__.NotificationTypes.STAFF_CREATED);
         }
       })["catch"](function (error) {
+        if (error.response.status === 422) (0,_plugins_Notifications__WEBPACK_IMPORTED_MODULE_5__.fireNotification)(_plugins_Notifications__WEBPACK_IMPORTED_MODULE_5__.NotificationTypes.USER_EXISTS);else (0,_plugins_Notifications__WEBPACK_IMPORTED_MODULE_5__.fireNotification)(_plugins_Notifications__WEBPACK_IMPORTED_MODULE_5__.NotificationTypes.GENERAL_ERROR);
         console.log(error.response);
-        (0,_plugins_Notifications__WEBPACK_IMPORTED_MODULE_5__.fireNotification)(_plugins_Notifications__WEBPACK_IMPORTED_MODULE_5__.NotificationTypes.GENERAL_ERROR);
       })["finally"](function () {
         return isLoading.value = false;
       });
@@ -325,7 +325,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
         if (response.data.message === "success") {
           emit("update:shouldShow", false);
           emit("success");
-          (0,_plugins_Notifications__WEBPACK_IMPORTED_MODULE_5__.fireNotification)(_plugins_Notifications__WEBPACK_IMPORTED_MODULE_5__.NotificationTypes.STAFF_CREATED);
+          (0,_plugins_Notifications__WEBPACK_IMPORTED_MODULE_5__.fireNotification)(_plugins_Notifications__WEBPACK_IMPORTED_MODULE_5__.NotificationTypes.STAFF_UPDATED);
         }
       })["catch"](function (error) {
         console.log(error.response);
@@ -994,14 +994,17 @@ __webpack_require__.r(__webpack_exports__);
 var _hoisted_1 = {
   key: 0
 };
+var _hoisted_2 = {
+  "class": "mb-4"
+};
 
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("caption", {
+var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("caption", {
   "class": "text-xl text-slate-900 text-left"
-}, "Admins:", -1
+}, " Admins: ", -1
 /* HOISTED */
 );
 
-var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", {
+var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", {
   "class": "text-slate-900 h-10 px-12"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", {
   "class": "text-left px-4"
@@ -1013,11 +1016,8 @@ var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 /* HOISTED */
 );
 
-var _hoisted_4 = {
-  "class": "px-4 py-2"
-};
 var _hoisted_5 = {
-  "class": "px-4"
+  "class": "px-4 py-2"
 };
 var _hoisted_6 = {
   "class": "px-4"
@@ -1025,21 +1025,22 @@ var _hoisted_6 = {
 var _hoisted_7 = {
   "class": "px-4"
 };
+var _hoisted_8 = {
+  "class": "px-4"
+};
 
-var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
-  "class": "mt-4 text-amber-500 hover:underline"
-}, " Register a new account ", -1
-/* HOISTED */
-);
+var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Register a new account ");
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return $props.data ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("table", null, [_hoisted_2, _hoisted_3, ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.data, function (admin, index) {
+  var _component_router_link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("router-link");
+
+  return $props.data ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("table", _hoisted_2, [_hoisted_3, _hoisted_4, ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.data, function (admin, index) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("tr", {
       key: index,
       "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
         'bg-slate-100 shadow rounded': $setup.myUserId === admin.id
       })
-    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_4, [admin.profile_image_url ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)($setup["BaseImage"], {
+    }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_5, [admin.profile_image_url ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)($setup["BaseImage"], {
       key: 0,
       src: admin.profile_image_url,
       "is-external": "",
@@ -1050,18 +1051,30 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       key: 1,
       src: "/user.jpg",
       "class": "w-10 h-10 rounded-full shadow"
-    }))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(admin.name), 1
+    }))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(admin.name), 1
     /* TEXT */
-    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(admin.email), 1
+    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(admin.email), 1
     /* TEXT */
-    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.formatDate(admin.created_at)), 1
+    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.formatDate(admin.created_at)), 1
     /* TEXT */
     )], 2
     /* CLASS */
     );
   }), 128
   /* KEYED_FRAGMENT */
-  ))]), _hoisted_8])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true);
+  ))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+    to: {
+      name: 'AdminRegister'
+    },
+    "class": "text-amber-500 hover:underline"
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [_hoisted_9];
+    }),
+    _: 1
+    /* STABLE */
+
+  })])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true);
 }
 
 /***/ }),
@@ -1752,6 +1765,10 @@ var NotificationTypes = {
     type: "success",
     message: "¡Personal creado con éxito!"
   },
+  STAFF_UPDATED: {
+    type: "success",
+    message: "¡El personal se actualizó con éxito!"
+  },
   STAFF_DELETED: {
     type: "success",
     message: "¡Personal creado con éxito!"
@@ -1759,6 +1776,10 @@ var NotificationTypes = {
   LOGIN_SUCCESS: {
     type: "success",
     message: "¡Ingresó exitosamente!"
+  },
+  ADMIN_REGISTERED: {
+    type: "success",
+    message: "¡Administrador registrado con éxito!"
   },
   GENERAL_ERROR: {
     type: "error",

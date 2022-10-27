@@ -153,8 +153,10 @@ function handleSubmit() {
             }
         })
         .catch((error) => {
+            if (error.response.status === 422)
+                fireNotification(NotificationTypes.USER_EXISTS);
+            else fireNotification(NotificationTypes.GENERAL_ERROR);
             console.log(error.response);
-            fireNotification(NotificationTypes.GENERAL_ERROR);
         })
         .finally(() => (isLoading.value = false));
 }

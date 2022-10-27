@@ -1,7 +1,9 @@
 <template>
     <div v-if="data">
-        <table>
-            <caption class="text-xl text-slate-900 text-left">Admins:</caption>
+        <table class="mb-4">
+            <caption class="text-xl text-slate-900 text-left">
+                Admins:
+            </caption>
             <tr class="text-slate-900 h-10 px-12">
                 <th></th>
                 <th class="text-left px-4">Name</th>
@@ -35,9 +37,12 @@
                 </td>
             </tr>
         </table>
-        <p class="mt-4 text-amber-500 hover:underline">
+        <router-link
+            :to="{ name: 'AdminRegister' }"
+            class="text-amber-500 hover:underline"
+        >
             Register a new account
-        </p>
+        </router-link>
     </div>
 </template>
 

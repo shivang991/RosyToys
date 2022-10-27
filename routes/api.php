@@ -4,15 +4,13 @@ use App\Http\Controllers\AdminProfileController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisterController;
-use App\Http\Controllers\Auth\UserController;
+use App\Http\Controllers\Auth\AdminController;
+use App\Http\Controllers\Auth\StaffController;
 use App\Http\Controllers\CarouselImageController;
-use App\Http\Controllers\StaffController;
 use App\Http\Controllers\Choices\ProductFieldChoices;
 use App\Http\Controllers\ProductController;
-use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Storage;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,7 +36,9 @@ Route::prefix("/user")->group(function () {
     Route::middleware('auth:sanctum')->get('', function (Request $request) {
         return $request->user();
     });
-    Route::get('/all', [UserController::class, 'index']);
+    Route::get('/all', [AdminController::class, 'index']);
+    Route::post('/admin/register',[AdminController::class,'store']);
+
     Route::post('/staff/create', [StaffController::class, 'store']);
     Route::post('/staff/update/{user}', [StaffController::class, 'update']);
     Route::delete('/staff/{user}', [StaffController::class, 'destroy']);

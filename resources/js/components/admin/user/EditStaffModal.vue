@@ -174,7 +174,7 @@ function handleSubmit() {
             if (response.data.message === "success") {
                 emit("update:shouldShow", false);
                 emit("success");
-                fireNotification(NotificationTypes.STAFF_CREATED);
+                fireNotification(NotificationTypes.STAFF_UPDATED);
             }
         })
         .catch((error) => {

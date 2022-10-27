@@ -404,6 +404,10 @@ var NotificationTypes = {
     type: "success",
     message: "¡Personal creado con éxito!"
   },
+  STAFF_UPDATED: {
+    type: "success",
+    message: "¡El personal se actualizó con éxito!"
+  },
   STAFF_DELETED: {
     type: "success",
     message: "¡Personal creado con éxito!"
@@ -411,6 +415,10 @@ var NotificationTypes = {
   LOGIN_SUCCESS: {
     type: "success",
     message: "¡Ingresó exitosamente!"
+  },
+  ADMIN_REGISTERED: {
+    type: "success",
+    message: "¡Administrador registrado con éxito!"
   },
   GENERAL_ERROR: {
     type: "error",
