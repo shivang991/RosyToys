@@ -1134,7 +1134,7 @@ var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 );
 
 var _hoisted_3 = ["src"];
-var _hoisted_4 = ["onClick", "disabled"];
+var _hoisted_4 = ["onClick"];
 var _hoisted_5 = ["onDrop"];
 var _hoisted_6 = {
   "class": "text-xl mb-1 text-slate-500"
@@ -1165,13 +1165,13 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     })
   }), null, 16
   /* FULL_PROPS */
-  , _hoisted_3), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  , _hoisted_3), !!$props.modelValue ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", {
+    key: 0,
     onClick: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)($setup.clearImage, ["prevent", "stop"]),
-    "class": "py-1 text-amber-500 px-2 border border-amber-500 rounded-md disabled:opacity-50 mt-2",
-    disabled: !$props.modelValue
+    "class": "py-1 text-amber-500 px-2 border border-amber-500 rounded-md mt-2"
   }, " Quita la imagen ", 8
   /* PROPS */
-  , _hoisted_4)])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
+  , _hoisted_4)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
     key: 1,
     "class": ["py-8 flex flex-col items-center rounded-b-md shadow bg-slate-100 ring-slate-200", [$props.isInvalid ? 'bg-red-50' : 'bg-slate-100', {
       'ring-2': $setup.isActive

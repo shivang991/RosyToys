@@ -84,7 +84,6 @@ class ProductController extends Controller
         $product->description = $data['description'];
         $product->price = $data['price'];
         $product->brand = $data['brand'];
-        error_log(json_encode($data));
         $product->is_available = $data['isAvailable'];
         $product->save();
 

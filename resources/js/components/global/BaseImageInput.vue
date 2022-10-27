@@ -14,9 +14,9 @@
                 @click="$refs.inputEl.click()"
             />
             <button
+                v-if="!!modelValue"
                 @click.prevent.stop="clearImage"
-                class="py-1 text-amber-500 px-2 border border-amber-500 rounded-md disabled:opacity-50 mt-2"
-                :disabled="!modelValue"
+                class="py-1 text-amber-500 px-2 border border-amber-500 rounded-md mt-2"
             >
                 Quita la imagen
             </button>

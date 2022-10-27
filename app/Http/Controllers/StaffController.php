@@ -17,21 +17,28 @@ class StaffController extends Controller
         $this->middleware(['auth:sanctum', 'admin']);
     }
 
+    private function _getValidatedData(bool $shouldValidateEmailPass)
+    {
+        $fields = [
+            'name' => 'required|min:4|max:12',
+            // Access
+            'carouselManager' => 'boolean',
+            'productManager' => 'boolean',
+            'customerServiceManager' => 'boolean',
+            'postCreator' => 'boolean'
+        ];
+
+        if ($shouldValidateEmailPass) {
+            $fields['password'] = 'required|min:6';
+            $fields['email'] = 'required|email|unique:users';
+        }
+
+        return collect(Request::validate($fields));
+    }
+
     public function store()
     {
-        $data = collect(
-            Request::validate([
-                'name' => 'required|min:4|max:12',
-                'password' => 'required|min:6',
-                'email' => 'required|email|unique:users',
-
-                // Access
-                'carouselManager' => 'boolean',
-                'productManager' => 'boolean',
-                'customerServiceManager' => 'boolean',
-                'postCreator' => 'boolean'
-            ])
-        );
+        $data = $this->_getValidatedData(true);
 
         $userAttributes = $data->only('name', 'email')->merge([
             'password' => Hash::make($data['password']),
@@ -59,6 +66,48 @@ class StaffController extends Controller
     {
         Storage::delete($user->image_path);
         $user->delete();
+        return Response::json(['message' => 'success']);
+    }
+
+    public function destroyImage(User $user)
+    {
+        if ($user->profile_image_path) {
+            Storage::delete($user->profile_image_path);
+            $user->profile_image_path = null;
+            $user->profile_image_url = null;
+            $user->save();
+        }
+        return Response::json(['message' => 'success']);
+    }
+
+    // return staff permissions
+    public function show(User $user)
+    {
+        $abilties = $user->staffAbilities()->first();
+        if (!$abilties) return Response::json([]);
+        return Response::json($abilties);
+    }
+
+    public function update(User $user)
+    {
+        $data = $this->_getValidatedData(false);
+        $image = Request::file('image');
+        if ($image) {
+            if ($user->profile_image_path)
+                Storage::delete($user->profile_image_path);
+            $imgPath = $image->store('profile_image');
+            $imgUrl = Storage::url($imgPath);
+            $user->profile_image_url = $imgUrl;
+            $user->profile_image_path = $imgPath;
+        }
+        $user->name = $data['name'];
+        $user->save();
+
+        $abilities = $user->staffAbilities()->first();
+        if ($abilities)
+            $abilities->update($data->only('carouselManager', 'productManager', 'customerServiceManager', 'postCreator')->toArray());
+
+
         return Response::json(['message' => 'success']);
     }
 }

@@ -16,7 +16,6 @@ export function useAxios() {
             } else if (typeof value !== "undefined" || value !== null)
                 multipartData.append(key, value);
         });
-        console.log(multipartData.get("permissions"))
         return axios.post(url, multipartData, {
             headers: {
                 "content-type": "multipart/form-data",

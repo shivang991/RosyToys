@@ -9,8 +9,10 @@ use App\Http\Controllers\CarouselImageController;
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\Choices\ProductFieldChoices;
 use App\Http\Controllers\ProductController;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Storage;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,7 +40,10 @@ Route::prefix("/user")->group(function () {
     });
     Route::get('/all', [UserController::class, 'index']);
     Route::post('/staff/create', [StaffController::class, 'store']);
+    Route::post('/staff/update/{user}', [StaffController::class, 'update']);
     Route::delete('/staff/{user}', [StaffController::class, 'destroy']);
+    Route::delete('/staff/image/{user}', [StaffController::class, 'destroyImage']);
+    Route::get('/staff/{user}', [StaffController::class, 'show']);
 });
 
 Route::prefix('/product')->group(function () {

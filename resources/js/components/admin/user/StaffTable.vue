@@ -11,6 +11,7 @@
             <button
                 class="rounded-md shadow-lg px-4 py-2 text-amber-500 disabled:opacity-50"
                 :disabled="selectedStaff === null"
+                @click="shouldShowEditModal = true"
             >
                 Edit <FontAwesomeIcon icon="fa fa-pen"></FontAwesomeIcon>
             </button>
@@ -86,6 +87,11 @@
             v-model:should-show="shouldShowRemoveModal"
             :staff="selectedStaff"
         ></RemoveStaffModal>
+        <EditStaffModal
+            @success="emit('update')"
+            v-model:should-show="shouldShowEditModal"
+            :staff="selectedStaff"
+        ></EditStaffModal>
     </div>
 </template>
 
@@ -93,8 +99,9 @@
 import BaseImage from "@/components/global/BaseImage.vue";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { ref, watch } from "vue";
-import AddStaffModal from "@/components/admin/user/AddStaffModal.vue";
+import AddStaffModal from "./AddStaffModal.vue";
 import RemoveStaffModal from "./RemoveStaffModal.vue";
+import EditStaffModal from "./EditStaffModal.vue";
 
 defineProps({
     data: {
@@ -109,10 +116,14 @@ const selectedStaff = ref(null); // {id,name,email,profile_image_url,created_at}
 
 const shouldShowAddModal = ref(false);
 const shouldShowRemoveModal = ref(false);
+const shouldShowEditModal = ref(false);
 
-watch([shouldShowAddModal, shouldShowRemoveModal], (newVal) => {
-    if (newVal.some((e) => e)) scrollTo({ top: 0, behavior: "smooth" });
-});
+watch(
+    [shouldShowAddModal, shouldShowRemoveModal, shouldShowEditModal],
+    (newVal) => {
+        if (newVal.some((e) => e)) scrollTo({ top: 0, behavior: "smooth" });
+    }
+);
 
 const formatDate = (dateStr) =>
     new Date(dateStr).toLocaleDateString("es", {

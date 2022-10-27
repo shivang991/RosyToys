@@ -24355,7 +24355,6 @@ function useAxios() {
         }
       } else if (typeof value !== "undefined" || value !== null) multipartData.append(key, value);
     });
-    console.log(multipartData.get("permissions"));
     return axios__WEBPACK_IMPORTED_MODULE_0___default().post(url, multipartData, {
       headers: {
         "content-type": "multipart/form-data",
