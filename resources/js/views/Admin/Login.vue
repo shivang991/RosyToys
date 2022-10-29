@@ -2,7 +2,7 @@
     <div class="mt-24 max-w-xl mx-4 md:mx-auto">
         <h1 class="text-4xl text-slate-900 font-bold mb-2">Control Panel Login</h1>
         <p class="mb-12 flex space-x-2">
-            <span>¿No eres administrador?</span>
+            <span>¿No eres administrador o personal?</span>
             <router-link class="text-amber-500 hover:underline" :to="{ name: 'Home' }">Ir al casa</router-link>
         </p>
         <login-form></login-form>

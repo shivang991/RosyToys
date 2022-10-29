@@ -14,7 +14,7 @@
                 <router-link
                     :to="{ name: 'AdminLogin' }"
                     class="text-slate-200 text-center sm:text-left hover:underline"
-                    >Admin Login</router-link
+                    >Entrar en Panel de control</router-link
                 >
             </div>
             <div class="sm:block hidden">

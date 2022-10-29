@@ -356,7 +356,7 @@ var _hoisted_3 = {
   "class": "mb-12 flex space-x-2"
 };
 
-var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "¿No eres administrador?", -1
+var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "¿No eres administrador o personal?", -1
 /* HOISTED */
 );
 
