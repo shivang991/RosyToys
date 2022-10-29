@@ -17,6 +17,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 /* harmony import */ var _plugins_Axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/plugins/Axios */ "./resources/js/plugins/Axios.js");
 /* harmony import */ var _plugins_Notifications__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/plugins/Notifications */ "./resources/js/plugins/Notifications.js");
+/* harmony import */ var _store_auth__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/store/auth */ "./resources/js/store/auth.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
@@ -34,6 +35,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
@@ -61,7 +63,6 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
       email: "",
       image: null
     });
-    var accessOptions = ["carouselManager", "productManager", "customerServiceManager", "postCreator"];
     var accessInput = (0,vue__WEBPACK_IMPORTED_MODULE_3__.ref)(new Set());
     var invalidFields = (0,vue__WEBPACK_IMPORTED_MODULE_3__.reactive)(new Set());
     var isLoading = (0,vue__WEBPACK_IMPORTED_MODULE_3__.ref)(false);
@@ -89,7 +90,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
         email: fields.email,
         image: fields.image,
         password: fields.password
-      }, Object.fromEntries(accessOptions.map(function (v) {
+      }, Object.fromEntries(_store_auth__WEBPACK_IMPORTED_MODULE_6__.staffAccessOptions.map(function (v) {
         return [v, Number(accessInput.value.has(v))];
       })))).then(function (response) {
         if (response.data.message === "success") {
@@ -113,7 +114,6 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
     var __returned__ = {
       fields: fields,
-      accessOptions: accessOptions,
       accessInput: accessInput,
       invalidFields: invalidFields,
       isLoading: isLoading,
@@ -127,7 +127,8 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
       ref: vue__WEBPACK_IMPORTED_MODULE_3__.ref,
       useAxios: _plugins_Axios__WEBPACK_IMPORTED_MODULE_4__["default"],
       fireNotification: _plugins_Notifications__WEBPACK_IMPORTED_MODULE_5__.fireNotification,
-      NotificationTypes: _plugins_Notifications__WEBPACK_IMPORTED_MODULE_5__.NotificationTypes
+      NotificationTypes: _plugins_Notifications__WEBPACK_IMPORTED_MODULE_5__.NotificationTypes,
+      staffAccessOptions: _store_auth__WEBPACK_IMPORTED_MODULE_6__.staffAccessOptions
     };
     Object.defineProperty(__returned__, '__isScriptSetup', {
       enumerable: false,
@@ -354,6 +355,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 /* harmony import */ var _plugins_Axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/plugins/Axios */ "./resources/js/plugins/Axios.js");
 /* harmony import */ var _plugins_Notifications__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/plugins/Notifications */ "./resources/js/plugins/Notifications.js");
+/* harmony import */ var _store_auth__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/store/auth */ "./resources/js/store/auth.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
@@ -371,6 +373,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
@@ -397,7 +400,6 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
         emit = _ref.emit;
     expose();
     var props = __props;
-    var accessOptions = ["carouselManager", "productManager", "customerServiceManager", "postCreator"];
     var fields = (0,vue__WEBPACK_IMPORTED_MODULE_3__.reactive)({
       name: "",
       image: null
@@ -427,7 +429,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
                   key = _ref3[0],
                   value = _ref3[1];
 
-              if (value && accessOptions.includes(key)) accessInput.value.add(key);
+              if (value && _store_auth__WEBPACK_IMPORTED_MODULE_6__.staffAccessOptions.includes(key)) accessInput.value.add(key);
             });
             isFetchingStaffAccess.value = false;
           }
@@ -456,7 +458,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
       axios.postMultipart("/api/user/staff/update/".concat(props.staff.id), _objectSpread({
         name: fields.name,
         image: fields.image
-      }, Object.fromEntries(accessOptions.map(function (v) {
+      }, Object.fromEntries(_store_auth__WEBPACK_IMPORTED_MODULE_6__.staffAccessOptions.map(function (v) {
         return [v, Number(accessInput.value.has(v))];
       })))).then(function (response) {
         if (response.data.message === "success") {
@@ -475,7 +477,6 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
     var __returned__ = {
       props: props,
       emit: emit,
-      accessOptions: accessOptions,
       fields: fields,
       profileImgUrl: profileImgUrl,
       isDeletingProfileImage: isDeletingProfileImage,
@@ -494,7 +495,8 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
       watch: vue__WEBPACK_IMPORTED_MODULE_3__.watch,
       useAxios: _plugins_Axios__WEBPACK_IMPORTED_MODULE_4__["default"],
       fireNotification: _plugins_Notifications__WEBPACK_IMPORTED_MODULE_5__.fireNotification,
-      NotificationTypes: _plugins_Notifications__WEBPACK_IMPORTED_MODULE_5__.NotificationTypes
+      NotificationTypes: _plugins_Notifications__WEBPACK_IMPORTED_MODULE_5__.NotificationTypes,
+      staffAccessOptions: _store_auth__WEBPACK_IMPORTED_MODULE_6__.staffAccessOptions
     };
     Object.defineProperty(__returned__, '__isScriptSetup', {
       enumerable: false,
@@ -1049,7 +1051,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         }),
         label: "Name",
         min: 4,
-        max: 12,
+        max: 24,
         "is-invalid": $setup.invalidFields.has('name')
       }, null, 8
       /* PROPS */
@@ -1083,8 +1085,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         label: "Confirm Password"
       }, null, 8
       /* PROPS */
-      , ["is-invalid", "modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [_hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.accessOptions, function (permissionKey, index) {
-        return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+      , ["is-invalid", "modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [_hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.staffAccessOptions, function (option, index) {
+        return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
           "class": "flex space-x-2 items-center",
           key: index
         }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
@@ -1092,15 +1094,15 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           "onUpdate:modelValue": _cache[5] || (_cache[5] = function ($event) {
             return $setup.accessInput = $event;
           }),
-          value: permissionKey,
+          value: option,
           "class": "accent-amber-500"
         }, null, 8
         /* PROPS */
-        , _hoisted_7), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelCheckbox, $setup.accessInput]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(permissionKey), 1
+        , _hoisted_7), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelCheckbox, $setup.accessInput]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(option), 1
         /* TEXT */
         )]);
-      }), 64
-      /* STABLE_FRAGMENT */
+      }), 128
+      /* KEYED_FRAGMENT */
       ))])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
         "class": "bg-amber-500 py-2 mt-8 text-white rounded-md w-full",
         disabled: $setup.isLoading,
@@ -1285,7 +1287,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         }),
         label: "Name",
         min: 4,
-        max: 12,
+        max: 24,
         "is-invalid": $setup.invalidFields.has('name')
       }, null, 8
       /* PROPS */
@@ -1400,12 +1402,12 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         }),
         label: "Name",
         min: 4,
-        max: 12,
+        max: 24,
         "is-invalid": $setup.invalidFields.has('name')
       }, null, 8
       /* PROPS */
-      , ["modelValue", "is-invalid"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [_hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.accessOptions, function (permissionKey, index) {
-        return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+      , ["modelValue", "is-invalid"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [_hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.staffAccessOptions, function (permissionKey, index) {
+        return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
           "class": "flex space-x-2 items-center",
           key: index
         }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
@@ -1420,8 +1422,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         , _hoisted_10), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelCheckbox, $setup.accessInput]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(permissionKey), 1
         /* TEXT */
         )]);
-      }), 64
-      /* STABLE_FRAGMENT */
+      }), 128
+      /* KEYED_FRAGMENT */
       ))])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
         "class": "bg-amber-500 py-2 mt-8 text-white rounded-md w-full",
         disabled: $setup.isSubimitting,

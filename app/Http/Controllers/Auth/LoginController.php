@@ -25,17 +25,34 @@ class LoginController extends Controller
             return Response::json(['message' => 'unauthenticated'], 401);
         }
 
+        /** @var App\Models\User  */
         $user = Auth::user();
 
-        if ($user->isAdmin()) {
+        if ($user->role === 'admin') {
             $token = $user->createToken('api token', ['server:update']);
+            Response::json([
+                'message' => 'success',
+                'token' => $token->plainTextToken,
+                'profile' => $user
+            ]);
         } else {
-            $token = $user->createToken('api token');
-        }
+            $tokenAbilites = [];
+            $staffAbilites = $user->staffAbilities()->first();
 
-        return Response::json([
-            'message' => 'success',
-            'token' => $token->plainTextToken,
-        ]);
+            if ($staffAbilites) {
+                if ($staffAbilites->carouselManager) array_push($tokenAbilites, 'carouselManager');
+                if ($staffAbilites->productManager) array_push($tokenAbilites, 'productManager');
+                if ($staffAbilites->customerServiceManager) array_push($tokenAbilites, 'customerServiceManager');
+                if ($staffAbilites->postCreator) array_push($tokenAbilites, 'postCreator');
+            }
+            $token = $user->createToken('api token', $tokenAbilites);
+
+            return Response::json([
+                'message' => 'success',
+                'token' => $token->plainTextToken,
+                'profile' => $user,
+                'abilites' => $staffAbilites
+            ]);
+        }
     }
 }

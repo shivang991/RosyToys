@@ -16,7 +16,7 @@
                         v-model="fields.name"
                         label="Name"
                         :min="4"
-                        :max="12"
+                        :max="24"
                         :is-invalid="invalidFields.has('name')"
                     ></BaseTextField>
                     <BaseTextField
@@ -45,16 +45,16 @@
                     <div class="grid grid-cols-2 gap-x-4">
                         <div
                             class="flex space-x-2 items-center"
-                            v-for="(permissionKey, index) in accessOptions"
+                            v-for="(option, index) in staffAccessOptions"
                             :key="index"
                         >
                             <input
                                 type="checkbox"
                                 v-model="accessInput"
-                                :value="permissionKey"
+                                :value="option"
                                 class="accent-amber-500"
                             />
-                            <p class="capitalize">{{ permissionKey }}</p>
+                            <p class="capitalize">{{ option }}</p>
                         </div>
                     </div>
                 </div>
@@ -82,6 +82,7 @@ import BaseModal from "@/components/global/BaseModal.vue";
 import { reactive, ref } from "vue";
 import useAxios from "@/plugins/Axios";
 import { fireNotification, NotificationTypes } from "@/plugins/Notifications";
+import { staffAccessOptions } from "@/store/auth";
 
 defineProps({
     shouldShow: {
@@ -97,13 +98,6 @@ const fields = reactive({
     email: "",
     image: null,
 });
-
-const accessOptions = [
-    "carouselManager",
-    "productManager",
-    "customerServiceManager",
-    "postCreator",
-];
 
 const accessInput = ref(new Set());
 
@@ -136,7 +130,10 @@ function handleSubmit() {
             image: fields.image,
             password: fields.password,
             ...Object.fromEntries(
-                accessOptions.map((v) => [v, Number(accessInput.value.has(v))])
+                staffAccessOptions.map((v) => [
+                    v,
+                    Number(accessInput.value.has(v)),
+                ])
             ),
         })
         .then((response) => {

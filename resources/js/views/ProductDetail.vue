@@ -38,32 +38,6 @@
                         Add to Cart
                     </button>
                 </div>
-                <div class="mt-8" v-if="$store.getters['auth/isAdmin']">
-                    <p class="flex space-x-2">
-                        <span>Identificación de producto:</span>
-                        <span class="fw-bolder">{{ product.id }}</span>
-                    </p>
-                    <div class="d-flex">
-                        <router-link
-                            :to="{
-                                name: 'DeleteProduct',
-                                query: { id: product.id },
-                            }"
-                            class="flex-grow-1 me-2 btn btn-primary"
-                        >
-                            Eliminar
-                        </router-link>
-                        <router-link
-                            :to="{
-                                name: 'UpdateProduct',
-                                query: { id: product.id },
-                            }"
-                            class="flex-grow-1 mx-2 btn btn-primary"
-                        >
-                            Editar
-                        </router-link>
-                    </div>
-                </div>
             </div>
         </div>
     </div>

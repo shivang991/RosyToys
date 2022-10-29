@@ -23,23 +23,34 @@ import { useAxios } from "@/plugins/Axios";
 import { fireNotification, NotificationTypes } from "@/plugins/Notifications";
 import { useRouter } from "vue-router";
 import BaseTextField from "../global/BaseTextField.vue";
-
+import { useStore } from "vuex";
 const axios = useAxios();
+const store = useStore();
 const router = useRouter();
-
 const password = ref("");
 const email = ref("");
 
 const login = async () => {
     try {
-        await axios.adminLogin(email.value, password.value);
-        fireNotification(NotificationTypes.LOGIN_SUCCESS);
-        router.push({ name: "AdminDashboard" });
+        const response = await axios.post("/api/login", {
+            email: email.value,
+            password: password.value,
+        });
+        if (response.data.message === "success") {
+            store.commit("auth/SET_PROFILE", {
+                accessToken: response.data.token,
+                profile: response.data.profile,
+            });
+            if (response.data.abilites)
+                store.commit(
+                    "auth/SET_ACCESSIBLE_MODULES",
+                    response.data.abilites
+                );
+            fireNotification(NotificationTypes.LOGIN_SUCCESS);
+            router.push({ name: "AdminDashboard" });
+        }
     } catch (error) {
-        if (
-            error.message === "IsNonAdminUser" ||
-            error.response.status === 401
-        ) {
+        if (error.response.status === 401) {
             fireNotification(NotificationTypes.INVALID_CREDENTIALS);
         }
     }

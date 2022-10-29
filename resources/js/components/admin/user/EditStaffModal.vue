@@ -35,7 +35,7 @@
                     v-model="fields.name"
                     label="Name"
                     :min="4"
-                    :max="12"
+                    :max="24"
                     :is-invalid="invalidFields.has('name')"
                 ></BaseTextField>
                 <div>
@@ -43,7 +43,7 @@
                     <div class="grid grid-cols-2 gap-x-4">
                         <div
                             class="flex space-x-2 items-center"
-                            v-for="(permissionKey, index) in accessOptions"
+                            v-for="(permissionKey, index) in staffAccessOptions"
                             :key="index"
                         >
                             <input
@@ -80,6 +80,7 @@ import BaseModal from "@/components/global/BaseModal.vue";
 import { reactive, ref, watch } from "vue";
 import useAxios from "@/plugins/Axios";
 import { fireNotification, NotificationTypes } from "@/plugins/Notifications";
+import { staffAccessOptions } from "@/store/auth";
 
 const props = defineProps({
     shouldShow: {
@@ -92,13 +93,6 @@ const props = defineProps({
     },
 });
 const emit = defineEmits(["update:shouldShow", "success"]);
-
-const accessOptions = [
-    "carouselManager",
-    "productManager",
-    "customerServiceManager",
-    "postCreator",
-];
 
 const fields = reactive({
     name: "",
@@ -129,7 +123,7 @@ watch(
                     if (response.data) {
                         Object.entries(response.data).forEach(
                             ([key, value]) => {
-                                if (value && accessOptions.includes(key))
+                                if (value && staffAccessOptions.includes(key))
                                     accessInput.value.add(key);
                             }
                         );
@@ -167,7 +161,10 @@ function handleSubmit() {
             name: fields.name,
             image: fields.image,
             ...Object.fromEntries(
-                accessOptions.map((v) => [v, Number(accessInput.value.has(v))])
+                staffAccessOptions.map((v) => [
+                    v,
+                    Number(accessInput.value.has(v)),
+                ])
             ),
         })
         .then((response) => {

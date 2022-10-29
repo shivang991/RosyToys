@@ -17,7 +17,9 @@ class EnsureUserIsAdmin
      */
     public function handle(Request $request, Closure $next)
     {
-        if (Auth::user() && Auth::user()->isAdmin()) {
+        /** @var App\Models\User */
+        $user = Auth::user();
+        if ($user && $user->role === 'admin') {
             return $next($request);
         }
 

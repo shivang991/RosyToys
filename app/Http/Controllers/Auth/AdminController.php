@@ -38,7 +38,7 @@ class AdminController extends Controller
     public function store()
     {
         $data = Request::validate([
-            'name' => 'required|min:4|max:12',
+            'name' => 'required|min:4|max:24',
             'password' => 'required|min:6',
             'email' => 'required|email|unique:users',
         ]);
@@ -56,6 +56,7 @@ class AdminController extends Controller
 
         return Response::json([
             'message' => 'success',
+            'profile' => $newUser,
             'token' => $token->plainTextToken,
         ]);
     }
@@ -75,7 +76,7 @@ class AdminController extends Controller
     public function update()
     {
         $data = Request::validate([
-            'name' => 'required|min:4|max:12',
+            'name' => 'required|min:4|max:24',
         ]);
         $user = Auth::user();
         $image = Request::file('image');

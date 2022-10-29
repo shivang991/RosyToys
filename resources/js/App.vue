@@ -17,25 +17,23 @@
 </template>
 
 <script setup>
-import { onMounted, ref } from "vue";
+import { onMounted, computed } from "vue";
 import NavBar from "@/components/layout/nav/Nav.vue";
 import FooterBar from "@/components/layout/footer/Footer.vue";
 import { useAxios } from "@/plugins/Axios";
 import NotificationRoot from "@/components/global/NotificationRoot.vue";
-import { computed } from "@vue/reactivity";
 import { useRoute, useRouter } from "vue-router";
 import { useStore } from "vuex";
-
-const isUserLoaded = ref(false);
-const { setUser } = useAxios();
 
 const route = useRoute();
 const router = useRouter();
 
+const store = useStore();
+const isUserLoaded = computed(() => store.state.auth.isReady);
+
 onMounted(async () => {
-    await setUser();
+    store.dispatch("auth/init");
     await router.isReady();
-    isUserLoaded.value = true;
 });
 
 const isLayoutEnabled = computed(() => !route.meta.isLayoutDisabled);

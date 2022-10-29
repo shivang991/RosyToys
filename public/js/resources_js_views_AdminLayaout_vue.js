@@ -98,7 +98,7 @@ var _hoisted_2 = {
   "class": "py-2 bg-slate-900 flex items-center px-2 sm:px-8 md:px-20"
 };
 
-var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Admin");
+var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Control Panel");
 
 var _hoisted_4 = {
   "class": "flex space-x-2"

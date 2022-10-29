@@ -9,7 +9,6 @@
             </span>
         </p>
         <register-form
-            @success="handleSuccess"
             @email-error="fireInputErr"
             @general-error="fireGenErr"
         ></register-form>
@@ -19,18 +18,6 @@
 <script setup>
 import { NotificationTypes, fireNotification } from "@/plugins/Notifications";
 import RegisterForm from "@/components/admin/RegisterForm.vue";
-import useAxios from "@/plugins/Axios";
-import { useRouter } from "vue-router";
-
-const router = useRouter();
-
-const axios = useAxios();
-function handleSuccess(accessToken) {
-    axios.setUser(accessToken).then(() => {
-        fireNotification(NotificationTypes.ADMIN_REGISTERED);
-        router.push({ name: "AdminDashboard" });
-    });
-}
 
 const fireGenErr = fireNotification.bind(this, NotificationTypes.GENERAL_ERROR);
 const fireInputErr = fireNotification.bind(this, NotificationTypes.USER_EXISTS);

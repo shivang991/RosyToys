@@ -1,7 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import store from "../store/index";
 import Home from "../views/Home.vue";
-import { useAxios } from "@/plugins/Axios";
 
 const routes = [
     {
@@ -31,6 +30,16 @@ const routes = [
                 component: () => import("../views/Admin/CarouselManager.vue"),
             },
             {
+                path: "post",
+                name: "PostCreator",
+                component: () => import("../views/UnderDev.vue"),
+            },
+            {
+                path: "service",
+                name: "CustomerServiceManager",
+                component: () => import("../views/UnderDev.vue"),
+            },
+            {
                 path: "user",
                 name: "UserManager",
                 component: () => import("../views/Admin/UserManager.vue"),
@@ -39,16 +48,6 @@ const routes = [
                 path: "register",
                 name: "AdminRegister",
                 component: () => import("../views/Admin/AdminRegister.vue"),
-            },
-            {
-                path: "profile/edit",
-                name: "UpdateProfile",
-                component: () => import("../views/Admin/UpdateProfile.vue"),
-            },
-            {
-                path: "profile/delete",
-                name: "DeleteProfile",
-                component: () => import("../views/Admin/DeleteProfile.vue"),
             },
         ],
     },
@@ -65,14 +64,7 @@ const routes = [
         component: () => import("../views/Contact.vue"),
     },
     {
-        // Pendant desgin.
         path: "/login",
-        name: "Login",
-        component: () => import("../views/Login.vue"),
-        meta: { isLayoutDisabled: true },
-    },
-    {
-        path: "/admin-login",
         name: "AdminLogin",
         component: () => import("../views/Admin/Login.vue"),
         meta: { isLayoutDisabled: true },
@@ -100,7 +92,7 @@ router.beforeEach(async (to) => {
     if (!store.state.auth.isReady)
         await new Promise((r) => window.addEventListener("authready", r));
 
-    const isAdmin = store.getters["auth/isAdmin"];
+    const isAdmin = store.getters["auth/isLoggedIn"];
 
     if (!isAdmin && to.matched.some((route) => route.meta.requiredAdminAuth))
         return { name: "AdminLogin" };

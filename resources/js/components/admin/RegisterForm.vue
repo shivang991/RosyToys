@@ -3,7 +3,7 @@
         <div class="space-y-8">
             <BaseTextField
                 :min="4"
-                :max="12"
+                :max="24"
                 v-model="fields.name"
                 :is-invalid="invalidFields.has('name')"
                 label="Name"
@@ -44,12 +44,19 @@
 import { reactive, ref } from "vue";
 import { useAxios } from "@/plugins/Axios";
 import BaseTextField from "../global/BaseTextField.vue";
+import { useStore } from "vuex";
+import { fireNotification, NotificationTypes } from "@/plugins/Notifications";
+import { useRouter } from "vue-router";
 
-const emit = defineEmits(["email-error", "general-error", "success"]);
+const emit = defineEmits(["email-error", "general-error"]);
+
+const store = useStore();
+const router = useRouter();
 
 const axios = useAxios();
 const isFormSending = ref(false);
 const invalidFields = ref(new Set());
+
 const fields = reactive({
     email: "",
     name: "",
@@ -78,8 +85,13 @@ async function submitForm() {
             password: fields.password,
         });
         if (response.data.message === "success") {
+            store.commit("auth/SET_PROFILE", {
+                accessToken: response.data.token,
+                profile: response.data.profile,
+            });
+            fireNotification(NotificationTypes.ADMIN_REGISTERED);
             isFormSending.value = false;
-            emit("success", response.data.token);
+            router.push({ name: "AdminDashboard" });
         }
     } catch (error) {
         console.log(error.response);

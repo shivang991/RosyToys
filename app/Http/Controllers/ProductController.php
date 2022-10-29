@@ -11,7 +11,7 @@ class ProductController extends Controller
 {
     public function __construct()
     {
-        $this->middleware(['auth:sanctum', 'admin'])->except(['index', 'show']);
+        $this->middleware(['auth:sanctum', 'ability:productManager,server:update'])->except(['index', 'show']);
     }
 
     public function index()

@@ -64,7 +64,7 @@ const links = ref([
 ]);
 
 // add or remove admin link from navbar when login or logout
-const isAdmin = computed(() => getters["auth/isAdmin"]);
+const isAdmin = computed(() => getters["auth/isLoggedIn"]);
 const adminLink = { route: "AdminDashboard", title: "Admin" };
 if (isAdmin.value) links.value.push(adminLink);
 watch(isAdmin, (newVal) => {

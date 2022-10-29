@@ -30,7 +30,7 @@
                     v-model="fields.name"
                     label="Name"
                     :min="4"
-                    :max="12"
+                    :max="24"
                     :is-invalid="invalidFields.has('name')"
                 ></BaseTextField>
             </div>

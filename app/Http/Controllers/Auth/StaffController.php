@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\StaffAbilities;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Response;
@@ -14,13 +15,14 @@ class StaffController extends Controller
 {
     public function __construct()
     {
-        $this->middleware(['auth:sanctum', 'admin']);
+        $this->middleware('auth:sanctum');
+        $this->middleware('admin')->except('show');
     }
 
     private function _getValidatedData(bool $shouldValidateEmailPass)
     {
         $fields = [
-            'name' => 'required|min:4|max:12',
+            'name' => 'required|min:4|max:24',
             // Access
             'carouselManager' => 'boolean',
             'productManager' => 'boolean',
@@ -83,9 +85,14 @@ class StaffController extends Controller
     // return staff permissions
     public function show(User $user)
     {
-        $abilties = $user->staffAbilities()->first();
-        if (!$abilties) return Response::json([]);
-        return Response::json($abilties);
+        $authUser = Auth::user();
+        if ($authUser->role === 'admin' || $authUser->id === $user->id) {
+            $abilties = $user->staffAbilities()->first();
+            if (!$abilties) return Response::json([]);
+            return Response::json($abilties);
+        }
+
+        return Response::json(['message' => 'unauthenticated'], 401);
     }
 
     public function update(User $user)
@@ -106,7 +113,6 @@ class StaffController extends Controller
         $abilities = $user->staffAbilities()->first();
         if ($abilities)
             $abilities->update($data->only('carouselManager', 'productManager', 'customerServiceManager', 'postCreator')->toArray());
-
 
         return Response::json(['message' => 'success']);
     }
