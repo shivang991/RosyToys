@@ -10,5 +10,4 @@
 import ProductosFilters from "@/components/productos/ProductosFilters.vue";
 import ProductosList from "@/components/productos/ProductosList.vue";
 import ProductPagination from "@/components/productos/ProductPagination.vue";
-import { ref } from "vue";
 </script>

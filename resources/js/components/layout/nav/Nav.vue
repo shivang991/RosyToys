@@ -15,26 +15,26 @@
                 ></FontAwesomeIcon>
             </button>
         </div>
-        <div
-            v-else
-            class="mx-8 md:mx-20 py-4 justify-between flex items-center"
-        >
-            <BaseImage src="logo.png" class="w-32" />
-            <button
-                @click="shouldShowSideBar = !shouldShowSideBar"
-                class="lg:hidden text-slate-200 text-xl"
-            >
-                <FontAwesomeIcon
-                    :icon="shouldShowSideBar ? 'fa-times' : 'fa-bars'"
-                ></FontAwesomeIcon>
-            </button>
-            <div class="hidden lg:flex items-center space-x-8">
-                <nav-links :links="links"></nav-links>
-                <product-search-box
-                    class="w-60"
-                    shouldRedirectOnSuccess
-                ></product-search-box>
+        <div v-else>
+            <div class="mx-8 md:mx-20 py-4 justify-between flex items-center">
+                <BaseImage src="logo.png" class="w-32" />
+                <button
+                    @click="shouldShowSideBar = !shouldShowSideBar"
+                    class="lg:hidden text-slate-200 text-xl"
+                >
+                    <FontAwesomeIcon
+                        :icon="shouldShowSideBar ? 'fa-times' : 'fa-bars'"
+                    ></FontAwesomeIcon>
+                </button>
+                <div class="hidden lg:flex items-center space-x-8">
+                    <nav-links :links="links"></nav-links>
+                    <product-search-box
+                        class="w-60"
+                        shouldRedirectOnSuccess
+                    ></product-search-box>
+                </div>
             </div>
+            <NavCart></NavCart>
         </div>
     </nav>
 
@@ -48,6 +48,7 @@
 import { computed, ref, watch } from "vue";
 import { useStore } from "vuex";
 import NavLinks from "./NavLinks.vue";
+import NavCart from "./NavCart.vue";
 import NavMobile from "./NavMobile.vue";
 import ProductSearchBox from "@/components/global/ProductSearchBox.vue";
 import BaseImage from "@/components/global/BaseImage.vue";

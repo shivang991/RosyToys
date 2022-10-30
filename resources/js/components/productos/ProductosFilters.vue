@@ -1,7 +1,7 @@
 <template>
     <div class="relative">
         <div class="flex justify-between items-center">
-            <h2 class="text-4xl font-semibold text-slate-800">
+            <h2 class="text-4xl font-semibold text-slate-900">
                 Browse our Products
             </h2>
             <button

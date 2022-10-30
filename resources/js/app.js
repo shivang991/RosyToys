@@ -42,7 +42,10 @@ import {
     faPhone,
     faMapLocation,
     faCheck,
-    faCheckSquare
+    faCheckSquare,
+    faMinus,
+    faCartShopping,
+    faTrash
 } from "@fortawesome/free-solid-svg-icons";
 import {
     faTwitter,
@@ -52,6 +55,10 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 
 library.add(
+    faTrash,
+    faCartShopping,
+    faPlus,
+    faMinus,
     faCheck,
     faCheckSquare,
     faRightFromBracket,
