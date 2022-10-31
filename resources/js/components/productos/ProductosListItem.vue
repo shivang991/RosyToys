@@ -12,7 +12,7 @@
         <h5 class="text-xl font-semibold mb-2 text-center leading-none">
             {{ title }}
         </h5>
-        <p class="mb-8 text-center">Price: {{ formattedPrice }}$</p>
+        <p class="mb-8 text-center">Price: {{ formattedPrice }}</p>
         <div
             class="flex justify-center items-center space-x-4"
             v-if="quantityInCart"
@@ -50,7 +50,7 @@ import { useRouter } from "vue-router";
 import BaseImage from "../global/BaseImage.vue";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { useStore } from "vuex";
-import { computed } from "vue";
+import { computed, toRaw } from "vue";
 
 const props = defineProps({
     id: {
@@ -85,7 +85,9 @@ const quantityInCart = computed(() =>
     store.getters["cart/itemCount"](props.id)
 );
 
-const addToCart = () => store.commit("cart/ADD_ONE_ITEM", { ...props });
+const rawProduct = toRaw(props);
+
+const addToCart = () => store.commit("cart/ADD_ONE_ITEM", rawProduct);
 const removeFromCart = () => store.commit("cart/REMOVE_ONE_ITEM", props.id);
 
 const viewProduct = () =>

@@ -267,12 +267,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _fortawesome_vue_fontawesome__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fortawesome/vue-fontawesome */ "./node_modules/@fortawesome/vue-fontawesome/index.es.js");
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm-bundler.js");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 
 
 
@@ -313,9 +307,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     var quantityInCart = (0,vue__WEBPACK_IMPORTED_MODULE_2__.computed)(function () {
       return store.getters["cart/itemCount"](props.id);
     });
+    var rawProduct = (0,vue__WEBPACK_IMPORTED_MODULE_2__.toRaw)(props);
 
     var addToCart = function addToCart() {
-      return store.commit("cart/ADD_ONE_ITEM", _objectSpread({}, props));
+      return store.commit("cart/ADD_ONE_ITEM", rawProduct);
     };
 
     var removeFromCart = function removeFromCart() {
@@ -337,6 +332,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       router: router,
       store: store,
       quantityInCart: quantityInCart,
+      rawProduct: rawProduct,
       addToCart: addToCart,
       removeFromCart: removeFromCart,
       viewProduct: viewProduct,
@@ -344,7 +340,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       BaseImage: _global_BaseImage_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
       FontAwesomeIcon: _fortawesome_vue_fontawesome__WEBPACK_IMPORTED_MODULE_1__.FontAwesomeIcon,
       useStore: vuex__WEBPACK_IMPORTED_MODULE_4__.useStore,
-      computed: vue__WEBPACK_IMPORTED_MODULE_2__.computed
+      computed: vue__WEBPACK_IMPORTED_MODULE_2__.computed,
+      toRaw: vue__WEBPACK_IMPORTED_MODULE_2__.toRaw
     };
     Object.defineProperty(__returned__, '__isScriptSetup', {
       enumerable: false,
@@ -701,7 +698,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* PROPS */
   , ["src"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", _hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.title), 1
   /* TEXT */
-  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_2, "Price: " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.formattedPrice) + "$", 1
+  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_2, "Price: " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.formattedPrice), 1
   /* TEXT */
   ), $setup.quantityInCart ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     "class": "py-1 px-2 rounded-md border border-amber-500 text-amber-500 hover:bg-amber-500 hover:text-white",

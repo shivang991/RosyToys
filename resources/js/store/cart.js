@@ -1,11 +1,12 @@
 export default {
     namespaced: true,
     state: {
-        items: new Map(),
+        items: new Map(), // Map<number,{imgSrc:string,title:string,price:number,quantity:number}>
         totalPrice: 0,
     },
     mutations: {
         ADD_ONE_ITEM(state, payload) {
+            console.log(payload);
             const { id, ...item } = payload;
             if (state.items.has(id)) state.items.get(id).quantity++;
             else state.items.set(id, { ...item, quantity: 1 });
