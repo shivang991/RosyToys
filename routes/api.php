@@ -5,7 +5,9 @@ use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\AdminController;
 use App\Http\Controllers\Auth\StaffController;
 use App\Http\Controllers\CarouselImageController;
+use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\Choices\ProductFieldChoices;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -30,15 +32,24 @@ Route::prefix("/user")->group(function () {
         return $request->user();
     });
     Route::get('/all', [AdminController::class, 'index']);
-    Route::post('/admin/register',[AdminController::class,'store']);
-    Route::post('/admin/update',[AdminController::class,'update']);
-    Route::delete('/admin/image',[AdminController::class,'destroyImage']);
+    Route::post('/admin/register', [AdminController::class, 'store']);
+    Route::post('/admin/update', [AdminController::class, 'update']);
+    Route::delete('/admin/image', [AdminController::class, 'destroyImage']);
 
     Route::post('/staff/create', [StaffController::class, 'store']);
     Route::post('/staff/update/{user}', [StaffController::class, 'update']);
     Route::delete('/staff/{user}', [StaffController::class, 'destroy']);
     Route::delete('/staff/image/{user}', [StaffController::class, 'destroyImage']);
     Route::get('/staff/{user}', [StaffController::class, 'show']);
+});
+
+Route::prefix('/checkout')->group(function () {
+    Route::post('', [CheckoutController::class, 'store']);
+    Route::post('/pay', [CheckoutController::class, 'update']);
+});
+
+Route::prefix('/order')->group(function () {
+    Route::get('/{order}', [OrderController::class, 'show']);
 });
 
 Route::prefix('/product')->group(function () {

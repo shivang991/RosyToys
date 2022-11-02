@@ -1550,7 +1550,7 @@ var _hoisted_9 = {
 };
 
 var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "col-start-1 row-start-1 h-16 bg-gray-200"
+  "class": "col-start-1 row-start-1 h-16 bg-slate-200"
 }, null, -1
 /* HOISTED */
 );
@@ -1623,7 +1623,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   , _hoisted_7)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [_hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("table", _hoisted_11, [_hoisted_12, ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.data, function (staff, index) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("tr", {
       key: index,
-      "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["hover:bg-slate-100 cursor-pointer border-b", $setup.selectedStaff === staff ? 'border-transparent bg-gray-100 shadow rounded' : 'border-amber-500']),
+      "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["hover:bg-slate-100 cursor-pointer border-b", $setup.selectedStaff === staff ? 'border-transparent bg-slate-100 shadow rounded' : 'border-amber-500']),
       onClick: function onClick($event) {
         return $setup.selectedStaff = staff;
       }

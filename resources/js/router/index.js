@@ -81,10 +81,21 @@ const routes = [
         component: () => import("../views/ProductDetail.vue"),
     },
     {
-        path: '/cart',
+        path: "/cart",
         name: "Cart",
-        component: () => import("../views/Cart.vue")
-    }
+        component: () => import("../views/Cart.vue"),
+    },
+    {
+        path: "/request-checkout",
+        name: "RequestCheckout",
+        component: () => import("../views/RequestCheckout.vue"),
+    },
+    {
+        path: "/checkout",
+        name: "Checkout",
+        component: () => import("../views/Checkout.vue"),
+        meta: { isLayoutDisabled: true },
+    },
 ];
 
 const router = createRouter({

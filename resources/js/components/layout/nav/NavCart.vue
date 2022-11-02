@@ -1,6 +1,9 @@
 <template>
     <div
-        v-if="store.state.cart.totalPrice && $route.name !== 'Cart'"
+        v-if="
+            store.state.cart.totalPrice &&
+            !['Cart', 'RequestCheckout', 'Checkout'].includes($route.name)
+        "
         class="px-8 md:px-20 py-2 justify-end flex items-center bg-gradient-to-r from-orange-600 to-pink-700 space-x-8"
     >
         <p class="text-slate-200">

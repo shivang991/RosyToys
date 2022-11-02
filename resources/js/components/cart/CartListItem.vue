@@ -30,7 +30,7 @@
                 </p>
             </div>
             <div class="justify-self-end">
-                <p class="text-gray-900 mb-2">Price:</p>
+                <p class="text-slate-900 mb-2">Price:</p>
                 <h4 class="text-2xl font-semibold text-slate-500">
                     ${{ price }}
                 </h4>

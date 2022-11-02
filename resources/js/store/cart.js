@@ -5,8 +5,10 @@ export default {
         totalPrice: 0,
     },
     mutations: {
+        CLEAR(state){
+            state.items.clear();
+        },
         ADD_ONE_ITEM(state, payload) {
-            console.log(payload);
             const { id, ...item } = payload;
             if (state.items.has(id)) state.items.get(id).quantity++;
             else state.items.set(id, { ...item, quantity: 1 });

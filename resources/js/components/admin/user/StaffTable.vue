@@ -25,7 +25,7 @@
             </button>
         </div>
         <div class="grid">
-            <div class="col-start-1 row-start-1 h-16 bg-gray-200"></div>
+            <div class="col-start-1 row-start-1 h-16 bg-slate-200"></div>
             <table class="mx-12 col-start-1 row-start-1">
                 <tr class="text-slate-900 h-16 px-12">
                     <th></th>
@@ -39,7 +39,7 @@
                     class="hover:bg-slate-100 cursor-pointer border-b"
                     :class="
                         selectedStaff === staff
-                            ? 'border-transparent bg-gray-100 shadow rounded'
+                            ? 'border-transparent bg-slate-100 shadow rounded'
                             : 'border-amber-500'
                     "
                     @click="selectedStaff = staff"

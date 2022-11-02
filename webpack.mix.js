@@ -1,6 +1,8 @@
 const mix = require("laravel-mix");
 const path = require("path");
 
+require("dotenv").config();
+
 mix.js("resources/js/app.js", "public/js")
     .webpackConfig({
         resolve: {

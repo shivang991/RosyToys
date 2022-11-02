@@ -14,6 +14,9 @@ return [
     */
 
     'default' => env('MAIL_MAILER', 'smtp'),
+    // 'driver' => env('MAIL_DRIVER', 'smtp'),
+    // 'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
+    // 'port' => env('MAIL_PORT', 587),
 
     /*
     |--------------------------------------------------------------------------
