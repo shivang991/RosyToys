@@ -97,7 +97,7 @@ onMounted(async () => {
 });
 
 function handleSubmit() {
-    if (stripe && clientSecret && nameOnCard.value.length > 4) {
+    if (stripe && clientSecret && nameOnCard.value.length > 0) {
         isSubmitting.value = true;
         stripe
             .confirmCardSetup(clientSecret, {

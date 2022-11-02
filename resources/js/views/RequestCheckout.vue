@@ -122,7 +122,7 @@ function handleSubmit() {
             if (response.data.message === "success") {
                 emailInput.value = "";
                 requestState.value = "success";
-                store.commit("cart/CLEAR");
+                // store.commit("cart/CLEAR");
             }
         })
         .catch((error) => {
