@@ -37,6 +37,7 @@ const login = async () => {
             password: password.value,
         });
         if (response.data.message === "success") {
+            console.log(response.data)
             store.commit("auth/SET_PROFILE", {
                 accessToken: response.data.token,
                 profile: response.data.profile,

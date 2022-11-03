@@ -20,20 +20,48 @@
                 </p>
                 <div class="flex items-center space-x-2 mb-4">
                     <h4 class="text-xl">Quantity:</h4>
-                    <button class="px-4 py-2 bg-slate-200 rounded-md">1</button>
+                    <div class="flex space-x-2" v-if="quantity">
+                        <button
+                            class="py-1 px-2 rounded-md border border-amber-500 text-amber-500 text-sm"
+                            @click.stop="
+                                store.commit('cart/REMOVE_ONE_ITEM', product.id)
+                            "
+                        >
+                            <FontAwesomeIcon
+                                icon="fa fa-minus"
+                            ></FontAwesomeIcon>
+                        </button>
+
+                        <span class="text-xl font-semibold text-slate-500">{{
+                            quantity
+                        }}</span>
+                        <button
+                            class="py-1 px-2 rounded-md border border-amber-500 text-amber-500 text-sm"
+                            @click.stop="addToCart"
+                        >
+                            <FontAwesomeIcon
+                                icon="fa fa-plus"
+                            ></FontAwesomeIcon>
+                        </button>
+                    </div>
+                    <div class="px-4 py-2 bg-slate-200 rounded-md" v-else>
+                        1
+                    </div>
                 </div>
                 <div class="mb-8">
                     <h4 class="text-xl mb-2">Description:</h4>
                     <p>{{ product.description }}</p>
                 </div>
-                <div class="space-y-4">
+                <div class="space-y-4" v-if="!quantity">
                     <button
+                        @click="buyNow"
                         class="w-full py-2 border border-amber-500 text-amber-500 rounded-md"
                     >
                         Buy Now
                     </button>
                     <button
                         class="w-full py-2 bg-amber-500 text-white rounded-md"
+                        @click="addToCart"
                     >
                         Add to Cart
                     </button>
@@ -56,13 +84,18 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
-import { useRoute } from "vue-router";
+import { computed, ref } from "vue";
+import { useRoute, useRouter } from "vue-router";
 import { useAxios } from "@/plugins/Axios";
 import BaseImage from "../components/global/BaseImage.vue";
+import { useStore } from "vuex";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
 const route = useRoute();
+const router = useRouter();
 const axios = useAxios();
+const store = useStore();
+
 const product = ref(null);
 
 const isNotFound = ref(false);
@@ -74,5 +107,25 @@ if (route.params.id) {
         .catch((err) => {
             if (err.response.status === 404) isNotFound.value = true;
         });
+}
+
+const quantity = computed(() =>
+    store.getters["cart/itemCount"](product.value?.id)
+);
+
+function addToCart() {
+    const prod = product.value;
+    if (!prod) return;
+    store.commit("cart/ADD_ONE_ITEM", {
+        id: prod.id,
+        imgSrc: prod.image_url,
+        title: prod.title,
+        price: prod.price,
+    });
+}
+
+function buyNow() {
+    addToCart();
+    router.push({ name: "RequestCheckout" });
 }
 </script>

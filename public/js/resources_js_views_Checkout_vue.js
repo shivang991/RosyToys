@@ -364,7 +364,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     })));
 
     function handleSubmit() {
-      if (stripe && clientSecret && nameOnCard.value.length > 4) {
+      if (stripe && clientSecret && nameOnCard.value.length > 0) {
         isSubmitting.value = true;
         stripe.confirmCardSetup(clientSecret, {
           payment_method: {

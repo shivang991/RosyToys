@@ -60,6 +60,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 response = _context.sent;
 
                 if (response.data.message === "success") {
+                  console.log(response.data);
                   store.commit("auth/SET_PROFILE", {
                     accessToken: response.data.token,
                     profile: response.data.profile
@@ -379,97 +380,6 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["LoginForm"])]);
 }
-
-/***/ }),
-
-/***/ "./resources/js/plugins/Notifications.js":
-/*!***********************************************!*\
-  !*** ./resources/js/plugins/Notifications.js ***!
-  \***********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "NotificationTypes": () => (/* binding */ NotificationTypes),
-/* harmony export */   "fireNotification": () => (/* binding */ fireNotification),
-/* harmony export */   "useNotification": () => (/* binding */ useNotification)
-/* harmony export */ });
-var NotificationTypes = {
-  PRODUCT_CREATED: {
-    type: "success",
-    message: "Producto creado con éxito"
-  },
-  PRODUCT_UPDATED: {
-    type: "success",
-    message: "¡Actualizó con éxito los datos del producto!"
-  },
-  PRODUCT_DELETED: {
-    type: "success",
-    message: "¡Eliminado el producto con éxito!"
-  },
-  CAROUSEL_IMAGE_CREATED: {
-    type: "success",
-    message: "¡Artículo agregado!"
-  },
-  CAROUSEL_IMAGE_DELETED: {
-    type: "success",
-    message: "¡Artículo eliminado con éxito!"
-  },
-  CAROUSEL_IMAGE_UPDATED: {
-    type: "success",
-    message: "¡Artículo actualizado con éxito!"
-  },
-  STAFF_CREATED: {
-    type: "success",
-    message: "¡Personal creado con éxito!"
-  },
-  STAFF_UPDATED: {
-    type: "success",
-    message: "¡El personal se actualizó con éxito!"
-  },
-  STAFF_DELETED: {
-    type: "success",
-    message: "¡Personal creado con éxito!"
-  },
-  LOGIN_SUCCESS: {
-    type: "success",
-    message: "¡Ingresó exitosamente!"
-  },
-  ADMIN_REGISTERED: {
-    type: "success",
-    message: "¡Administrador registrado con éxito!"
-  },
-  ADMIN_UPDATED: {
-    type: "success",
-    message: "¡Administrador actualizado con éxito!"
-  },
-  GENERAL_ERROR: {
-    type: "error",
-    message: "¡Ocurrió un error inesperado!"
-  },
-  INVALID_CREDENTIALS: {
-    type: "error",
-    message: "Verifique sus credenciales y vuelva a intentarlo."
-  },
-  USER_EXISTS: {
-    type: "error",
-    message: "Este correo electrónico ha sido tomado."
-  }
-};
-var EVENT_NAME = "notificationreq";
-
-function fire(type) {
-  window.dispatchEvent(new CustomEvent(EVENT_NAME, {
-    detail: type
-  }));
-}
-
-function useNotification() {
-  return {
-    fire: fire
-  };
-}
-var fireNotification = fire;
 
 /***/ }),
 

@@ -9,7 +9,7 @@
                 <Transition name="modal" @afterLeave="emit('close')">
                     <div
                         v-if="shouldShowContent"
-                        class="z-20 bg-white mx-auto my-8 shadow-xl rounded-md overflow-hidden max-w-lg h-max"
+                        class="z-20 bg-white my-8 shadow-xl rounded-md overflow-hidden max-w-lg h-max"
                     >
                         <div class="flex justify-end">
                             <button

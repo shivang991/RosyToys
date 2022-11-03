@@ -60,6 +60,11 @@ export const NotificationTypes = {
         type: "error",
         message: "Este correo electrónico ha sido tomado.",
     },
+
+    ITEM_ADDED: {
+        type: "compact",
+        message: "Artículo añadido a tu carrito!",
+    },
 };
 
 const EVENT_NAME = "notificationreq";

@@ -28,9 +28,10 @@ class LoginController extends Controller
         /** @var App\Models\User  */
         $user = Auth::user();
 
+
         if ($user->role === 'admin') {
             $token = $user->createToken('api token', ['server:update']);
-            Response::json([
+            return Response::json([
                 'message' => 'success',
                 'token' => $token->plainTextToken,
                 'profile' => $user

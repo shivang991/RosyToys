@@ -17,7 +17,7 @@
 </head>
 
 <body>
-    <div id="app-modals" class="w-full absolute"></div>
+    <div id="app-modals" class="w-full absolute flex justify-center"></div>
     <div id="app">
     </div>
 </body>

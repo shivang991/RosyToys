@@ -148,8 +148,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       }).then(function (response) {
         if (response.data.message === "success") {
           emailInput.value = "";
-          requestState.value = "success";
-          store.commit("cart/CLEAR");
+          requestState.value = "success"; // store.commit("cart/CLEAR");
         }
       })["catch"](function (error) {
         console.log(error.response);

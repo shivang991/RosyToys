@@ -1,3 +1,5 @@
+import { fireNotification, NotificationTypes } from "@/plugins/Notifications";
+
 export default {
     namespaced: true,
     state: {
@@ -5,13 +7,16 @@ export default {
         totalPrice: 0,
     },
     mutations: {
-        CLEAR(state){
+        CLEAR(state) {
             state.items.clear();
         },
         ADD_ONE_ITEM(state, payload) {
             const { id, ...item } = payload;
             if (state.items.has(id)) state.items.get(id).quantity++;
-            else state.items.set(id, { ...item, quantity: 1 });
+            else {
+                state.items.set(id, { ...item, quantity: 1 });
+                fireNotification(NotificationTypes.ITEM_ADDED);
+            }
             state.totalPrice += item.price;
         },
         REMOVE_ONE_ITEM(state, payload) {
