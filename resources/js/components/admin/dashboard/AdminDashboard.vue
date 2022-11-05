@@ -17,7 +17,8 @@
                 Image Carousel Manager
             </h5>
         </router-link>
-        <div
+        <router-link
+            :to="{ name: 'CustomerServiceManager' }"
             class="py-8 px-4 bg-white rounded-md shadow cursor-pointer transition hover:shadow-xl hover:scale-110"
         >
             <h5 class="text-xl text-amber-500 text-center mb-8">
@@ -27,7 +28,7 @@
                 src="admin_customer_service_manager.png"
                 class="w-32 mx-auto"
             ></BaseImage>
-        </div>
+        </router-link>
         <router-link
             :to="{ name: 'ProductManager' }"
             class="col-span-2 flex py-8 px-4 bg-white rounded-md shadow justify-center space-x-8 cursor-pointer transition hover:shadow-xl hover:scale-110"

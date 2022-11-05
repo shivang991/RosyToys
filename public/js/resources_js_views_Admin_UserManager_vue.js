@@ -151,8 +151,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _components_global_BaseImage_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/components/global/BaseImage.vue */ "./resources/js/components/global/BaseImage.vue");
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm-bundler.js");
+/* harmony import */ var _plugins_Formatters__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/plugins/Formatters */ "./resources/js/plugins/Formatters.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm-bundler.js");
+
 
 
 
@@ -168,29 +170,19 @@ __webpack_require__.r(__webpack_exports__);
   setup: function setup(__props, _ref) {
     var expose = _ref.expose;
     expose();
-    var store = (0,vuex__WEBPACK_IMPORTED_MODULE_2__.useStore)();
-    var myUserId = (0,vue__WEBPACK_IMPORTED_MODULE_1__.computed)(function () {
+    var store = (0,vuex__WEBPACK_IMPORTED_MODULE_3__.useStore)();
+    var myUserId = (0,vue__WEBPACK_IMPORTED_MODULE_2__.computed)(function () {
       var _store$state$auth$pro;
 
       return (_store$state$auth$pro = store.state.auth.profile) === null || _store$state$auth$pro === void 0 ? void 0 : _store$state$auth$pro.id;
     });
-
-    var formatDate = function formatDate(dateStr) {
-      return new Date(dateStr).toLocaleDateString("es", {
-        day: "numeric",
-        year: "2-digit",
-        month: "short",
-        time: "full"
-      });
-    };
-
     var __returned__ = {
       store: store,
       myUserId: myUserId,
-      formatDate: formatDate,
       BaseImage: _components_global_BaseImage_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
-      computed: vue__WEBPACK_IMPORTED_MODULE_1__.computed,
-      useStore: vuex__WEBPACK_IMPORTED_MODULE_2__.useStore
+      formatDate: _plugins_Formatters__WEBPACK_IMPORTED_MODULE_1__.formatDate,
+      computed: vue__WEBPACK_IMPORTED_MODULE_2__.computed,
+      useStore: vuex__WEBPACK_IMPORTED_MODULE_3__.useStore
     };
     Object.defineProperty(__returned__, '__isScriptSetup', {
       enumerable: false,
@@ -604,6 +596,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _AddStaffModal_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./AddStaffModal.vue */ "./resources/js/components/admin/user/AddStaffModal.vue");
 /* harmony import */ var _RemoveStaffModal_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./RemoveStaffModal.vue */ "./resources/js/components/admin/user/RemoveStaffModal.vue");
 /* harmony import */ var _EditStaffModal_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./EditStaffModal.vue */ "./resources/js/components/admin/user/EditStaffModal.vue");
+/* harmony import */ var _plugins_Formatters__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/plugins/Formatters */ "./resources/js/plugins/Formatters.js");
+
 
 
 
@@ -637,30 +631,20 @@ __webpack_require__.r(__webpack_exports__);
         behavior: "smooth"
       });
     });
-
-    var formatDate = function formatDate(dateStr) {
-      return new Date(dateStr).toLocaleDateString("es", {
-        day: "numeric",
-        year: "2-digit",
-        month: "short",
-        time: "full"
-      });
-    };
-
     var __returned__ = {
       emit: emit,
       selectedStaff: selectedStaff,
       shouldShowAddModal: shouldShowAddModal,
       shouldShowRemoveModal: shouldShowRemoveModal,
       shouldShowEditModal: shouldShowEditModal,
-      formatDate: formatDate,
       BaseImage: _components_global_BaseImage_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
       FontAwesomeIcon: _fortawesome_vue_fontawesome__WEBPACK_IMPORTED_MODULE_1__.FontAwesomeIcon,
       ref: vue__WEBPACK_IMPORTED_MODULE_2__.ref,
       watch: vue__WEBPACK_IMPORTED_MODULE_2__.watch,
       AddStaffModal: _AddStaffModal_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
       RemoveStaffModal: _RemoveStaffModal_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
-      EditStaffModal: _EditStaffModal_vue__WEBPACK_IMPORTED_MODULE_5__["default"]
+      EditStaffModal: _EditStaffModal_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
+      formatDate: _plugins_Formatters__WEBPACK_IMPORTED_MODULE_6__.formatDate
     };
     Object.defineProperty(__returned__, '__isScriptSetup', {
       enumerable: false,
@@ -1805,7 +1789,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [$props.shouldShow ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
         key: 0,
-        "class": "bg-gradient-to-b from-transparent to-slate-100 grid",
+        "class": "bg-gradient-to-b from-transparent to-slate-100 grid w-full justify-center z-10",
         style: (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeStyle)({
           height: "".concat($setup.bgHeight, "px")
         })

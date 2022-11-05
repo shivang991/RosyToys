@@ -102,6 +102,7 @@ import { ref, watch } from "vue";
 import AddStaffModal from "./AddStaffModal.vue";
 import RemoveStaffModal from "./RemoveStaffModal.vue";
 import EditStaffModal from "./EditStaffModal.vue";
+import { formatDate } from "@/plugins/Formatters";
 
 defineProps({
     data: {
@@ -124,12 +125,4 @@ watch(
         if (newVal.some((e) => e)) scrollTo({ top: 0, behavior: "smooth" });
     }
 );
-
-const formatDate = (dateStr) =>
-    new Date(dateStr).toLocaleDateString("es", {
-        day: "numeric",
-        year: "2-digit",
-        month: "short",
-        time: "full",
-    });
 </script>

@@ -5,7 +5,7 @@
     >
         <p class="text-slate-200">
             <span> Cart Total: </span>
-            <span class="text-xl"> {{ formattedTotal }} </span>
+            <span class="text-xl"> {{ formatPrice(totalPrice) }} </span>
         </p>
         <router-link :to="{ name: 'Cart' }" class="grid">
             <div
@@ -23,6 +23,7 @@
 </template>
 
 <script setup>
+import { formatPrice } from "@/plugins/Formatters";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { computed, ref, watch } from "vue";
 import { useRoute } from "vue-router";
@@ -48,12 +49,5 @@ watch(
             shouldShow.value = false;
         } else shouldShow.value = true;
     }
-);
-
-const formattedTotal = computed(() =>
-    new Intl.NumberFormat("es-mx", {
-        style: "currency",
-        currency: "USD",
-    }).format(totalPrice.value)
 );
 </script>

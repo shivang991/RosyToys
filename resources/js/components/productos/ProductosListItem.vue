@@ -51,6 +51,7 @@ import BaseImage from "../global/BaseImage.vue";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { useStore } from "vuex";
 import { computed, toRaw } from "vue";
+import { formatPrice } from "@/plugins/Formatters";
 
 const props = defineProps({
     id: {
@@ -71,12 +72,8 @@ const props = defineProps({
     },
 });
 
-const formattedPrice = computed(() =>
-    new Intl.NumberFormat("es-mx", {
-        style: "currency",
-        currency: "USD",
-    }).format(props.price)
-);
+const formattedPrice = computed(() => formatPrice(props.price));
+
 const router = useRouter();
 
 const store = useStore();

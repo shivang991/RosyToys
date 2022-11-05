@@ -37,7 +37,8 @@ const routes = [
             {
                 path: "service",
                 name: "CustomerServiceManager",
-                component: () => import("../views/UnderDev.vue"),
+                component: () =>
+                    import("../views/Admin/CustomerServiceManager.vue"),
             },
             {
                 path: "user",

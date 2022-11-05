@@ -2,7 +2,7 @@
     <Teleport to="#app-modals">
         <Transition name="modal" @afterEnter="shouldShowContent = true">
             <div
-                class="bg-gradient-to-b from-transparent to-slate-100 grid"
+                class="bg-gradient-to-b from-transparent to-slate-100 grid w-full justify-center z-10"
                 :style="{ height: `${bgHeight}px` }"
                 v-if="shouldShow"
             >

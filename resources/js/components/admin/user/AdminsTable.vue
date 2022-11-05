@@ -48,6 +48,7 @@
 
 <script setup>
 import BaseImage from "@/components/global/BaseImage.vue";
+import { formatDate } from "@/plugins/Formatters";
 import { computed } from "vue";
 import { useStore } from "vuex";
 
@@ -61,12 +62,4 @@ defineProps({
 const store = useStore();
 
 const myUserId = computed(() => store.state.auth.profile?.id);
-
-const formatDate = (dateStr) =>
-    new Date(dateStr).toLocaleDateString("es", {
-        day: "numeric",
-        year: "2-digit",
-        month: "short",
-        time: "full",
-    });
 </script>

@@ -926,7 +926,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [$props.shouldShow ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
         key: 0,
-        "class": "bg-gradient-to-b from-transparent to-slate-100 grid",
+        "class": "bg-gradient-to-b from-transparent to-slate-100 grid w-full justify-center z-10",
         style: (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeStyle)({
           height: "".concat($setup.bgHeight, "px")
         })

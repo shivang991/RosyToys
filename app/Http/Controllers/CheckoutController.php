@@ -58,6 +58,7 @@ class CheckoutController extends Controller
         $user->charge($order->total_price * 100, $data['payment_method']);
 
         $order->is_paid = true;
+        $order->status = 'paid';
         $order->save();
 
         Mail::to($user->email)->send(new OrderConfirmed($order->id));

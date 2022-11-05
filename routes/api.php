@@ -49,7 +49,9 @@ Route::prefix('/checkout')->group(function () {
 });
 
 Route::prefix('/order')->group(function () {
-    Route::get('/{order}', [OrderController::class, 'show']);
+    Route::get('/all', [OrderController::class, 'index']);
+    Route::get('/{id}', [OrderController::class, 'show']);
+    Route::post('/update/{order}', [OrderController::class, 'update']);
 });
 
 Route::prefix('/product')->group(function () {

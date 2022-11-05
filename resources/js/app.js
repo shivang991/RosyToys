@@ -45,7 +45,8 @@ import {
     faCheckSquare,
     faMinus,
     faCartShopping,
-    faTrash
+    faTrash,
+    faExpand
 } from "@fortawesome/free-solid-svg-icons";
 import {
     faTwitter,
@@ -83,4 +84,5 @@ library.add(
     faPlus,
     faPen,
     faUpload,
+    faExpand
 );
