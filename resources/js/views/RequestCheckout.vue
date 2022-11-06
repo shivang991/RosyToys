@@ -14,10 +14,7 @@
             <p class="text-slate-500 mb-4">
                 Por favor ingrese su correo electrónico para iniciar el proceso.
             </p>
-            <form
-                class="flex space-x-4 w-full mb-4"
-                @submit.prevent="handleSubmit"
-            >
+            <form class="flex space-x-4 w-full" @submit.prevent="handleSubmit">
                 <BaseTextField
                     label="Email"
                     v-model="emailInput"
@@ -25,7 +22,8 @@
                     class="flex-grow"
                 ></BaseTextField>
                 <button
-                    class="bg-amber-500 px-8 py-2 text-white rounded-md"
+                    class="bg-amber-500 px-8 py-2 text-white rounded-md disabled:opacity-50"
+                    :disabled="shouldDisableSubmit"
                     type="submit"
                 >
                     <span
@@ -33,12 +31,17 @@
                         v-if="requestState === 'loading'"
                     >
                     </span>
+                    <span v-else-if="resendCountdown === 0"> Resend </span>
                     <span v-else> Submit </span>
                 </button>
             </form>
+            <p class="text-gray-500" v-if="resendCountdown > 0">
+                Resend available in {{ resendCountdown }}s
+            </p>
+
             <div
                 v-if="requestState === 'success'"
-                class="mb-8 bg-slate-200 border rounded-md border-slate-500 py-8 px-4 flex space-x-4"
+                class="mb-8 bg-slate-200 border rounded-md border-slate-500 py-8 px-4 flex space-x-4 mt-4"
             >
                 <FontAwesomeIcon
                     icon="fa-check"
@@ -52,7 +55,7 @@
             </div>
             <div
                 v-if="requestState === 'error'"
-                class="mb-8 bg-red-50 border rounded-md border-red-600 py-8 px-4 flex space-x-4"
+                class="mb-8 bg-red-50 border rounded-md border-red-600 py-8 px-4 flex space-x-4 mt-4"
             >
                 <FontAwesomeIcon
                     icon="fa-exclamation-triangle"
@@ -99,17 +102,27 @@ const cart = computed(() => store.state.cart);
 
 const requestState = ref("pending"); // "pending"|"loading"|"success"|"error"
 
+const resendCountdown = ref(-1);
+let resendIntervalId;
+
+const shouldDisableSubmit = computed(
+    () =>
+        resendCountdown.value !== 0 &&
+        !["pending", "error"].includes(requestState.value)
+);
+
 function handleSubmit() {
     const { items } = cart.value;
     if (!items.size) return;
 
-    if (!["pending", "error"].includes(requestState.value)) return;
+    if (shouldDisableSubmit.value) return;
     if (!/^\S+@\S+\.\S+$/.test(emailInput.value)) {
         isEmailInvalid.value = true;
         return;
     }
 
     requestState.value = "loading";
+    resendCountdown.value = -1;
     axios
         .post("/api/checkout", {
             email: emailInput.value,
@@ -120,8 +133,14 @@ function handleSubmit() {
         })
         .then((response) => {
             if (response.data.message === "success") {
-                emailInput.value = "";
                 requestState.value = "success";
+
+                resendCountdown.value = 30;
+                resendIntervalId = setInterval(() => {
+                    resendCountdown.value--;
+                    if (resendCountdown.value === 0)
+                        clearInterval(resendIntervalId);
+                }, 1000);
                 // store.commit("cart/CLEAR");
             }
         })

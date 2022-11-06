@@ -122,10 +122,16 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     });
     var requestState = (0,vue__WEBPACK_IMPORTED_MODULE_3__.ref)("pending"); // "pending"|"loading"|"success"|"error"
 
+    var resendCountdown = (0,vue__WEBPACK_IMPORTED_MODULE_3__.ref)(-1);
+    var resendIntervalId;
+    var shouldDisableSubmit = (0,vue__WEBPACK_IMPORTED_MODULE_3__.computed)(function () {
+      return resendCountdown.value !== 0 && !["pending", "error"].includes(requestState.value);
+    });
+
     function handleSubmit() {
       var items = cart.value.items;
       if (!items.size) return;
-      if (!["pending", "error"].includes(requestState.value)) return;
+      if (shouldDisableSubmit.value) return;
 
       if (!/^\S+@\S+\.\S+$/.test(emailInput.value)) {
         isEmailInvalid.value = true;
@@ -133,6 +139,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       }
 
       requestState.value = "loading";
+      resendCountdown.value = -1;
       axios.post("/api/checkout", {
         email: emailInput.value,
         items: _toConsumableArray(items.entries()).map(function (_ref2) {
@@ -147,8 +154,12 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         })
       }).then(function (response) {
         if (response.data.message === "success") {
-          emailInput.value = "";
-          requestState.value = "success"; // store.commit("cart/CLEAR");
+          requestState.value = "success";
+          resendCountdown.value = 30;
+          resendIntervalId = setInterval(function () {
+            resendCountdown.value--;
+            if (resendCountdown.value === 0) clearInterval(resendIntervalId);
+          }, 1000); // store.commit("cart/CLEAR");
         }
       })["catch"](function (error) {
         console.log(error.response);
@@ -163,6 +174,9 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       store: store,
       cart: cart,
       requestState: requestState,
+      resendCountdown: resendCountdown,
+      resendIntervalId: resendIntervalId,
+      shouldDisableSubmit: shouldDisableSubmit,
       handleSubmit: handleSubmit,
       BaseTextField: _components_global_BaseTextField_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
       useAxios: _plugins_Axios__WEBPACK_IMPORTED_MODULE_1__["default"],
@@ -268,10 +282,7 @@ var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 );
 
 var _hoisted_7 = ["onSubmit"];
-var _hoisted_8 = {
-  "class": "bg-amber-500 px-8 py-2 text-white rounded-md",
-  type: "submit"
-};
+var _hoisted_8 = ["disabled"];
 var _hoisted_9 = {
   key: 0,
   "class": "h-4 block w-4 border-2 my-1 rounded-full border-b-transparent border-white animate-spin mx-auto"
@@ -280,61 +291,68 @@ var _hoisted_10 = {
   key: 1
 };
 var _hoisted_11 = {
+  key: 2
+};
+var _hoisted_12 = {
   key: 0,
-  "class": "mb-8 bg-slate-200 border rounded-md border-slate-500 py-8 px-4 flex space-x-4"
+  "class": "text-gray-500"
+};
+var _hoisted_13 = {
+  key: 1,
+  "class": "mb-8 bg-slate-200 border rounded-md border-slate-500 py-8 px-4 flex space-x-4 mt-4"
 };
 
-var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
+var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
   "class": "text-slate-900"
 }, " El enlace para proceder con la compra ha sido enviado por correo. Por favor revise su correo electrónico y siga las instrucciones. ", -1
 /* HOISTED */
 );
 
-var _hoisted_13 = {
-  key: 1,
-  "class": "mb-8 bg-red-50 border rounded-md border-red-600 py-8 px-4 flex space-x-4"
+var _hoisted_15 = {
+  key: 2,
+  "class": "mb-8 bg-red-50 border rounded-md border-red-600 py-8 px-4 flex space-x-4 mt-4"
 };
 
-var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
+var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
   "class": "text-red-600"
 }, " Se produjo algún error. Por favor, intenta de nuevo ", -1
 /* HOISTED */
 );
 
-var _hoisted_15 = {
+var _hoisted_17 = {
   "class": "bg-slate-100 py-4 px-8 rounded-md shadow mt-8"
 };
 
-var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h4", {
+var _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h4", {
   "class": "text-2xl font-semibold mb-2"
 }, " Requesting checkout for: ", -1
 /* HOISTED */
 );
 
-var _hoisted_17 = {
+var _hoisted_19 = {
   "class": "flex space-x-2 items-center"
 };
 
-var _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "Total Price:", -1
+var _hoisted_20 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "Total Price:", -1
 /* HOISTED */
 );
 
-var _hoisted_19 = {
+var _hoisted_21 = {
   "class": "text-xl"
 };
-var _hoisted_20 = {
+var _hoisted_22 = {
   "class": "flex space-x-2 items-center mb-4"
 };
 
-var _hoisted_21 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "Item count:", -1
+var _hoisted_23 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "Item count:", -1
 /* HOISTED */
 );
 
-var _hoisted_22 = {
+var _hoisted_24 = {
   "class": "text-xl"
 };
 
-var _hoisted_23 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Edit cart");
+var _hoisted_25 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Edit cart");
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_router_link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("router-link");
@@ -342,7 +360,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [!$setup.cart.items.size ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["FontAwesomeIcon"], {
     icon: "fa-exclamation-triangle"
   }), _hoisted_3])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_4, [_hoisted_5, _hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
-    "class": "flex space-x-4 w-full mb-4",
+    "class": "flex space-x-4 w-full",
     onSubmit: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)($setup.handleSubmit, ["prevent"])
   }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BaseTextField"], {
     label: "Email",
@@ -354,17 +372,25 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "class": "flex-grow"
   }, null, 8
   /* PROPS */
-  , ["modelValue", "is-invalid"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", _hoisted_8, [$setup.requestState === 'loading' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_9)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_10, " Submit "))])], 40
+  , ["modelValue", "is-invalid"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    "class": "bg-amber-500 px-8 py-2 text-white rounded-md disabled:opacity-50",
+    disabled: $setup.shouldDisableSubmit,
+    type: "submit"
+  }, [$setup.requestState === 'loading' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_9)) : $setup.resendCountdown === 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_10, " Resend ")) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_11, " Submit "))], 8
+  /* PROPS */
+  , _hoisted_8)], 40
   /* PROPS, HYDRATE_EVENTS */
-  , _hoisted_7), $setup.requestState === 'success' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["FontAwesomeIcon"], {
+  , _hoisted_7), $setup.resendCountdown > 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_12, " Resend available in " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.resendCountdown) + "s ", 1
+  /* TEXT */
+  )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $setup.requestState === 'success' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["FontAwesomeIcon"], {
     icon: "fa-check",
     "class": "text-2xl text-slate-500"
-  }), _hoisted_12])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $setup.requestState === 'error' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_13, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["FontAwesomeIcon"], {
+  }), _hoisted_14])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $setup.requestState === 'error' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["FontAwesomeIcon"], {
     icon: "fa-exclamation-triangle",
     "class": "text-2xl text-red-600"
-  }), _hoisted_14])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [_hoisted_16, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_17, [_hoisted_18, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_19, "$" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.cart.totalPrice), 1
+  }), _hoisted_16])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_17, [_hoisted_18, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_19, [_hoisted_20, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_21, "$" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.cart.totalPrice), 1
   /* TEXT */
-  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_20, [_hoisted_21, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_22, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.cart.items.size), 1
+  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_22, [_hoisted_23, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_24, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.cart.items.size), 1
   /* TEXT */
   )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
     to: {
@@ -373,7 +399,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "class": "text-amber-500 hover:underline"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_23];
+      return [_hoisted_25];
     }),
     _: 1
     /* STABLE */

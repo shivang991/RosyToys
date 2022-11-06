@@ -7,9 +7,11 @@ use App\Mail\OrderConfirmed;
 use App\Models\Order;
 use App\Models\Product;
 use App\Models\User;
+use Exception;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Response;
+use PhpParser\Node\Stmt\TryCatch;
 
 class CheckoutController extends Controller
 {
@@ -38,7 +40,12 @@ class CheckoutController extends Controller
         $order = $user->orders()->create(['secret' => $setupIntent->client_secret, 'total_price' => $totalPrice]);
         $order->order_items()->createMany($inputItems);
 
-        Mail::to($data['email'])->send(new CheckoutRequested($order->id));
+        try {
+            Mail::to($data['email'])->send(new CheckoutRequested($order->id));
+        } catch (Exception $e) {
+            $order->delete();
+            return Response::json($e, 500);
+        }
 
         return Response::json(['message' => 'success']);
     }
