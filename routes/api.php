@@ -7,6 +7,7 @@ use App\Http\Controllers\Auth\StaffController;
 use App\Http\Controllers\CarouselImageController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\Choices\ProductFieldChoices;
+use App\Http\Controllers\ContactMessageController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Http\Request;
@@ -52,6 +53,13 @@ Route::prefix('/order')->group(function () {
     Route::get('/all', [OrderController::class, 'index']);
     Route::get('/{id}', [OrderController::class, 'show']);
     Route::post('/update/{order}', [OrderController::class, 'update']);
+});
+
+Route::prefix('/contact')->group(function () {
+    Route::post('/create', [ContactMessageController::class, 'store']);
+    Route::get('/all', [ContactMessageController::class, 'index']);
+    Route::get('/{message}', [ContactMessageController::class, 'show']);
+    Route::delete('/{message}', [ContactMessageController::class, 'destroy']);
 });
 
 Route::prefix('/product')->group(function () {

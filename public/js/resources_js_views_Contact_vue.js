@@ -11,8 +11,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
-/* harmony import */ var _global_BaseTextField_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../global/BaseTextField.vue */ "./resources/js/components/global/BaseTextField.vue");
+/* harmony import */ var _plugins_Axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/plugins/Axios */ "./resources/js/plugins/Axios.js");
+/* harmony import */ var _plugins_Notifications__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/plugins/Notifications */ "./resources/js/plugins/Notifications.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+/* harmony import */ var _global_BaseTextField_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../global/BaseTextField.vue */ "./resources/js/components/global/BaseTextField.vue");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -20,22 +36,50 @@ __webpack_require__.r(__webpack_exports__);
   setup: function setup(__props, _ref) {
     var expose = _ref.expose;
     expose();
-    var fields = (0,vue__WEBPACK_IMPORTED_MODULE_0__.reactive)({
-      firstName: "",
-      lastName: "",
+    var fields = (0,vue__WEBPACK_IMPORTED_MODULE_2__.reactive)({
+      name: "",
       email: "",
+      subject: "",
       message: ""
     });
+    var invalidFields = (0,vue__WEBPACK_IMPORTED_MODULE_2__.ref)(new Set([]));
+    var isSubmitting = (0,vue__WEBPACK_IMPORTED_MODULE_2__.ref)(false);
+    var axios = (0,_plugins_Axios__WEBPACK_IMPORTED_MODULE_0__["default"])();
 
     function handleSubmit() {
-      console.log("handling form submition");
+      invalidFields.value.clear(); // Validation: all fields required
+
+      Object.entries(fields).forEach(function (_ref2) {
+        var _ref3 = _slicedToArray(_ref2, 2),
+            field = _ref3[0],
+            value = _ref3[1];
+
+        if (!value) invalidFields.value.add(field);
+      });
+      if (invalidFields.value.size) return;
+      isSubmitting.value = true;
+      axios.post("/api/contact/create", fields).then(function (response) {
+        if (response.data.message === "success") {
+          fields.message = "";
+          fields.subject = "";
+          (0,_plugins_Notifications__WEBPACK_IMPORTED_MODULE_1__.fireNotification)(_plugins_Notifications__WEBPACK_IMPORTED_MODULE_1__.NotificationTypes.CONTACT_MESSAGE_ADDED);
+          isSubmitting.value = false;
+        }
+      });
     }
 
     var __returned__ = {
       fields: fields,
+      invalidFields: invalidFields,
+      isSubmitting: isSubmitting,
+      axios: axios,
       handleSubmit: handleSubmit,
-      reactive: vue__WEBPACK_IMPORTED_MODULE_0__.reactive,
-      BaseTextField: _global_BaseTextField_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+      useAxios: _plugins_Axios__WEBPACK_IMPORTED_MODULE_0__["default"],
+      fireNotification: _plugins_Notifications__WEBPACK_IMPORTED_MODULE_1__.fireNotification,
+      NotificationTypes: _plugins_Notifications__WEBPACK_IMPORTED_MODULE_1__.NotificationTypes,
+      reactive: vue__WEBPACK_IMPORTED_MODULE_2__.reactive,
+      ref: vue__WEBPACK_IMPORTED_MODULE_2__.ref,
+      BaseTextField: _global_BaseTextField_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
     };
     Object.defineProperty(__returned__, '__isScriptSetup', {
       enumerable: false,
@@ -209,51 +253,63 @@ var _hoisted_1 = ["onSubmit"];
 var _hoisted_2 = {
   "class": "space-y-8 w-full"
 };
-
-var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-  "class": "mt-8 bg-amber-500 text-white py-2 px-4 rounded-md"
-}, " Send Message ", -1
-/* HOISTED */
-);
-
+var _hoisted_3 = ["disabled"];
+var _hoisted_4 = {
+  key: 0,
+  "class": "h-4 block w-4 border-2 my-1 rounded-full border-b-transparent border-white animate-spin mx-auto"
+};
+var _hoisted_5 = {
+  key: 1
+};
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("form", {
     onSubmit: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)($setup.handleSubmit, ["prevent"]),
     "class": "flex flex-col items-end"
   }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BaseTextField"], {
-    modelValue: $setup.fields.firstName,
+    modelValue: $setup.fields.name,
     "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
-      return $setup.fields.firstName = $event;
+      return $setup.fields.name = $event;
     }),
-    label: "First Name"
+    label: "Your Name",
+    "is-invalid": $setup.invalidFields.has('name')
   }, null, 8
   /* PROPS */
-  , ["modelValue"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BaseTextField"], {
-    modelValue: $setup.fields.lastName,
-    "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
-      return $setup.fields.lastName = $event;
-    }),
-    label: "Last Name"
-  }, null, 8
-  /* PROPS */
-  , ["modelValue"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BaseTextField"], {
+  , ["modelValue", "is-invalid"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BaseTextField"], {
+    type: "email",
     modelValue: $setup.fields.email,
-    "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
+    "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
       return $setup.fields.email = $event;
     }),
-    label: "Email Id"
+    label: "Email Id",
+    "is-invalid": $setup.invalidFields.has('email')
   }, null, 8
   /* PROPS */
-  , ["modelValue"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BaseTextField"], {
+  , ["modelValue", "is-invalid"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BaseTextField"], {
+    modelValue: $setup.fields.subject,
+    "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
+      return $setup.fields.subject = $event;
+    }),
+    label: "Subject",
+    "is-invalid": $setup.invalidFields.has('subject')
+  }, null, 8
+  /* PROPS */
+  , ["modelValue", "is-invalid"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BaseTextField"], {
     modelValue: $setup.fields.message,
     "onUpdate:modelValue": _cache[3] || (_cache[3] = function ($event) {
       return $setup.fields.message = $event;
     }),
     label: "Message",
-    "is-text-area": ""
+    "is-text-area": "",
+    "is-invalid": $setup.invalidFields.has('message')
   }, null, 8
   /* PROPS */
-  , ["modelValue"])]), _hoisted_3], 40
+  , ["modelValue", "is-invalid"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    "class": "bg-amber-500 px-8 py-2 text-white rounded-md mt-8",
+    type: "submit",
+    disabled: $setup.isSubmitting
+  }, [$setup.isSubmitting ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_4)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_5, " Send message "))], 8
+  /* PROPS */
+  , _hoisted_3)], 40
   /* PROPS, HYDRATE_EVENTS */
   , _hoisted_1);
 }

@@ -47,7 +47,10 @@ export const NotificationTypes = {
         type: "success",
         message: "¡Administrador actualizado con éxito!",
     },
-
+    CONTACT_MESSAGE_DELETED:{
+        type: "success",
+        message:""
+    },
     GENERAL_ERROR: {
         type: "error",
         message: "¡Ocurrió un error inesperado!",
@@ -64,6 +67,10 @@ export const NotificationTypes = {
     ITEM_ADDED: {
         type: "compact",
         message: "Artículo añadido a tu carrito!",
+    },
+    CONTACT_MESSAGE_ADDED: {
+        type: "compact",
+        message: "¡El mensaje nos llegó! Responderemos pronto.",
     },
 };
 
