@@ -1,8 +1,8 @@
 <template>
-    <base-modal :shouldShow="!!msgId" @close="emit('cancel')">
+    <base-modal :shouldShow="!!postId" @close="emit('cancel')">
         <div class="px-4 pb-8 max-w-xs">
             <p class="text-slate-900 mb-8 text-center">
-                ¿Está seguro de que desea eliminar ese mensaje?
+                ¿Seguro que quieres eliminar esa publicación?
             </p>
             <button
                 @click="handleConfirmed"
@@ -28,7 +28,7 @@ import { fireNotification, NotificationTypes } from "@/plugins/Notifications";
 import { ref } from "vue";
 
 const props = defineProps({
-    msgId: {
+    postId: {
         type: Number,
         default: null,
     },
@@ -41,14 +41,14 @@ const isLoading = ref(false);
 const axios = useAxios();
 
 function handleConfirmed() {
-    if (props.msgId) {
+    if (props.postId) {
         isLoading.value = true;
         axios
-            .authDelete(`/api/contact/${props.msgId}`)
+            .authDelete(`/api/post/${props.postId}`)
             .then((response) => {
                 if (response.data.message === "success") {
                     emit("success");
-                    fireNotification(NotificationTypes.CONTACT_MESSAGE_DELETED);
+                    fireNotification(NotificationTypes.POST_DELETED);
                 }
             })
             .catch((error) => {

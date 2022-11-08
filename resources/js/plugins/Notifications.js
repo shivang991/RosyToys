@@ -47,9 +47,17 @@ export const NotificationTypes = {
         type: "success",
         message: "¡Administrador actualizado con éxito!",
     },
-    CONTACT_MESSAGE_DELETED:{
+    CONTACT_MESSAGE_DELETED: {
         type: "success",
-        message:""
+        message: "¡El mensaje fue eliminado con éxito!",
+    },
+    POST_CREATED: {
+        type: "success",
+        message: "¡La publicación se creó con éxito!",
+    },
+    POST_DELETED: {
+        type: "success",
+        message: "¡La publicación fue eliminada con éxito!",
     },
     GENERAL_ERROR: {
         type: "error",

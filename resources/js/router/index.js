@@ -32,7 +32,7 @@ const routes = [
             {
                 path: "post",
                 name: "PostCreator",
-                component: () => import("../views/UnderDev.vue"),
+                component: () => import("../views/Admin/PostCreator.vue"),
             },
             {
                 path: "service",

@@ -988,7 +988,7 @@ var _hoisted_1 = {
 
 var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
   "class": "text-slate-900 mb-8 text-center"
-}, " Are you sure you want to delete that message? ", -1
+}, " ¿Está seguro de que desea eliminar ese mensaje? ", -1
 /* HOISTED */
 );
 

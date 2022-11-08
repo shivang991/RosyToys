@@ -8,7 +8,7 @@ const postMultipart = (state, url, data) => {
     Object.entries(data).forEach(([key, value]) => {
         if (Array.isArray(value)) {
             for (let i = 0; i < value.length; i++)
-                multipartData.append(`${key}`, value[i]);
+                multipartData.append(`${key}[]`, value[i]);
         } else if (typeof value !== "undefined" || value !== null)
             multipartData.append(key, value);
     });

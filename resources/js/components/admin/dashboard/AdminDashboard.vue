@@ -1,6 +1,7 @@
 <template>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-8">
-        <div
+        <router-link
+            :to="{ name: 'PostCreator' }"
             class="col-span-2 flex py-8 px-4 bg-white rounded-md shadow justify-center space-x-8 cursor-pointer transition hover:shadow-xl hover:scale-110"
         >
             <h5 class="text-xl text-amber-500">Post Creator</h5>
@@ -8,7 +9,7 @@
                 src="admin_post_creator.png"
                 class="w-40 h-40 object-contain"
             ></BaseImage>
-        </div>
+        </router-link>
         <router-link
             :to="{ name: 'CarouselManager' }"
             class="px-4 py-8 bg-white rounded-md shadow cursor-pointer transition hover:shadow-xl hover:scale-110"

@@ -9,6 +9,7 @@ use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\Choices\ProductFieldChoices;
 use App\Http\Controllers\ContactMessageController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -60,6 +61,13 @@ Route::prefix('/contact')->group(function () {
     Route::get('/all', [ContactMessageController::class, 'index']);
     Route::get('/{message}', [ContactMessageController::class, 'show']);
     Route::delete('/{message}', [ContactMessageController::class, 'destroy']);
+});
+
+Route::prefix('/post')->group(function () {
+    Route::post('/create', [PostController::class, 'store']);
+    Route::get('/all', [PostController::class, 'index']);
+    Route::delete('/{id}', [PostController::class, 'destroy']);
+    Route::get('/{id}', [PostController::class, 'show']);
 });
 
 Route::prefix('/product')->group(function () {
