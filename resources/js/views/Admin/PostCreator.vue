@@ -76,6 +76,7 @@ function handlePostSubmit() {
             if (response.data.message === "success") {
                 fireNotification(NotificationTypes.POST_CREATED);
                 bodyInputComponent.value.clear();
+                fetchPosts();
             }
         })
         .catch((error) => {
@@ -87,8 +88,8 @@ function handlePostSubmit() {
 
 const posts = ref(null);
 
-function fetchPosts() {
-    axios.authGet("/api/post/all").then((response) => {
+function fetchPosts(url) {
+    axios.authGet(url ?? "/api/post/all").then((response) => {
         posts.value = response.data;
     });
 }
