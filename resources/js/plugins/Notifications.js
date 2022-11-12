@@ -80,6 +80,10 @@ export const NotificationTypes = {
         type: "compact",
         message: "¡El mensaje nos llegó! Responderemos pronto.",
     },
+    REVIEW_ADDED: {
+        type: "compact",
+        message: "¡Gracias por tu reseña!",
+    },
 };
 
 const EVENT_NAME = "notificationreq";

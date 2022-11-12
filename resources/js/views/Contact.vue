@@ -41,6 +41,7 @@
             </div>
             <contact-form></contact-form>
         </div>
+        <testimonial-form></testimonial-form>
         <contact-map></contact-map>
     </div>
 </template>
@@ -49,6 +50,7 @@
 import ContactForm from "@/components/contact/ContactForm.vue";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import ContactMap from "@/components/contact/ContactMap.vue";
+import TestimonialForm from "@/components/contact/TestimonialForm.vue";
 
 const contactInfo = [
     { icon: "fa-phone", text: "(406) 555-0120" },

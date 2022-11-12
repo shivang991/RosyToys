@@ -114,6 +114,9 @@ function clearImage() {
 
 watch(
     () => props.modelValue,
-    (newVal) => newVal && preparePreview(newVal)
+    (newVal) => {
+        if (newVal) preparePreview(newVal);
+        else imgSrc.value = props.defaultSrc;
+    }
 );
 </script>

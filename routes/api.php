@@ -8,6 +8,7 @@ use App\Http\Controllers\CarouselImageController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\Choices\ProductFieldChoices;
 use App\Http\Controllers\ContactMessageController;
+use App\Http\Controllers\CustomerReviewController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProductController;
@@ -61,6 +62,10 @@ Route::prefix('/contact')->group(function () {
     Route::get('/all', [ContactMessageController::class, 'index']);
     Route::get('/{message}', [ContactMessageController::class, 'show']);
     Route::delete('/{message}', [ContactMessageController::class, 'destroy']);
+});
+
+Route::prefix('/review')->group(function () {
+    Route::post('/create', [CustomerReviewController::class, 'store']);
 });
 
 Route::prefix('/post')->group(function () {

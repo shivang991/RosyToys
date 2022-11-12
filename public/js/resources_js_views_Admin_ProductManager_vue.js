@@ -506,7 +506,7 @@ var __default__ = {
     (0,vue__WEBPACK_IMPORTED_MODULE_0__.watch)(function () {
       return props.modelValue;
     }, function (newVal) {
-      return newVal && preparePreview(newVal);
+      if (newVal) preparePreview(newVal);else imgSrc.value = props.defaultSrc;
     });
     var __returned__ = {
       attrs: attrs,

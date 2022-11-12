@@ -820,6 +820,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         if (response.data.message === "success") {
           (0,_plugins_Notifications__WEBPACK_IMPORTED_MODULE_4__.fireNotification)(_plugins_Notifications__WEBPACK_IMPORTED_MODULE_4__.NotificationTypes.POST_CREATED);
           bodyInputComponent.value.clear();
+          fetchPosts();
         }
       })["catch"](function (error) {
         console.log(error.response);
@@ -831,8 +832,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
     var posts = (0,vue__WEBPACK_IMPORTED_MODULE_6__.ref)(null);
 
-    function fetchPosts() {
-      axios.authGet("/api/post/all").then(function (response) {
+    function fetchPosts(url) {
+      axios.authGet(url !== null && url !== void 0 ? url : "/api/post/all").then(function (response) {
         posts.value = response.data;
       });
     }

@@ -15,7 +15,9 @@ const postMultipart = (state, url, data) => {
     return axios.post(url, multipartData, {
         headers: {
             "content-type": "multipart/form-data",
-            Authorization: `Bearer ${state.auth.accessToken}`,
+            ...(state.auth.profile && {
+                Authorization: `Bearer ${state.auth.accessToken}`,
+            }),
         },
     });
 };
