@@ -66,6 +66,9 @@ Route::prefix('/contact')->group(function () {
 
 Route::prefix('/review')->group(function () {
     Route::post('/create', [CustomerReviewController::class, 'store']);
+    Route::get('/all', [CustomerReviewController::class, 'index']);
+    Route::post('/update/{review}', [CustomerReviewController::class, 'update']);
+    Route::delete('/{review}', [CustomerReviewController::class, 'destroy']);
 });
 
 Route::prefix('/post')->group(function () {

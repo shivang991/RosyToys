@@ -33,4 +33,21 @@ class CustomerReviewController extends Controller
         ]);
         return Response::json(['message' => 'success']);
     }
+    public function index()
+    {
+        return CustomerReview::paginate(10);
+    }
+    public function update(CustomerReview $review)
+    {
+        $review->is_verified = !$review->is_verified;
+        $review->save();
+        return Response::json(['message' => 'success']);
+    }
+    public function destroy(CustomerReview $review)
+    {
+        if ($review->image_path)
+            Storage::delete($review->image_path);
+        $review->delete();
+        return Response::json(['message' => 'success']);
+    }
 }

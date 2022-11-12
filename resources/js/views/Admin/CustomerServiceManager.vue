@@ -12,17 +12,24 @@
             :messages="messages"
             @refetch-requested="fetchMessages"
         ></ContactMessagesTable>
+        <div class="py-4"></div>
+        <CustomerReviewsTable
+            :reviews="reviews"
+            @refetch-requested="fetchReviews"
+        ></CustomerReviewsTable>
     </div>
 </template>
 
 <script setup>
 import ContactMessagesTable from "@/components/admin/service/ContactMessagesTable.vue";
+import CustomerReviewsTable from "@/components/admin/service/CustomerReviewsTable.vue";
 import OrdersTable from "@/components/admin/service/OrdersTable.vue";
 import useAxios from "@/plugins/Axios";
 import { ref } from "vue";
 
 const orders = ref(null); // Paginated<{id,user_id,created_at,total_price,user:{email,id}}>
 const messages = ref(null);
+const reviews = ref(null);
 
 const axios = useAxios();
 
@@ -39,4 +46,11 @@ function fetchMessages(url) {
     });
 }
 fetchMessages();
+
+function fetchReviews(url) {
+    axios.authGet(url ?? "/api/review/all").then((res) => {
+        reviews.value = res.data;
+    });
+}
+fetchReviews();
 </script>

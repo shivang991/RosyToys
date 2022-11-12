@@ -51,6 +51,10 @@ export const NotificationTypes = {
         type: "success",
         message: "¡El mensaje fue eliminado con éxito!",
     },
+    REVIEW_DELETED: {
+        type: "success",
+        message: "¡Eliminó la reseña con éxito!",
+    },
     POST_CREATED: {
         type: "success",
         message: "¡La publicación se creó con éxito!",
