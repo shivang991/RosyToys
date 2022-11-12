@@ -16,11 +16,11 @@
                 <div class="row-start-1 col-start-1 h-10"></div>
                 <div class="row-start-2 col-start-1 bg-slate-900 h-24"></div>
                 <div
-                    class="row-start-1 col-start-1 row-span-2 justify-self-center"
+                    class="row-start-1 col-start-1 row-span-2 justify-self-center flex flex-col items-center"
                 >
                     <BaseImage
                         :src="review.image_url"
-                        class="w-20 h-20 rounded-full shadow-xl"
+                        class="w-20 h-20 rounded-full shadow-xl object-cover"
                         is-external
                     ></BaseImage>
                     <p class="text-slate-200 font-semibold text-center mt-2">
