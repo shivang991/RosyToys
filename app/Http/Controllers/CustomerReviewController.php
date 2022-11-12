@@ -11,7 +11,7 @@ class CustomerReviewController extends Controller
 {
     public function __construct()
     {
-        $this->middleware(['auth:sanctum', 'ability:customerServiceManager,server:update'])->except('store');
+        $this->middleware(['auth:sanctum', 'ability:customerServiceManager,server:update'])->except(['store', 'indexRandom']);
     }
 
     public function store()
@@ -35,7 +35,11 @@ class CustomerReviewController extends Controller
     }
     public function index()
     {
-        return CustomerReview::paginate(10);
+        return Response::json(CustomerReview::paginate(10));
+    }
+    public function indexRandom()
+    {
+        return Response::json(CustomerReview::inRandomOrder()->where('is_verified', true)->paginate(10));
     }
     public function update(CustomerReview $review)
     {

@@ -1953,7 +1953,7 @@ var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 );
 
 var _hoisted_8 = {
-  "class": "row-start-1 col-start-1 row-span-2 justify-self-center"
+  "class": "row-start-1 col-start-1 row-span-2 justify-self-center flex flex-col items-center"
 };
 var _hoisted_9 = {
   "class": "text-slate-200 font-semibold text-center mt-2"
@@ -1972,7 +1972,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       /* TEXT */
       )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [_hoisted_6, _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BaseImage"], {
         src: $props.review.image_url,
-        "class": "w-20 h-20 rounded-full shadow-xl",
+        "class": "w-20 h-20 rounded-full shadow-xl object-cover",
         "is-external": ""
       }, null, 8
       /* PROPS */
