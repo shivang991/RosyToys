@@ -1,7 +1,7 @@
 <template>
     <div class="py-12">
         <h2 class="max-w-xs text-2xl text-center mx-auto font-semibold mb-12">
-            We Love to Hear from you, Get in Touch With Us &#x1F44B;
+            Nos encanta saber de ti, ponte en contacto con nosotros &#x1F44B;
         </h2>
         <div
             class="flex flex-col-reverse sm:grid grid-cols-2 mx-auto gap-x-8 w-11/12 md:w-3/4 mb-12"
@@ -13,11 +13,11 @@
                     class="px-8 py-24 text-white row-start-1 col-start-1 min-w-0 z-10"
                 >
                     <h4 class="text-2xl mb-8 font-semibold">
-                        Contact Information
+                        Información del contacto
                     </h4>
                     <p class="mb-12">
-                        Fill up the form and our team will get back to you
-                        within 24Hrs
+                        Rellena el formulario y nuestro equipo se pondrá en
+                        contacto contigo dentro de las 24 horas
                     </p>
                     <ul class="space-y-4">
                         <li

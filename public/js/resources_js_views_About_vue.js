@@ -102,7 +102,7 @@ var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
   "class": "max-w-lg mx-auto"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h4", {
   "class": "text-xl font-semibold text-center mb-8"
-}, " Our Value's "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", {
+}, " Nuestros valores "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", {
   "class": "space-y-4 list-disc"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, " Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur et explicabo similique quibusdam provident. Dolores cum iste odit quia quidem! "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, " Doloribus odio dolor officiis culpa eius dolore quis cumque ipsa, accusamus eligendi accusantium dicta labore iure voluptas vero modi, ducimus non, explicabo sed excepturi consectetur dolorum. "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, " Voluptatem pariatur dicta error aspernatur iure! ")])], -1
 /* HOISTED */
@@ -116,7 +116,7 @@ var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
   "class": "max-w-lg mx-auto"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h4", {
   "class": "text-xl font-semibold text-center mb-8"
-}, " Our Mission "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", {
+}, " Nuestra misión "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", {
   "class": "space-y-4 list-disc"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, " Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur et explicabo similique quibusdam provident. Dolores cum iste odit quia quidem! "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, " Doloribus odio dolor officiis culpa eius dolore quis cumque ipsa, accusamus eligendi accusantium dicta labore iure voluptas vero modi, ducimus non, explicabo sed excepturi consectetur dolorum. "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, " Voluptatem pariatur dicta error aspernatur iure! ")])], -1
 /* HOISTED */
@@ -124,7 +124,7 @@ var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 
 var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
   "class": "text-2xl font-semibold text-center mb-12"
-}, " Meet our Team ", -1
+}, " Conozca a nuestro equipo ", -1
 /* HOISTED */
 );
 

@@ -3,7 +3,7 @@
         <div class="space-y-8 w-full">
             <base-text-field
                 v-model="fields.name"
-                label="Your Name"
+                label="Su nombre"
                 :is-invalid="invalidFields.has('name')"
             />
             <base-text-field
@@ -14,12 +14,12 @@
             />
             <base-text-field
                 v-model="fields.subject"
-                label="Subject"
+                label="Sujeto"
                 :is-invalid="invalidFields.has('subject')"
             />
             <base-text-field
                 v-model="fields.message"
-                label="Message"
+                label="Mensaje"
                 is-text-area
                 :is-invalid="invalidFields.has('message')"
             />
@@ -34,7 +34,7 @@
                 v-if="isSubmitting"
             >
             </span>
-            <span v-else> Send message </span>
+            <span v-else> Enviar mensaje </span>
         </button>
     </form>
 </template>

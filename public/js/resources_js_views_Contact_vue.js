@@ -495,7 +495,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
       return $setup.fields.name = $event;
     }),
-    label: "Your Name",
+    label: "Su nombre",
     "is-invalid": $setup.invalidFields.has('name')
   }, null, 8
   /* PROPS */
@@ -514,7 +514,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
       return $setup.fields.subject = $event;
     }),
-    label: "Subject",
+    label: "Sujeto",
     "is-invalid": $setup.invalidFields.has('subject')
   }, null, 8
   /* PROPS */
@@ -523,7 +523,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "onUpdate:modelValue": _cache[3] || (_cache[3] = function ($event) {
       return $setup.fields.message = $event;
     }),
-    label: "Message",
+    label: "Mensaje",
     "is-text-area": "",
     "is-invalid": $setup.invalidFields.has('message')
   }, null, 8
@@ -532,7 +532,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "class": "bg-amber-500 px-8 py-2 text-white rounded-md mt-8",
     type: "submit",
     disabled: $setup.isSubmitting
-  }, [$setup.isSubmitting ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_4)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_5, " Send message "))], 8
+  }, [$setup.isSubmitting ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_4)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_5, " Enviar mensaje "))], 8
   /* PROPS */
   , _hoisted_3)], 40
   /* PROPS, HYDRATE_EVENTS */
@@ -643,7 +643,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
       return $setup.fields.name = $event;
     }),
-    label: "Your Name",
+    label: "Su nombre",
     "is-invalid": $setup.invalidFields.has('name')
   }, null, 8
   /* PROPS */
@@ -652,7 +652,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
       return $setup.fields.message = $event;
     }),
-    label: "Message",
+    label: "Mensaje",
     "is-text-area": "",
     "is-invalid": $setup.invalidFields.has('message')
   }, null, 8
@@ -661,7 +661,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "class": "bg-amber-500 py-2 text-white rounded-md mt-8 w-full",
     type: "submit",
     disabled: $setup.isSubmitting
-  }, [$setup.isSubmitting ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_6)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_7, " Send "))], 8
+  }, [$setup.isSubmitting ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_6)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_7, " Enviar "))], 8
   /* PROPS */
   , _hoisted_5)], 40
   /* PROPS, HYDRATE_EVENTS */
@@ -820,7 +820,7 @@ var _hoisted_1 = {
 
 var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
   "class": "max-w-xs text-2xl text-center mx-auto font-semibold mb-12"
-}, " We Love to Hear from you, Get in Touch With Us 👋 ", -1
+}, " Nos encanta saber de ti, ponte en contacto con nosotros 👋 ", -1
 /* HOISTED */
 );
 
@@ -836,13 +836,13 @@ var _hoisted_5 = {
 
 var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h4", {
   "class": "text-2xl mb-8 font-semibold"
-}, " Contact Information ", -1
+}, " Información del contacto ", -1
 /* HOISTED */
 );
 
 var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
   "class": "mb-12"
-}, " Fill up the form and our team will get back to you within 24Hrs ", -1
+}, " Rellena el formulario y nuestro equipo se pondrá en contacto contigo dentro de las 24 horas ", -1
 /* HOISTED */
 );
 

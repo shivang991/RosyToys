@@ -4,7 +4,7 @@
     >
         <input
             type="text"
-            placeholder="Search"
+            placeholder="Búsqueda"
             class="bg-transparent focus:outline-none flex-grow"
             @input.stop="handleInput"
         />

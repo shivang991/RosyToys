@@ -22,12 +22,12 @@
             ></base-image-input>
             <base-text-field
                 v-model="fields.name"
-                label="Your Name"
+                label="Su nombre"
                 :is-invalid="invalidFields.has('name')"
             />
             <base-text-field
                 v-model="fields.message"
-                label="Message"
+                label="Mensaje"
                 is-text-area
                 :is-invalid="invalidFields.has('message')"
             />
@@ -42,7 +42,7 @@
                 v-if="isSubmitting"
             >
             </span>
-            <span v-else> Send </span>
+            <span v-else> Enviar </span>
         </button>
     </form>
 </template>

@@ -21,7 +21,7 @@
                 <router-link
                     :to="{ name: 'Productos' }"
                     class="text-2xl py-4 px-8 text-white bg-amber-500 rounded-md mt-8 font-semibold"
-                    >View More
+                    >Ver más
                 </router-link>
             </div>
             <div class="lg:flex space-x-8 items-center">
@@ -30,12 +30,12 @@
                     <div
                         class="border rounded-md border-amber-500 px-4 py-2 text-slate-200 mb-8"
                     >
-                        <p>Upto</p>
+                        <p>Hasta</p>
                         <p class="flex space-x-2 items-end">
                             <span class="text-amber-500 text-4xl font-semibold"
                                 >40%</span
                             >
-                            <span>off</span>
+                            <span class="leading-none">de descuento</span>
                         </p>
                     </div>
                     <BaseImage src="home_dec1.png" class="w-40" />
@@ -49,52 +49,11 @@
         </div>
     </div>
     <HomeCarousel></HomeCarousel>
-    <div class="grid">
-        <BaseImage
-            src="home_promotions_2.png"
-            class="justify-self-end row-start-1 col-start-1 hidden sm:block"
-        />
-        <div
-            class="w-11/12 lg:w-3/4 justify-self-center py-16 col-start-1 row-start-1"
-        >
-            <h4 class="text-center text-2xl text-slate-900 mb-4 font-semibold">
-                Don't Miss These Promotions
-            </h4>
-            <BaseImage
-                src="home_promotions_1.png"
-                class="block translate-y-12 w-80"
-            />
-            <div
-                class="bg-gradient-to-br from-orange-600 to-pink-700 py-12 px-8 rounded-xl relative"
-            >
-                <h2 class="text-center text-slate-200 text-4xl font-bold mb-8">
-                    Marvel
-                </h2>
-                <div
-                    class="md:grid grid-cols-2 gap-y-20 space-y-12 md:space-y-0"
-                >
-                    <div
-                        class="grid"
-                        v-for="(tile, index) in promotionTiles"
-                        :key="index"
-                    >
-                        <BaseImage
-                            :src="tile.image"
-                            class="w-64 row-start-1 col-start-1 -translate-y-8 place-self-center z-10"
-                        />
-                        <div
-                            class="col-start-1 row-start-1 w-64 h-32 bg-slate-900 opacity-25 rounded-xl self-end justify-self-center"
-                        ></div>
-                        <div class="mt-4 text-slate-200 text-center">
-                            {{ tile.title }}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <HomePromotions></HomePromotions>
     <div class="my-16 w-11/12 lg:w-3/4 mx-auto">
-        <h4 class="text-2xl font-semibold text-slate-900 mb-8 sm:mb-20">Services</h4>
+        <h4 class="text-2xl font-semibold text-slate-900 mb-8 sm:mb-20">
+            Servicios
+        </h4>
         <ul class="space-y-12">
             <li
                 class="flex even:flex-row-reverse group items-center w-full"
@@ -132,6 +91,7 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import HomeCarousel from "@/components/home/HomeCarousel.vue";
 import HomeTestimonial from "@/components/home/HomeTestimonial.vue";
 import BaseImage from "@/components/global/BaseImage.vue";
+import HomePromotions from "@/components/home/HomePromotions.vue";
 
 const leftDecorationImages = [
     "home_dec4.png",
@@ -139,44 +99,25 @@ const leftDecorationImages = [
     "home_dec2.png",
 ];
 
-const promotionTiles = [
-    {
-        image: "home_promotions_tile_1.png",
-        title: "Spider Man",
-    },
-    {
-        image: "home_promotions_tile_2.png",
-        title: "Captain America",
-    },
-    {
-        image: "home_promotions_tile_3.png",
-        title: "Hawkeye",
-    },
-    {
-        image: "home_promotions_tile_4.png",
-        title: "Black Panther",
-    },
-];
-
 const services = [
     {
-        title: "Absolute Packaging",
-        desc: "All our shipments are 100% protected with collector s grade packaging.",
+        title: "Embalaje absoluto",
+        desc: "Todos nuestros envíos están 100% protegidos con empaques de coleccionista.",
         icon: "fa-envelope",
     },
     {
-        title: "Satisfaction or Return",
-        desc: "We have a 100% satisfaction policy, if you are bot satisfied with the prouct we will return your money",
+        title: "Satisfacción o Retorno",
+        desc: "Tenemos una política de satisfacción del 100%, si no está satisfecho con el producto, le devolvemos su dinero.",
         icon: "fa-smile",
     },
     {
-        title: "24 Hrs Customer Support",
-        desc: "We know the importance of solving all your doubts, which is why our email is always open.",
+        title: "Atención al cliente las 24 horas",
+        desc: "Sabemos la importancia de resolver todas tus dudas, por eso nuestro correo siempre está abierto.",
         icon: "fa-headset",
     },
     {
-        title: "Secure payments",
-        desc: "We use reliable methods and keep your information fully protected.",
+        title: "Pagos seguros",
+        desc: "Utilizamos métodos confiables y mantenemos su información completamente protegida.",
         icon: "fa-money-check-dollar",
     },
 ];

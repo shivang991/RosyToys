@@ -1,7 +1,7 @@
 <template>
     <div class="py-12" v-if="carouselSlides.length">
         <div class="flex justify-between w-3/4 items-center mx-auto mb-8">
-            <h4 class="text-slate-900 text-2xl">Trending Right Now</h4>
+            <h4 class="text-slate-900 text-2xl">Tendencia ahora mismo</h4>
             <div class="flex space-x-2 text-slate-900">
                 <button
                     :disabled="marginLeft <= minXTranslation"

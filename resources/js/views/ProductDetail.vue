@@ -33,7 +33,7 @@
                     ${{ product.price }}
                 </p>
                 <div class="flex items-center space-x-2 mb-4">
-                    <h4 class="text-xl">Quantity:</h4>
+                    <h4 class="text-xl">Cantidad:</h4>
                     <div class="flex space-x-2" v-if="quantity">
                         <button
                             class="py-1 px-2 rounded-md border border-amber-500 text-amber-500 text-sm"
@@ -63,7 +63,7 @@
                     </div>
                 </div>
                 <div class="mb-8">
-                    <h4 class="text-xl mb-2">Description:</h4>
+                    <h4 class="text-xl mb-2">Descripción:</h4>
                     <p>{{ product.description }}</p>
                 </div>
                 <div class="space-y-4" v-if="!quantity">
@@ -71,13 +71,13 @@
                         @click="buyNow"
                         class="w-full py-2 border border-amber-500 text-amber-500 rounded-md"
                     >
-                        Buy Now
+                        Comprar ahora
                     </button>
                     <button
                         class="w-full py-2 bg-amber-500 text-white rounded-md"
                         @click="addToCart"
                     >
-                        Add to Cart
+                        Añadir al carrito
                     </button>
                 </div>
             </div>

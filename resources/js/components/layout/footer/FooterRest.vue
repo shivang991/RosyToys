@@ -13,7 +13,7 @@
             </div>
             <div class="sm:block hidden">
                 <h4 class="text-xl font-semibold mb-4 text-slate-200">
-                    Useful links
+                    Enlaces útiles
                 </h4>
                 <ul>
                     <li v-for="(link, index) in internalLinks" :key="index">
@@ -27,7 +27,7 @@
             </div>
             <div>
                 <h4 class="text-xl text-slate-200 font-semibold mb-4">
-                    Connect With Us
+                    Conéctate con nosotros
                 </h4>
                 <ul class="flex space-x-4">
                     <li v-for="(link, index) in socialMediaLinks" :key="index">

@@ -11,7 +11,7 @@ class ProductController extends Controller
 {
     public function __construct()
     {
-        $this->middleware(['auth:sanctum', 'ability:productManager,server:update'])->except(['index', 'show']);
+        $this->middleware(['auth:sanctum', 'ability:productManager,server:update'])->except(['index', 'indexRandom', 'show']);
     }
 
     public function index()
@@ -31,7 +31,10 @@ class ProductController extends Controller
             ->select('id', 'title', 'price', 'image_url', 'is_limited_edition', 'is_low_stock', 'is_promoted')
             ->paginate(6);
     }
-
+    public function indexRandom()
+    {
+        return Response::json(Product::inRandomOrder()->where('is_promoted', true)->select('title', 'image_url', 'id')->paginate(4));
+    }
     public function store()
     {
         $data = Request::validate([

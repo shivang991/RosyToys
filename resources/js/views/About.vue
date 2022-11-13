@@ -46,7 +46,7 @@
                 ></base-image>
                 <div class="max-w-lg mx-auto">
                     <h4 class="text-xl font-semibold text-center mb-8">
-                        Our Value's
+                        Nuestros valores
                     </h4>
                     <ul class="space-y-4 list-disc">
                         <li>
@@ -71,7 +71,7 @@
             >
                 <div class="max-w-lg mx-auto">
                     <h4 class="text-xl font-semibold text-center mb-8">
-                        Our Mission
+                        Nuestra misión
                     </h4>
                     <ul class="space-y-4 list-disc">
                         <li>
@@ -96,7 +96,7 @@
                 ></base-image>
             </div>
             <h2 class="text-2xl font-semibold text-center mb-12">
-                Meet our Team
+                Conozca a nuestro equipo
             </h2>
             <ul
                 class="grid grid-cols-2 md:grid-cols-3 w-11/12 lg:w-3/4 mx-auto gap-2 sm:gap-8 lg:gap-12"

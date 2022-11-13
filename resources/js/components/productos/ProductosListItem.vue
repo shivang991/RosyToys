@@ -39,7 +39,7 @@
             @click.stop="addToCart"
             v-else
         >
-            <span>Add to Cart</span>
+            <span>Añadir al carrito</span>
             <FontAwesomeIcon icon="fa-shopping-cart"></FontAwesomeIcon>
         </button>
     </div>

@@ -2,13 +2,13 @@
     <div class="relative">
         <div class="flex justify-between items-center">
             <h2 class="text-4xl font-semibold text-slate-900">
-                Browse our Products
+                Explore nuestros productos
             </h2>
             <button
                 class="flex space-x-2 py-2 px-4 rounded-md text-amber-500 shadow-md items-center"
                 @click="shouldShowFilters = !shouldShowFilters"
             >
-                <span>Filters</span>
+                <span>Filtros</span>
                 <span
                     class="text-sm duration-100"
                     :class="{ 'rotate-180': shouldShowFilters }"
