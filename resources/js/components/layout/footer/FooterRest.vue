@@ -5,12 +5,6 @@
         >
             <div class="mb-8 sm:mb-0">
                 <BaseImage src="logo.png" class="w-40"></BaseImage>
-                <p class="text-slate-200 mt-4 text-center sm:text-left">
-                    Terms & Conditions
-                </p>
-                <p class="text-slate-200 text-center sm:text-left mb-8">
-                    Privacy Policies
-                </p>
                 <router-link
                     :to="{ name: 'AdminLogin' }"
                     class="text-slate-200 text-center sm:text-left hover:underline"

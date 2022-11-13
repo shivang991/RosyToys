@@ -19,7 +19,7 @@
                     />
                 </div>
                 <router-link
-                    :to="{ name: 'Home' }"
+                    :to="{ name: 'Productos' }"
                     class="text-2xl py-4 px-8 text-white bg-amber-500 rounded-md mt-8 font-semibold"
                     >View More
                 </router-link>

@@ -35,10 +35,9 @@ const socialMediaLinks = [
 ];
 
 const internalLinks = [
-    { route: "Home", title: "New Releases" },
-    { route: "Home", title: "Brands" },
-    { route: "Home", title: "Gaming" },
-    { route: "Home", title: "Choice" },
-    { route: "Home", title: "Deals" },
+    { route: "Home", title: "Inicio" },
+    { route: "About", title: "Acerca de" },
+    { route: "Productos", title: "Productos" },
+    { route: "Contacto", title: "Contacto" },
 ];
 </script>
