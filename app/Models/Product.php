@@ -16,6 +16,8 @@ class Product extends Model
         'description',
         'brand',
         'price',
-        'is_available',
+        'is_limited_edition',
+        'is_low_stock',
+        'is_promoted',
     ];
 }

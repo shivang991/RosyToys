@@ -11,22 +11,11 @@
                     class="w-full h-40 object-cover"
                     label="Product Image"
                 ></BaseImageInput>
-                <div class="flex space-x-4 items-center">
-                    <BaseTextField
-                        v-model="fields.title"
-                        class="flex-grow"
-                        label="Product Name"
-                        :is-invalid="invalidFields.has('title')"
-                    ></BaseTextField>
-                    <div class="flex space-x-2">
-                        <input
-                            type="checkbox"
-                            class="accent-amber-500"
-                            v-model="fields.isAvailable"
-                        />
-                        <label>Is Available</label>
-                    </div>
-                </div>
+                <BaseTextField
+                    v-model="fields.title"
+                    label="Product Name"
+                    :is-invalid="invalidFields.has('title')"
+                ></BaseTextField>
                 <BaseTextField
                     :is-invalid="invalidFields.has('description')"
                     v-model="fields.description"
@@ -44,6 +33,32 @@
                         v-model="fields.brand"
                         label="Brand"
                     ></BaseTextField>
+                </div>
+                <div class="grid grid-cols-2">
+                    <div class="flex space-x-2">
+                        <input
+                            type="checkbox"
+                            class="accent-amber-500"
+                            v-model="fields.isLimitedEdition"
+                        />
+                        <label>Limited edition</label>
+                    </div>
+                    <div class="flex space-x-2">
+                        <input
+                            type="checkbox"
+                            class="accent-amber-500"
+                            v-model="fields.isLowStock"
+                        />
+                        <label>Low stock</label>
+                    </div>
+                    <div class="flex space-x-2">
+                        <input
+                            type="checkbox"
+                            class="accent-amber-500"
+                            v-model="fields.isPromoted"
+                        />
+                        <label>Promoted</label>
+                    </div>
                 </div>
             </div>
             <button
@@ -80,10 +95,12 @@ defineProps({
 const fields = reactive({
     image: null,
     title: "",
-    isAvailable: false,
     description: "",
     price: "",
     brand: "",
+    isLimitedEdition: false,
+    isLowStock: false,
+    isPromoted: false,
 });
 
 const invalidFields = reactive(new Set());
@@ -94,9 +111,9 @@ const axios = useAxios();
 
 function handleSubmit() {
     invalidFields.clear();
-    // Validation: All fields except isAvailable required
+    // Validation: All fields except booleans required
     Object.entries(fields).forEach(([key, val]) => {
-        if (key === "isAvailable") return;
+        if (key.startsWith("is")) return;
         if (!val) invalidFields.add(key);
     });
     // Validation: Price should be numeric
@@ -105,10 +122,15 @@ function handleSubmit() {
     if (invalidFields.size) return;
 
     isLoading.value = true;
+
+    const { isLimitedEdition, isLowStock, isPromoted, ...data } = fields;
+
     axios
         .postMultipart("/api/product/create", {
-            ...fields,
-            isAvailable: Number(fields.isAvailable),
+            ...data,
+            is_limited_edition: Number(isLimitedEdition),
+            is_low_stock: Number(isLowStock),
+            is_promoted: Number(isPromoted),
         })
         .then((response) => {
             if (response.data.message === "success") {
@@ -116,8 +138,10 @@ function handleSubmit() {
                 fields.title = "";
                 fields.price = "";
                 fields.brand = "";
-                fields.isAvailable = false;
                 fields.description = "";
+                fields.isLimitedEdition = false;
+                fields.isLowStock = false;
+                fields.isPromoted = false;
                 emit("update:shouldShow", false);
                 fireNotification(NotificationTypes.PRODUCT_CREATED);
             }

@@ -16,21 +16,10 @@
                     label="Product Image"
                     v-model="fields.image"
                 ></BaseImageInput>
-                <div class="flex space-x-4 items-center">
-                    <BaseTextField
-                        v-model="fields.title"
-                        class="flex-grow"
-                        label="Product Name"
-                    ></BaseTextField>
-                    <div class="flex space-x-2">
-                        <input
-                            type="checkbox"
-                            class="accent-amber-500"
-                            v-model="fields.isAvailable"
-                        />
-                        <label>Is Available</label>
-                    </div>
-                </div>
+                <BaseTextField
+                    v-model="fields.title"
+                    label="Product Name"
+                ></BaseTextField>
                 <BaseTextField
                     v-model="fields.description"
                     label="Description"
@@ -47,6 +36,33 @@
                     ></BaseTextField>
                 </div>
             </div>
+            <div class="grid grid-cols-2">
+                <div class="flex space-x-2">
+                    <input
+                        type="checkbox"
+                        class="accent-amber-500"
+                        v-model="fields.isLimitedEdition"
+                    />
+                    <label>Limited edition</label>
+                </div>
+                <div class="flex space-x-2">
+                    <input
+                        type="checkbox"
+                        class="accent-amber-500"
+                        v-model="fields.isLowStock"
+                    />
+                    <label>Low stock</label>
+                </div>
+                <div class="flex space-x-2">
+                    <input
+                        type="checkbox"
+                        class="accent-amber-500"
+                        v-model="fields.isPromoted"
+                    />
+                    <label>Promoted</label>
+                </div>
+            </div>
+
             <button
                 class="bg-amber-500 py-2 mt-8 text-white rounded-md w-full"
                 :disabled="isFormSubmitting"
@@ -93,7 +109,9 @@ const fields = reactive({
     description: "",
     price: "",
     brand: "",
-    isAvailable: false,
+    isLimitedEdition: false,
+    isLowStock: false,
+    isPromoted: false,
 });
 
 const isFetchingProduct = ref(false);
@@ -107,9 +125,9 @@ const store = useStore();
 
 function handleSubmit() {
     invalidFields.clear();
-    // Validation: All fields except image and isAvailable required
+    // Validation: All fields except image and booleans required
     Object.entries(fields).forEach(([key, val]) => {
-        if (key === "image" || key === "isAvailable") return;
+        if (key === "image" || key.startsWith("is")) return;
         if (!val) invalidFields.add(key);
     });
     // Validation: Price should be numeric
@@ -118,10 +136,13 @@ function handleSubmit() {
     if (invalidFields.size) return;
 
     isFormSubmitting.value = true;
+    const { isLimitedEdition, isLowStock, isPromoted, ...data } = fields;
     axios
         .postMultipart(`/api/product/update/${props.productId}`, {
-            ...fields,
-            isAvailable: Number(fields.isAvailable),
+            ...data,
+            is_limited_edition: Number(isLimitedEdition),
+            is_low_stock: Number(isLowStock),
+            is_promoted: Number(isPromoted),
         })
         .then((response) => {
             if (response.data.message === "success") {
@@ -152,7 +173,9 @@ watch(
             fields.description = newProduct.description;
             fields.price = String(newProduct.price);
             fields.brand = newProduct.brand;
-            fields.isAvailable = Boolean(newProduct.is_available);
+            fields.isLimitedEdition = Boolean(newProduct.is_limited_edition);
+            fields.isLowStock = Boolean(newProduct.is_low_stock);
+            fields.isPromoted = Boolean(newProduct.is_promoted);
             productImgSrc.value = newProduct.image_url;
             isFetchingProduct.value = false;
             lastProductId = props.productId;

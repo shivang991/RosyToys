@@ -27,7 +27,9 @@ class ProductController extends Controller
 
         // $add_filter('application');
         $add_filter('brand');
-        return $productBuilder->select('id', 'title', 'price', 'image_url')->paginate(6);
+        return $productBuilder
+            ->select('id', 'title', 'price', 'image_url', 'is_limited_edition', 'is_low_stock', 'is_promoted')
+            ->paginate(6);
     }
 
     public function store()
@@ -38,7 +40,9 @@ class ProductController extends Controller
             'price' => 'required|numeric',
             'brand' => 'required',
             'image' => 'required|image',
-            'isAvailable' => 'required|boolean'
+            'is_limited_edition' => 'required|boolean',
+            'is_low_stock' => 'required|boolean',
+            'is_promoted' => 'required|boolean',
         ]);
         $imgPath = Request::file('image')->store('products');
 
@@ -48,9 +52,7 @@ class ProductController extends Controller
             ->merge([
                 'image_path' => $imgPath,
                 'image_url' => $imgUrl,
-                'is_available' => $data['isAvailable']
             ])
-            ->forget('isAvailable')
             ->toArray();
 
         Product::create($productAttrs);
@@ -69,7 +71,9 @@ class ProductController extends Controller
             'description' => 'required',
             'price' => 'required|numeric',
             'brand' => 'required',
-            'isAvailable' => 'boolean'
+            'is_limited_edition' => 'boolean',
+            'is_low_stock' => 'boolean',
+            'is_promoted' => 'boolean',
         ]);
 
         $image = Request::file('image');
@@ -84,7 +88,9 @@ class ProductController extends Controller
         $product->description = $data['description'];
         $product->price = $data['price'];
         $product->brand = $data['brand'];
-        $product->is_available = $data['isAvailable'];
+        $product->is_limited_edition = $data['is_limited_edition'];
+        $product->is_low_stock = $data['is_low_stock'];
+        $product->is_promoted = $data['is_promoted'];
         $product->save();
 
         return Response::json(['message' => 'success']);

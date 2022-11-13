@@ -12,9 +12,23 @@
                 />
             </div>
             <div>
-                <h1 class="text-4xl font-semibold leading-none mb-4">
+                <h1 class="text-4xl font-semibold leading-none mb-2">
                     {{ product.title }}
                 </h1>
+                <div class="flex space-x-2 mb-4">
+                    <p
+                        class="px-2 text-sm bg-red-50 text-red-600 rounded-md"
+                        v-if="product.is_low_stock"
+                    >
+                        Existencias bajas
+                    </p>
+                    <p
+                        class="px-2 text-sm bg-slate-100 text-slate-500 rounded-md"
+                        v-if="product.is_limited_edition"
+                    >
+                        Edición limitada
+                    </p>
+                </div>
                 <p class="font-semibold text-2xl text-slate-600 mb-4">
                     ${{ product.price }}
                 </p>

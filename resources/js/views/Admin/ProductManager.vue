@@ -34,10 +34,11 @@
                 class="w-3/4 mx-auto col-start-1 row-start-1"
             >
                 <tr class="text-slate-900 h-16 mb-8">
-                    <th class="text-left px-2 w-16">Id No</th>
+                    <th class="text-left px-2 w-16">Id</th>
                     <th class="text-left px-2">Image</th>
                     <th class="text-left px-2">Name</th>
                     <th class="text-left px-2">Price</th>
+                    <th class="text-left px-2"></th>
                 </tr>
                 <tr class="h-4"></tr>
                 <tr
@@ -67,6 +68,26 @@
                     </td>
                     <td class="px-2">{{ product.title }}</td>
                     <td class="px-2">${{ product.price }}</td>
+                    <td class="px-2 py-4 space-y-2 flex flex-col items-end">
+                        <p
+                            v-if="product.is_limited_edition"
+                            class="text-sm bg-slate-200 text-slate-500 border border-slate-500 px-2 rounded-full py-1 w-max"
+                        >
+                            Limited Edition
+                        </p>
+                        <p
+                            v-if="product.is_low_stock"
+                            class="text-sm bg-red-50 text-red-600 border border-red-600 px-2 rounded-full py-1 w-max"
+                        >
+                            Low stock
+                        </p>
+                        <p
+                            v-if="product.is_promoted"
+                            class="text-sm text-amber-500 border border-amber-500 px-2 rounded-full py-1 w-max"
+                        >
+                            Promoted
+                        </p>
+                    </td>
                 </tr>
             </table>
         </div>
