@@ -513,10 +513,6 @@ video {
   margin-top: 4rem;
   margin-bottom: 4rem;
 }
-.my-24 {
-  margin-top: 6rem;
-  margin-bottom: 6rem;
-}
 .my-2 {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
@@ -620,6 +616,10 @@ video {
 .h-4 {
   height: 1rem;
 }
+.h-max {
+  height: -moz-max-content;
+  height: max-content;
+}
 .h-32 {
   height: 8rem;
 }
@@ -631,10 +631,6 @@ video {
 }
 .h-96 {
   height: 24rem;
-}
-.h-max {
-  height: -moz-max-content;
-  height: max-content;
 }
 .h-8 {
   height: 2rem;
@@ -997,14 +993,14 @@ video {
 .border-t {
   border-top-width: 1px;
 }
+.border-b {
+  border-bottom-width: 1px;
+}
 .border-b-4 {
   border-bottom-width: 4px;
 }
 .border-b-2 {
   border-bottom-width: 2px;
-}
-.border-b {
-  border-bottom-width: 1px;
 }
 .border-amber-500 {
   --tw-border-opacity: 1;
@@ -1018,6 +1014,9 @@ video {
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
+.border-transparent {
+  border-color: transparent;
+}
 .border-slate-500 {
   --tw-border-opacity: 1;
   border-color: rgb(100 116 139 / var(--tw-border-opacity));
@@ -1025,17 +1024,6 @@ video {
 .border-red-600 {
   --tw-border-opacity: 1;
   border-color: rgb(220 38 38 / var(--tw-border-opacity));
-}
-.border-transparent {
-  border-color: transparent;
-}
-.border-red-500 {
-  --tw-border-opacity: 1;
-  border-color: rgb(239 68 68 / var(--tw-border-opacity));
-}
-.border-red-50 {
-  --tw-border-opacity: 1;
-  border-color: rgb(254 242 242 / var(--tw-border-opacity));
 }
 .border-b-transparent {
   border-bottom-color: transparent;
@@ -1082,10 +1070,6 @@ video {
 .bg-gray-200 {
   --tw-bg-opacity: 1;
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
-}
-.bg-red-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(254 202 202 / var(--tw-bg-opacity));
 }
 .bg-opacity-25 {
   --tw-bg-opacity: 0.25;
@@ -1174,6 +1158,10 @@ video {
 .py-1 {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
+}
+.py-24 {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
 }
 .py-4 {
   padding-top: 1rem;
@@ -1322,14 +1310,14 @@ video {
 .accent-amber-500 {
   accent-color: #f59e0b;
 }
+.opacity-50 {
+  opacity: 0.5;
+}
 .opacity-25 {
   opacity: 0.25;
 }
 .opacity-100 {
   opacity: 1;
-}
-.opacity-50 {
-  opacity: 0.5;
 }
 .shadow-sm {
   --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);

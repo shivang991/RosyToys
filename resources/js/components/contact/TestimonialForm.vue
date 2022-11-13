@@ -1,14 +1,24 @@
 <template>
-    <form @submit.prevent="handleSubmit" class="max-w-lg mx-auto my-24 px-4">
-        <h2 class="text-2xl text-center mx-auto font-semibold mb-8">
-            Leave us a testimonial ❤️
-        </h2>
+    <form @submit.prevent="handleSubmit">
         <div class="space-y-8 w-full">
+            <div class="flex space-x-2 justify-center text-2xl">
+                <button
+                    v-for="i in 5"
+                    @click="fields.stars = i"
+                    type="button"
+                    class="text-amber-500"
+                >
+                    <FontAwesomeIcon
+                        v-if="i > fields.stars"
+                        icon="far fa-star"
+                    ></FontAwesomeIcon>
+                    <FontAwesomeIcon v-else icon="fa fa-star"></FontAwesomeIcon>
+                </button>
+            </div>
             <base-image-input
                 v-model="userImage"
                 label="Please attach your photo"
                 class="w-40 h-40 object-cover rounded-full shadow mx-auto"
-                :is-invalid="invalidFields.has('image')"
             ></base-image-input>
             <base-text-field
                 v-model="fields.name"
@@ -40,6 +50,7 @@
 <script setup>
 import useAxios from "@/plugins/Axios";
 import { fireNotification, NotificationTypes } from "@/plugins/Notifications";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { reactive, ref } from "vue";
 import BaseImageInput from "../global/BaseImageInput.vue";
 import BaseTextField from "../global/BaseTextField.vue";
@@ -47,6 +58,7 @@ import BaseTextField from "../global/BaseTextField.vue";
 const fields = reactive({
     name: "",
     message: "",
+    stars: 5,
 });
 const userImage = ref(null);
 
@@ -56,11 +68,10 @@ const axios = useAxios();
 
 function handleSubmit() {
     invalidFields.value.clear();
-    // Validation: all fields required
+    // Validation: all fields except image required
     Object.entries(fields).forEach(([field, value]) => {
         if (!value) invalidFields.value.add(field);
     });
-    if (!userImage.value) invalidFields.value.add("image");
 
     if (invalidFields.value.size) return;
 
@@ -69,7 +80,7 @@ function handleSubmit() {
     axios
         .postMultipart("/api/review/create", {
             ...fields,
-            image: userImage.value,
+            ...(userImage.value && { image: userImage.value }),
         })
         .then((response) => {
             if (response.data.message === "success") {

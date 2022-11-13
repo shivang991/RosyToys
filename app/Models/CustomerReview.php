@@ -14,6 +14,7 @@ class CustomerReview extends Model
         'message',
         'image_url',
         'image_path',
+        'stars',
         'is_verified'
     ];
 }

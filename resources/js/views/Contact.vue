@@ -7,10 +7,10 @@
             class="flex flex-col-reverse sm:grid grid-cols-2 mx-auto gap-x-8 w-11/12 md:w-3/4 mb-12"
         >
             <div
-                class="grid overflow-hidden rounded-xl mt-8 sm:mt-0 bg-amber-500"
+                class="grid h-max overflow-hidden rounded-xl mt-8 sm:mt-0 bg-amber-500"
             >
                 <div
-                    class="p-8 text-white row-start-1 col-start-1 min-w-0 z-10"
+                    class="px-8 py-24 text-white row-start-1 col-start-1 min-w-0 z-10"
                 >
                     <h4 class="text-2xl mb-8 font-semibold">
                         Contact Information
@@ -39,9 +39,45 @@
                     class="row-start-1 col-start-1 bg-slate-600 w-40 h-40 rounded-full self-end justify-self-end translate-x-1/4 translate-y-1/4"
                 ></div>
             </div>
-            <contact-form></contact-form>
+            <div>
+                <div class="grid grid-cols-2 mb-8">
+                    <button
+                        class="py-2 px-4 text-slate-900 border-b font-semibold"
+                        @click="shouldShowTestimonialForm = false"
+                        :class="
+                            shouldShowTestimonialForm
+                                ? 'border-transparent opacity-50'
+                                : 'border-amber-500 bg-slate-100 rounded-t-md'
+                        "
+                    >
+                        Escribe un mensaje
+                    </button>
+                    <button
+                        @click="shouldShowTestimonialForm = true"
+                        class="py-2 px-4 text-slate-900 border-b font-semibold"
+                        :class="
+                            shouldShowTestimonialForm
+                                ? 'border-amber-500 bg-slate-100 rounded-t-md'
+                                : 'border-transparent opacity-50'
+                        "
+                    >
+                        Dejar un comentario
+                    </button>
+                </div>
+                <div class="grid">
+                    <Transition name="fade">
+                        <testimonial-form
+                            class="row-start-1 col-start-1"
+                            v-if="shouldShowTestimonialForm"
+                        ></testimonial-form>
+                        <contact-form
+                            class="row-start-1 col-start-1"
+                            v-else
+                        ></contact-form>
+                    </Transition>
+                </div>
+            </div>
         </div>
-        <testimonial-form></testimonial-form>
         <contact-map></contact-map>
     </div>
 </template>
@@ -51,6 +87,7 @@ import ContactForm from "@/components/contact/ContactForm.vue";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import ContactMap from "@/components/contact/ContactMap.vue";
 import TestimonialForm from "@/components/contact/TestimonialForm.vue";
+import { ref } from "vue";
 
 const contactInfo = [
     { icon: "fa-phone", text: "(406) 555-0120" },
@@ -60,4 +97,6 @@ const contactInfo = [
         text: "2972 Westheimer Rd. Santa Ana, Illinois 85486",
     },
 ];
+
+const shouldShowTestimonialForm = ref(false);
 </script>

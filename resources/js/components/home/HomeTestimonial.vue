@@ -47,9 +47,13 @@
                                 </p>
                                 <p class="flex space-x-2 text-amber-500">
                                     <FontAwesomeIcon
-                                        icon="fa-star"
                                         v-for="i in 5"
                                         :key="i"
+                                        :icon="
+                                            i > currentTestiomial.stars
+                                                ? 'far fa-star'
+                                                : 'fa fa-star'
+                                        "
                                     ></FontAwesomeIcon>
                                 </p>
                             </div>

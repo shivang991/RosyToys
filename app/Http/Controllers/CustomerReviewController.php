@@ -19,18 +19,21 @@ class CustomerReviewController extends Controller
         $data = Request::validate([
             'name' => 'required',
             'message' => 'required',
-            'image' => 'image|required'
+            'stars' => 'numeric|required',
+            'image' => 'image'
         ]);
 
-        $imgPath = Request::file('image')->store('customers');
-        $imgUrl = Storage::url($imgPath);
-
-        CustomerReview::create([
+        $img =  Request::file('image');
+        $imgAttrs = [];
+        if ($img) {
+            $imgAttrs['image_path'] = $img->store('customers');
+            $imgAttrs['image_url'] = Storage::url($imgAttrs['image_path']);
+        }
+        CustomerReview::create(array_merge([
             'name' => $data['name'],
             'message' => $data['message'],
-            'image_url' => $imgUrl,
-            'image_path' => $imgPath
-        ]);
+            'stars' => $data['stars']
+        ], $imgAttrs));
         return Response::json(['message' => 'success']);
     }
     public function index()

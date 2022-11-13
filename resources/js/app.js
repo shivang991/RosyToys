@@ -47,7 +47,7 @@ import {
     faCartShopping,
     faTrash,
     faExpand,
-    faQuoteLeft
+    faQuoteLeft,
 } from "@fortawesome/free-solid-svg-icons";
 import {
     faTwitter,
@@ -55,6 +55,7 @@ import {
     faFacebook,
     faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
+import { faStar as faStarOutlined } from "@fortawesome/free-regular-svg-icons";
 
 library.add(
     faTrash,
@@ -86,5 +87,6 @@ library.add(
     faPen,
     faUpload,
     faExpand,
-    faQuoteLeft
+    faQuoteLeft,
+    faStarOutlined
 );
