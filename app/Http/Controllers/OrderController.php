@@ -26,9 +26,9 @@ class OrderController extends Controller
         return Response::json(
             Order::with(['order_items' => function ($query) {
                 $query->with('product:id,title,price');
-            }])
+            }, 'user:id,email'])
                 ->where('id', $id)
-                ->select('id', 'created_at', 'secret', 'total_price')
+                ->select('id', 'user_id', 'created_at', 'secret', 'address', 'total_price')
                 ->first()
         );
     }

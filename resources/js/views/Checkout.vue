@@ -17,12 +17,20 @@
                 Complete los siguientes detalles de la tarjeta y presione
                 "pagar" para pagar.
             </p>
-            <BaseTextField
-                v-model="nameOnCard"
-                label="Name on card"
-                class="w-full mb-4"
-            ></BaseTextField>
             <div ref="cardEl"></div>
+            <BaseTextField
+                v-model="fields.name"
+                label="Name on card"
+                class="w-full mb-4 mt-8"
+                :is-invalid="invalidFields.has('name')"
+            ></BaseTextField>
+            <BaseTextField
+                v-model="fields.address"
+                label="Billing Address"
+                class="w-full"
+                is-text-area
+                :is-invalid="invalidFields.has('address')"
+            ></BaseTextField>
             <p
                 class="mt-4 py-1 px-4 bg-red-50 text-red-500 rounded-md"
                 v-if="isCardError"
@@ -55,12 +63,11 @@ import BaseImage from "@/components/global/BaseImage.vue";
 import BaseTextField from "@/components/global/BaseTextField.vue";
 import useAxios from "@/plugins/Axios";
 import { loadStripe } from "@stripe/stripe-js/pure";
-import { onMounted, ref } from "vue";
+import { onMounted, reactive, ref } from "vue";
 import { useRoute } from "vue-router";
 
 const cardEl = ref();
 
-const nameOnCard = ref("");
 const totalPrice = ref();
 const isReady = ref(false);
 const isSubmitting = ref(false);
@@ -80,12 +87,20 @@ loadStripe.setLoadParameters({ advancedFraudSignals: false });
 const axios = useAxios();
 const route = useRoute();
 
+const fields = reactive({
+    address: "",
+    name: "",
+    email: "",
+});
+const invalidFields = ref(new Set([]));
+
 onMounted(async () => {
     const orderId = route.query.id;
     if (!orderId) return;
     const { data } = await axios.get(`/api/order/${orderId}`);
     if (data.is_paid) return (isPaid.value = true);
     clientSecret = data.secret;
+    fields.email = data.user.email;
     totalPrice.value = data.total_price;
     const loadResult = await loadStripe(process.env.MIX_STRIPE_PK);
     stripe = loadResult;
@@ -97,30 +112,35 @@ onMounted(async () => {
 });
 
 function handleSubmit() {
-    if (stripe && clientSecret && nameOnCard.value.length > 0) {
-        isSubmitting.value = true;
-        stripe
-            .confirmCardSetup(clientSecret, {
-                payment_method: {
-                    card: stripeCard,
-                    billing_details: { name: nameOnCard.value },
-                },
-            })
-            .then((result) => {
-                if (result.error && result.error.code === "card_declined") {
-                    isSubmitting.value = false;
-                    isCardError.value = true;
-                } else if (result.setupIntent)
-                    axios
-                        .post("/api/checkout/pay", {
-                            secret: clientSecret,
-                            payment_method: result.setupIntent.payment_method,
-                        })
-                        .then((response) => {
-                            if (response.data.message === "success")
-                                isPaid.value = true;
-                        });
-            });
-    }
+    invalidFields.value.clear();
+    Object.entries(fields).forEach(([key, value]) => {
+        if (!value) invalidFields.value.add(key);
+    });
+    if (invalidFields.value.size || !stripe || !clientSecret) return;
+
+    isSubmitting.value = true;
+    stripe
+        .confirmCardSetup(clientSecret, {
+            payment_method: {
+                card: stripeCard,
+                billing_details: fields,
+            },
+        })
+        .then((result) => {
+            if (result.error && result.error.code === "card_declined") {
+                isSubmitting.value = false;
+                isCardError.value = true;
+            } else if (result.setupIntent)
+                axios
+                    .post("/api/checkout/pay", {
+                        secret: clientSecret,
+                        payment_method: result.setupIntent.payment_method,
+                        address: fields.address,
+                    })
+                    .then((response) => {
+                        if (response.data.message === "success")
+                            isPaid.value = true;
+                    });
+        });
 }
 </script>

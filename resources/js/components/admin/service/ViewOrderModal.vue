@@ -15,6 +15,10 @@
                     {{ formatDate(order.created_at) }}
                 </h4>
             </div>
+            <div class="mb-4">
+                <p class="text-slate-500">Address:</p>
+                <p class="text-slate-900">{{ order.address }}</p>
+            </div>
             <p class="text-gray-500">Products:</p>
             <table>
                 <tr>
@@ -24,10 +28,18 @@
                     <th class="text-left px-4 py-2">Quantity</th>
                 </tr>
                 <tr v-for="(item, index) in order.order_items" :key="index">
-                    <td class="py-2 px-4 border-amber-500 border-y">{{ item.product.id }}</td>
-                    <td class="py-2 px-4 border-amber-500 border-y">{{ item.product.title }}</td>
-                    <td class="py-2 px-4 border-amber-500 border-y">${{ item.product.price }}</td>
-                    <td class="py-2 px-4 border-amber-500 border-y">{{ item.quantity }}</td>
+                    <td class="py-2 px-4 border-amber-500 border-y">
+                        {{ item.product.id }}
+                    </td>
+                    <td class="py-2 px-4 border-amber-500 border-y">
+                        {{ item.product.title }}
+                    </td>
+                    <td class="py-2 px-4 border-amber-500 border-y">
+                        ${{ item.product.price }}
+                    </td>
+                    <td class="py-2 px-4 border-amber-500 border-y">
+                        {{ item.quantity }}
+                    </td>
                 </tr>
             </table>
         </div>

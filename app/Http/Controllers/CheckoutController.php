@@ -55,7 +55,8 @@ class CheckoutController extends Controller
     {
         $data = Request::validate([
             'secret' => 'required|string',
-            'payment_method' => 'required|string'
+            'payment_method' => 'required|string',
+            'address' => 'required|string'
         ]);
 
         $order = Order::with('user')->where('secret', $data['secret'])->first();
@@ -65,6 +66,7 @@ class CheckoutController extends Controller
         $user->charge($order->total_price * 100, $data['payment_method']);
 
         $order->is_paid = true;
+        $order->address = $data['address'];
         $order->status = 'paid';
         $order->save();
 
