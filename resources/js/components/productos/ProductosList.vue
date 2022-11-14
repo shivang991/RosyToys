@@ -10,6 +10,9 @@
             :imgSrc="product.image_url"
             :price="product.price"
             :title="product.title"
+            :isLimited="product.is_limited_edition"
+            :isLowStock="product.is_low_stock"
+            :isPromoted="product.is_promoted"
         ></productos-list-item>
         <div
             class="flex space-x-4 text-xl items-center p-4 text-center justify-center bg-slate-100 text-slate-900 rounded-lg shadow-lg"

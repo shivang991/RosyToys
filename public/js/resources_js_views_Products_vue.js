@@ -339,6 +339,18 @@ __webpack_require__.r(__webpack_exports__);
     price: {
       type: Number,
       required: true
+    },
+    isLimited: {
+      type: Boolean,
+      required: true
+    },
+    isPromoted: {
+      type: Boolean,
+      required: true
+    },
+    isLowStock: {
+      type: Boolean,
+      required: true
     }
   },
   setup: function setup(__props, _ref) {
@@ -709,10 +721,13 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       id: product.id,
       imgSrc: product.image_url,
       price: product.price,
-      title: product.title
+      title: product.title,
+      isLimited: product.is_limited_edition,
+      isLowStock: product.is_low_stock,
+      isPromoted: product.is_promoted
     }, null, 8
     /* PROPS */
-    , ["id", "imgSrc", "price", "title"]);
+    , ["id", "imgSrc", "price", "title", "isLimited", "isLowStock", "isPromoted"]);
   }), 128
   /* KEYED_FRAGMENT */
   )), !$setup.products.length ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["FontAwesomeIcon"], {
@@ -735,23 +750,41 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "text-xl font-semibold mb-2 text-center leading-none"
+  "class": "grid"
 };
 var _hoisted_2 = {
-  "class": "mb-8 text-center"
+  "class": "flex flex-col items-start space-y-2 row-start-1 col-start-1 self-start mb-4"
 };
 var _hoisted_3 = {
   key: 0,
+  "class": "px-2 text-sm bg-red-50 border border-red-600 text-red-600 rounded-full"
+};
+var _hoisted_4 = {
+  key: 1,
+  "class": "px-2 text-sm bg-white text-slate-500 rounded-full border border-slate-500"
+};
+var _hoisted_5 = {
+  key: 2,
+  "class": "px-2 text-sm bg-white text-amber-500 rounded-full border border-amber-500"
+};
+var _hoisted_6 = {
+  "class": "text-xl font-semibold mb-2 text-center leading-none"
+};
+var _hoisted_7 = {
+  "class": "mb-8 text-center"
+};
+var _hoisted_8 = {
+  key: 0,
   "class": "flex justify-center items-center space-x-4"
 };
-var _hoisted_4 = ["onClick"];
-var _hoisted_5 = {
+var _hoisted_9 = ["onClick"];
+var _hoisted_10 = {
   "class": "text-xl font-semibold text-slate-500"
 };
-var _hoisted_6 = ["onClick"];
-var _hoisted_7 = ["onClick"];
+var _hoisted_11 = ["onClick"];
+var _hoisted_12 = ["onClick"];
 
-var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "Añadir al carrito", -1
+var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "Añadir al carrito", -1
 /* HOISTED */
 );
 
@@ -760,24 +793,24 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     title: "Ver el producto",
     onClick: $setup.viewProduct,
     "class": "bg-slate-100 hover:shadow-xl cursor-pointer flex flex-col items-center px-8 py-12 shadow-sm rounded-tl-md rounded-tr-2xl rounded-bl-2xl rounde-br-md"
-  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BaseImage"], {
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BaseImage"], {
     isExternal: "",
     src: $props.imgSrc,
-    "class": "w-60 h-40 object-cover mb-4 rounded"
+    "class": "row-start-1 col-start-1 w-60 h-40 object-cover mb-4 rounded"
   }, null, 8
   /* PROPS */
-  , ["src"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", _hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.title), 1
+  , ["src"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [$props.isLowStock ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_3, " Existencias bajas ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $props.isLimited ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_4, " Edición limitada ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $props.isPromoted ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_5, " Promocionado ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", _hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.title), 1
   /* TEXT */
-  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_2, "Price: " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.formattedPrice), 1
+  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_7, "Price: " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.formattedPrice), 1
   /* TEXT */
-  ), $setup.quantityInCart ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  ), $setup.quantityInCart ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     "class": "py-1 px-2 rounded-md border border-amber-500 text-amber-500 hover:bg-amber-500 hover:text-white",
     onClick: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)($setup.removeFromCart, ["stop"])
   }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["FontAwesomeIcon"], {
     icon: "fa fa-minus"
   })], 8
   /* PROPS */
-  , _hoisted_4), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.quantityInCart), 1
+  , _hoisted_9), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.quantityInCart), 1
   /* TEXT */
   ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     "class": "py-1 px-2 rounded-md border border-amber-500 text-amber-500 hover:bg-amber-500 hover:text-white",
@@ -786,15 +819,15 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     icon: "fa fa-plus"
   })], 8
   /* PROPS */
-  , _hoisted_6)])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", {
+  , _hoisted_11)])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", {
     key: 1,
     "class": "flex justify-between w-full items-center py-2 px-4 bg-amber-500 hover:bg-amber-600 text-white rounded-md",
     onClick: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)($setup.addToCart, ["stop"])
-  }, [_hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["FontAwesomeIcon"], {
+  }, [_hoisted_13, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["FontAwesomeIcon"], {
     icon: "fa-shopping-cart"
   })], 8
   /* PROPS */
-  , _hoisted_7))]);
+  , _hoisted_12))]);
 }
 
 /***/ }),

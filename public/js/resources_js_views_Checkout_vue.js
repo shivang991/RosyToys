@@ -351,20 +351,21 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               data = _yield$axios$get.data;
 
               if (!data.is_paid) {
-                _context.next = 9;
+                _context.next = 10;
                 break;
               }
 
-              return _context.abrupt("return", isPaid.value = true);
+              isPaid.value = true;
+              return _context.abrupt("return");
 
-            case 9:
+            case 10:
               clientSecret = data.secret;
               fields.email = data.user.email;
               totalPrice.value = data.total_price;
-              _context.next = 14;
+              _context.next = 15;
               return (0,_stripe_stripe_js_pure__WEBPACK_IMPORTED_MODULE_3__.loadStripe)("pk_test_51JaKH5SBO5SujIhczesl1GpKhbvS4ho7X1RdE3BimmIPqNLq6Z9n1LWs9UXMyZkuQnELU4UIcQdoeifoxoxuiWo200NSRwFlIZ");
 
-            case 14:
+            case 15:
               loadResult = _context.sent;
               stripe = loadResult;
               elements = stripe.elements();
@@ -373,7 +374,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               stripeCard = card;
               isReady.value = true;
 
-            case 21:
+            case 22:
             case "end":
               return _context.stop();
           }
@@ -506,72 +507,78 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
+  "class": "mb-8 mt-12"
+};
+var _hoisted_2 = {
   key: 0,
-  "class": "py-8 my-12"
+  "class": "max-w-lg mx-auto"
 };
 
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", {
+var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h1", {
   "class": "text-slate-900 text-4xl font-semibold mb-8 text-center"
 }, " Thanks for your purchase, your order has been placed! ", -1
 /* HOISTED */
 );
 
-var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
+var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
   "class": "text-slate-900 text-center"
 }, " We will keep you updated about the delivery via your email. ", -1
 /* HOISTED */
 );
 
-var _hoisted_4 = {
+var _hoisted_5 = [_hoisted_3, _hoisted_4];
+var _hoisted_6 = {
   key: 1,
   "class": "max-w-lg mx-auto py-12"
 };
-var _hoisted_5 = ["onSubmit"];
-var _hoisted_6 = {
+var _hoisted_7 = ["onSubmit"];
+var _hoisted_8 = {
   "class": "text-2xl font-semibold text-gray-500"
 };
 
-var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
+var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
   "class": "mb-8 text-gray-500"
 }, " Complete los siguientes detalles de la tarjeta y presione \"pagar\" para pagar. ", -1
 /* HOISTED */
 );
 
-var _hoisted_8 = {
+var _hoisted_10 = {
   ref: "cardEl"
 };
-var _hoisted_9 = {
+var _hoisted_11 = {
   key: 0,
   "class": "mt-4 py-1 px-4 bg-red-50 text-red-500 rounded-md"
 };
-var _hoisted_10 = ["disabled"];
-var _hoisted_11 = {
+var _hoisted_12 = ["disabled"];
+var _hoisted_13 = {
   key: 0,
   "class": "h-4 block w-4 border-2 my-1 rounded-full border-b-transparent border-white animate-spin mx-auto"
 };
-var _hoisted_12 = {
+var _hoisted_14 = {
   key: 1
 };
-var _hoisted_13 = {
+var _hoisted_15 = {
   "class": "flex justify-center py-8"
 };
 
-var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "w-10 h-10 border-4 border-amber-500 border-b-transparent rounded-full animate-spin"
 }, null, -1
 /* HOISTED */
 );
 
-var _hoisted_15 = [_hoisted_14];
+var _hoisted_17 = [_hoisted_16];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return $setup.isPaid ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BaseImage"], {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BaseImage"], {
     src: "/logo.png",
     "class": "w-80 mb-8 mx-auto"
-  }), _hoisted_2, _hoisted_3])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
+  })], 512
+  /* NEED_PATCH */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, $setup.isPaid]]), $setup.isPaid ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_2, _hoisted_5)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
     onSubmit: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)($setup.handleSubmit, ["prevent"])
-  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h4", _hoisted_6, " Paying a total of: $" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.totalPrice) + " only ", 1
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h4", _hoisted_8, " Paying a total of: $" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.totalPrice) + " only ", 1
   /* TEXT */
-  ), _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, null, 512
+  ), _hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, null, 512
   /* NEED_PATCH */
   ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BaseTextField"], {
     modelValue: $setup.fields.name,
@@ -594,17 +601,17 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "is-invalid": $setup.invalidFields.has('address')
   }, null, 8
   /* PROPS */
-  , ["modelValue", "is-invalid"]), $setup.isCardError ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_9, " Your card got declined ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  , ["modelValue", "is-invalid"]), $setup.isCardError ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_11, " Your card got declined ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     "class": "bg-amber-500 px-8 py-2 text-white rounded-md mt-8",
     type: "submit",
     disabled: $setup.isSubmitting
-  }, [$setup.isSubmitting ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_11)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_12, " Pagar "))], 8
+  }, [$setup.isSubmitting ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_13)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_14, " Pagar "))], 8
   /* PROPS */
-  , _hoisted_10)], 40
+  , _hoisted_12)], 40
   /* PROPS, HYDRATE_EVENTS */
-  , _hoisted_5), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, $setup.isReady]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_13, _hoisted_15, 512
+  , _hoisted_7), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, $setup.isReady]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, _hoisted_17, 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, !$setup.isReady]])]));
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, !$setup.isReady]])]))]);
 }
 
 /***/ }),

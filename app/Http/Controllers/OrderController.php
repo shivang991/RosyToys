@@ -28,7 +28,7 @@ class OrderController extends Controller
                 $query->with('product:id,title,price');
             }, 'user:id,email'])
                 ->where('id', $id)
-                ->select('id', 'user_id', 'created_at', 'secret', 'address', 'total_price')
+                ->select('id', 'user_id', 'created_at', 'secret', 'address', 'is_paid', 'total_price')
                 ->first()
         );
     }

@@ -1,59 +1,63 @@
 <template>
-    <div v-if="isPaid" class="py-8 my-12">
-        <BaseImage src="/logo.png" class="w-80 mb-8 mx-auto"></BaseImage>
-        <h1 class="text-slate-900 text-4xl font-semibold mb-8 text-center">
-            Thanks for your purchase, your order has been placed!
-        </h1>
-        <p class="text-slate-900 text-center">
-            We will keep you updated about the delivery via your email.
-        </p>
-    </div>
-    <div class="max-w-lg mx-auto py-12" v-else>
-        <form v-show="isReady" @submit.prevent="handleSubmit">
-            <h4 class="text-2xl font-semibold text-gray-500">
-                Paying a total of: ${{ totalPrice }} only
-            </h4>
-            <p class="mb-8 text-gray-500">
-                Complete los siguientes detalles de la tarjeta y presione
-                "pagar" para pagar.
+    <div>
+        <div v-show="isPaid" class="mb-8 mt-12">
+            <BaseImage src="/logo.png" class="w-80 mb-8 mx-auto"></BaseImage>
+        </div>
+        <div v-if="isPaid" class="max-w-lg mx-auto">
+            <h1 class="text-slate-900 text-4xl font-semibold mb-8 text-center">
+                Thanks for your purchase, your order has been placed!
+            </h1>
+            <p class="text-slate-900 text-center">
+                We will keep you updated about the delivery via your email.
             </p>
-            <div ref="cardEl"></div>
-            <BaseTextField
-                v-model="fields.name"
-                label="Name on card"
-                class="w-full mb-4 mt-8"
-                :is-invalid="invalidFields.has('name')"
-            ></BaseTextField>
-            <BaseTextField
-                v-model="fields.address"
-                label="Billing Address"
-                class="w-full"
-                is-text-area
-                :is-invalid="invalidFields.has('address')"
-            ></BaseTextField>
-            <p
-                class="mt-4 py-1 px-4 bg-red-50 text-red-500 rounded-md"
-                v-if="isCardError"
-            >
-                Your card got declined
-            </p>
-            <button
-                class="bg-amber-500 px-8 py-2 text-white rounded-md mt-8"
-                type="submit"
-                :disabled="isSubmitting"
-            >
-                <span
-                    class="h-4 block w-4 border-2 my-1 rounded-full border-b-transparent border-white animate-spin mx-auto"
-                    v-if="isSubmitting"
+        </div>
+        <div class="max-w-lg mx-auto py-12" v-else>
+            <form v-show="isReady" @submit.prevent="handleSubmit">
+                <h4 class="text-2xl font-semibold text-gray-500">
+                    Paying a total of: ${{ totalPrice }} only
+                </h4>
+                <p class="mb-8 text-gray-500">
+                    Complete los siguientes detalles de la tarjeta y presione
+                    "pagar" para pagar.
+                </p>
+                <div ref="cardEl"></div>
+                <BaseTextField
+                    v-model="fields.name"
+                    label="Name on card"
+                    class="w-full mb-4 mt-8"
+                    :is-invalid="invalidFields.has('name')"
+                ></BaseTextField>
+                <BaseTextField
+                    v-model="fields.address"
+                    label="Billing Address"
+                    class="w-full"
+                    is-text-area
+                    :is-invalid="invalidFields.has('address')"
+                ></BaseTextField>
+                <p
+                    class="mt-4 py-1 px-4 bg-red-50 text-red-500 rounded-md"
+                    v-if="isCardError"
                 >
-                </span>
-                <span v-else> Pagar </span>
-            </button>
-        </form>
-        <div class="flex justify-center py-8" v-show="!isReady">
-            <div
-                class="w-10 h-10 border-4 border-amber-500 border-b-transparent rounded-full animate-spin"
-            ></div>
+                    Your card got declined
+                </p>
+                <button
+                    class="bg-amber-500 px-8 py-2 text-white rounded-md mt-8"
+                    type="submit"
+                    :disabled="isSubmitting"
+                >
+                    <span
+                        class="h-4 block w-4 border-2 my-1 rounded-full border-b-transparent border-white animate-spin mx-auto"
+                        v-if="isSubmitting"
+                    >
+                    </span>
+                    <span v-else> Pagar </span>
+                </button>
+            </form>
+            <div class="flex justify-center py-8" v-show="!isReady">
+                <div
+                    class="w-10 h-10 border-4 border-amber-500 border-b-transparent rounded-full animate-spin"
+                ></div>
+            </div>
         </div>
     </div>
 </template>
@@ -98,7 +102,10 @@ onMounted(async () => {
     const orderId = route.query.id;
     if (!orderId) return;
     const { data } = await axios.get(`/api/order/${orderId}`);
-    if (data.is_paid) return (isPaid.value = true);
+    if (data.is_paid) {
+        isPaid.value = true;
+        return;
+    }
     clientSecret = data.secret;
     fields.email = data.user.email;
     totalPrice.value = data.total_price;

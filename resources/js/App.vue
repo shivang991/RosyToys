@@ -1,6 +1,6 @@
 <template>
     <notification-root />
-    <div v-if="isUserLoaded">
+    <div v-if="isAuthReady">
         <nav-bar v-if="isLayoutEnabled"></nav-bar>
         <div class="min-h-screen flex flex-col">
             <div class="flex-grow">
@@ -17,10 +17,9 @@
 </template>
 
 <script setup>
-import { onMounted, computed } from "vue";
+import { onMounted, computed, ref } from "vue";
 import NavBar from "@/components/layout/nav/Nav.vue";
 import FooterBar from "@/components/layout/footer/Footer.vue";
-import { useAxios } from "@/plugins/Axios";
 import NotificationRoot from "@/components/global/NotificationRoot.vue";
 import { useRoute, useRouter } from "vue-router";
 import { useStore } from "vuex";
@@ -29,15 +28,19 @@ const route = useRoute();
 const router = useRouter();
 
 const store = useStore();
-const isUserLoaded = computed(() => store.state.auth.isReady);
+
+// not using store.state.auth.isReady because we'll need to await router.isReady
+// after "auth/init" action is complete
+const isAuthReady = ref(false);
 
 onMounted(async () => {
     store.dispatch("auth/init");
     await router.isReady();
+    isAuthReady.value = true;
 });
 
-const isLayoutEnabled = computed(() => !route.meta.isLayoutDisabled);
+const isLayoutEnabled = computed(() => isAuthReady.value && !route.meta.isLayoutDisabled);
 
 // Initialize product list
-useStore().dispatch("products/refetch");
+store.dispatch("products/refetch");
 </script>
