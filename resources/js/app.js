@@ -47,7 +47,10 @@ import {
     faCartShopping,
     faTrash,
     faExpand,
+    faPlay,
     faQuoteLeft,
+    faSearch,
+    faArrowLeft
 } from "@fortawesome/free-solid-svg-icons";
 import {
     faTwitter,
@@ -58,6 +61,10 @@ import {
 import { faStar as faStarOutlined } from "@fortawesome/free-regular-svg-icons";
 
 library.add(
+    faArrowRight,
+    faArrowLeft,
+    faSearch,
+    faPlay,
     faTrash,
     faCartShopping,
     faPlus,

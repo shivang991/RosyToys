@@ -1,39 +1,29 @@
 <template>
-    <nav class="bg-slate-900">
+    <nav class="bg-gray-100">
         <div
-            class="w-11/12 lg:w-3/4 flex justify-between items-center py-4 lg:py-8 mx-auto"
             v-if="$route.name === 'Home'"
+            class="flex justify-between w-3/4 mx-auto items-center py-8"
         >
-            <BaseImage src="logo.png" class="w-40" />
-            <nav-links class="hidden md:flex" :links="links"></nav-links>
-            <button
-                @click="shouldShowSideBar = !shouldShowSideBar"
-                class="md:hidden text-slate-200 text-xl"
-            >
-                <FontAwesomeIcon
-                    :icon="shouldShowSideBar ? 'fa-times' : 'fa-bars'"
-                ></FontAwesomeIcon>
-            </button>
+            <div class="h-24">
+                <BaseImage src="logo.png" class="h-full" />
+            </div>
+            <nav-links class="hidden md:grid" :links="links"></nav-links>
         </div>
         <div v-else>
-            <div class="mx-8 md:mx-20 py-4 justify-between flex items-center">
-                <BaseImage src="logo.png" class="w-32" />
+            <div class="bg-blue-100 flex md:justify-center">
+                <div class="h-12">
+                    <BaseImage src="logo.png" class="h-full" />
+                </div>
                 <button
                     @click="shouldShowSideBar = !shouldShowSideBar"
-                    class="lg:hidden text-slate-200 text-xl"
+                    class="md:hidden text-white text-xl ml-auto py-2 w-12 bg-blue-600"
                 >
                     <FontAwesomeIcon
                         :icon="shouldShowSideBar ? 'fa-times' : 'fa-bars'"
                     ></FontAwesomeIcon>
                 </button>
-                <div class="hidden lg:flex items-center space-x-8">
-                    <nav-links :links="links"></nav-links>
-                    <product-search-box
-                        class="w-60"
-                        shouldRedirectOnSuccess
-                    ></product-search-box>
-                </div>
             </div>
+            <nav-links class="hidden md:flex" :links="links"></nav-links>
             <NavCart></NavCart>
         </div>
     </nav>
@@ -50,7 +40,6 @@ import { useStore } from "vuex";
 import NavLinks from "./NavLinks.vue";
 import NavCart from "./NavCart.vue";
 import NavMobile from "./NavMobile.vue";
-import ProductSearchBox from "@/components/global/ProductSearchBox.vue";
 import BaseImage from "@/components/global/BaseImage.vue";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 

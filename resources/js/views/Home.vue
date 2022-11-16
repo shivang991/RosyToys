@@ -1,124 +1,84 @@
 <template>
-    <div class="bg-slate-900">
-        <div
-            class="flex justify-center md:justify-between items-center w-3/4 mx-auto"
-        >
-            <div class="hidden md:block">
-                <h1 class="text-4xl text-slate-200 mb-4">Naruto Shippuden</h1>
-                <p
-                    class="mb-12 text-xl bg-gradient-to-r bg-clip-text text-transparent font-bold from-amber-800 w-max to-amber-500"
-                >
-                    #DATTEBAYO
-                </p>
-                <div class="flex space-x-8 mb-12">
-                    <BaseImage
-                        class="w-20 mb-12"
-                        v-for="(src, index) in leftDecorationImages"
-                        :src="src"
-                        :key="index"
-                    />
-                </div>
-                <router-link
-                    :to="{ name: 'Productos' }"
-                    class="text-2xl py-4 px-8 text-white bg-amber-500 rounded-md mt-8 font-semibold"
-                    >Ver más
-                </router-link>
-            </div>
-            <div class="lg:flex space-x-8 items-center">
-                <BaseImage src="home_central.png" width="480" />
-                <div class="hidden lg:block">
-                    <div
-                        class="border rounded-md border-amber-500 px-4 py-2 text-slate-200 mb-8"
-                    >
-                        <p>Hasta</p>
-                        <p class="flex space-x-2 items-end">
-                            <span class="text-amber-500 text-4xl font-semibold"
-                                >40%</span
+    <main class="bg-gray-100">
+        <div class="grid">
+            <div class="w-3/4 mx-auto mb-20 col-start-1 row-start-1">
+                <div class="grid">
+                    <div class="col-start-1 row-start-1 py-20 flex bg-primary">
+                        <div class="w-80"></div>
+                        <div>
+                            <h1
+                                class="text-6xl mb-2 max-w-xl text-white font-serif"
                             >
-                            <span class="leading-none">de descuento</span>
-                        </p>
+                                Are you planning a kermes or a party?
+                            </h1>
+                            <div class="w-40 h-px my-4 bg-sky-600"></div>
+                            <p class="mb-12 max-w-md">
+                                Here we offer a wide catalog ofeconomic toysfrom
+                                $ 1.00 peso for prizes, gifts or for the piñata.
+                            </p>
+                            <div class="flex space-x-4">
+                                <button
+                                    class="text-xl flex items-center space-x-4 text-white bg-sky-600 py-2 px-8"
+                                >
+                                    <FontAwesomeIcon
+                                        class="text-sm"
+                                        icon="fa-cart-shopping"
+                                    ></FontAwesomeIcon>
+                                    <span>Add to cart</span>
+                                </button>
+                                <button
+                                    class="text-xl border-2 border-sky-600 py-2 px-8 font-serif"
+                                >
+                                    Explore
+                                </button>
+                            </div>
+                        </div>
                     </div>
-                    <BaseImage src="home_dec1.png" class="w-40" />
+                    <BaseImage
+                        src="toy.png"
+                        class="w-80 col-start-1 row-start-1 self-end translate-y-12 rotate-12"
+                    ></BaseImage>
+                </div>
+                <div class="py-12"></div>
+                <HomePromotions></HomePromotions>
+            </div>
+            <BaseImage
+                src="bg-arrow.png"
+                class="col-start-1 row-start-1 w-1/2 justify-self-end -translate-y-8"
+            ></BaseImage>
+        </div>
+        <HomeTrending class="mt-20"></HomeTrending>
+        <HomeTestimonial class="my-20"></HomeTestimonial>
+        <div class="bg-sky-600 py-8">
+            <div class="max-w-xl mx-auto grid grid-cols-5 gap-8">
+                <div
+                    class="p-4 bg-white rounded-md"
+                    v-for="logoSrc in sponserLogos"
+                >
+                    <BaseImage is-external :src="logoSrc"></BaseImage>
                 </div>
             </div>
         </div>
-        <div class="flex justify-center pb-8">
-            <button class="text-slate-200 text-lg">
-                <FontAwesomeIcon icon="fa-chevron-down" />
-            </button>
-        </div>
-    </div>
-    <HomeCarousel></HomeCarousel>
-    <HomePromotions></HomePromotions>
-    <div class="my-16 w-11/12 lg:w-3/4 mx-auto">
-        <h4 class="text-2xl font-semibold text-slate-900 mb-8 sm:mb-20">
-            Servicios
-        </h4>
-        <ul class="space-y-12">
-            <li
-                class="flex even:flex-row-reverse group items-center w-full"
-                v-for="(service, index) in services"
-                :key="index"
-            >
-                <div
-                    class="flex shadow-xl items-center group-even:flex-row-reverse p-8 border-b-4 border-amber-500 rounded-xl max-w-lg"
-                >
-                    <p class="text-6xl font-bold text-slate-500">
-                        0{{ index + 1 }}
-                    </p>
-                    <div
-                        class="space-y-4 text-slate-900 ml-8 group-even:mr-8 group-even:ml-0"
-                    >
-                        <h5 class="text-xl font-semibold">
-                            {{ service.title }}
-                        </h5>
-                        <p>{{ service.desc }}</p>
-                    </div>
-                </div>
-                <div
-                    class="hidden md:block text-8xl text-slate-500 p-8 rounded border-b-4 border-amber-500 shadow-xl ml-8 group-even:mr-8 group-even:ml-0"
-                >
-                    <FontAwesomeIcon :icon="service.icon"></FontAwesomeIcon>
-                </div>
-            </li>
-        </ul>
-    </div>
-    <HomeTestimonial></HomeTestimonial>
+    </main>
 </template>
 
 <script setup>
-import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-import HomeCarousel from "@/components/home/HomeCarousel.vue";
 import HomeTestimonial from "@/components/home/HomeTestimonial.vue";
-import BaseImage from "@/components/global/BaseImage.vue";
 import HomePromotions from "@/components/home/HomePromotions.vue";
+import HomeTrending from "@/components/home/HomeTrending.vue";
+import BaseImage from "@/components/global/BaseImage.vue";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
-const leftDecorationImages = [
-    "home_dec4.png",
-    "home_dec3.png",
-    "home_dec2.png",
-];
-
-const services = [
-    {
-        title: "Embalaje absoluto",
-        desc: "Todos nuestros envíos están 100% protegidos con empaques de coleccionista.",
-        icon: "fa-envelope",
-    },
-    {
-        title: "Satisfacción o Retorno",
-        desc: "Tenemos una política de satisfacción del 100%, si no está satisfecho con el producto, le devolvemos su dinero.",
-        icon: "fa-smile",
-    },
-    {
-        title: "Atención al cliente las 24 horas",
-        desc: "Sabemos la importancia de resolver todas tus dudas, por eso nuestro correo siempre está abierto.",
-        icon: "fa-headset",
-    },
-    {
-        title: "Pagos seguros",
-        desc: "Utilizamos métodos confiables y mantenemos su información completamente protegida.",
-        icon: "fa-money-check-dollar",
-    },
+const sponserLogos = [
+    "https://s3.amazonaws.com/cdn.designcrowd.com/blog/100-Famous-Brand%20Logos-From-The-Most-Valuable-Companies-of-2020/verizon-logo.png",
+    "https://s3.amazonaws.com/cdn.designcrowd.com/blog/100-Famous-Brand%20Logos-From-The-Most-Valuable-Companies-of-2020/oracle-logo.png",
+    "https://s3.amazonaws.com/cdn.designcrowd.com/blog/100-Famous-Brand%20Logos-From-The-Most-Valuable-Companies-of-2020/mercedes-benz-logo.png",
+    "https://s3.amazonaws.com/cdn.designcrowd.com/blog/100-Famous-Brand%20Logos-From-The-Most-Valuable-Companies-of-2020/ge-logo.png",
+    "https://s3.amazonaws.com/cdn.designcrowd.com/blog/100-Famous-Brand%20Logos-From-The-Most-Valuable-Companies-of-2020/nike-logo.png",
+    "https://s3.amazonaws.com/cdn.designcrowd.com/blog/100-Famous-Brand%20Logos-From-The-Most-Valuable-Companies-of-2020/intel-logo.png",
+    "https://s3.amazonaws.com/cdn.designcrowd.com/blog/100-Famous-Brand%20Logos-From-The-Most-Valuable-Companies-of-2020/ibm-logo.png",
+    "https://s3.amazonaws.com/cdn.designcrowd.com/blog/100-Famous-Brand%20Logos-From-The-Most-Valuable-Companies-of-2020/sap-logo.png",
+    "https://s3.amazonaws.com/cdn.designcrowd.com/blog/100-Famous-Brand%20Logos-From-The-Most-Valuable-Companies-of-2020/visa-logo.png",
+    "https://s3.amazonaws.com/cdn.designcrowd.com/blog/100-Famous-Brand%20Logos-From-The-Most-Valuable-Companies-of-2020/pepsi-logo.png",
 ];
 </script>

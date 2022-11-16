@@ -4,11 +4,10 @@
             <li
                 v-for="(link, index) in links"
                 :key="index"
-                class="text-slate-900"
             >
                 <router-link
                     :to="{ name: link.route }"
-                    active-class="text-amber-500 font-semibold"
+                    active-class="text-blue-600 font-semibold"
                     @click="emit('update:shouldShow', false)"
                 >
                     {{ link.title }}
