@@ -1,9 +1,35 @@
 <template>
     <div>
-        <div class="grid grid-cols-2 gap-8 mb-20">
+        <div v-if="products && products.length" class="mb-20">
+            <h4 class="text-2xl text-sky-600 font-serif mb-8">All Product</h4>
+            <div class="grid grid-cols-4 gap-4">
+                <div
+                    class="py-8 px-4 bg-white flex flex-col rounded-md shadow-xl"
+                    v-for="prod in products"
+                >
+                    <BaseImage
+                        :src="prod.image_url"
+                        is-external
+                        class="w-full h-60 mb-4 object-contain"
+                    ></BaseImage>
+                    <div class="flex justify-between items-cent mb-4">
+                        <p class="font-serif text-sm">
+                            {{ prod.title }}
+                        </p>
+                        <p class="font-semibold mb-8">
+                            ${{ prod.price }}
+                        </p>
+                    </div>
+                    <button class="py-2 w-full text-white bg-sky-600 mt-auto rounded-md">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="grid grid-cols-2 gap-8">
             <div
                 v-for="ad in ads"
-                class="pb-4 pt-8 px-8 bg-white flex flex-col"
+                class="pb-4 pt-8 px-8 bg-white flex flex-col rounded-md shadow-xl"
             >
                 <h4 class="text-2xl mb-2">{{ ad.title }}</h4>
                 <p>{{ ad.description }}</p>
@@ -15,33 +41,6 @@
                     is-external
                     src="https://tiimg.tistatic.com/fp/1/007/651/kid-high-speed-racing-sports-remote-control-colorful-3d-light-effects-toy-car--469-w410.jpg"
                 ></BaseImage>
-            </div>
-        </div>
-        
-        <div v-if="products && products.length">
-            <h2 class="text-4xl font-serif">All Product</h2>
-            <div class="w-20 h-px bg-black mb-8"></div>
-            <div class="grid grid-cols-4 gap-4">
-                <div
-                    class="py-8 px-4 bg-white flex flex-col"
-                    v-for="prod in products"
-                >
-                    <BaseImage
-                        :src="prod.image_url"
-                        is-external
-                        class="w-full h-60 mb-4 object-contain"
-                    ></BaseImage>
-
-                    <h5 class="font-serif text-xl mb-4">
-                        {{ prod.title }}
-                    </h5>
-                    <h5 class="text-xl font-semibold mb-8">
-                        ${{ prod.price }}
-                    </h5>
-                    <button class="py-2 w-full text-white bg-sky-600 mt-auto">
-                        Add to Cart
-                    </button>
-                </div>
             </div>
         </div>
     </div>

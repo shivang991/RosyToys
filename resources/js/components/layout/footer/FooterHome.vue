@@ -1,5 +1,5 @@
 <template>
-    <footer class="px-8 md:px-12 bg-primary py-12">
+    <footer class="px-8 md:px-12 bg-sky-900 py-12">
         <div
             class="w-3/4 mx-auto flex flex-col sm:flex-row items-center sm:items-start justify-between"
         >
@@ -9,7 +9,7 @@
                     <li v-for="(link, index) in socialMediaLinks" :key="index">
                         <a
                             :href="link.href"
-                            class="text-primary w-8 h-8 bg-white rounded-full flex items-center justify-center"
+                            class="text-sky-900 w-8 h-8 bg-white rounded-full flex items-center justify-center"
                         >
                             <FontAwesomeIcon
                                 :icon="link.icon"

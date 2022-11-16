@@ -1,79 +1,43 @@
 <template>
-    <div class="grid">
-        <div
-            class="col-start-1 row-start-1 w-1/2 h-80 bg-primary justify-self-end"
-        >
-            <BaseImage
-                src="bg-arrow.png"
-                class="w-full scale-105 origin-right"
-            ></BaseImage>
-        </div>
-        <div class="col-start-1 row-start-1 flex justify-between w-3/4 mx-auto">
-            <div>
-                <h4 class="text-2xl font-serif">Hot Trending</h4>
-                <div class="w-20 h-px bg-black mb-20"></div>
-                <div class="text-gray-600">Explore your favourites</div>
-                <h2 class="max-w-xs text-4xl mb-8">Toy Story Collection</h2>
-                <button
-                    class="px-8 py-2 border-2 border-sky-600 text-sky-600 font-serif"
-                >
-                    Discover
-                </button>
-            </div>
-            <BaseImage class="w-60 relative" src="trending.png"></BaseImage>
-        </div>
-        <div class="w-3/4 mx-auto grid grid-cols-3 gap-4 mt-12">
-            <div>
-                <h4 class="text-2xl font-serif">Hot & Trending</h4>
-                <div class="w-20 h-px bg-black mb-8"></div>
-                <div class="flex space-x-4 mt-4" v-for="i in 3" :key="i">
-                    <BaseImage
-                        src="toy.png"
-                        class="bg-primary w-20 h-20 object-contain"
-                    ></BaseImage>
-                    <div>
-                        <p class="text-gray-600 mb-4">Sugioti RC Car</p>
-                        <h5 class="text-xl">$39.99</h5>
-                    </div>
+    <div class="py-8">
+        <h2 class="text-4xl mb-12 font-serif text-center">Trending this month 🔥</h2>
+        <div class="grid grid-cols-2 gap-8">
+            <div class="flex space-x-4 px-8 py-4 rounded-md shadow-xl" v-for="prod in trendingProducts">
+                <BaseImage :src="prod.image_url" is-external class="h-40 w-40 rounded object-cover"></BaseImage>
+                <div class="flex-grow">
+                    <h5 class="text-xl font-serif mb-4">{{prod.title}}</h5>
+                    <h4 class="text-2xl font-semibold mb-8">${{prod.price}}</h4>
+                    <button class="py-2 w-full bg-sky-600 text-white rounded-md">Add To Cart</button>
                 </div>
             </div>
-            <div>
-                <h4 class="text-2xl font-serif">Most Buyed</h4>
-                <div class="w-20 h-px bg-black mb-8"></div>
-                <div class="flex space-x-4 mt-4" v-for="i in 3" :key="i">
-                    <BaseImage
-                        src="bot.png"
-                        class="bg-primary w-20 h-20 object-contain"
-                    ></BaseImage>
-                    <div>
-                        <p class="text-gray-600 mb-4">Sugioti RC Car</p>
-                        <h5 class="text-xl">$39.99</h5>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <h4 class="text-2xl font-serif">Featured</h4>
-                <div class="w-20 h-px bg-black mb-8"></div>
-                <div class="flex space-x-4 mt-4" v-for="i in 3" :key="i">
-                    <BaseImage
-                        src="ulquiorra.jpg"
-                        class="bg-primary w-20 h-20 object-contain"
-                    ></BaseImage>
-                    <div>
-                        <p class="text-gray-600 mb-4">Sugioti RC Car</p>
-                        <h5 class="text-xl">$39.99</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="col-span-3 flex items-center my-8">
-                <div class="flex-grow h-px bg-gray-600"></div>
-                <button class="px-8 py-2 text-sky-600 border border-sky-600 mx-4 font-serif">See More</button>
-                <div class="flex-grow h-px bg-gray-600"></div>
-            </div>
         </div>
+
     </div>
 </template>
 
 <script setup>
 import BaseImage from "../global/BaseImage.vue";
+
+const trendingProducts = [
+    {
+        title: "SS Goku",
+        price: 30.99,
+        image_url: "https://images.unsplash.com/photo-1606663889134-b1dedb5ed8b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"
+    },
+    {
+        title: "Toy Story Collection",
+        price: 44.55,
+        image_url: "https://images.unsplash.com/photo-1580477667995-2b94f01c9516?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+    },
+    {
+        title: "Asuka Langley",
+        price: 99.99,
+        image_url: "https://images.unsplash.com/photo-1578632749014-ca77efd052eb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+    },
+    {
+        title: "Uchiha Lite",
+        price: 24.99,
+        image_url: "https://images.unsplash.com/photo-1630710478039-9c680b99f800?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+    },
+];
 </script>

@@ -1,84 +1,65 @@
 <template>
-    <main class="bg-gray-100">
-        <div class="grid">
-            <div class="w-3/4 mx-auto mb-20 col-start-1 row-start-1">
-                <div class="grid">
-                    <div class="col-start-1 row-start-1 py-20 flex bg-primary">
-                        <div class="w-80"></div>
-                        <div>
-                            <h1
-                                class="text-6xl mb-2 max-w-xl text-white font-serif"
-                            >
-                                Are you planning a kermes or a party?
-                            </h1>
-                            <div class="w-40 h-px my-4 bg-sky-600"></div>
-                            <p class="mb-12 max-w-md">
-                                Here we offer a wide catalog ofeconomic toysfrom
-                                $ 1.00 peso for prizes, gifts or for the piñata.
-                            </p>
-                            <div class="flex space-x-4">
-                                <button
-                                    class="text-xl flex items-center space-x-4 text-white bg-sky-600 py-2 px-8"
-                                >
-                                    <FontAwesomeIcon
-                                        class="text-sm"
-                                        icon="fa-cart-shopping"
-                                    ></FontAwesomeIcon>
-                                    <span>Add to cart</span>
-                                </button>
-                                <button
-                                    class="text-xl border-2 border-sky-600 py-2 px-8 font-serif"
-                                >
-                                    Explore
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+    <main class="w-3/4 mx-auto my-12">
+        <div class="grid bg-primary">
+            <div
+                class="flex justify-between mt-8 px-20 col-start-1 row-start-1"
+            >
+                <BaseImage src="sparkle.png" class="h-12"></BaseImage>
+                <BaseImage src="heart.png" class="h-12"></BaseImage>
+            </div>
+            <div
+                class="flex justify-between items-end self-end col-start-1 row-start-1"
+            >
+                <BaseImage src="bot.png" class="h-60"></BaseImage>
+                <BaseImage src="toy.png" class="h-80"></BaseImage>
+            </div>
+            <div class="col-start-1 row-start-1 py-20 relative">
+                <h2
+                    class="text-4xl text-center font-serif max-w-lg mx-auto mb-1"
+                >
+                    Are you planning a kermes or a party?
+                </h2>
+                <div class="h-4 flex justify-center mb-8">
                     <BaseImage
-                        src="toy.png"
-                        class="w-80 col-start-1 row-start-1 self-end translate-y-12 rotate-12"
+                        src="underline.png"
+                        class="max-h-full"
                     ></BaseImage>
                 </div>
-                <div class="py-12"></div>
-                <HomePromotions></HomePromotions>
-            </div>
-            <BaseImage
-                src="bg-arrow.png"
-                class="col-start-1 row-start-1 w-1/2 justify-self-end -translate-y-8"
-            ></BaseImage>
-        </div>
-        <HomeTrending class="mt-20"></HomeTrending>
-        <HomeTestimonial class="my-20"></HomeTestimonial>
-        <div class="bg-sky-600 py-8">
-            <div class="max-w-xl mx-auto grid grid-cols-5 gap-8">
-                <div
-                    class="p-4 bg-white rounded-md"
-                    v-for="logoSrc in sponserLogos"
+
+                <p class="mb-12 max-w-md text-center mx-auto">
+                    Here we offer a wide catalog ofeconomic toysfrom $ 1.00 peso
+                    for prizes, gifts or for the piñata.
+                </p>
+
+                <button
+                    class="text-xl bg-sky-600 text-white rounded-md py-2 px-8 font-serif mx-auto block"
                 >
-                    <BaseImage is-external :src="logoSrc"></BaseImage>
+                    Explore
+                </button>
+            </div>
+        </div>
+        <HomePromotions class="my-20"></HomePromotions>
+        <HomeTrending></HomeTrending>
+        <div class="py-12 w-3/4 mx-auto">
+            <div class="px-8 py-12 rounded-lg bg-primary flex space-x-8 justify-between items-start">
+                <div>
+                    <h4 class="text-2xl text-sky-600 mb-4 font-semibold">
+                        Ready to start making your parties more Exciting?
+                    </h4>
+                    <p class="text-sky-600">
+                        Join over 1,000+ members already growing with Untitled
+                    </p>
                 </div>
+                <button class="border px-4 py-2 font-serif rounded-md bg-white">Explore</button>
             </div>
         </div>
     </main>
+    <!-- <HomeTestimonial class="my-20"></HomeTestimonial> -->
 </template>
 
 <script setup>
-import HomeTestimonial from "@/components/home/HomeTestimonial.vue";
+// import HomeTestimonial from "@/components/home/HomeTestimonial.vue";
 import HomePromotions from "@/components/home/HomePromotions.vue";
 import HomeTrending from "@/components/home/HomeTrending.vue";
 import BaseImage from "@/components/global/BaseImage.vue";
-import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-
-const sponserLogos = [
-    "https://s3.amazonaws.com/cdn.designcrowd.com/blog/100-Famous-Brand%20Logos-From-The-Most-Valuable-Companies-of-2020/verizon-logo.png",
-    "https://s3.amazonaws.com/cdn.designcrowd.com/blog/100-Famous-Brand%20Logos-From-The-Most-Valuable-Companies-of-2020/oracle-logo.png",
-    "https://s3.amazonaws.com/cdn.designcrowd.com/blog/100-Famous-Brand%20Logos-From-The-Most-Valuable-Companies-of-2020/mercedes-benz-logo.png",
-    "https://s3.amazonaws.com/cdn.designcrowd.com/blog/100-Famous-Brand%20Logos-From-The-Most-Valuable-Companies-of-2020/ge-logo.png",
-    "https://s3.amazonaws.com/cdn.designcrowd.com/blog/100-Famous-Brand%20Logos-From-The-Most-Valuable-Companies-of-2020/nike-logo.png",
-    "https://s3.amazonaws.com/cdn.designcrowd.com/blog/100-Famous-Brand%20Logos-From-The-Most-Valuable-Companies-of-2020/intel-logo.png",
-    "https://s3.amazonaws.com/cdn.designcrowd.com/blog/100-Famous-Brand%20Logos-From-The-Most-Valuable-Companies-of-2020/ibm-logo.png",
-    "https://s3.amazonaws.com/cdn.designcrowd.com/blog/100-Famous-Brand%20Logos-From-The-Most-Valuable-Companies-of-2020/sap-logo.png",
-    "https://s3.amazonaws.com/cdn.designcrowd.com/blog/100-Famous-Brand%20Logos-From-The-Most-Valuable-Companies-of-2020/visa-logo.png",
-    "https://s3.amazonaws.com/cdn.designcrowd.com/blog/100-Famous-Brand%20Logos-From-The-Most-Valuable-Companies-of-2020/pepsi-logo.png",
-];
 </script>
