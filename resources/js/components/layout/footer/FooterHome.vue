@@ -42,7 +42,7 @@
                 <ul>
                     <li v-for="(link, index) in internalLinks" :key="index">
                         <router-link
-                            :to="{ name: link.route }"
+                            :to="{ name: 'Home' }"
                             class="text-slate-200"
                             >{{ link.title }}</router-link
                         >
