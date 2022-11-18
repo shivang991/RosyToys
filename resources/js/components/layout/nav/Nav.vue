@@ -1,23 +1,19 @@
 <template>
     <nav class="bg-gray-100">
-        <div
-            v-if="$route.name === 'Home'"
-        >
-            <div class="bg-primary flex md:justify-center">
-                <div class="h-16 py-2">
-                    <BaseImage src="logo.png" class="h-full" />
-                </div>
-                <button
-                    @click="shouldShowSideBar = !shouldShowSideBar"
-                    class="md:hidden text-white text-xl ml-auto py-2 w-12 bg-blue-600"
-                >
-                    <FontAwesomeIcon
-                        :icon="shouldShowSideBar ? 'fa-times' : 'fa-bars'"
-                    ></FontAwesomeIcon>
-                </button>
+        <div class="bg-primary flex md:justify-center">
+            <div class="h-16 py-2">
+                <BaseImage src="logo.png" class="h-full" />
             </div>
-            <nav-links class="hidden md:flex" :links="links"></nav-links>
+            <button
+                @click="shouldShowSideBar = !shouldShowSideBar"
+                class="md:hidden text-white text-xl ml-auto py-2 w-12 bg-blue-600"
+            >
+                <FontAwesomeIcon
+                    :icon="shouldShowSideBar ? 'fa-times' : 'fa-bars'"
+                ></FontAwesomeIcon>
+            </button>
         </div>
+        <nav-links class="hidden md:flex" :links="links"></nav-links>
         <!-- <div v-else>
 
             <NavCart></NavCart>
@@ -44,13 +40,9 @@ const shouldShowSideBar = ref(false);
 const { getters } = useStore();
 const links = ref([
     { route: "Home", title: "Inicio" },
-    { route: "Home", title: "Acerca de" },
-    { route: "Home", title: "Productos" },
-    { route: "Home", title: "Contacto" },
-    // { route: "Home", title: "Inicio" },
-    // { route: "About", title: "Acerca de" },
-    // { route: "Productos", title: "Productos" },
-    // { route: "Contacto", title: "Contacto" },
+    { route: "About", title: "Acerca de" },
+    { route: "Productos", title: "Productos" },
+    { route: "Contacto", title: "Contacto" },
 ]);
 
 // add or remove admin link from navbar when login or logout
