@@ -1,13 +1,10 @@
 <template>
     <div ref="sideBarEl" class="duration-500 h-0 overflow-hidden">
         <ul class="flex flex-col items-center py-4 space-y-2">
-            <li
-                v-for="(link, index) in links"
-                :key="index"
-            >
+            <li v-for="(link, index) in links" :key="index">
                 <router-link
                     :to="{ name: link.route }"
-                    active-class="text-blue-600 font-semibold"
+                    active-class="text-sky-600 font-semibold"
                     @click="emit('update:shouldShow', false)"
                 >
                     {{ link.title }}
@@ -18,9 +15,8 @@
 </template>
 
 <script setup>
-import { computed } from "@vue/reactivity";
 import { useStore } from "vuex";
-import { onMounted, ref, watch } from "vue";
+import { onMounted, ref, watch, computed } from "vue";
 
 const props = defineProps({
     links: {

@@ -1,13 +1,13 @@
 <template>
     <div class="grid">
-        <label class="text-sm mb-1">
+        <p class="text-sm mb-1">
             {{ label }}
-        </label>
+        </p>
         <component
             :is="inputTagName"
             :placeholder="placeholder || label"
             rows="5"
-            class="bg-transparent focus:outline-none resize-none rounded-md border px-4 py-1 focus:ring"
+            class="bg-transparent focus:outline-none resize-none rounded-md border px-4 py-1"
             :class="{ 'border-red-600 bg-red-50': isInvalid }"
             :type="type"
             :minlength="min"

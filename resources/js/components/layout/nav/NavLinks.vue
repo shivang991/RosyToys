@@ -7,7 +7,7 @@
                 v-for="(link, index) in links"
                 :key="index"
                 class="hover:underline text-lg"
-                active-class="text-sky-100"
+                active-class="font-semibold"
                 :to="{ name: link.route }"
                 >{{ link.title }}</router-link
             >

@@ -6,7 +6,7 @@
             </div>
             <button
                 @click="shouldShowSideBar = !shouldShowSideBar"
-                class="md:hidden text-white text-xl ml-auto py-2 w-12 bg-blue-600"
+                class="md:hidden text-white text-xl ml-auto py-2 w-12 bg-sky-600"
             >
                 <FontAwesomeIcon
                     :icon="shouldShowSideBar ? 'fa-times' : 'fa-bars'"

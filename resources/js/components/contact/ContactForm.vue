@@ -1,31 +1,38 @@
 <template>
     <form @submit.prevent="handleSubmit" class="flex flex-col items-end">
-        <div class="space-y-8 w-full">
+        <div class="space-y-4 w-full">
             <base-text-field
                 v-model="fields.name"
-                label="Su nombre"
+                placeholder="Your Name"
+                label="Nombre"
                 :is-invalid="invalidFields.has('name')"
             />
             <base-text-field
                 type="email"
+                placeholder="you@company.com"
                 v-model="fields.email"
-                label="Email Id"
+                label="Email"
                 :is-invalid="invalidFields.has('email')"
             />
             <base-text-field
-                v-model="fields.subject"
-                label="Sujeto"
-                :is-invalid="invalidFields.has('subject')"
+                v-model="fields.phone"
+                placeholder="+1 (555) 000-0000"
+                label="Phone number"
+                type="tel"
+                :min="10"
+                :max="10"
+                :is-invalid="invalidFields.has('phone')"
             />
             <base-text-field
                 v-model="fields.message"
-                label="Mensaje"
+                placeholder="Tell us a little about the project..."
+                label="¿Cómo podemos ayudar?"
                 is-text-area
                 :is-invalid="invalidFields.has('message')"
             />
         </div>
         <button
-            class="bg-amber-500 px-8 py-2 text-white rounded-md mt-8"
+            class="bg-sky-600 px-8 py-2 text-white rounded-md mt-8 w-full"
             type="submit"
             :disabled="isSubmitting"
         >
@@ -48,7 +55,7 @@ import BaseTextField from "../global/BaseTextField.vue";
 const fields = reactive({
     name: "",
     email: "",
-    subject: "",
+    phone: "",
     message: "",
 });
 
@@ -66,13 +73,13 @@ function handleSubmit() {
 
     isSubmitting.value = true;
 
-    axios.post("/api/contact/create", fields).then((response) => {
-        if (response.data.message === "success") {
-            fields.message = "";
-            fields.subject = "";
-            fireNotification(NotificationTypes.CONTACT_MESSAGE_ADDED);
-            isSubmitting.value = false;
-        }
-    });
+    // axios.post("/api/contact/create", fields).then((response) => {
+    //     if (response.data.message === "success") {
+    //         fields.message = "";
+    //         fields.phone = "";
+    //         fireNotification(NotificationTypes.CONTACT_MESSAGE_ADDED);
+    //         isSubmitting.value = false;
+    //     }
+    // });
 }
 </script>

@@ -144,6 +144,10 @@ __webpack_require__.r(__webpack_exports__);
       type: String,
       "default": ""
     },
+    placeholder: {
+      type: String,
+      "default": ""
+    },
     isTextArea: {
       type: Boolean,
       "default": false
@@ -170,12 +174,12 @@ __webpack_require__.r(__webpack_exports__);
     var expose = _ref.expose;
     expose();
     var props = __props;
-    var inputTag = props.isTextArea ? "textarea" : "input";
     var isInputFocused = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)(false);
+    var inputTagName = props.isTextArea ? "textarea" : "input";
     var __returned__ = {
       props: props,
-      inputTag: inputTag,
       isInputFocused: isInputFocused,
+      inputTagName: inputTagName,
       ref: vue__WEBPACK_IMPORTED_MODULE_0__.ref
     };
     Object.defineProperty(__returned__, '__isScriptSetup', {
@@ -297,12 +301,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
+var _hoisted_1 = {
+  "class": "grid"
+};
+var _hoisted_2 = {
+  "class": "text-sm mb-1"
+};
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["grid rounded-md border-t border-b-2 px-4 py-1", $props.isInvalid ? 'border-red-600 bg-red-50' : 'border-amber-500 bg-slate-100'])
-  }, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)((0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveDynamicComponent)($setup.inputTag), {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", _hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.label), 1
+  /* TEXT */
+  ), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)((0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveDynamicComponent)($setup.inputTagName), {
+    placeholder: $props.placeholder || $props.label,
     rows: "5",
-    "class": "row-start-1 col-start-1 bg-transparent focus:outline-none resize-none",
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["bg-transparent focus:outline-none resize-none rounded-md border px-4 py-1 focus:ring", {
+      'border-red-600 bg-red-50': $props.isInvalid
+    }]),
     type: $props.type,
     minlength: $props.min,
     maxlength: $props.max,
@@ -318,15 +331,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     })
   }, null, 40
   /* PROPS, HYDRATE_EVENTS */
-  , ["type", "minlength", "maxlength", "value"])), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)([{
-      'scale-75 -translate-y-6 -translate-x-2 opacity-100': $setup.isInputFocused || $props.modelValue.length
-    }, "pointer-events-none origin-top-left col-start-1 row-start-1 duration-200 opacity-50"])
-  }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.label), 3
-  /* TEXT, CLASS */
-  )], 2
-  /* CLASS */
-  );
+  , ["placeholder", "class", "type", "minlength", "maxlength", "value"]))]);
 }
 
 /***/ }),
