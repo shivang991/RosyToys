@@ -23380,7 +23380,7 @@ var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 );
 
 var _hoisted_3 = {
-  "class": "grid grid-cols-4 gap-4"
+  "class": "grid grid-cols-2 md:grid-cols-4 gap-4"
 };
 var _hoisted_4 = {
   "class": "py-8 px-4 bg-white flex flex-col rounded-md shadow-xl"
@@ -23402,7 +23402,7 @@ var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 );
 
 var _hoisted_9 = {
-  "class": "grid grid-cols-2 gap-8"
+  "class": "grid md:grid-cols-2 gap-8"
 };
 var _hoisted_10 = {
   "class": "pb-4 pt-8 px-8 bg-white flex flex-col rounded-md shadow-xl"
@@ -23468,15 +23468,15 @@ var _hoisted_1 = {
 
 var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
   "class": "text-4xl mb-12 font-serif text-center"
-}, "Trending this month 🔥", -1
+}, " Trending this month 🔥 ", -1
 /* HOISTED */
 );
 
 var _hoisted_3 = {
-  "class": "grid grid-cols-2 gap-8"
+  "class": "grid grid-cols-2 gap-4 lg:gap-8"
 };
 var _hoisted_4 = {
-  "class": "flex space-x-4 px-8 py-4 rounded-md shadow-xl"
+  "class": "lg:flex lg:space-x-4 px-8 py-4 rounded-md shadow-xl"
 };
 var _hoisted_5 = {
   "class": "flex-grow"
@@ -23489,8 +23489,8 @@ var _hoisted_7 = {
 };
 
 var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-  "class": "py-2 w-full bg-sky-600 text-white rounded-md"
-}, "Add To Cart", -1
+  "class": "py-2 px-2 w-full bg-sky-600 text-white rounded-md"
+}, " Add To Cart ", -1
 /* HOISTED */
 );
 
@@ -23499,12 +23499,12 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BaseImage"], {
       src: prod.image_url,
       "is-external": "",
-      "class": "h-40 w-40 rounded object-cover"
+      "class": "w-full lg:w-40 h-40 rounded object-cover mb-8 lg:mb-0"
     }, null, 8
     /* PROPS */
     , ["src"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", _hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(prod.title), 1
     /* TEXT */
-    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h4", _hoisted_7, "$" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(prod.price), 1
+    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h4", _hoisted_7, " $" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(prod.price), 1
     /* TEXT */
     ), _hoisted_8])]);
   }), 64
@@ -23859,10 +23859,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "w-3/4 mx-auto my-12"
+  "class": "w-11/12 md:w-3/4 mx-auto my-12"
 };
 var _hoisted_2 = {
-  "class": "grid bg-primary"
+  "class": "grid bg-primary overflow-hidden"
 };
 var _hoisted_3 = {
   "class": "flex justify-between mt-8 px-20 col-start-1 row-start-1"
@@ -23871,7 +23871,7 @@ var _hoisted_4 = {
   "class": "flex justify-between items-end self-end col-start-1 row-start-1"
 };
 var _hoisted_5 = {
-  "class": "col-start-1 row-start-1 py-20 relative"
+  "class": "col-start-1 row-start-1 px-4 py-20 relative"
 };
 
 var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
@@ -23896,7 +23896,7 @@ var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 /* HOISTED */
 );
 
-var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"py-12 w-3/4 mx-auto\"><div class=\"px-8 py-12 rounded-lg bg-primary flex space-x-8 justify-between items-start\"><div><h4 class=\"text-2xl text-sky-600 mb-4 font-semibold\"> Ready to start making your parties more Exciting? </h4><p class=\"text-sky-600\"> Join over 1,000+ members already growing with Untitled </p></div><button class=\"border px-4 py-2 font-serif rounded-md bg-white\">Explore</button></div></div>", 1);
+var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"py-12 sm:w-3/4 mx-auto\"><div class=\"px-8 py-12 rounded-lg bg-primary flex space-x-8 justify-between items-start\"><div><h4 class=\"text-2xl text-sky-600 mb-4 font-semibold\"> Ready to start making your parties more Exciting? </h4><p class=\"text-sky-600\"> Join over 1,000+ members already growing with Untitled </p></div><button class=\"border px-4 py-2 font-serif rounded-md bg-white\"> Explore </button></div></div>", 1);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("main", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BaseImage"], {
@@ -23907,10 +23907,10 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "class": "h-12"
   })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BaseImage"], {
     src: "bot.png",
-    "class": "h-60"
+    "class": "h-40 sm:h-60 opacity-50 lg:opacity-50"
   }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BaseImage"], {
     src: "toy.png",
-    "class": "h-80"
+    "class": "h-40 sm:h-80 opacity-50 lg:opacity-50"
   })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [_hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BaseImage"], {
     src: "underline.png",
     "class": "max-h-full"

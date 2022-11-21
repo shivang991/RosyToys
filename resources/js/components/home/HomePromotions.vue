@@ -2,7 +2,7 @@
     <div>
         <div v-if="products && products.length" class="mb-20">
             <h4 class="text-2xl text-sky-600 font-serif mb-8">All Product</h4>
-            <div class="grid grid-cols-4 gap-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <div
                     class="py-8 px-4 bg-white flex flex-col rounded-md shadow-xl"
                     v-for="prod in products"
@@ -26,7 +26,7 @@
                 </div>
             </div>
         </div>
-        <div class="grid grid-cols-2 gap-8">
+        <div class="grid md:grid-cols-2 gap-8">
             <div
                 v-for="ad in ads"
                 class="pb-4 pt-8 px-8 bg-white flex flex-col rounded-md shadow-xl"
