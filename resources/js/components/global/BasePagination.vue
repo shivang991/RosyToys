@@ -7,9 +7,9 @@
             Mostrando <strong>{{ paginationData.per_page }}</strong> de
             <strong>{{ paginationData.total }}</strong> elementos.
         </p>
-        <div class="flex space-x-4 items-center text-slate-900">
+        <div class="flex space-x-4 items-center">
             <button
-                class="rotate-180 px-4 py-2 hover:bg-slate-200 rounded-md disabled:opacity-50"
+                class="rotate-180 px-4 py-2 hover:bg-gray-100 rounded-md disabled:opacity-50"
                 @click="loadPrevPage()"
                 :disabled="paginationData.current_page === 1"
             >
@@ -37,7 +37,7 @@
                 :disabled="
                     paginationData.current_page === paginationData.last_page
                 "
-                class="px-4 py-2 hover:bg-slate-200 rounded-md disabled:opacity-50"
+                class="px-4 py-2 hover:bg-gray-100 rounded-md disabled:opacity-50"
                 @click="loadNextPage()"
             >
                 <FontAwesomeIcon icon="fa-chevron-right"></FontAwesomeIcon>
