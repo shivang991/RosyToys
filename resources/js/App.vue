@@ -11,7 +11,7 @@
     </div>
     <div v-else class="min-h-screen flex items-center justify-center">
         <p
-            class="w-10 h-10 border-4 border-b-transparent border-amber-500 animate-spin rounded-full"
+            class="w-10 h-10 border-4 border-b-transparent border-sky-600 animate-spin rounded-full"
         ></p>
     </div>
 </template>

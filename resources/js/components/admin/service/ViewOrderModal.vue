@@ -5,7 +5,7 @@
     >
         <div class="py-8 flex justify-center w-80" v-if="isLoading">
             <div
-                class="w-8 h-8 border-4 border-amber-500 border-b-transparent rounded-full animate-spin"
+                class="w-8 h-8 border-4 border-sky-600 border-b-transparent rounded-full animate-spin"
             ></div>
         </div>
         <div class="px-4 py-8 max-w-lg" v-else>
@@ -28,16 +28,16 @@
                     <th class="text-left px-4 py-2">Quantity</th>
                 </tr>
                 <tr v-for="(item, index) in order.order_items" :key="index">
-                    <td class="py-2 px-4 border-amber-500 border-y">
+                    <td class="py-2 px-4 border-sky-600 border-y">
                         {{ item.product.id }}
                     </td>
-                    <td class="py-2 px-4 border-amber-500 border-y">
+                    <td class="py-2 px-4 border-sky-600 border-y">
                         {{ item.product.title }}
                     </td>
-                    <td class="py-2 px-4 border-amber-500 border-y">
+                    <td class="py-2 px-4 border-sky-600 border-y">
                         ${{ item.product.price }}
                     </td>
-                    <td class="py-2 px-4 border-amber-500 border-y">
+                    <td class="py-2 px-4 border-sky-600 border-y">
                         {{ item.quantity }}
                     </td>
                 </tr>

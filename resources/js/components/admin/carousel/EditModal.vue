@@ -15,7 +15,7 @@
                 ></BaseTextField>
             </div>
             <button
-                class="bg-amber-500 py-2 mt-8 text-white rounded-md w-full"
+                class="bg-sky-600 py-2 mt-8 text-white rounded-md w-full"
                 :disabled="isLoading"
                 type="submit"
             >

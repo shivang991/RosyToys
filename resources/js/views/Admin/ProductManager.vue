@@ -1,39 +1,52 @@
 <template>
-    <div class="mt-8 py-8 w-11/12 lg:w-3/4 mx-auto bg-white rounded-md shadow">
+    <div class="mt-8 py-8 w-11/12 lg:w-3/4 mx-auto rounded-md">
         <div class="px-12 mb-8">
             <h4 class="font-semibold mb-8 text-2xl">Product Manager</h4>
-            <product-search-box class="w-full mb-8"></product-search-box>
-            <div class="flex justify-end space-x-4">
-                <button
-                    class="rounded-md shadow-lg px-4 py-2 text-slate-500"
-                    @click="shouldShowAddProductModal = true"
-                >
-                    Add <FontAwesomeIcon icon="fa fa-plus"></FontAwesomeIcon>
-                </button>
-                <button
-                    class="rounded-md shadow-lg px-4 py-2 text-amber-500 disabled:opacity-50"
-                    :disabled="selectedProductId === null"
-                    @click="shouldShowEditProductModal = true"
-                >
-                    Edit <FontAwesomeIcon icon="fa fa-pen"></FontAwesomeIcon>
-                </button>
-                <button
-                    class="rounded-md shadow-lg px-4 py-2 text-red-600 disabled:opacity-50"
-                    :disabled="selectedProductId === null"
-                    @click="shouldShowRemoveProductModal = true"
-                >
-                    Remove
-                    <FontAwesomeIcon icon="fa fa-times"></FontAwesomeIcon>
-                </button>
+            <div class="flex space-x-8">
+                <SearchBox></SearchBox>
+                <div class="flex">
+                    <button
+                        @click="shouldShowAddProductModal = true"
+                        class="px-4 flex items-center space-x-2 text-sky-600 border border-r-transparent border-sky-600 rounded-l-md"
+                    >
+                        <span>Add</span>
+                        <FontAwesomeIcon
+                            icon="fa fa-plus"
+                            class="text-sm"
+                        ></FontAwesomeIcon>
+                    </button>
+                    <button
+                        :disabled="selectedProductId === null"
+                        @click="shouldShowEditProductModal = true"
+                        class="px-4 flex items-center space-x-2 text-sky-600 bg-sky-100 border border-sky-600 disabled:opacity-50"
+                    >
+                        <span>Edit</span>
+                        <FontAwesomeIcon
+                            icon="fa fa-pen"
+                            class="text-sm"
+                        ></FontAwesomeIcon>
+                    </button>
+                    <button
+                        :disabled="selectedProductId === null"
+                        @click="shouldShowRemoveProductModal = true"
+                        class="px-4 flex items-center space-x-2 text-red-600 bg-red-50 border border-red-600 border-l-transparent rounded-r-md disabled:opacity-50"
+                    >
+                        <span>Remove</span>
+                        <FontAwesomeIcon
+                            icon="fa fa-times"
+                            class="text-sm"
+                        ></FontAwesomeIcon>
+                    </button>
+                </div>
             </div>
         </div>
         <div class="grid mb-12">
-            <div class="h-16 bg-slate-200 col-start-1 row-start-1"></div>
+            <div class="h-16 bg-gray-100 col-start-1 row-start-1"></div>
             <table
                 v-if="products"
                 class="w-3/4 mx-auto col-start-1 row-start-1"
             >
-                <tr class="text-slate-900 h-16 mb-8">
+                <tr class="h-16 mb-8">
                     <th class="text-left px-2 w-16">Id</th>
                     <th class="text-left px-2">Image</th>
                     <th class="text-left px-2">Name</th>
@@ -44,10 +57,10 @@
                 <tr
                     v-for="(product, index) in products"
                     :key="index"
-                    class="border-b border-amber-500 hover:bg-slate-100 cursor-pointer"
+                    class="border-b border-gray-600 hover:bg-gray-100 cursor-pointer"
                     @click="selectedProductId = product.id"
                     :class="{
-                        'bg-slate-100 border-transparent  rounded-lg shadow':
+                        'bg-gray-100 border-transparent  rounded-lg shadow':
                             selectedProductId === product.id,
                     }"
                 >
@@ -55,7 +68,7 @@
                         <FontAwesomeIcon
                             v-if="selectedProductId === product.id"
                             icon="fa fa-check-square"
-                            class="text-slate-500"
+                            class="text-gray-600"
                         ></FontAwesomeIcon>
                         <span v-else>{{ product.id }}</span>
                     </td>
@@ -71,7 +84,7 @@
                     <td class="px-2 py-4 space-y-2 flex flex-col items-end">
                         <p
                             v-if="product.is_limited_edition"
-                            class="text-sm bg-slate-200 text-slate-500 border border-slate-500 px-2 rounded-full py-1 w-max"
+                            class="text-sm bg-gray-200 text-gray-600 border border-gray-600 px-2 rounded-full py-1 w-max"
                         >
                             Limited Edition
                         </p>
@@ -83,7 +96,7 @@
                         </p>
                         <p
                             v-if="product.is_promoted"
-                            class="text-sm text-amber-500 border border-amber-500 px-2 rounded-full py-1 w-max"
+                            class="text-sm text-sky-600 border border-sky-600 px-2 rounded-full py-1 w-max"
                         >
                             Promoted
                         </p>
@@ -105,7 +118,6 @@
 </template>
 
 <script setup>
-import ProductSearchBox from "@/components/global/ProductSearchBox.vue";
 import { computed, ref } from "vue";
 import { useStore } from "vuex";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
@@ -114,6 +126,7 @@ import ProductPagination from "@/components/productos/ProductPagination.vue";
 import AddModal from "@/components/admin/product/AddModal.vue";
 import RemoveModal from "@/components/admin/product/RemoveModal.vue";
 import EditModal from "@/components/admin/product/EditModal.vue";
+import SearchBox from "@/components/admin/product/SearchBox.vue";
 
 const store = useStore();
 const products = computed(() => store.state.products.data);

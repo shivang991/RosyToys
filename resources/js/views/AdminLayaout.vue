@@ -1,15 +1,15 @@
 <template>
-    <div class="bg-slate-100 min-h-screen">
-        <div class="py-2 bg-slate-900 flex items-center px-2 sm:px-8 md:px-20">
+    <div>
+        <div class="py-2 bg-sky-600 flex items-center px-2 sm:px-8 md:px-20">
             <router-link
                 :to="{ name: 'AdminDashboard' }"
-                class="font-semibold text-slate-200 ml-2 mr-auto text-xl"
+                class="font-semibold text-white ml-2 mr-auto text-xl"
                 >Control Panel</router-link
             >
             <div class="flex space-x-2">
                 <button
                     @click="logout"
-                    class="flex items-center space-x-2 py-1 px-4 border rounded-md border-amber-500 text-amber-500"
+                    class="flex items-center space-x-2 py-1 px-4 border rounded-md border-white text-white"
                 >
                     <FontAwesomeIcon
                         icon="fa fa-right-from-bracket"
@@ -18,7 +18,7 @@
                 </button>
                 <router-link
                     :to="{ name: 'Home' }"
-                    class="py-1 px-4 border rounded-md border-amber-500 text-amber-500"
+                    class="py-1 px-4 border rounded-md border-white text-white"
                     >Home</router-link
                 >
             </div>

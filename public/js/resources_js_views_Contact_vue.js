@@ -630,7 +630,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         return $setup.fields.stars = i;
       },
       type: "button",
-      "class": "text-amber-500"
+      "class": "text-sky-600"
     }, [i > $setup.fields.stars ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)($setup["FontAwesomeIcon"], {
       key: 0,
       icon: "far fa-star"
@@ -671,7 +671,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }, null, 8
   /* PROPS */
   , ["modelValue", "is-invalid"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-    "class": "bg-amber-500 py-2 text-white rounded-md mt-8 w-full",
+    "class": "bg-sky-600 py-2 text-white rounded-md mt-8 w-full",
     type: "submit",
     disabled: $setup.isSubmitting
   }, [$setup.isSubmitting ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_6)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_7, " Enviar "))], 8
@@ -700,7 +700,7 @@ var _hoisted_1 = {
 };
 
 var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
-  "class": "my-2 text-slate-500"
+  "class": "my-2 text-gray-600"
 }, "Haga clic para cambiar la imagen", -1
 /* HOISTED */
 );
@@ -709,11 +709,11 @@ var _hoisted_3 = ["src"];
 var _hoisted_4 = ["onClick"];
 var _hoisted_5 = ["onDrop"];
 var _hoisted_6 = {
-  "class": "text-xl mb-1 text-slate-500"
+  "class": "text-xl mb-1 text-gray-600"
 };
 
 var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
-  "class": "text-slate-500 mb-2"
+  "class": "text-gray-600 mb-2"
 }, "Suelta un archivo o", -1
 /* HOISTED */
 );
@@ -726,7 +726,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }, null, 544
   /* HYDRATE_EVENTS, NEED_PATCH */
   ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, false]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["py-1 px-2 rounded-t-md text-white", $props.isInvalid ? 'bg-red-600' : 'bg-amber-500'])
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["py-1 px-2 rounded-t-md text-white", $props.isInvalid ? 'bg-red-600' : 'bg-sky-500'])
   }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.label), 3
   /* TEXT, CLASS */
   ), $setup.imgSrc || $props.defaultSrc ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
@@ -740,12 +740,12 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   , _hoisted_3), !!$props.modelValue ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", {
     key: 0,
     onClick: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)($setup.clearImage, ["prevent", "stop"]),
-    "class": "py-1 text-amber-500 px-2 border border-amber-500 rounded-md mt-2"
+    "class": "py-1 text-sky-500 px-2 border border-sky-600 rounded-md mt-2"
   }, " Quita la imagen ", 8
   /* PROPS */
   , _hoisted_4)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
     key: 1,
-    "class": ["py-8 flex flex-col items-center rounded-b-md shadow bg-slate-100 ring-slate-200", [$props.isInvalid ? 'bg-red-50' : 'bg-slate-100', {
+    "class": ["py-8 flex flex-col items-center rounded-b-md shadow bg-gray-100 ring-gray-100", [$props.isInvalid ? 'bg-red-50' : 'bg-gray-100', {
       'ring-2': $setup.isActive
     }]],
     onDrop: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)($setup.handleDrop, ["prevent", "stop"]),
@@ -758,7 +758,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toHandlers)($setup.dragEvtHandlers)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["FontAwesomeIcon"], {
     icon: "fa fa-upload"
   })]), _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-    "class": "text-amber-500 hover:underline",
+    "class": "text-sky-500 hover:underline",
     onClick: _cache[1] || (_cache[1] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function ($event) {
       return _ctx.$refs.inputEl.click();
     }, ["prevent"]))

@@ -1,6 +1,6 @@
 <template>
     <form @submit.prevent="login">
-        <div class="space-y-8 mb-12">
+        <div class="space-y-4 mb-12">
             <base-text-field
                 v-model="email"
                 label="Correo electrónico"
@@ -11,7 +11,7 @@
                 label="Contraseña"
             ></base-text-field>
         </div>
-        <button class="bg-amber-500 w-full py-2 rounded-md text-white">
+        <button class="bg-sky-600 w-full py-2 rounded-md text-white">
             Enviar
         </button>
     </form>

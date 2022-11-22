@@ -39,7 +39,7 @@
         </table>
         <router-link
             :to="{ name: 'AdminRegister' }"
-            class="text-amber-500 hover:underline"
+            class="text-sky-600 hover:underline"
         >
             Register a new account
         </router-link>

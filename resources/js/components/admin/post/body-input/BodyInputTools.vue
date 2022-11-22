@@ -6,7 +6,7 @@
       <button
         v-for="(tool, index) in simpleTools"
         :key="index"
-        class="px-4 py-4 text-xl hove text-slate-200 rounded duration-100 hover:bg-amber-500 hover:text-slate-900"
+        class="px-4 py-4 text-xl hove text-slate-200 rounded duration-100 hover:bg-sky-600 hover:text-slate-900"
         :class="{ 'pointer-events-none opacity-50': isDisabled }"
         type="button"
         @click="handleToolClick(tool)"
@@ -18,7 +18,7 @@
       >
         <button
           type="button"
-          class="px-6 py-4 text-2xl hover:bg-amber-500 text-slate-200 w-full flex justify-center hover:text-slate-900"
+          class="px-6 py-4 text-2xl hover:bg-sky-600 text-slate-200 w-full flex justify-center hover:text-slate-900"
           @click="fileInputEl && fileInputEl.click()"
         >
           <CameraImage></CameraImage>

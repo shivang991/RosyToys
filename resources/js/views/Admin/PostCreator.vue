@@ -24,7 +24,7 @@
                 <p class="text-red-600">Se requiere algún contenido.</p>
             </div>
             <button
-                class="bg-amber-500 px-8 py-2 text-white rounded-md mt-8"
+                class="bg-sky-600 px-8 py-2 text-white rounded-md mt-8"
                 type="submit"
                 :disabled="isSubmitting"
             >

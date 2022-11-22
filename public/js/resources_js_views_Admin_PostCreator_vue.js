@@ -978,7 +978,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   , _hoisted_7)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [_hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("table", _hoisted_11, [_hoisted_12, ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.posts.data, function (post, index) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("tr", {
       key: index,
-      "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["hover:bg-slate-100 cursor-pointer border-b", $setup.selectedPost === post ? 'border-transparent bg-slate-100 shadow rounded' : 'border-amber-500']),
+      "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["hover:bg-slate-100 cursor-pointer border-b", $setup.selectedPost === post ? 'border-transparent bg-slate-100 shadow rounded' : 'border-sky-600']),
       onClick: function onClick($event) {
         return $setup.selectedPost = post;
       }
@@ -1067,7 +1067,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
         onClick: $setup.handleConfirmed,
-        "class": "bg-amber-500 py-2 text-white rounded-md w-full",
+        "class": "bg-sky-600 py-2 text-white rounded-md w-full",
         disabled: $setup.isLoading,
         type: "submit"
       }, [$setup.isLoading ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_4)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_5, " Yes "))], 8
@@ -1109,7 +1109,7 @@ var _hoisted_1 = {
 
 var _hoisted_2 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-    "class": "w-8 h-8 border-4 border-amber-500 border-b-transparent rounded-full animate-spin"
+    "class": "w-8 h-8 border-4 border-sky-600 border-b-transparent rounded-full animate-spin"
   }, null, -1
   /* HOISTED */
   );
@@ -1206,7 +1206,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
     ref: "inputAreaEl",
     contenteditable: "",
-    "class": "input-area px-4 py-2 outline-none overflow-y-auto focus:ring ring-amber-500",
+    "class": "input-area px-4 py-2 outline-none overflow-y-auto focus:ring ring-sky-600",
     onBlur: $setup.updateMarkdown,
     onInput: $setup.handleInput
   }, null, 544
@@ -1243,7 +1243,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.simpleTools, function (tool, index) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
       key: index,
-      "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["px-4 py-4 text-xl hove text-slate-200 rounded duration-100 hover:bg-amber-500 hover:text-slate-900", {
+      "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["px-4 py-4 text-xl hove text-slate-200 rounded duration-100 hover:bg-sky-600 hover:text-slate-900", {
         'pointer-events-none opacity-50': $props.isDisabled
       }]),
       type: "button",
@@ -1257,7 +1257,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* STABLE_FRAGMENT */
   )), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     type: "button",
-    "class": "px-6 py-4 text-2xl hover:bg-amber-500 text-slate-200 w-full flex justify-center hover:text-slate-900",
+    "class": "px-6 py-4 text-2xl hover:bg-sky-600 text-slate-200 w-full flex justify-center hover:text-slate-900",
     onClick: _cache[0] || (_cache[0] = function ($event) {
       return $setup.fileInputEl && $setup.fileInputEl.click();
     })
@@ -1533,7 +1533,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     icon: "fa-exclamation-triangle",
     "class": "text-2xl text-red-600"
   }), _hoisted_6])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-    "class": "bg-amber-500 px-8 py-2 text-white rounded-md mt-8",
+    "class": "bg-sky-600 px-8 py-2 text-white rounded-md mt-8",
     type: "submit",
     disabled: $setup.isSubmitting
   }, [$setup.isSubmitting ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_8)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_9, " Submit "))], 8
@@ -1567,7 +1567,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.preview[data-v-35bef1f8] h1 {\r\n    margin-bottom: 1rem;\r\n    font-size: 2.25rem;\r\n    line-height: 2.5rem;\r\n    font-weight: 700;\r\n    --tw-text-opacity: 1;\r\n    color: rgb(100 116 139 / var(--tw-text-opacity))\n}\n.preview[data-v-35bef1f8] h2 {\r\n    margin-bottom: 0.5rem;\r\n    font-size: 1.875rem;\r\n    line-height: 2.25rem;\r\n    font-weight: 700;\r\n    --tw-text-opacity: 1;\r\n    color: rgb(100 116 139 / var(--tw-text-opacity))\n}\n.preview[data-v-35bef1f8] h3 {\r\n    margin-bottom: 0.5rem;\r\n    font-size: 1.5rem;\r\n    line-height: 2rem;\r\n    font-weight: 700;\r\n    --tw-text-opacity: 1;\r\n    color: rgb(100 116 139 / var(--tw-text-opacity))\n}\n.preview[data-v-35bef1f8] strong {\r\n    font-weight: 700;\r\n    --tw-text-opacity: 1;\r\n    color: rgb(100 116 139 / var(--tw-text-opacity))\n}\n.preview[data-v-35bef1f8] blockquote {\r\n    border-left-width: 4px;\r\n    --tw-bg-opacity: 1;\r\n    background-color: rgb(226 232 240 / var(--tw-bg-opacity));\r\n    padding: 0.25rem;\r\n    padding-left: 0.5rem;\r\n    --tw-text-opacity: 1;\r\n    color: rgb(100 116 139 / var(--tw-text-opacity))\n}\n.preview[data-v-35bef1f8] ol {\r\n    list-style-position: inside;\r\n    list-style-type: decimal\n}\n.preview[data-v-35bef1f8] ul {\r\n    list-style-position: inside;\r\n    list-style-type: disc\n}\n.preview[data-v-35bef1f8] img {\r\n    display: block;\r\n    max-width: 100%;\r\n    border-radius: 0.25rem\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.preview[data-v-35bef1f8] h1 {\n    margin-bottom: 1rem;\n    font-size: 2.25rem;\n    line-height: 2.5rem;\n    font-weight: 700;\n    --tw-text-opacity: 1;\n    color: rgb(100 116 139 / var(--tw-text-opacity))\n}\n.preview[data-v-35bef1f8] h2 {\n    margin-bottom: 0.5rem;\n    font-size: 1.875rem;\n    line-height: 2.25rem;\n    font-weight: 700;\n    --tw-text-opacity: 1;\n    color: rgb(100 116 139 / var(--tw-text-opacity))\n}\n.preview[data-v-35bef1f8] h3 {\n    margin-bottom: 0.5rem;\n    font-size: 1.5rem;\n    line-height: 2rem;\n    font-weight: 700;\n    --tw-text-opacity: 1;\n    color: rgb(100 116 139 / var(--tw-text-opacity))\n}\n.preview[data-v-35bef1f8] strong {\n    font-weight: 700;\n    --tw-text-opacity: 1;\n    color: rgb(100 116 139 / var(--tw-text-opacity))\n}\n.preview[data-v-35bef1f8] blockquote {\n    border-left-width: 4px;\n    --tw-bg-opacity: 1;\n    background-color: rgb(226 232 240 / var(--tw-bg-opacity));\n    padding: 0.25rem;\n    padding-left: 0.5rem;\n    --tw-text-opacity: 1;\n    color: rgb(100 116 139 / var(--tw-text-opacity))\n}\n.preview[data-v-35bef1f8] ol {\n    list-style-position: inside;\n    list-style-type: decimal\n}\n.preview[data-v-35bef1f8] ul {\n    list-style-position: inside;\n    list-style-type: disc\n}\n.preview[data-v-35bef1f8] img {\n    display: block;\n    max-width: 100%;\n    border-radius: 0.25rem\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1591,7 +1591,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.input-area[data-v-1c761019] h1 {\r\n    margin-bottom: 1rem;\r\n    font-size: 2.25rem;\r\n    line-height: 2.5rem;\r\n    font-weight: 700;\r\n    --tw-text-opacity: 1;\r\n    color: rgb(100 116 139 / var(--tw-text-opacity))\n}\n.input-area[data-v-1c761019] h2 {\r\n    margin-bottom: 0.5rem;\r\n    font-size: 1.875rem;\r\n    line-height: 2.25rem;\r\n    font-weight: 700;\r\n    --tw-text-opacity: 1;\r\n    color: rgb(100 116 139 / var(--tw-text-opacity))\n}\n.input-area[data-v-1c761019] h3 {\r\n    margin-bottom: 0.5rem;\r\n    font-size: 1.5rem;\r\n    line-height: 2rem;\r\n    font-weight: 700;\r\n    --tw-text-opacity: 1;\r\n    color: rgb(100 116 139 / var(--tw-text-opacity))\n}\n.input-area[data-v-1c761019] strong {\r\n    font-weight: 700;\r\n    --tw-text-opacity: 1;\r\n    color: rgb(100 116 139 / var(--tw-text-opacity))\n}\n.input-area[data-v-1c761019] blockquote {\r\n    border-left-width: 4px;\r\n    --tw-bg-opacity: 1;\r\n    background-color: rgb(226 232 240 / var(--tw-bg-opacity));\r\n    padding: 0.25rem;\r\n    padding-left: 0.5rem;\r\n    --tw-text-opacity: 1;\r\n    color: rgb(100 116 139 / var(--tw-text-opacity))\n}\n.input-area[data-v-1c761019] ol {\r\n    list-style-position: inside;\r\n    list-style-type: decimal\n}\n.input-area[data-v-1c761019] ul {\r\n    list-style-position: inside;\r\n    list-style-type: disc\n}\n.input-area[data-v-1c761019] img {\r\n    display: block;\r\n    max-width: 100%;\r\n    border-radius: 0.25rem\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.input-area[data-v-1c761019] h1 {\n    margin-bottom: 1rem;\n    font-size: 2.25rem;\n    line-height: 2.5rem;\n    font-weight: 700;\n    --tw-text-opacity: 1;\n    color: rgb(100 116 139 / var(--tw-text-opacity))\n}\n.input-area[data-v-1c761019] h2 {\n    margin-bottom: 0.5rem;\n    font-size: 1.875rem;\n    line-height: 2.25rem;\n    font-weight: 700;\n    --tw-text-opacity: 1;\n    color: rgb(100 116 139 / var(--tw-text-opacity))\n}\n.input-area[data-v-1c761019] h3 {\n    margin-bottom: 0.5rem;\n    font-size: 1.5rem;\n    line-height: 2rem;\n    font-weight: 700;\n    --tw-text-opacity: 1;\n    color: rgb(100 116 139 / var(--tw-text-opacity))\n}\n.input-area[data-v-1c761019] strong {\n    font-weight: 700;\n    --tw-text-opacity: 1;\n    color: rgb(100 116 139 / var(--tw-text-opacity))\n}\n.input-area[data-v-1c761019] blockquote {\n    border-left-width: 4px;\n    --tw-bg-opacity: 1;\n    background-color: rgb(226 232 240 / var(--tw-bg-opacity));\n    padding: 0.25rem;\n    padding-left: 0.5rem;\n    --tw-text-opacity: 1;\n    color: rgb(100 116 139 / var(--tw-text-opacity))\n}\n.input-area[data-v-1c761019] ol {\n    list-style-position: inside;\n    list-style-type: decimal\n}\n.input-area[data-v-1c761019] ul {\n    list-style-position: inside;\n    list-style-type: disc\n}\n.input-area[data-v-1c761019] img {\n    display: block;\n    max-width: 100%;\n    border-radius: 0.25rem\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

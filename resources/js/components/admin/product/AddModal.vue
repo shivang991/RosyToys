@@ -38,7 +38,7 @@
                     <div class="flex space-x-2">
                         <input
                             type="checkbox"
-                            class="accent-amber-500"
+                            class="accent-sky-600"
                             v-model="fields.isLimitedEdition"
                         />
                         <label>Limited edition</label>
@@ -46,7 +46,7 @@
                     <div class="flex space-x-2">
                         <input
                             type="checkbox"
-                            class="accent-amber-500"
+                            class="accent-sky-600"
                             v-model="fields.isLowStock"
                         />
                         <label>Low stock</label>
@@ -54,7 +54,7 @@
                     <div class="flex space-x-2">
                         <input
                             type="checkbox"
-                            class="accent-amber-500"
+                            class="accent-sky-600"
                             v-model="fields.isPromoted"
                         />
                         <label>Promoted</label>
@@ -62,7 +62,7 @@
                 </div>
             </div>
             <button
-                class="bg-amber-500 py-2 mt-8 text-white rounded-md w-full"
+                class="bg-sky-500 py-2 mt-8 text-white rounded-md w-full"
                 :disabled="isLoading"
                 type="submit"
             >

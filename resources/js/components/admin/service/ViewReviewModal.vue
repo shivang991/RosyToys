@@ -12,7 +12,7 @@
                 </div>
                 <div class="col-start-1 row-start-1 px-4 py-8 text-slate-900">
                     <p
-                        class="flex mb-4 space-x-2 text-amber-500 justify-center"
+                        class="flex mb-4 space-x-2 text-sky-600 justify-center"
                     >
                         <FontAwesomeIcon
                             v-for="i in 5"

@@ -22,7 +22,7 @@
                     class="flex-grow"
                 ></BaseTextField>
                 <button
-                    class="bg-amber-500 px-8 py-2 text-white rounded-md disabled:opacity-50"
+                    class="bg-sky-600 px-8 py-2 text-white rounded-md disabled:opacity-50"
                     :disabled="shouldDisableSubmit"
                     type="submit"
                 >
@@ -79,7 +79,7 @@
                 </p>
                 <router-link
                     :to="{ name: 'Cart' }"
-                    class="text-amber-500 hover:underline"
+                    class="text-sky-600 hover:underline"
                     >Edit cart</router-link
                 >
             </div>

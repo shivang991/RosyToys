@@ -193,7 +193,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* TEXT */
   ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_5, [_hoisted_6, $setup.isEditingQuantity ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("input", {
     key: 0,
-    "class": "w-20 px-4 py-2 rounded-md outline-2 outline-amber-500",
+    "class": "w-20 px-4 py-2 rounded-md outline-2 outline-sky-600",
     ref: "quantityInputEl",
     type: "number",
     value: $props.quantity,
@@ -209,7 +209,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   ))])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [_hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h4", _hoisted_11, " $" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.price), 1
   /* TEXT */
   )])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_12, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-    "class": "rounded-md px-4 py-2 text-white bg-amber-500",
+    "class": "rounded-md px-4 py-2 text-white bg-sky-600",
     onClick: _cache[1] || (_cache[1] = function ($event) {
       return $setup.isEditingQuantity = true;
     })
@@ -328,7 +328,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     to: {
       name: 'RequestCheckout'
     },
-    "class": "py-2 px-8 text-xl text-white rounded-md bg-amber-500 font-semibold"
+    "class": "py-2 px-8 text-xl text-white rounded-md bg-sky-600 font-semibold"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [_hoisted_12];

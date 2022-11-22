@@ -6,7 +6,7 @@
                     v-for="i in 5"
                     @click="fields.stars = i"
                     type="button"
-                    class="text-amber-500"
+                    class="text-sky-600"
                 >
                     <FontAwesomeIcon
                         v-if="i > fields.stars"
@@ -33,7 +33,7 @@
             />
         </div>
         <button
-            class="bg-amber-500 py-2 text-white rounded-md mt-8 w-full"
+            class="bg-sky-600 py-2 text-white rounded-md mt-8 w-full"
             type="submit"
             :disabled="isSubmitting"
         >

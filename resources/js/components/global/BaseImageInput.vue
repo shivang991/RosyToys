@@ -3,11 +3,11 @@
         <input type="file" v-show="false" ref="inputEl" @change="handleInput" />
         <label
             class="py-1 px-2 rounded-t-md text-white"
-            :class="isInvalid ? 'bg-red-600' : 'bg-amber-500'"
+            :class="isInvalid ? 'bg-red-600' : 'bg-sky-500'"
             >{{ label }}</label
         >
         <div v-if="imgSrc || defaultSrc">
-            <p class="my-2 text-slate-500">Haga clic para cambiar la imagen</p>
+            <p class="my-2 text-gray-600">Haga clic para cambiar la imagen</p>
             <img
                 :src="imgSrc || defaultSrc"
                 v-bind="attrs"
@@ -16,15 +16,15 @@
             <button
                 v-if="!!modelValue"
                 @click.prevent.stop="clearImage"
-                class="py-1 text-amber-500 px-2 border border-amber-500 rounded-md mt-2"
+                class="py-1 text-sky-500 px-2 border border-sky-600 rounded-md mt-2"
             >
                 Quita la imagen
             </button>
         </div>
         <div
-            class="py-8 flex flex-col items-center rounded-b-md shadow bg-slate-100 ring-slate-200"
+            class="py-8 flex flex-col items-center rounded-b-md shadow bg-gray-100 ring-gray-100"
             :class="[
-                isInvalid ? 'bg-red-50' : 'bg-slate-100',
+                isInvalid ? 'bg-red-50' : 'bg-gray-100',
                 { 'ring-2': isActive },
             ]"
             v-else
@@ -33,12 +33,12 @@
             @dragleave="isActive = false"
             v-on="dragEvtHandlers"
         >
-            <p class="text-xl mb-1 text-slate-500">
+            <p class="text-xl mb-1 text-gray-600">
                 <FontAwesomeIcon icon="fa fa-upload" />
             </p>
-            <p class="text-slate-500 mb-2">Suelta un archivo o</p>
+            <p class="text-gray-600 mb-2">Suelta un archivo o</p>
             <button
-                class="text-amber-500 hover:underline"
+                class="text-sky-500 hover:underline"
                 @click.prevent="$refs.inputEl.click()"
             >
                 Haga clic para navegar

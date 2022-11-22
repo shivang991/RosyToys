@@ -16,10 +16,10 @@
                         @click="deletingProfileImage"
                         v-if="profileImgUrl"
                         type="button"
-                        class="mt-2 py-1 px-2 border border-amber-500 rounded-md text-amber-500"
+                        class="mt-2 py-1 px-2 border border-sky-600 rounded-md text-sky-600"
                     >
                         <span
-                            class="w-4 block h-4 border-2 my-1 border-b-transparent border-amber-500 animate-spin rounded-full"
+                            class="w-4 block h-4 border-2 my-1 border-b-transparent border-sky-600 animate-spin rounded-full"
                             v-if="isDeletingProfileImage"
                         >
                         </span>
@@ -35,7 +35,7 @@
                 ></BaseTextField>
             </div>
             <button
-                class="bg-amber-500 py-2 mt-8 text-white rounded-md w-full"
+                class="bg-sky-600 py-2 mt-8 text-white rounded-md w-full"
                 :disabled="isSubimitting"
                 type="submit"
             >

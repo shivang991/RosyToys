@@ -6,7 +6,7 @@
             :to="{ name: link.route }"
             class="px-4 py-8 bg-white rounded-md shadow cursor-pointer transition hover:shadow-xl hover:scale-110"
         >
-            <h5 class="text-xl text-amber-500 text-center mb-4">
+            <h5 class="text-xl text-sky-600 text-center mb-4">
                 {{ link.title }}
             </h5>
             <BaseImage

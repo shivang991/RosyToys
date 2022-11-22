@@ -10,7 +10,7 @@
                 <span>
                     <input
                         type="checkbox"
-                        class="accent-amber-500 form-check-input"
+                        class="accent-sky-600 form-check-input"
                         :checked="modelValue.includes(option)"
                         @change="handleCheck(option)"
                     />

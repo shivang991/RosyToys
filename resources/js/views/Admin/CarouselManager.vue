@@ -4,7 +4,7 @@
             <h4 class="font-semibold mb-8 text-2xl">Image Carousel Manager</h4>
             <div class="py-8 flex justify-center" v-if="isLoading">
                 <div
-                    class="w-8 h-8 border-4 border-amber-500 border-b-transparent rounded-full animate-spin"
+                    class="w-8 h-8 border-4 border-sky-600 border-b-transparent rounded-full animate-spin"
                 ></div>
             </div>
             <div v-else>
@@ -24,13 +24,13 @@
                         </div>
                         <div class="col-start-2 flex justify-center space-x-2">
                             <button
-                                class="px-2 py-1 border border-amber-500 rounded-md text-amber-500"
+                                class="px-2 py-1 border border-sky-600 rounded-md text-sky-600"
                                 @click="imageIdForDeletion = item.id"
                             >
                                 Remove
                             </button>
                             <button
-                                class="px-2 py-1 border border-amber-500 rounded-md text-amber-500"
+                                class="px-2 py-1 border border-sky-600 rounded-md text-sky-600"
                                 @click="imgObjForUpdation = item"
                             >
                                 Edit
@@ -45,7 +45,7 @@
                     Ningún elemento para mostrar aquí
                 </p>
                 <button
-                    class="py-2 px-8 bg-amber-500 text-white mt-8 rounded-md"
+                    class="py-2 px-8 bg-sky-600 text-white mt-8 rounded-md"
                     @click="shouldShowAddImageModal = true"
                 >
                     Add an item

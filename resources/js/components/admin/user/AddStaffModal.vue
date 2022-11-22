@@ -52,7 +52,7 @@
                                 type="checkbox"
                                 v-model="accessInput"
                                 :value="option"
-                                class="accent-amber-500"
+                                class="accent-sky-600"
                             />
                             <p class="capitalize">{{ option }}</p>
                         </div>
@@ -60,7 +60,7 @@
                 </div>
             </div>
             <button
-                class="bg-amber-500 py-2 mt-8 text-white rounded-md w-full"
+                class="bg-sky-600 py-2 mt-8 text-white rounded-md w-full"
                 :disabled="isLoading"
                 type="submit"
             >

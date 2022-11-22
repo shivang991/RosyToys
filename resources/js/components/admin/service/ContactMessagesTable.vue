@@ -36,7 +36,7 @@
                         :class="
                             selectedMessage === msg
                                 ? 'border-transparent bg-slate-100 shadow rounded'
-                                : 'border-amber-500'
+                                : 'border-sky-600'
                         "
                         @click="selectedMessage = msg"
                     >

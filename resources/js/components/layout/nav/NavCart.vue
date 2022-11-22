@@ -16,7 +16,7 @@
             </div>
             <div
                 v-if="shouldFlash"
-                class="col-start-1 row-start-1 w-2 h-2 bg-amber-500 justify-self-end self-start rounded-full translate-x-1/4 -translate-y-1/4 animate-pulse"
+                class="col-start-1 row-start-1 w-2 h-2 bg-sky-600 justify-self-end self-start rounded-full translate-x-1/4 -translate-y-1/4 animate-pulse"
             ></div>
         </router-link>
     </div>

@@ -15,7 +15,7 @@
                 <p class="flex space-x-2 items-center">
                     <span> Quantity: </span>
                     <input
-                        class="w-20 px-4 py-2 rounded-md outline-2 outline-amber-500"
+                        class="w-20 px-4 py-2 rounded-md outline-2 outline-sky-600"
                         ref="quantityInputEl"
                         type="number"
                         :value="quantity"
@@ -38,7 +38,7 @@
         </div>
         <div class="flex justify-end space-x-2">
             <button
-                class="rounded-md px-4 py-2 text-white bg-amber-500"
+                class="rounded-md px-4 py-2 text-white bg-sky-600"
                 @click="isEditingQuantity = true"
             >
                 <FontAwesomeIcon icon="fa fa-pen"></FontAwesomeIcon>

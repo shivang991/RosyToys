@@ -21,7 +21,7 @@
                     View <FontAwesomeIcon icon="fa fa-expand"></FontAwesomeIcon>
                 </button>
                 <button
-                    class="rounded-md shadow-lg px-4 py-2 text-amber-500 disabled:opacity-50"
+                    class="rounded-md shadow-lg px-4 py-2 text-sky-600 disabled:opacity-50"
                     :disabled="selectedReview === null"
                     @click="shouldShowUpdateModal = true"
                 >
@@ -46,7 +46,7 @@
                         :class="
                             selectedReview === review
                                 ? 'border-transparent bg-slate-100 shadow rounded'
-                                : 'border-amber-500'
+                                : 'border-sky-600'
                         "
                         @click="selectedReview = review"
                     >

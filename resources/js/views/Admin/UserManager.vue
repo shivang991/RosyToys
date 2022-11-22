@@ -20,7 +20,7 @@
                         <p>{{ myProfile.name }}</p>
                         <p class="text-slate-500 mb-2">{{ myProfile.email }}</p>
                         <button
-                            class="text-amber-500 hover:underline"
+                            class="text-sky-600 hover:underline"
                             @click="shouldShowEditMeModal = true"
                         >
                             Edit

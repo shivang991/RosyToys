@@ -567,7 +567,7 @@ var _hoisted_15 = {
 };
 
 var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "w-10 h-10 border-4 border-amber-500 border-b-transparent rounded-full animate-spin"
+  "class": "w-10 h-10 border-4 border-sky-600 border-b-transparent rounded-full animate-spin"
 }, null, -1
 /* HOISTED */
 );
@@ -607,7 +607,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }, null, 8
   /* PROPS */
   , ["modelValue", "is-invalid"]), $setup.isCardError ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_11, " Your card got declined ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-    "class": "bg-amber-500 px-8 py-2 text-white rounded-md mt-8",
+    "class": "bg-sky-600 px-8 py-2 text-white rounded-md mt-8",
     type: "submit",
     disabled: $setup.isSubmitting
   }, [$setup.isSubmitting ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_13)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_14, " Pagar "))], 8

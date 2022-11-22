@@ -8,7 +8,7 @@
         <h1 class="mb-2 text-2xl font-bold text-center text-slate-900">
             Page Under Development
         </h1>
-        <button class="text-amber-500 hover:underline" @click="router.back()">
+        <button class="text-sky-600 hover:underline" @click="router.back()">
             Go back
         </button>
     </div>

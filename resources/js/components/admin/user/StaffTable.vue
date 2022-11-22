@@ -9,7 +9,7 @@
                 Add <FontAwesomeIcon icon="fa fa-plus"></FontAwesomeIcon>
             </button>
             <button
-                class="rounded-md shadow-lg px-4 py-2 text-amber-500 disabled:opacity-50"
+                class="rounded-md shadow-lg px-4 py-2 text-sky-600 disabled:opacity-50"
                 :disabled="selectedStaff === null"
                 @click="shouldShowEditModal = true"
             >
@@ -40,7 +40,7 @@
                     :class="
                         selectedStaff === staff
                             ? 'border-transparent bg-slate-100 shadow rounded'
-                            : 'border-amber-500'
+                            : 'border-sky-600'
                     "
                     @click="selectedStaff = staff"
                 >

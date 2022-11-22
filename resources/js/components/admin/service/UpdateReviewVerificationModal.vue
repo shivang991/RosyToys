@@ -6,7 +6,7 @@
         <div class="px-4 py-8 w-80" v-if="review && message">
             <p class="text-slate-900">{{ message }}</p>
             <button
-                class="bg-amber-500 py-2 mt-8 text-white rounded-md w-full"
+                class="bg-sky-600 py-2 mt-8 text-white rounded-md w-full"
                 :disabled="isLoading"
                 type="button"
                 @click="updateVerification"

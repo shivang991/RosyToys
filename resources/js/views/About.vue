@@ -67,7 +67,7 @@
                 </div>
             </div>
             <div
-                class="border-y-4 border-amber-500 py-8 px-8 md:flex md:space-x-12 bg-amber-100 justify-center mb-20"
+                class="border-y-4 border-sky-600 py-8 px-8 md:flex md:space-x-12 bg-amber-100 justify-center mb-20"
             >
                 <div class="max-w-lg mx-auto">
                     <h4 class="text-xl font-semibold text-center mb-8">

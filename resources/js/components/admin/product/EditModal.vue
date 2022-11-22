@@ -5,7 +5,7 @@
     >
         <div class="py-8 flex justify-center w-80" v-if="isFetchingProduct">
             <div
-                class="w-8 h-8 border-4 border-amber-500 border-b-transparent rounded-full animate-spin"
+                class="w-8 h-8 border-4 border-sky-600 border-b-transparent rounded-full animate-spin"
             ></div>
         </div>
         <form v-else class="px-4 pb-8" @submit.prevent="handleSubmit">
@@ -40,7 +40,7 @@
                 <div class="flex space-x-2">
                     <input
                         type="checkbox"
-                        class="accent-amber-500"
+                        class="accent-sky-600"
                         v-model="fields.isLimitedEdition"
                     />
                     <label>Limited edition</label>
@@ -48,7 +48,7 @@
                 <div class="flex space-x-2">
                     <input
                         type="checkbox"
-                        class="accent-amber-500"
+                        class="accent-sky-600"
                         v-model="fields.isLowStock"
                     />
                     <label>Low stock</label>
@@ -56,7 +56,7 @@
                 <div class="flex space-x-2">
                     <input
                         type="checkbox"
-                        class="accent-amber-500"
+                        class="accent-sky-600"
                         v-model="fields.isPromoted"
                     />
                     <label>Promoted</label>
@@ -64,7 +64,7 @@
             </div>
 
             <button
-                class="bg-amber-500 py-2 mt-8 text-white rounded-md w-full"
+                class="bg-sky-600 py-2 mt-8 text-white rounded-md w-full"
                 :disabled="isFormSubmitting"
                 type="submit"
             >

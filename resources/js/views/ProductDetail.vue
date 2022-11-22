@@ -36,7 +36,7 @@
                     <h4 class="text-xl">Cantidad:</h4>
                     <div class="flex space-x-2" v-if="quantity">
                         <button
-                            class="py-1 px-2 rounded-md border border-amber-500 text-amber-500 text-sm"
+                            class="py-1 px-2 rounded-md border border-sky-600 text-sky-600 text-sm"
                             @click.stop="
                                 store.commit('cart/REMOVE_ONE_ITEM', product.id)
                             "
@@ -50,7 +50,7 @@
                             quantity
                         }}</span>
                         <button
-                            class="py-1 px-2 rounded-md border border-amber-500 text-amber-500 text-sm"
+                            class="py-1 px-2 rounded-md border border-sky-600 text-sky-600 text-sm"
                             @click.stop="addToCart"
                         >
                             <FontAwesomeIcon
@@ -69,12 +69,12 @@
                 <div class="space-y-4" v-if="!quantity">
                     <button
                         @click="buyNow"
-                        class="w-full py-2 border border-amber-500 text-amber-500 rounded-md"
+                        class="w-full py-2 border border-sky-600 text-sky-600 rounded-md"
                     >
                         Comprar ahora
                     </button>
                     <button
-                        class="w-full py-2 bg-amber-500 text-white rounded-md"
+                        class="w-full py-2 bg-sky-600 text-white rounded-md"
                         @click="addToCart"
                     >
                         Añadir al carrito
@@ -92,7 +92,7 @@
     </div>
     <div v-else class="pt-12 flex justify-center">
         <div
-            class="w-12 h-12 rounded-full border-4 border-amber-500 animate-spin border-b-transparent"
+            class="w-12 h-12 rounded-full border-4 border-sky-600 animate-spin border-b-transparent"
         ></div>
     </div>
 </template>

@@ -30,7 +30,7 @@
                 <div class="flex justify-end">
                     <router-link
                         :to="{ name: 'RequestCheckout' }"
-                        class="py-2 px-8 text-xl text-white rounded-md bg-amber-500 font-semibold"
+                        class="py-2 px-8 text-xl text-white rounded-md bg-sky-600 font-semibold"
                         >Checkout</router-link
                     >
                 </div>

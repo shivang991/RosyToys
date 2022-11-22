@@ -13,11 +13,22 @@
                 ></FontAwesomeIcon>
             </button>
         </div>
-        <nav-links class="hidden md:flex" :links="links"></nav-links>
-        <!-- <div v-else>
-
-            <NavCart></NavCart>
-        </div> -->
+        <div
+            class="py-2 bg-sky-600 flex justify-center items-center space-x-8 text-white"
+        >
+            <router-link
+                v-for="(link, index) in links"
+                :key="index"
+                class="hover:underline text-lg"
+                active-class="font-semibold"
+                :to="{ name: link.route }"
+                >{{ link.title }}</router-link
+            >
+            <nav-search-box
+                class="hidden md:flex"
+                :links="links"
+            ></nav-search-box>
+        </div>
     </nav>
 
     <nav-mobile
@@ -29,7 +40,7 @@
 <script setup>
 import { computed, ref, watch } from "vue";
 import { useStore } from "vuex";
-import NavLinks from "./NavLinks.vue";
+import NavSearchBox from "./NavSearchBox.vue";
 import NavCart from "./NavCart.vue";
 import NavMobile from "./NavMobile.vue";
 import BaseImage from "@/components/global/BaseImage.vue";

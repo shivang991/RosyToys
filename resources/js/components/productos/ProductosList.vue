@@ -24,7 +24,7 @@
     </div>
     <div v-else class="h-96 flex items-center justify-center">
         <div
-            class="w-12 h-12 rounded-full border-4 border-amber-500 animate-spin border-b-transparent"
+            class="w-12 h-12 rounded-full border-4 border-sky-600 animate-spin border-b-transparent"
         ></div>
     </div>
 </template>

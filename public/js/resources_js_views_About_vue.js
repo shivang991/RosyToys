@@ -109,7 +109,7 @@ var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 );
 
 var _hoisted_7 = {
-  "class": "border-y-4 border-amber-500 py-8 px-8 md:flex md:space-x-12 bg-amber-100 justify-center mb-20"
+  "class": "border-y-4 border-sky-600 py-8 px-8 md:flex md:space-x-12 bg-amber-100 justify-center mb-20"
 };
 
 var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {

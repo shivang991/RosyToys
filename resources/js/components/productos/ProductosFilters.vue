@@ -5,7 +5,7 @@
                 Explore nuestros productos
             </h2>
             <button
-                class="flex space-x-2 py-2 px-4 rounded-md text-amber-500 shadow-md items-center"
+                class="flex space-x-2 py-2 px-4 rounded-md text-sky-600 shadow-md items-center"
                 @click="shouldShowFilters = !shouldShowFilters"
             >
                 <span>Filtros</span>
@@ -34,13 +34,13 @@
             </div>
             <div class="flex justify-center space-x-2 mt-4">
                 <button
-                    class="bg-amber-500 py-2 px-4 text-white rounded"
+                    class="bg-sky-600 py-2 px-4 text-white rounded"
                     @click="applyFilters"
                 >
                     Aplicar
                 </button>
                 <button
-                    class="btn btn-secondary ms-1 py-2 px-4 border text-amber-500 border-amber-500 rounded"
+                    class="btn btn-secondary ms-1 py-2 px-4 border text-sky-600 border-sky-600 rounded"
                     @click="clearFilters"
                 >
                     Borrar

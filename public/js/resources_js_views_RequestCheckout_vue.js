@@ -378,7 +378,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }, null, 8
   /* PROPS */
   , ["modelValue", "is-invalid"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-    "class": "bg-amber-500 px-8 py-2 text-white rounded-md disabled:opacity-50",
+    "class": "bg-sky-600 px-8 py-2 text-white rounded-md disabled:opacity-50",
     disabled: $setup.shouldDisableSubmit,
     type: "submit"
   }, [$setup.requestState === 'loading' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_9)) : $setup.resendCountdown === 0 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_10, " Resend ")) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_11, " Submit "))], 8
@@ -401,7 +401,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     to: {
       name: 'Cart'
     },
-    "class": "text-amber-500 hover:underline"
+    "class": "text-sky-600 hover:underline"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [_hoisted_25];

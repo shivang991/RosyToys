@@ -159,35 +159,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-8"
+  "class": "grid grid-cols-2 gap-4 lg:gap-8"
 };
 
 var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", {
-  "class": "text-xl text-amber-500"
-}, "Post Creator", -1
-/* HOISTED */
-);
-
-var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", {
-  "class": "text-xl text-amber-500 text-center"
-}, " Image Carousel Manager ", -1
-/* HOISTED */
-);
-
-var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", {
-  "class": "text-xl text-amber-500 text-center mb-8"
-}, " Customer Service Manager ", -1
-/* HOISTED */
-);
-
-var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", {
-  "class": "text-xl text-amber-500"
+  "class": "text-xl text-center"
 }, "Product Manager", -1
 /* HOISTED */
 );
 
-var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", {
-  "class": "text-xl text-amber-500"
+var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", {
+  "class": "text-xl text-center"
 }, "User Manager", -1
 /* HOISTED */
 );
@@ -197,54 +179,12 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
     to: {
-      name: 'PostCreator'
+      name: 'ProductManager'
     },
-    "class": "col-span-2 flex py-8 px-4 bg-white rounded-md shadow justify-center space-x-8 cursor-pointer transition hover:shadow-xl hover:scale-110"
+    "class": "py-8 px-4 bg-white rounded-md flex flex-col items-center space-y-8 cursor-pointer hover:bg-gray-100"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BaseImage"], {
-        src: "admin_post_creator.png",
-        "class": "w-40 h-40 object-contain"
-      })];
-    }),
-    _: 1
-    /* STABLE */
-
-  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
-    to: {
-      name: 'CarouselManager'
-    },
-    "class": "px-4 py-8 bg-white rounded-md shadow cursor-pointer transition hover:shadow-xl hover:scale-110"
-  }, {
-    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_3];
-    }),
-    _: 1
-    /* STABLE */
-
-  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
-    to: {
-      name: 'CustomerServiceManager'
-    },
-    "class": "py-8 px-4 bg-white rounded-md shadow cursor-pointer transition hover:shadow-xl hover:scale-110"
-  }, {
-    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BaseImage"], {
-        src: "admin_customer_service_manager.png",
-        "class": "w-32 mx-auto"
-      })];
-    }),
-    _: 1
-    /* STABLE */
-
-  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
-    to: {
-      name: 'ProductManager'
-    },
-    "class": "col-span-2 flex py-8 px-4 bg-white rounded-md shadow justify-center space-x-8 cursor-pointer transition hover:shadow-xl hover:scale-110"
-  }, {
-    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BaseImage"], {
         src: "admin_product_manager.png",
         "class": "w-40 h-40 object-contain"
       })];
@@ -256,10 +196,10 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     to: {
       name: 'UserManager'
     },
-    "class": "col-span-2 flex py-8 px-4 bg-white rounded-md shadow justify-center space-x-8 cursor-pointer transition hover:shadow-xl hover:scale-110"
+    "class": "py-8 px-4 bg-white rounded-md flex flex-col items-center space-y-8 cursor-pointer hover:bg-gray-100"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BaseImage"], {
+      return [_hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BaseImage"], {
         src: "admin_user_manager.png",
         "class": "w-40 h-40 object-contain"
       })];
@@ -288,7 +228,7 @@ var _hoisted_1 = {
   "class": "grid grid-cols-2 gap-4 lg:gap-8"
 };
 var _hoisted_2 = {
-  "class": "text-xl text-amber-500 text-center mb-4"
+  "class": "text-xl text-sky-600 text-center mb-4"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_router_link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("router-link");
@@ -341,7 +281,7 @@ var _hoisted_1 = {
   "class": "py-8 w-11/12 lg:w-3/4 mx-auto"
 };
 var _hoisted_2 = {
-  "class": "font-semibold mb-8 text-2xl"
+  "class": "font-semibold mb-8 text-2xl text-center"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h4", _hoisted_2, "Welcome, " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.profile.name), 1

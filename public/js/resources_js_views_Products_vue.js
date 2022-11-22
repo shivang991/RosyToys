@@ -590,7 +590,7 @@ var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [_hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-    "class": "flex space-x-2 py-2 px-4 rounded-md text-amber-500 shadow-md items-center",
+    "class": "flex space-x-2 py-2 px-4 rounded-md text-sky-600 shadow-md items-center",
     onClick: _cache[0] || (_cache[0] = function ($event) {
       return $setup.shouldShowFilters = !$setup.shouldShowFilters;
     })
@@ -620,10 +620,10 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   )), _hoisted_7]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
     "class": "flex justify-center space-x-2 mt-4"
   }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-    "class": "bg-amber-500 py-2 px-4 text-white rounded",
+    "class": "bg-sky-600 py-2 px-4 text-white rounded",
     onClick: $setup.applyFilters
   }, " Aplicar "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-    "class": "btn btn-secondary ms-1 py-2 px-4 border text-amber-500 border-amber-500 rounded",
+    "class": "btn btn-secondary ms-1 py-2 px-4 border text-sky-600 border-sky-600 rounded",
     onClick: $setup.clearFilters
   }, " Borrar ")])], 512
   /* NEED_PATCH */
@@ -660,7 +660,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       key: index
     }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
       type: "checkbox",
-      "class": "accent-amber-500 form-check-input",
+      "class": "accent-sky-600 form-check-input",
       checked: $props.modelValue.includes(option),
       onChange: function onChange($event) {
         return $setup.handleCheck(option);
@@ -708,7 +708,7 @@ var _hoisted_4 = {
 };
 
 var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "w-12 h-12 rounded-full border-4 border-amber-500 animate-spin border-b-transparent"
+  "class": "w-12 h-12 rounded-full border-4 border-sky-600 animate-spin border-b-transparent"
 }, null, -1
 /* HOISTED */
 );
@@ -750,84 +750,54 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "grid"
+  "class": "bg-slate-100 hover:shadow-xl cursor-pointer flex flex-col items-center px-8 py-12 shadow-sm rounded-tl-md rounded-tr-2xl rounded-bl-2xl rounde-br-md"
 };
 var _hoisted_2 = {
-  "class": "flex flex-col items-start space-y-2 row-start-1 col-start-1 self-start mb-4"
+  "class": "grid"
 };
 var _hoisted_3 = {
+  "class": "flex flex-col items-start space-y-2 row-start-1 col-start-1 self-start mb-4"
+};
+var _hoisted_4 = {
   key: 0,
   "class": "px-2 text-sm bg-red-50 border border-red-600 text-red-600 rounded-full"
 };
-var _hoisted_4 = {
+var _hoisted_5 = {
   key: 1,
   "class": "px-2 text-sm bg-white text-slate-500 rounded-full border border-slate-500"
 };
-var _hoisted_5 = {
-  key: 2,
-  "class": "px-2 text-sm bg-white text-amber-500 rounded-full border border-amber-500"
-};
 var _hoisted_6 = {
-  "class": "text-xl font-semibold mb-2 text-center leading-none"
+  key: 2,
+  "class": "px-2 text-sm bg-white text-sky-600 rounded-full border border-sky-600"
 };
 var _hoisted_7 = {
-  "class": "mb-8 text-center"
+  "class": "text-xl font-semibold mb-2 text-center leading-none"
 };
 var _hoisted_8 = {
-  key: 0,
-  "class": "flex justify-center items-center space-x-4"
+  "class": "mb-8 text-center"
 };
-var _hoisted_9 = ["onClick"];
-var _hoisted_10 = {
-  "class": "text-xl font-semibold text-slate-500"
+var _hoisted_9 = {
+  "class": "flex justify-between w-full items-center py-2 px-4 bg-sky-600 hover:bg-white hover:text-sky-600 text-white rounded-md"
 };
-var _hoisted_11 = ["onClick"];
-var _hoisted_12 = ["onClick"];
 
-var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "Añadir al carrito", -1
+var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "Añadir al carrito", -1
 /* HOISTED */
 );
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
-    title: "Ver el producto",
-    onClick: $setup.viewProduct,
-    "class": "bg-slate-100 hover:shadow-xl cursor-pointer flex flex-col items-center px-8 py-12 shadow-sm rounded-tl-md rounded-tr-2xl rounded-bl-2xl rounde-br-md"
-  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BaseImage"], {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BaseImage"], {
     isExternal: "",
     src: $props.imgSrc,
     "class": "row-start-1 col-start-1 w-60 h-40 object-cover mb-4 rounded"
   }, null, 8
   /* PROPS */
-  , ["src"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [$props.isLowStock ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_3, " Existencias bajas ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $props.isLimited ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_4, " Edición limitada ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $props.isPromoted ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_5, " Promocionado ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", _hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.title), 1
+  , ["src"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [$props.isLowStock ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_4, " Existencias bajas ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $props.isLimited ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_5, " Edición limitada ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $props.isPromoted ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_6, " Promocionado ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.title), 1
   /* TEXT */
-  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_7, "Price: " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.formattedPrice), 1
+  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_8, "Price: " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.formattedPrice), 1
   /* TEXT */
-  ), $setup.quantityInCart ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-    "class": "py-1 px-2 rounded-md border border-amber-500 text-amber-500 hover:bg-amber-500 hover:text-white",
-    onClick: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)($setup.removeFromCart, ["stop"])
-  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["FontAwesomeIcon"], {
-    icon: "fa fa-minus"
-  })], 8
-  /* PROPS */
-  , _hoisted_9), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.quantityInCart), 1
-  /* TEXT */
-  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-    "class": "py-1 px-2 rounded-md border border-amber-500 text-amber-500 hover:bg-amber-500 hover:text-white",
-    onClick: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)($setup.addToCart, ["stop"])
-  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["FontAwesomeIcon"], {
-    icon: "fa fa-plus"
-  })], 8
-  /* PROPS */
-  , _hoisted_11)])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", {
-    key: 1,
-    "class": "flex justify-between w-full items-center py-2 px-4 bg-amber-500 hover:bg-amber-600 text-white rounded-md",
-    onClick: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)($setup.addToCart, ["stop"])
-  }, [_hoisted_13, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["FontAwesomeIcon"], {
+  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div\n            class=\"flex justify-center items-center space-x-4\"\n            v-if=\"quantityInCart\"\n        >\n            <button\n                class=\"py-1 px-2 rounded-md border border-sky-600 text-sky-600 hover:bg-sky-600 hover:text-white\"\n                @click.stop=\"removeFromCart\"\n            >\n                <FontAwesomeIcon icon=\"fa fa-minus\"></FontAwesomeIcon>\n            </button>\n\n            <span class=\"text-xl font-semibold text-slate-500\">{{\n                quantityInCart\n            }}</span>\n            <button\n                class=\"py-1 px-2 rounded-md border border-sky-600 text-sky-600 hover:bg-sky-600 hover:text-white\"\n                @click.stop=\"addToCart\"\n            >\n                <FontAwesomeIcon icon=\"fa fa-plus\"></FontAwesomeIcon>\n            </button>\n        </div> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", _hoisted_9, [_hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["FontAwesomeIcon"], {
     icon: "fa-shopping-cart"
-  })], 8
-  /* PROPS */
-  , _hoisted_12))]);
+  })])]);
 }
 
 /***/ }),

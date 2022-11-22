@@ -27,7 +27,7 @@
                 type="password"
             ></BaseTextField>
             <button
-                class="w-full py-2 bg-amber-500 text-white rounded-md"
+                class="w-full py-2 bg-sky-600 text-white rounded-md"
                 :disabled="isFormSending"
             >
                 <span

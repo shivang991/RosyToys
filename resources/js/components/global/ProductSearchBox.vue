@@ -1,6 +1,6 @@
 <template>
     <div
-        class="flex bg-slate-100 px-4 py-2 rounded-md focus-within:ring-2 ring-amber-500 items-center"
+        class="flex bg-slate-100 px-4 py-2 rounded-md focus-within:ring-2 ring-sky-600 items-center"
     >
         <input
             type="text"
@@ -10,7 +10,7 @@
         />
         <div
             v-show="isSearchLoading"
-            class="w-4 h-4 border-2 border-b-transparent border-amber-500 rounded-full animate-spin"
+            class="w-4 h-4 border-2 border-b-transparent border-sky-600 rounded-full animate-spin"
         ></div>
     </div>
 </template>

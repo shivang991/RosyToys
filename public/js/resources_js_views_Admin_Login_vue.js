@@ -253,11 +253,11 @@ __webpack_require__.r(__webpack_exports__);
 
 var _hoisted_1 = ["onSubmit"];
 var _hoisted_2 = {
-  "class": "space-y-8 mb-12"
+  "class": "space-y-4 mb-12"
 };
 
 var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-  "class": "bg-amber-500 w-full py-2 rounded-md text-white"
+  "class": "bg-sky-600 w-full py-2 rounded-md text-white"
 }, " Enviar ", -1
 /* HOISTED */
 );
@@ -372,7 +372,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_router_link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("router-link");
 
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_3, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
-    "class": "text-amber-500 hover:underline",
+    "class": "text-sky-600 hover:underline",
     to: {
       name: 'Home'
     }

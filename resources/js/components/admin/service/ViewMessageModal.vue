@@ -5,7 +5,7 @@
     >
         <div class="flex justify-center w-80" v-if="isLoading">
             <div
-                class="w-8 h-8 border-4 border-amber-500 border-b-transparent rounded-full animate-spin"
+                class="w-8 h-8 border-4 border-sky-600 border-b-transparent rounded-full animate-spin"
             ></div>
         </div>
         <div class="p-4 max-w-lg text-slate-900" v-else>

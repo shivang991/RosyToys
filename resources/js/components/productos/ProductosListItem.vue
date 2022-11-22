@@ -1,7 +1,5 @@
 <template>
     <div
-        title="Ver el producto"
-        @click="viewProduct"
         class="bg-slate-100 hover:shadow-xl cursor-pointer flex flex-col items-center px-8 py-12 shadow-sm rounded-tl-md rounded-tr-2xl rounded-bl-2xl rounde-br-md"
     >
         <div class="grid">
@@ -26,7 +24,7 @@
                     Edición limitada
                 </p>
                 <p
-                    class="px-2 text-sm bg-white text-amber-500 rounded-full border border-amber-500"
+                    class="px-2 text-sm bg-white text-sky-600 rounded-full border border-sky-600"
                     v-if="isPromoted"
                 >
                     Promocionado
@@ -37,12 +35,12 @@
             {{ title }}
         </h5>
         <p class="mb-8 text-center">Price: {{ formattedPrice }}</p>
-        <div
+        <!-- <div
             class="flex justify-center items-center space-x-4"
             v-if="quantityInCart"
         >
             <button
-                class="py-1 px-2 rounded-md border border-amber-500 text-amber-500 hover:bg-amber-500 hover:text-white"
+                class="py-1 px-2 rounded-md border border-sky-600 text-sky-600 hover:bg-sky-600 hover:text-white"
                 @click.stop="removeFromCart"
             >
                 <FontAwesomeIcon icon="fa fa-minus"></FontAwesomeIcon>
@@ -52,16 +50,14 @@
                 quantityInCart
             }}</span>
             <button
-                class="py-1 px-2 rounded-md border border-amber-500 text-amber-500 hover:bg-amber-500 hover:text-white"
+                class="py-1 px-2 rounded-md border border-sky-600 text-sky-600 hover:bg-sky-600 hover:text-white"
                 @click.stop="addToCart"
             >
                 <FontAwesomeIcon icon="fa fa-plus"></FontAwesomeIcon>
             </button>
-        </div>
+        </div> -->
         <button
-            class="flex justify-between w-full items-center py-2 px-4 bg-amber-500 hover:bg-amber-600 text-white rounded-md"
-            @click.stop="addToCart"
-            v-else
+            class="flex justify-between w-full items-center py-2 px-4 bg-sky-600 hover:bg-white hover:text-sky-600 text-white rounded-md"
         >
             <span>Añadir al carrito</span>
             <FontAwesomeIcon icon="fa-shopping-cart"></FontAwesomeIcon>

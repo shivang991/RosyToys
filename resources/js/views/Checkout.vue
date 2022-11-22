@@ -41,7 +41,7 @@
                     Your card got declined
                 </p>
                 <button
-                    class="bg-amber-500 px-8 py-2 text-white rounded-md mt-8"
+                    class="bg-sky-600 px-8 py-2 text-white rounded-md mt-8"
                     type="submit"
                     :disabled="isSubmitting"
                 >
@@ -55,7 +55,7 @@
             </form>
             <div class="flex justify-center py-8" v-show="!isReady">
                 <div
-                    class="w-10 h-10 border-4 border-amber-500 border-b-transparent rounded-full animate-spin"
+                    class="w-10 h-10 border-4 border-sky-600 border-b-transparent rounded-full animate-spin"
                 ></div>
             </div>
         </div>

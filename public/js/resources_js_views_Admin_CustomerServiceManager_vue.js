@@ -1062,7 +1062,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   , _hoisted_7)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [_hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("table", _hoisted_11, [_hoisted_12, ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.messages.data, function (msg, index) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("tr", {
       key: index,
-      "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["hover:bg-slate-100 cursor-pointer border-b", $setup.selectedMessage === msg ? 'border-transparent bg-slate-100 shadow rounded' : 'border-amber-500']),
+      "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["hover:bg-slate-100 cursor-pointer border-b", $setup.selectedMessage === msg ? 'border-transparent bg-slate-100 shadow rounded' : 'border-sky-600']),
       onClick: function onClick($event) {
         return $setup.selectedMessage = msg;
       }
@@ -1234,7 +1234,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   })], 8
   /* PROPS */
   , _hoisted_7), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-    "class": "rounded-md shadow-lg px-4 py-2 text-amber-500 disabled:opacity-50",
+    "class": "rounded-md shadow-lg px-4 py-2 text-sky-600 disabled:opacity-50",
     disabled: $setup.selectedReview === null,
     onClick: _cache[2] || (_cache[2] = function ($event) {
       return $setup.shouldShowUpdateModal = true;
@@ -1246,7 +1246,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   , _hoisted_9)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [_hoisted_12, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("table", _hoisted_13, [_hoisted_14, ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.reviews.data, function (review, index) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("tr", {
       key: index,
-      "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["hover:bg-slate-100 cursor-pointer border-b", $setup.selectedReview === review ? 'border-transparent bg-slate-100 shadow rounded' : 'border-amber-500']),
+      "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["hover:bg-slate-100 cursor-pointer border-b", $setup.selectedReview === review ? 'border-transparent bg-slate-100 shadow rounded' : 'border-sky-600']),
       onClick: function onClick($event) {
         return $setup.selectedReview = review;
       }
@@ -1404,7 +1404,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _$setup$selectedOrder;
 
   return $props.orders ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [_hoisted_2, $props.orders.data.length ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-    "class": "rounded-md shadow-lg px-4 py-2 text-amber-500 disabled:opacity-50",
+    "class": "rounded-md shadow-lg px-4 py-2 text-sky-600 disabled:opacity-50",
     disabled: $setup.selectedOrder === null,
     onClick: _cache[0] || (_cache[0] = function ($event) {
       return $setup.shouldShowUpdateModal = true;
@@ -1426,7 +1426,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   , _hoisted_7)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [_hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("table", _hoisted_11, [_hoisted_12, ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.orders.data, function (order, index) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("tr", {
       key: index,
-      "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["hover:bg-slate-100 cursor-pointer border-b", $setup.selectedOrder === order ? 'border-transparent bg-slate-100 shadow rounded' : 'border-amber-500']),
+      "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["hover:bg-slate-100 cursor-pointer border-b", $setup.selectedOrder === order ? 'border-transparent bg-slate-100 shadow rounded' : 'border-sky-600']),
       onClick: function onClick($event) {
         return $setup.selectedOrder = order;
       }
@@ -1518,7 +1518,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
         onClick: $setup.handleConfirmed,
-        "class": "bg-amber-500 py-2 text-white rounded-md w-full",
+        "class": "bg-sky-600 py-2 text-white rounded-md w-full",
         disabled: $setup.isLoading,
         type: "submit"
       }, [$setup.isLoading ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_4)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_5, " Yes "))], 8
@@ -1575,7 +1575,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
         onClick: $setup.handleConfirmed,
-        "class": "bg-amber-500 py-2 text-white rounded-md w-full",
+        "class": "bg-sky-600 py-2 text-white rounded-md w-full",
         disabled: $setup.isLoading,
         type: "submit"
       }, [$setup.isLoading ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_4)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_5, " Yes "))], 8
@@ -1635,7 +1635,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.nextStatus.message), 1
       /* TEXT */
       ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-        "class": "bg-amber-500 py-2 mt-8 text-white rounded-md w-full",
+        "class": "bg-sky-600 py-2 mt-8 text-white rounded-md w-full",
         disabled: $setup.isLoading,
         type: "button",
         onClick: $setup.updateStatus
@@ -1691,7 +1691,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       return [$props.review && $setup.message ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.message), 1
       /* TEXT */
       ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-        "class": "bg-amber-500 py-2 mt-8 text-white rounded-md w-full",
+        "class": "bg-sky-600 py-2 mt-8 text-white rounded-md w-full",
         disabled: $setup.isLoading,
         type: "button",
         onClick: $setup.updateVerification
@@ -1727,7 +1727,7 @@ var _hoisted_1 = {
 };
 
 var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "w-8 h-8 border-4 border-amber-500 border-b-transparent rounded-full animate-spin"
+  "class": "w-8 h-8 border-4 border-sky-600 border-b-transparent rounded-full animate-spin"
 }, null, -1
 /* HOISTED */
 );
@@ -1821,7 +1821,7 @@ var _hoisted_1 = {
 };
 
 var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "w-8 h-8 border-4 border-amber-500 border-b-transparent rounded-full animate-spin"
+  "class": "w-8 h-8 border-4 border-sky-600 border-b-transparent rounded-full animate-spin"
 }, null, -1
 /* HOISTED */
 );
@@ -1877,16 +1877,16 @@ var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 );
 
 var _hoisted_13 = {
-  "class": "py-2 px-4 border-amber-500 border-y"
+  "class": "py-2 px-4 border-sky-600 border-y"
 };
 var _hoisted_14 = {
-  "class": "py-2 px-4 border-amber-500 border-y"
+  "class": "py-2 px-4 border-sky-600 border-y"
 };
 var _hoisted_15 = {
-  "class": "py-2 px-4 border-amber-500 border-y"
+  "class": "py-2 px-4 border-sky-600 border-y"
 };
 var _hoisted_16 = {
-  "class": "py-2 px-4 border-amber-500 border-y"
+  "class": "py-2 px-4 border-sky-600 border-y"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)($setup["BaseModal"], {
@@ -1952,7 +1952,7 @@ var _hoisted_4 = {
   "class": "col-start-1 row-start-1 px-4 py-8 text-slate-900"
 };
 var _hoisted_5 = {
-  "class": "flex mb-4 space-x-2 text-amber-500 justify-center"
+  "class": "flex mb-4 space-x-2 text-sky-600 justify-center"
 };
 var _hoisted_6 = {
   "class": "grid"

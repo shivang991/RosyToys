@@ -2,7 +2,7 @@
     <div
         ref="inputAreaEl"
         contenteditable
-        class="input-area px-4 py-2 outline-none overflow-y-auto focus:ring ring-amber-500"
+        class="input-area px-4 py-2 outline-none overflow-y-auto focus:ring ring-sky-600"
         @blur="updateMarkdown"
         @input="handleInput"
     ></div>

@@ -5,6 +5,9 @@
         >
             <div class="mb-8 sm:mb-0">
                 <BaseImage src="logo.png" class="w-40"></BaseImage>
+                <RouterLink class="text-white mt-2 mb-4" :to="{ name: 'AdminLogin' }"
+                    >Entrar en el panel de administración</RouterLink
+                >
                 <ul class="flex space-x-4 mt-4">
                     <li v-for="(link, index) in socialMediaLinks" :key="index">
                         <a
