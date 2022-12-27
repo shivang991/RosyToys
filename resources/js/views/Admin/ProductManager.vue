@@ -1,5 +1,5 @@
 <template>
-    <div class="mt-8 py-8 w-11/12 lg:w-3/4 mx-auto rounded-md">
+    <div class="mt-8 py-8 w-11/12 lg:w-3/4 mx-auto rounded-md shadow">
         <div class="px-12 mb-8">
             <h4 class="font-semibold mb-8 text-2xl">Product Manager</h4>
             <div class="flex space-x-8">
@@ -7,7 +7,7 @@
                 <div class="flex">
                     <button
                         @click="shouldShowAddProductModal = true"
-                        class="px-4 flex items-center space-x-2 text-sky-600 border border-r-transparent border-sky-600 rounded-l-md"
+                        class="px-4 flex items-center space-x-2 text-sky-600 border border-r-transparent border-sky-100 rounded-l-md"
                     >
                         <span>Add</span>
                         <FontAwesomeIcon
@@ -18,23 +18,23 @@
                     <button
                         :disabled="selectedProductId === null"
                         @click="shouldShowEditProductModal = true"
-                        class="px-4 flex items-center space-x-2 text-sky-600 bg-sky-100 border border-sky-600 disabled:opacity-50"
+                        class="px-4 flex items-center space-x-2 text-sky-600 border border-sky-100 group"
                     >
-                        <span>Edit</span>
+                        <span class="group-disabled:opacity-50">Edit</span>
                         <FontAwesomeIcon
                             icon="fa fa-pen"
-                            class="text-sm"
+                            class="text-sm group-disabled:opacity-50"
                         ></FontAwesomeIcon>
                     </button>
                     <button
                         :disabled="selectedProductId === null"
                         @click="shouldShowRemoveProductModal = true"
-                        class="px-4 flex items-center space-x-2 text-red-600 bg-red-50 border border-red-600 border-l-transparent rounded-r-md disabled:opacity-50"
+                        class="px-4 flex items-center space-x-2 text-red-600 border border-red-100 border-l-transparent rounded-r-md group"
                     >
-                        <span>Remove</span>
+                        <span class="group-disabled:opacity-50">Remove</span>
                         <FontAwesomeIcon
                             icon="fa fa-times"
-                            class="text-sm"
+                            class="text-sm group-disabled:opacity-50"
                         ></FontAwesomeIcon>
                     </button>
                 </div>

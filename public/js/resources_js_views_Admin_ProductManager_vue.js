@@ -1536,7 +1536,7 @@ var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNod
 var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" elementos. ");
 
 var _hoisted_5 = {
-  "class": "flex space-x-4 items-center text-slate-900"
+  "class": "flex space-x-4 items-center"
 };
 var _hoisted_6 = ["disabled"];
 var _hoisted_7 = {
@@ -1550,7 +1550,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   ), _hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.paginationData.total), 1
   /* TEXT */
   ), _hoisted_4]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-    "class": "rotate-180 px-4 py-2 hover:bg-slate-200 rounded-md disabled:opacity-50",
+    "class": "rotate-180 px-4 py-2 hover:bg-gray-100 rounded-md disabled:opacity-50",
     onClick: _cache[0] || (_cache[0] = function ($event) {
       return $setup.loadPrevPage();
     }),
@@ -1576,7 +1576,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* KEYED_FRAGMENT */
   ))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     disabled: $props.paginationData.current_page === $props.paginationData.last_page,
-    "class": "px-4 py-2 hover:bg-slate-200 rounded-md disabled:opacity-50",
+    "class": "px-4 py-2 hover:bg-gray-100 rounded-md disabled:opacity-50",
     onClick: _cache[1] || (_cache[1] = function ($event) {
       return $setup.loadNextPage();
     })
@@ -1672,7 +1672,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "mt-8 py-8 w-11/12 lg:w-3/4 mx-auto rounded-md"
+  "class": "mt-8 py-8 w-11/12 lg:w-3/4 mx-auto rounded-md shadow"
 };
 var _hoisted_2 = {
   "class": "px-12 mb-8"
@@ -1697,13 +1697,17 @@ var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 
 var _hoisted_7 = ["disabled"];
 
-var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "Edit", -1
+var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "group-disabled:opacity-50"
+}, "Edit", -1
 /* HOISTED */
 );
 
 var _hoisted_9 = ["disabled"];
 
-var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "Remove", -1
+var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "group-disabled:opacity-50"
+}, "Remove", -1
 /* HOISTED */
 );
 
@@ -1780,7 +1784,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onClick: _cache[0] || (_cache[0] = function ($event) {
       return $setup.shouldShowAddProductModal = true;
     }),
-    "class": "px-4 flex items-center space-x-2 text-sky-600 border border-r-transparent border-sky-600 rounded-l-md"
+    "class": "px-4 flex items-center space-x-2 text-sky-600 border border-r-transparent border-sky-100 rounded-l-md"
   }, [_hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["FontAwesomeIcon"], {
     icon: "fa fa-plus",
     "class": "text-sm"
@@ -1789,10 +1793,10 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onClick: _cache[1] || (_cache[1] = function ($event) {
       return $setup.shouldShowEditProductModal = true;
     }),
-    "class": "px-4 flex items-center space-x-2 text-sky-600 bg-sky-100 border border-sky-600 disabled:opacity-50"
+    "class": "px-4 flex items-center space-x-2 text-sky-600 border border-sky-100 group"
   }, [_hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["FontAwesomeIcon"], {
     icon: "fa fa-pen",
-    "class": "text-sm"
+    "class": "text-sm group-disabled:opacity-50"
   })], 8
   /* PROPS */
   , _hoisted_7), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
@@ -1800,10 +1804,10 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onClick: _cache[2] || (_cache[2] = function ($event) {
       return $setup.shouldShowRemoveProductModal = true;
     }),
-    "class": "px-4 flex items-center space-x-2 text-red-600 bg-red-50 border border-red-600 border-l-transparent rounded-r-md disabled:opacity-50"
+    "class": "px-4 flex items-center space-x-2 text-red-600 border border-red-100 border-l-transparent rounded-r-md group"
   }, [_hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["FontAwesomeIcon"], {
     icon: "fa fa-times",
-    "class": "text-sm"
+    "class": "text-sm group-disabled:opacity-50"
   })], 8
   /* PROPS */
   , _hoisted_9)])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_11, [_hoisted_12, $setup.products ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("table", _hoisted_13, [_hoisted_14, _hoisted_15, ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.products, function (product, index) {

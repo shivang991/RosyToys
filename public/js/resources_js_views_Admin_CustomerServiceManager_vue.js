@@ -2108,7 +2108,7 @@ var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNod
 var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" elementos. ");
 
 var _hoisted_5 = {
-  "class": "flex space-x-4 items-center text-slate-900"
+  "class": "flex space-x-4 items-center"
 };
 var _hoisted_6 = ["disabled"];
 var _hoisted_7 = {
@@ -2122,7 +2122,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   ), _hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.paginationData.total), 1
   /* TEXT */
   ), _hoisted_4]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-    "class": "rotate-180 px-4 py-2 hover:bg-slate-200 rounded-md disabled:opacity-50",
+    "class": "rotate-180 px-4 py-2 hover:bg-gray-100 rounded-md disabled:opacity-50",
     onClick: _cache[0] || (_cache[0] = function ($event) {
       return $setup.loadPrevPage();
     }),
@@ -2148,7 +2148,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* KEYED_FRAGMENT */
   ))]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     disabled: $props.paginationData.current_page === $props.paginationData.last_page,
-    "class": "px-4 py-2 hover:bg-slate-200 rounded-md disabled:opacity-50",
+    "class": "px-4 py-2 hover:bg-gray-100 rounded-md disabled:opacity-50",
     onClick: _cache[1] || (_cache[1] = function ($event) {
       return $setup.loadNextPage();
     })

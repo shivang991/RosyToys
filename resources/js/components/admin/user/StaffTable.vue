@@ -1,28 +1,41 @@
 <template>
     <div v-if="data">
-        <h5 class="text-xl text-slate-900 text-left mx-12">Staff:</h5>
-        <div class="flex justify-end mb-4 space-x-4 px-12">
-            <button
-                class="rounded-md shadow-lg px-4 py-2 text-slate-500"
-                @click="shouldShowAddModal = true"
-            >
-                Add <FontAwesomeIcon icon="fa fa-plus"></FontAwesomeIcon>
-            </button>
-            <button
-                class="rounded-md shadow-lg px-4 py-2 text-sky-600 disabled:opacity-50"
-                :disabled="selectedStaff === null"
-                @click="shouldShowEditModal = true"
-            >
-                Edit <FontAwesomeIcon icon="fa fa-pen"></FontAwesomeIcon>
-            </button>
-            <button
-                class="rounded-md shadow-lg px-4 py-2 text-red-600 disabled:opacity-50"
-                :disabled="selectedStaff === null"
-                @click="shouldShowRemoveModal = true"
-            >
-                Remove
-                <FontAwesomeIcon icon="fa fa-times"></FontAwesomeIcon>
-            </button>
+        <div class="flex mb-8 justify-between px-12">
+            <h5 class="text-xl text-slate-900 py-2">Staff:</h5>
+            <div class="flex">
+                <button
+                    class="px-4 flex items-center space-x-2 text-sky-600 border border-r-transparent border-sky-100 rounded-l-md"
+                    @click="shouldShowAddModal = true"
+                >
+                    <span>Add</span>
+                    <FontAwesomeIcon
+                        icon="fa fa-plus"
+                        class="text-sm"
+                    ></FontAwesomeIcon>
+                </button>
+                <button
+                    class="px-4 flex items-center space-x-2 text-sky-600 border border-sky-100 group"
+                    :disabled="selectedStaff === null"
+                    @click="shouldShowEditModal = true"
+                >
+                    <span class="group-disabled:opacity-50">Edit</span>
+                    <FontAwesomeIcon
+                        icon="fa fa-pen"
+                        class="text-sm group-disabled:opacity-50"
+                    ></FontAwesomeIcon>
+                </button>
+                <button
+                    class="px-4 flex items-center space-x-2 text-red-600 border border-red-100 border-l-transparent rounded-r-md group"
+                    :disabled="selectedStaff === null"
+                    @click="shouldShowRemoveModal = true"
+                >
+                    <span class="group-disabled:opacity-50">Remove</span>
+                    <FontAwesomeIcon
+                        icon="fa fa-times"
+                        class="text-sm group-disabled:opacity-50"
+                    ></FontAwesomeIcon>
+                </button>
+            </div>
         </div>
         <div class="grid">
             <div class="col-start-1 row-start-1 h-16 bg-slate-200"></div>
