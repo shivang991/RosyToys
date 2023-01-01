@@ -1,7 +1,7 @@
 <template>
     <div
         v-if="products"
-        class="grid sm:grid-cols-2 xl:grid-cols-3 gap-x-12 gap-y-8 md:gap-y-20 py-12"
+        class="grid sm:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-8 md:gap-y-20 mb-12"
     >
         <productos-list-item
             v-for="product in products"

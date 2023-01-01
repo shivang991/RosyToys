@@ -1,8 +1,12 @@
 <template>
-    <div class="w-11/12 md:w-3/4 mx-auto py-12">
-        <productos-filters></productos-filters>
-        <productos-list></productos-list>
-        <product-pagination></product-pagination>
+    <div class="py-12">
+        <div class="flex space-x-8">
+            <productos-filters></productos-filters>
+            <div>
+                <productos-list></productos-list>
+                <product-pagination></product-pagination>
+            </div>
+        </div>
     </div>
 </template>
 

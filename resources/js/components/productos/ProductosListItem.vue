@@ -1,77 +1,45 @@
 <template>
     <div
-        class="bg-slate-100 hover:shadow-xl cursor-pointer flex flex-col items-center px-8 py-12 shadow-sm rounded-tl-md rounded-tr-2xl rounded-bl-2xl rounde-br-md"
+        class="w-60 shadow-lg hover:shadow-xl cursor-pointer px-4 py-12 rounded-md"
     >
-        <div class="grid">
-            <BaseImage
-                isExternal
-                :src="imgSrc"
-                class="row-start-1 col-start-1 w-60 h-40 object-cover mb-4 rounded"
-            />
-            <div
-                class="flex flex-col items-start space-y-2 row-start-1 col-start-1 self-start mb-4"
+        <BaseImage
+            isExternal
+            :src="imgSrc"
+            class="w-40 h-40 object-cover mb-4 rounded"
+        />
+        <div
+            class="flex flex-col items-start mb-4 space-y-2"
+        >
+            <p
+                class="px-2 text-sm bg-red-50 border border-red-600 text-red-600 rounded-full"
+                v-if="isLowStock"
             >
-                <p
-                    class="px-2 text-sm bg-red-50 border border-red-600 text-red-600 rounded-full"
-                    v-if="isLowStock"
-                >
-                    Existencias bajas
-                </p>
-                <p
-                    class="px-2 text-sm bg-white text-slate-500 rounded-full border border-slate-500"
-                    v-if="isLimited"
-                >
-                    Edición limitada
-                </p>
-                <p
-                    class="px-2 text-sm bg-white text-sky-600 rounded-full border border-sky-600"
-                    v-if="isPromoted"
-                >
-                    Promocionado
-                </p>
-            </div>
+                Existencias bajas
+            </p>
+            <p
+                class="px-2 text-sm bg-white text-slate-500 rounded-full border border-slate-500"
+                v-if="isLimited"
+            >
+                Edición limitada
+            </p>
+            <p
+                class="px-2 text-sm bg-white text-sky-600 rounded-full border border-sky-600"
+                v-if="isPromoted"
+            >
+                Promocionado
+            </p>
         </div>
-        <h5 class="text-xl font-semibold mb-2 text-center leading-none">
-            {{ title }}
-        </h5>
-        <p class="mb-8 text-center">Price: {{ formattedPrice }}</p>
-        <!-- <div
-            class="flex justify-center items-center space-x-4"
-            v-if="quantityInCart"
-        >
-            <button
-                class="py-1 px-2 rounded-md border border-sky-600 text-sky-600 hover:bg-sky-600 hover:text-white"
-                @click.stop="removeFromCart"
-            >
-                <FontAwesomeIcon icon="fa fa-minus"></FontAwesomeIcon>
-            </button>
-
-            <span class="text-xl font-semibold text-slate-500">{{
-                quantityInCart
-            }}</span>
-            <button
-                class="py-1 px-2 rounded-md border border-sky-600 text-sky-600 hover:bg-sky-600 hover:text-white"
-                @click.stop="addToCart"
-            >
-                <FontAwesomeIcon icon="fa fa-plus"></FontAwesomeIcon>
-            </button>
-        </div> -->
-        <button
-            class="flex justify-between w-full items-center py-2 px-4 bg-sky-600 hover:bg-white hover:text-sky-600 text-white rounded-md"
-        >
-            <span>Añadir al carrito</span>
-            <FontAwesomeIcon icon="fa-shopping-cart"></FontAwesomeIcon>
-        </button>
+        <div class="flex justify-between space-x-8">
+            <p class="leading-none">
+                {{ title }}
+            </p>
+            <h5 class="font-semibold text-xl">${{ price }}</h5>
+        </div>
     </div>
 </template>
 
 <script setup>
-import { useRouter } from "vue-router";
 import BaseImage from "../global/BaseImage.vue";
-import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-import { useStore } from "vuex";
-import { computed, toRaw } from "vue";
-import { formatPrice } from "@/plugins/Formatters";
 
 const props = defineProps({
     id: {
@@ -104,21 +72,4 @@ const props = defineProps({
     },
 });
 
-const formattedPrice = computed(() => formatPrice(props.price));
-
-const router = useRouter();
-
-const store = useStore();
-
-const quantityInCart = computed(() =>
-    store.getters["cart/itemCount"](props.id)
-);
-
-const rawProduct = toRaw(props);
-
-const addToCart = () => store.commit("cart/ADD_ONE_ITEM", rawProduct);
-const removeFromCart = () => store.commit("cart/REMOVE_ONE_ITEM", props.id);
-
-const viewProduct = () =>
-    router.push({ name: "ProductDetail", params: { id: props.id } });
 </script>

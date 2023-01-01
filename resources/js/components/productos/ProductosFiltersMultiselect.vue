@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h5 class="font-semibold text-xl mb-4">{{ label }}:</h5>
+        <h5 class="font-semibold text-xl mb-2">{{ label }}</h5>
         <ul class="px-2 space-y-2">
             <li
                 class="flex items-center space-x-2"

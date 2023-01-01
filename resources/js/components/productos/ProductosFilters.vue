@@ -1,51 +1,26 @@
 <template>
-    <div class="relative">
-        <div class="flex justify-between items-center">
-            <h2 class="text-4xl font-semibold text-slate-900">
-                Explore nuestros productos
-            </h2>
+    <div class="px-12 py-8 w-80 shadow-lg h-max rounded-md">
+        <h4 class="text-2xl font-semibold pb-2 mb-4 border-b border-gray-600">Filtros:</h4>
+        <productos-filters-multiselect
+            v-for="(filter, key) in filters"
+            :key="key"
+            :options="filter.options"
+            :label="filter.label"
+            v-model="input[key]"
+        ></productos-filters-multiselect>
+        <div class="my-8" v-if="Object.keys(filters).length">
             <button
-                class="flex space-x-2 py-2 px-4 rounded-md text-sky-600 shadow-md items-center"
-                @click="shouldShowFilters = !shouldShowFilters"
+                class="bg-sky-600 py-2 px-4 text-white rounded-md w-full mb-2"
+                @click="applyFilters"
             >
-                <span>Filtros</span>
-                <span
-                    class="text-sm duration-100"
-                    :class="{ 'rotate-180': shouldShowFilters }"
-                >
-                    <FontAwesomeIcon icon="fa-chevron-down"></FontAwesomeIcon>
-                </span>
+                Aplicar
             </button>
-        </div>
-        <div
-            v-show="shouldShowFilters"
-            class="absolute bg-white w-full shadow-lg px-4 py-8 mt-2"
-        >
-            <div class="flex justify-between">
-                <productos-filters-multiselect
-                    v-for="(filter, key) in filters"
-                    :key="key"
-                    class="mb-5"
-                    :options="filter.options"
-                    :label="filter.label"
-                    v-model="input[key]"
-                ></productos-filters-multiselect>
-                <div></div>
-            </div>
-            <div class="flex justify-center space-x-2 mt-4">
-                <button
-                    class="bg-sky-600 py-2 px-4 text-white rounded"
-                    @click="applyFilters"
-                >
-                    Aplicar
-                </button>
-                <button
-                    class="btn btn-secondary ms-1 py-2 px-4 border text-sky-600 border-sky-600 rounded"
-                    @click="clearFilters"
-                >
-                    Borrar
-                </button>
-            </div>
+            <button
+                class="btn btn-secondary ms-1 py-2 px-4 border text-sky-600 border-sky-600 rounded-md w-full"
+                @click="clearFilters"
+            >
+                Borrar
+            </button>
         </div>
     </div>
 </template>

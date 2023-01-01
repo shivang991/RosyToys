@@ -15,22 +15,16 @@
             >
                 <FontAwesomeIcon icon="fa-chevron-right"></FontAwesomeIcon>
             </button>
-            <div class="space-x-2">
+            <div>
                 <button
                     v-for="link in paginationData.links.slice(1, -1)"
                     :key="link.url"
-                    class="text-xl hover:underline"
-                    :class="{ 'font-bold': link.active }"
+                    class="px-4 py-2 hover:bg-gray-100 rounded-md"
+                    :class="{ 'bg-sky-600 text-white': link.active }"
                     :disabled="!link.url"
                     @click="loadPageByURL(link.url)"
                 >
                     {{ link.label }}
-                    {{
-                        link.label === paginationData.last_page.toString() ||
-                        !link.url
-                            ? ""
-                            : ","
-                    }}
                 </button>
             </div>
             <button
