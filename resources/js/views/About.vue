@@ -1,11 +1,7 @@
 <template>
     <div>
-        <base-image src="about_top.jpg" class="w-full mb-8"></base-image>
         <div class="py-12">
-            <h2 class="text-2xl font-semibold text-center mb-8">
-                Anonymous Toys
-            </h2>
-            <p class="lg:max-w-4xl px-4 mx-auto max-w-xl">
+            <p class="lg:max-w-2xl px-4 mx-auto max-w-xl mb-20">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Recusandae quia consequuntur ab ipsum quidem neque, a est
                 debitis dicta itaque obcaecati voluptas provident laborum
@@ -18,100 +14,91 @@
                 quia consequuntur ab ipsum quidem neque, a est debitis dicta
                 itaque obcaecati voluptas provident laborum reiciendis saepe
                 eveniet iusto perspiciatis fugiat. Itaque mollitia laboriosam
-                assumenda amet. Explicabo id maxime, sequi placeat accusantium
-                quas optio ullam magnam vitae consequuntur dignissimos
-                praesentium itaque quibusdam voluptatibus, cum deserunt dicta
-                repudiandae totam, alias ipsum distinctio.
-            </p>
-            <p class="lg:max-w-4xl px-4 mx-auto mb-20 max-w-xl">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Recusandae quia consequuntur ab ipsum quidem neque, a est
-                debitis dicta itaque obcaecati voluptas provident laborum
-                reiciendis saepe eveniet iusto perspiciatis fugiat. Itaque
-                mollitia laboriosam assumenda amet. Explicabo id maxime, sequi
-                placeat accusantium quas optio ullam magnam vitae consequuntur
-                dignissimos praesentium itaque quibusdam voluptatibus, cum
-                deserunt dicta repudiandae totam, alias ipsum distinctio. Lorem
-                ipsum dolor sit amet consectetur adipisicing elit. Recusandae
-                quia consequuntur ab ipsum quidem neque, a est debitis dicta
-                itaque obcaecati voluptas provident laborum reiciendis saepe
-                eveniet iusto perspiciatis fugiat.
+                assumenda amet.
             </p>
             <div
-                class="border-y-4 border-slate-900 py-8 px-8 md:flex md:space-x-12 bg-slate-200 justify-center mb-12"
+                class="flex w-11/12 lg:w-3/4 mx-auto space-x-8 justify-center mb-20"
             >
-                <base-image
-                    src="about_value.png"
-                    class="w-80 object-contain mb-8 md:mb-0 mx-auto"
-                ></base-image>
-                <div class="max-w-lg mx-auto">
-                    <h4 class="text-xl font-semibold text-center mb-8">
-                        Nuestros valores
-                    </h4>
-                    <ul class="space-y-4 list-disc">
-                        <li>
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Tenetur et explicabo similique quibusdam
-                            provident. Dolores cum iste odit quia quidem!
-                        </li>
-                        <li>
-                            Doloribus odio dolor officiis culpa eius dolore quis
-                            cumque ipsa, accusamus eligendi accusantium dicta
-                            labore iure voluptas vero modi, ducimus non,
-                            explicabo sed excepturi consectetur dolorum.
-                        </li>
-                        <li>
-                            Voluptatem pariatur dicta error aspernatur iure!
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div
-                class="border-y-4 border-sky-600 py-8 px-8 md:flex md:space-x-12 bg-amber-100 justify-center mb-20"
-            >
-                <div class="max-w-lg mx-auto">
-                    <h4 class="text-xl font-semibold text-center mb-8">
+                <div class="max-w-md">
+                    <h2 class="text-4xl font-semibold font-serif mb-8">
                         Nuestra misión
-                    </h4>
-                    <ul class="space-y-4 list-disc">
-                        <li>
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Tenetur et explicabo similique quibusdam
-                            provident. Dolores cum iste odit quia quidem!
-                        </li>
-                        <li>
-                            Doloribus odio dolor officiis culpa eius dolore quis
-                            cumque ipsa, accusamus eligendi accusantium dicta
-                            labore iure voluptas vero modi, ducimus non,
-                            explicabo sed excepturi consectetur dolorum.
-                        </li>
-                        <li>
-                            Voluptatem pariatur dicta error aspernatur iure!
-                        </li>
-                    </ul>
+                    </h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Harum commodi omnis nemo sunt illo reiciendis animi,
+                        quaerat, illum ut consequuntur quidem optio expedita
+                        placeat vitae fugit eaque aliquam hic! Quia quos
+                        eligendi doloremque explicabo magni, similique nobis
+                        dolores voluptatem aut?
+                    </p>
                 </div>
-                <base-image
-                    src="about_mission.png"
-                    class="w-80 object-contain mt-8 md:mt-0 mx-auto"
-                ></base-image>
+                <div class="w-10 h-10">
+                    <base-image
+                        src="heart.png"
+                        class="w-full h-full rotate-12"
+                    ></base-image>
+                </div>
+                <div class="w-80 h-80">
+                    <base-image
+                        class="w-full h-full rounded-md object-cover"
+                        src="https://images.pexels.com/photos/627764/pexels-photo-627764.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        is-external
+                    ></base-image>
+                </div>
             </div>
-            <h2 class="text-2xl font-semibold text-center mb-12">
-                Conozca a nuestro equipo
+            <div
+                class="flex w-11/12 lg:w-3/4 mx-auto space-x-8 justify-center mb-20"
+            >
+                <base-image
+                    class="w-80 rounded-md h-80 object-cover"
+                    src="https://images.pexels.com/photos/236214/pexels-photo-236214.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    is-external
+                ></base-image>
+                <base-image
+                    src="lusture.png"
+                    class="w-10 h-10 rotate-"
+                ></base-image>
+                <div class="max-w-md">
+                    <h2 class="text-4xl font-semibold font-serif mb-8">
+                        Nuestra visión
+                    </h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Harum commodi omnis nemo sunt illo reiciendis animi,
+                        quaerat, illum ut consequuntur quidem optio expedita
+                        placeat vitae fugit eaque aliquam hic! Quia quos
+                        eligendi doloremque explicabo magni, similique nobis
+                        dolores voluptatem aut?
+                    </p>
+                </div>
+            </div>
+            <h2
+                class="text-4xl font-serif flex items-center space-x-2 font-semibold justify-center"
+            >
+                <base-image
+                    src="heart.png"
+                    class="rotate-12 w-10 h-10"
+                ></base-image>
+                <span> Nuestra gente </span>
             </h2>
             <ul
-                class="grid grid-cols-2 md:grid-cols-3 w-11/12 lg:w-3/4 mx-auto gap-2 sm:gap-8 lg:gap-12"
+                class="grid grid-cols-2 md:grid-cols-3 w-11/12 lg:w-3/4 mx-auto gap-2 sm:gap-8 lg:gap-12 py-12"
             >
                 <li
                     v-for="(member, index) in teamMembers"
                     :key="index"
-                    class="bg-slate-100 flex flex-col items-center px-4 sm:px-8 py-12 shadow-sm rounded-tl-md rounded-tr-2xl rounded-bl-2xl rounde-br-md"
+                    class="grid rounded-md shadow-xl overflow-hidden"
                 >
                     <base-image
-                        class="w-40 h-40 sm:w-60 sm:h-60 object-cover mb-4 rounded"
+                        class="w-full h-40 sm:h-60 object-cover col-start-1 row-start-1"
                         :src="member.image"
                         is-external
                     ></base-image>
-                    <p class="text-center">{{ member.name }}</p>
+                    <p
+                        class="self-end py-2 px-4 col-start-1 row-start-1 font-semibold bg-gray- text-gray-100"
+                    >
+                        {{ member.name }}
+                    </p>
                 </li>
             </ul>
         </div>
@@ -124,7 +111,7 @@ import BaseImage from "@/components/global/BaseImage.vue";
 const teamMembers = [
     {
         name: "Jacob Jones",
-        image: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg",
+        image: "https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     },
     {
         name: "Jerome Bell",
@@ -148,7 +135,7 @@ const teamMembers = [
     },
     {
         name: "Arlene McCoy",
-        image: "https://images.pexels.com/photos/1197132/pexels-photo-1197132.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        image: "https://images.pexels.com/photos/2777898/pexels-photo-2777898.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     },
     {
         name: "Courtney Henry",

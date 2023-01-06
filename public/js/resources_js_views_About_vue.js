@@ -20,7 +20,7 @@ __webpack_require__.r(__webpack_exports__);
     expose();
     var teamMembers = [{
       name: "Jacob Jones",
-      image: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg"
+      image: "https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     }, {
       name: "Jerome Bell",
       image: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
@@ -38,7 +38,7 @@ __webpack_require__.r(__webpack_exports__);
       image: "https://images.pexels.com/photos/1043474/pexels-photo-1043474.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     }, {
       name: "Arlene McCoy",
-      image: "https://images.pexels.com/photos/1197132/pexels-photo-1197132.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      image: "https://images.pexels.com/photos/2777898/pexels-photo-2777898.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     }, {
       name: "Courtney Henry",
       image: "https://images.pexels.com/photos/1386604/pexels-photo-1386604.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
@@ -76,85 +76,85 @@ var _hoisted_1 = {
   "class": "py-12"
 };
 
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
-  "class": "text-2xl font-semibold text-center mb-8"
-}, " Anonymous Toys ", -1
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
+  "class": "lg:max-w-2xl px-4 mx-auto max-w-xl mb-20"
+}, " Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae quia consequuntur ab ipsum quidem neque, a est debitis dicta itaque obcaecati voluptas provident laborum reiciendis saepe eveniet iusto perspiciatis fugiat. Itaque mollitia laboriosam assumenda amet. Explicabo id maxime, sequi placeat accusantium quas optio ullam magnam vitae consequuntur dignissimos praesentium itaque quibusdam voluptatibus, cum deserunt dicta repudiandae totam, alias ipsum distinctio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae quia consequuntur ab ipsum quidem neque, a est debitis dicta itaque obcaecati voluptas provident laborum reiciendis saepe eveniet iusto perspiciatis fugiat. Itaque mollitia laboriosam assumenda amet. ", -1
 /* HOISTED */
 );
 
-var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
-  "class": "lg:max-w-4xl px-4 mx-auto max-w-xl"
-}, " Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae quia consequuntur ab ipsum quidem neque, a est debitis dicta itaque obcaecati voluptas provident laborum reiciendis saepe eveniet iusto perspiciatis fugiat. Itaque mollitia laboriosam assumenda amet. Explicabo id maxime, sequi placeat accusantium quas optio ullam magnam vitae consequuntur dignissimos praesentium itaque quibusdam voluptatibus, cum deserunt dicta repudiandae totam, alias ipsum distinctio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae quia consequuntur ab ipsum quidem neque, a est debitis dicta itaque obcaecati voluptas provident laborum reiciendis saepe eveniet iusto perspiciatis fugiat. Itaque mollitia laboriosam assumenda amet. Explicabo id maxime, sequi placeat accusantium quas optio ullam magnam vitae consequuntur dignissimos praesentium itaque quibusdam voluptatibus, cum deserunt dicta repudiandae totam, alias ipsum distinctio. ", -1
-/* HOISTED */
-);
+var _hoisted_3 = {
+  "class": "flex w-11/12 lg:w-3/4 mx-auto space-x-8 justify-center mb-20"
+};
 
-var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
-  "class": "lg:max-w-4xl px-4 mx-auto mb-20 max-w-xl"
-}, " Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae quia consequuntur ab ipsum quidem neque, a est debitis dicta itaque obcaecati voluptas provident laborum reiciendis saepe eveniet iusto perspiciatis fugiat. Itaque mollitia laboriosam assumenda amet. Explicabo id maxime, sequi placeat accusantium quas optio ullam magnam vitae consequuntur dignissimos praesentium itaque quibusdam voluptatibus, cum deserunt dicta repudiandae totam, alias ipsum distinctio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae quia consequuntur ab ipsum quidem neque, a est debitis dicta itaque obcaecati voluptas provident laborum reiciendis saepe eveniet iusto perspiciatis fugiat. ", -1
+var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "max-w-md"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
+  "class": "text-4xl font-semibold font-serif mb-8"
+}, " Nuestra misión "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, " Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum commodi omnis nemo sunt illo reiciendis animi, quaerat, illum ut consequuntur quidem optio expedita placeat vitae fugit eaque aliquam hic! Quia quos eligendi doloremque explicabo magni, similique nobis dolores voluptatem aut? ")], -1
 /* HOISTED */
 );
 
 var _hoisted_5 = {
-  "class": "border-y-4 border-slate-900 py-8 px-8 md:flex md:space-x-12 bg-slate-200 justify-center mb-12"
+  "class": "w-10 h-10"
 };
-
-var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "max-w-lg mx-auto"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h4", {
-  "class": "text-xl font-semibold text-center mb-8"
-}, " Nuestros valores "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", {
-  "class": "space-y-4 list-disc"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, " Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur et explicabo similique quibusdam provident. Dolores cum iste odit quia quidem! "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, " Doloribus odio dolor officiis culpa eius dolore quis cumque ipsa, accusamus eligendi accusantium dicta labore iure voluptas vero modi, ducimus non, explicabo sed excepturi consectetur dolorum. "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, " Voluptatem pariatur dicta error aspernatur iure! ")])], -1
-/* HOISTED */
-);
-
+var _hoisted_6 = {
+  "class": "w-80 h-80"
+};
 var _hoisted_7 = {
-  "class": "border-y-4 border-sky-600 py-8 px-8 md:flex md:space-x-12 bg-amber-100 justify-center mb-20"
+  "class": "flex w-11/12 lg:w-3/4 mx-auto space-x-8 justify-center mb-20"
 };
 
 var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "max-w-lg mx-auto"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h4", {
-  "class": "text-xl font-semibold text-center mb-8"
-}, " Nuestra misión "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", {
-  "class": "space-y-4 list-disc"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, " Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur et explicabo similique quibusdam provident. Dolores cum iste odit quia quidem! "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, " Doloribus odio dolor officiis culpa eius dolore quis cumque ipsa, accusamus eligendi accusantium dicta labore iure voluptas vero modi, ducimus non, explicabo sed excepturi consectetur dolorum. "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, " Voluptatem pariatur dicta error aspernatur iure! ")])], -1
+  "class": "max-w-md"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
+  "class": "text-4xl font-semibold font-serif mb-8"
+}, " Nuestra visión "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, " Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum commodi omnis nemo sunt illo reiciendis animi, quaerat, illum ut consequuntur quidem optio expedita placeat vitae fugit eaque aliquam hic! Quia quos eligendi doloremque explicabo magni, similique nobis dolores voluptatem aut? ")], -1
 /* HOISTED */
 );
 
-var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
-  "class": "text-2xl font-semibold text-center mb-12"
-}, " Conozca a nuestro equipo ", -1
-/* HOISTED */
-);
-
-var _hoisted_10 = {
-  "class": "grid grid-cols-2 md:grid-cols-3 w-11/12 lg:w-3/4 mx-auto gap-2 sm:gap-8 lg:gap-12"
+var _hoisted_9 = {
+  "class": "text-4xl font-serif flex items-center space-x-2 font-semibold justify-center"
 };
+
+var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, " Nuestra gente ", -1
+/* HOISTED */
+);
+
 var _hoisted_11 = {
-  "class": "text-center"
+  "class": "grid grid-cols-2 md:grid-cols-3 w-11/12 lg:w-3/4 mx-auto gap-2 sm:gap-8 lg:gap-12 py-12"
+};
+var _hoisted_12 = {
+  "class": "self-end py-2 px-4 col-start-1 row-start-1 font-semibold bg-gray- text-gray-100"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BaseImage"], {
-    src: "about_top.jpg",
-    "class": "w-full mb-8"
-  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [_hoisted_2, _hoisted_3, _hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BaseImage"], {
-    src: "about_value.png",
-    "class": "w-80 object-contain mb-8 md:mb-0 mx-auto"
-  }), _hoisted_6]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [_hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BaseImage"], {
-    src: "about_mission.png",
-    "class": "w-80 object-contain mt-8 md:mt-0 mx-auto"
-  })]), _hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_10, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.teamMembers, function (member, index) {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BaseImage"], {
+    src: "heart.png",
+    "class": "w-full h-full rotate-12"
+  })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BaseImage"], {
+    "class": "w-full h-full rounded-md object-cover",
+    src: "https://images.pexels.com/photos/627764/pexels-photo-627764.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "is-external": ""
+  })])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BaseImage"], {
+    "class": "w-80 rounded-md h-80 object-cover",
+    src: "https://images.pexels.com/photos/236214/pexels-photo-236214.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "is-external": ""
+  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BaseImage"], {
+    src: "lusture.png",
+    "class": "w-10 h-10 rotate-"
+  }), _hoisted_8]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BaseImage"], {
+    src: "heart.png",
+    "class": "rotate-12 w-10 h-10"
+  }), _hoisted_10]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_11, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.teamMembers, function (member, index) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
       key: index,
-      "class": "bg-slate-100 flex flex-col items-center px-4 sm:px-8 py-12 shadow-sm rounded-tl-md rounded-tr-2xl rounded-bl-2xl rounde-br-md"
+      "class": "grid rounded-md shadow-xl overflow-hidden"
     }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BaseImage"], {
-      "class": "w-40 h-40 sm:w-60 sm:h-60 object-cover mb-4 rounded",
+      "class": "w-full h-40 sm:h-60 object-cover col-start-1 row-start-1",
       src: member.image,
       "is-external": ""
     }, null, 8
     /* PROPS */
-    , ["src"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(member.name), 1
+    , ["src"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_12, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(member.name), 1
     /* TEXT */
     )]);
   }), 64
