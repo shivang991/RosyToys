@@ -14,7 +14,7 @@
             </button>
         </div>
         <div
-            class="py-2 bg-sky-600 flex justify-center items-center space-x-8 text-white"
+            class="py-2 bg-sky-600 flex justify-center items-center space-x-8 text-white hidden md:flex"
         >
             <router-link
                 v-for="(link, index) in links"
@@ -24,10 +24,7 @@
                 :to="{ name: link.route }"
                 >{{ link.title }}</router-link
             >
-            <nav-search-box
-                class="hidden md:flex"
-                :links="links"
-            ></nav-search-box>
+            <nav-search-box :links="links"></nav-search-box>
         </div>
     </nav>
 

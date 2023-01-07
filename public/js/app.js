@@ -23560,13 +23560,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "px-8 md:px-12 bg-sky-900 py-12"
+  "class": "px-4 md:px-12 bg-sky-900 py-12"
 };
 var _hoisted_2 = {
   "class": "w-11/12 md:w-3/4 mx-auto flex flex-col sm:flex-row items-center sm:items-start justify-between"
 };
 var _hoisted_3 = {
-  "class": "mb-8 sm:mb-0"
+  "class": "mb-12 sm:mb-0"
 };
 
 var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Entrar en el panel de administración");
@@ -23673,7 +23673,7 @@ var _hoisted_3 = {
   "class": "h-16 py-2"
 };
 var _hoisted_4 = {
-  "class": "py-2 bg-sky-600 flex justify-center items-center space-x-8 text-white"
+  "class": "py-2 bg-sky-600 flex justify-center items-center space-x-8 text-white hidden md:flex"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_router_link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("router-link");
@@ -23713,7 +23713,6 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }), 128
   /* KEYED_FRAGMENT */
   )), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["NavSearchBox"], {
-    "class": "hidden md:flex",
     links: $setup.links
   }, null, 8
   /* PROPS */
@@ -23867,13 +23866,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "grid w-12 h-12 rounded-full relative overflow-hidden"
+  "class": "flex"
 };
 var _hoisted_2 = {
+  "class": "grid w-12 h-12 rounded-full relative overflow-hidden"
+};
+var _hoisted_3 = {
   "class": "col-start-1 row-start-1 border-4 border-b-transparent animate-spin border-sky-600 rounded-full relative"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     ref: "searchInputEl",
     placeholder: "Search",
@@ -23881,7 +23883,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onInput: $setup.handleInput
   }, null, 34
   /* CLASS, HYDRATE_EVENTS */
-  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, null, 512
+  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, null, 512
   /* NEED_PATCH */
   ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, $setup.isLoading]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     onClick: $setup.toggleSearchBox,

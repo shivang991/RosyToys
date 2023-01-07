@@ -83,11 +83,11 @@ var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 );
 
 var _hoisted_3 = {
-  "class": "flex w-11/12 lg:w-3/4 mx-auto space-x-8 justify-center mb-20"
+  "class": "lg:flex w-11/12 lg:w-3/4 mx-auto lg:space-x-8 justify-center mb-20"
 };
 
 var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "max-w-md"
+  "class": "lg:max-w-md mb-8 lg:mb-0"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
   "class": "text-4xl font-semibold font-serif mb-8"
 }, " Nuestra misión "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, " Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum commodi omnis nemo sunt illo reiciendis animi, quaerat, illum ut consequuntur quidem optio expedita placeat vitae fugit eaque aliquam hic! Quia quos eligendi doloremque explicabo magni, similique nobis dolores voluptatem aut? ")], -1
@@ -95,17 +95,17 @@ var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 );
 
 var _hoisted_5 = {
-  "class": "w-10 h-10"
+  "class": "hidden lg:block w-10 h-10"
 };
 var _hoisted_6 = {
-  "class": "w-80 h-80"
+  "class": "lg:w-80 h-80"
 };
 var _hoisted_7 = {
-  "class": "flex w-11/12 lg:w-3/4 mx-auto space-x-8 justify-center mb-20"
+  "class": "lg:flex w-11/12 lg:w-3/4 mx-auto lg:space-x-8 justify-center mb-20"
 };
 
 var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "max-w-md"
+  "class": "lg:max-w-md mt-8 lg:mt-0"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
   "class": "text-4xl font-semibold font-serif mb-8"
 }, " Nuestra visión "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, " Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum commodi omnis nemo sunt illo reiciendis animi, quaerat, illum ut consequuntur quidem optio expedita placeat vitae fugit eaque aliquam hic! Quia quos eligendi doloremque explicabo magni, similique nobis dolores voluptatem aut? ")], -1
@@ -135,12 +135,12 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     src: "https://images.pexels.com/photos/627764/pexels-photo-627764.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     "is-external": ""
   })])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BaseImage"], {
-    "class": "w-80 rounded-md h-80 object-cover",
+    "class": "w-full lg:w-80 rounded-md h-80 object-cover",
     src: "https://images.pexels.com/photos/236214/pexels-photo-236214.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     "is-external": ""
   }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BaseImage"], {
     src: "lusture.png",
-    "class": "w-10 h-10 rotate-"
+    "class": "hidden lg:hidden w-10 h-10"
   }), _hoisted_8]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BaseImage"], {
     src: "heart.png",
     "class": "rotate-12 w-10 h-10"

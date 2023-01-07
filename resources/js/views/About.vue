@@ -17,9 +17,9 @@
                 assumenda amet.
             </p>
             <div
-                class="flex w-11/12 lg:w-3/4 mx-auto space-x-8 justify-center mb-20"
+                class="lg:flex w-11/12 lg:w-3/4 mx-auto lg:space-x-8 justify-center mb-20"
             >
-                <div class="max-w-md">
+                <div class="lg:max-w-md mb-8 lg:mb-0">
                     <h2 class="text-4xl font-semibold font-serif mb-8">
                         Nuestra misión
                     </h2>
@@ -32,13 +32,13 @@
                         dolores voluptatem aut?
                     </p>
                 </div>
-                <div class="w-10 h-10">
+                <div class="hidden lg:block w-10 h-10">
                     <base-image
                         src="heart.png"
                         class="w-full h-full rotate-12"
                     ></base-image>
                 </div>
-                <div class="w-80 h-80">
+                <div class="lg:w-80 h-80">
                     <base-image
                         class="w-full h-full rounded-md object-cover"
                         src="https://images.pexels.com/photos/627764/pexels-photo-627764.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
@@ -47,18 +47,18 @@
                 </div>
             </div>
             <div
-                class="flex w-11/12 lg:w-3/4 mx-auto space-x-8 justify-center mb-20"
+                class="lg:flex w-11/12 lg:w-3/4 mx-auto lg:space-x-8 justify-center mb-20"
             >
                 <base-image
-                    class="w-80 rounded-md h-80 object-cover"
+                    class="w-full lg:w-80 rounded-md h-80 object-cover"
                     src="https://images.pexels.com/photos/236214/pexels-photo-236214.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                     is-external
                 ></base-image>
                 <base-image
                     src="lusture.png"
-                    class="w-10 h-10 rotate-"
+                    class="hidden lg:hidden w-10 h-10"
                 ></base-image>
-                <div class="max-w-md">
+                <div class="lg:max-w-md mt-8 lg:mt-0">
                     <h2 class="text-4xl font-semibold font-serif mb-8">
                         Nuestra visión
                     </h2>

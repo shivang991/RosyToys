@@ -1,11 +1,11 @@
 <template>
     <div
-        class="w-60 shadow-lg hover:shadow-xl cursor-pointer px-4 py-12 rounded-md"
+        class="shadow-lg hover:shadow-xl cursor-pointer px-4 py-12 rounded-md"
     >
         <BaseImage
             isExternal
             :src="imgSrc"
-            class="w-40 h-40 object-cover mb-4 rounded"
+            class="w-40 h-40 object-cover mb-4 rounded mx-auto"
         />
         <div
             class="flex flex-col items-start mb-4 space-y-2"

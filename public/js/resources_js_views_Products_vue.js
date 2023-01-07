@@ -134,7 +134,6 @@ __webpack_require__.r(__webpack_exports__);
   setup: function setup(__props, _ref) {
     var expose = _ref.expose;
     expose();
-    var shouldShowFilters = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)(false);
     var input = (0,vue__WEBPACK_IMPORTED_MODULE_1__.reactive)({
       brand: []
     });
@@ -143,7 +142,6 @@ __webpack_require__.r(__webpack_exports__);
     function applyFilters() {
       store.commit("products/SET_FILTERS", input);
       store.dispatch("products/refetch");
-      shouldShowFilters.value = false;
     }
 
     function clearFilters() {
@@ -160,14 +158,40 @@ __webpack_require__.r(__webpack_exports__);
         options: res.data
       };
     });
+    var isScreenWide = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)(window.innerWidth > 768);
+    window.addEventListener("resize", function () {
+      return isScreenWide.value = window.innerWidth > 768;
+    });
+    var shouldShowFiltersDropdown = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)(false);
+    var filterContainerEl = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)(null);
+
+    function toggleFilters() {
+      if (!filterContainerEl.value) return;
+      shouldShowFiltersDropdown.value = !shouldShowFiltersDropdown.value;
+
+      if (shouldShowFiltersDropdown.value) {
+        filterContainerEl.value.style.height = "auto";
+        var newHeight = getComputedStyle(filterContainerEl.value).getPropertyValue("height");
+        filterContainerEl.value.style.height = "0";
+        requestAnimationFrame(function () {
+          return filterContainerEl.value.style.height = newHeight;
+        });
+      } else {
+        filterContainerEl.value.style.height = "0";
+      }
+    }
+
     var __returned__ = {
-      shouldShowFilters: shouldShowFilters,
       input: input,
       store: store,
       applyFilters: applyFilters,
       clearFilters: clearFilters,
       axios: axios,
       filters: filters,
+      isScreenWide: isScreenWide,
+      shouldShowFiltersDropdown: shouldShowFiltersDropdown,
+      filterContainerEl: filterContainerEl,
+      toggleFilters: toggleFilters,
       useAxios: _plugins_Axios__WEBPACK_IMPORTED_MODULE_0__.useAxios,
       reactive: vue__WEBPACK_IMPORTED_MODULE_1__.reactive,
       ref: vue__WEBPACK_IMPORTED_MODULE_1__.ref,
@@ -507,21 +531,45 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "px-12 py-8 w-80 shadow-lg h-max rounded-md"
+  "class": "px-4 sm:px-8 md:px-0"
 };
 
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h4", {
-  "class": "text-2xl font-semibold pb-2 mb-4 border-b border-gray-600"
-}, "Filtros:", -1
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "Filtros", -1
 /* HOISTED */
 );
 
 var _hoisted_3 = {
+  "class": "duration-500 overflow-hidden h-0 md:h-max rounded-md bg-white shadow-lg",
+  ref: "filterContainerEl"
+};
+var _hoisted_4 = {
+  "class": "px-12 py-8 md:w-80"
+};
+
+var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h4", {
+  "class": "text-2xl font-semibold pb-2 mb-4 border-b border-gray-600"
+}, " Filtros: ", -1
+/* HOISTED */
+);
+
+var _hoisted_6 = {
   key: 0,
   "class": "my-8"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [_hoisted_2, ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.filters, function (filter, key) {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    "class": "flex md:hidden space-x-2 border rounded-md border-sky-600 text-sky-600 justify-between py-2 px-4 w-full items-center",
+    onClick: _cache[0] || (_cache[0] = function ($event) {
+      return $setup.toggleFilters();
+    })
+  }, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["FontAwesomeIcon"], {
+    icon: "fa-chevron-down",
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["text-sm duration-500", {
+      'rotate-180': $setup.shouldShowFiltersDropdown
+    }])
+  }, null, 8
+  /* PROPS */
+  , ["class"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [_hoisted_5, ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.filters, function (filter, key) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)($setup["ProductosFiltersMultiselect"], {
       key: key,
       options: filter.options,
@@ -535,13 +583,15 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     , ["options", "label", "modelValue", "onUpdate:modelValue"]);
   }), 128
   /* KEYED_FRAGMENT */
-  )), Object.keys($setup.filters).length ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  )), Object.keys($setup.filters).length ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     "class": "bg-sky-600 py-2 px-4 text-white rounded-md w-full mb-2",
     onClick: $setup.applyFilters
   }, " Aplicar "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     "class": "btn btn-secondary ms-1 py-2 px-4 border text-sky-600 border-sky-600 rounded-md w-full",
     onClick: $setup.clearFilters
-  }, " Borrar ")])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]);
+  }, " Borrar ")])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])], 512
+  /* NEED_PATCH */
+  )]);
 }
 
 /***/ }),
@@ -605,7 +655,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var _hoisted_1 = {
   key: 0,
-  "class": "grid sm:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-8 md:gap-y-20 mb-12"
+  "class": "grid sm:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-8 md:gap-y-20 mb-12 px-4 sm:px-8"
 };
 var _hoisted_2 = {
   key: 0,
@@ -636,9 +686,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       imgSrc: product.image_url,
       price: product.price,
       title: product.title,
-      isLimited: product.is_limited_edition,
-      isLowStock: product.is_low_stock,
-      isPromoted: product.is_promoted
+      isLimited: !!product.is_limited_edition,
+      isLowStock: !!product.is_low_stock,
+      isPromoted: !!product.is_promoted
     }, null, 8
     /* PROPS */
     , ["id", "imgSrc", "price", "title", "isLimited", "isLowStock", "isPromoted"]);
@@ -664,7 +714,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "w-60 shadow-lg hover:shadow-xl cursor-pointer px-4 py-12 rounded-md"
+  "class": "shadow-lg hover:shadow-xl cursor-pointer px-4 py-12 rounded-md"
 };
 var _hoisted_2 = {
   "class": "flex flex-col items-start mb-4 space-y-2"
@@ -694,7 +744,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BaseImage"], {
     isExternal: "",
     src: $props.imgSrc,
-    "class": "w-40 h-40 object-cover mb-4 rounded"
+    "class": "w-40 h-40 object-cover mb-4 rounded mx-auto"
   }, null, 8
   /* PROPS */
   , ["src"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [$props.isLowStock ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_3, " Existencias bajas ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $props.isLimited ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_4, " Edición limitada ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $props.isPromoted ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_5, " Promocionado ")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.title), 1
@@ -722,7 +772,7 @@ var _hoisted_1 = {
   "class": "py-12"
 };
 var _hoisted_2 = {
-  "class": "flex space-x-8"
+  "class": "md:flex md:space-x-4"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["ProductosFilters"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["ProductosList"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["ProductPagination"])])])]);

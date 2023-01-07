@@ -1,6 +1,6 @@
 <template>
     <div class="py-12">
-        <div class="flex space-x-8">
+        <div class="md:flex md:space-x-4">
             <productos-filters></productos-filters>
             <div>
                 <productos-list></productos-list>

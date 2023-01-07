@@ -1,7 +1,7 @@
 <template>
     <div
         v-if="products"
-        class="grid sm:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-8 md:gap-y-20 mb-12"
+        class="grid sm:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-8 md:gap-y-20 mb-12 px-4 sm:px-8"
     >
         <productos-list-item
             v-for="product in products"
@@ -10,9 +10,9 @@
             :imgSrc="product.image_url"
             :price="product.price"
             :title="product.title"
-            :isLimited="product.is_limited_edition"
-            :isLowStock="product.is_low_stock"
-            :isPromoted="product.is_promoted"
+            :isLimited="!!product.is_limited_edition"
+            :isLowStock="!!product.is_low_stock"
+            :isPromoted="!!product.is_promoted"
         ></productos-list-item>
         <div
             class="flex space-x-4 text-xl items-center p-4 text-center justify-center bg-slate-100 text-slate-900 rounded-lg shadow-lg"

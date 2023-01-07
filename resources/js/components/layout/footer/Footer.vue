@@ -1,9 +1,9 @@
 <template>
-    <footer class="px-8 md:px-12 bg-sky-900 py-12">
+    <footer class="px-4 md:px-12 bg-sky-900 py-12">
         <div
             class="w-11/12 md:w-3/4 mx-auto flex flex-col sm:flex-row items-center sm:items-start justify-between"
         >
-            <div class="mb-8 sm:mb-0">
+            <div class="mb-12 sm:mb-0">
                 <BaseImage src="logo.png" class="w-40"></BaseImage>
                 <RouterLink class="text-white mt-2 mb-4" :to="{ name: 'AdminLogin' }"
                     >Entrar en el panel de administración</RouterLink

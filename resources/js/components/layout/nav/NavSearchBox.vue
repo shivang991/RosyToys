@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="flex">
         <input
             type="text"
             ref="searchInputEl"
