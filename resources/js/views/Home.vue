@@ -64,11 +64,9 @@
             </div>
         </div>
     </main>
-    <!-- <HomeTestimonial class="my-20"></HomeTestimonial> -->
 </template>
 
 <script setup>
-// import HomeTestimonial from "@/components/home/HomeTestimonial.vue";
 import HomePromotions from "@/components/home/HomePromotions.vue";
 import HomeTrending from "@/components/home/HomeTrending.vue";
 import BaseImage from "@/components/global/BaseImage.vue";

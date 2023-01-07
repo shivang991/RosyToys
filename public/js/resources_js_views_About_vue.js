@@ -139,8 +139,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     src: "https://images.pexels.com/photos/236214/pexels-photo-236214.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     "is-external": ""
   }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BaseImage"], {
-    src: "lusture.png",
-    "class": "hidden lg:hidden w-10 h-10"
+    src: "sparkle.png",
+    "class": "hidden lg:block w-10 h-10"
   }), _hoisted_8]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", _hoisted_9, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BaseImage"], {
     src: "heart.png",
     "class": "rotate-12 w-10 h-10"

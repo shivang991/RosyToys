@@ -24,20 +24,5 @@
 
 <script setup>
 import ContactForm from "@/components/contact/ContactForm.vue";
-import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-import ContactMap from "@/components/contact/ContactMap.vue";
-import TestimonialForm from "@/components/contact/TestimonialForm.vue";
-import { ref } from "vue";
 import BaseImage from "@/components/global/BaseImage.vue";
-
-const contactInfo = [
-    { icon: "fa-phone", text: "(406) 555-0120" },
-    { icon: "fa-envelope", text: "contact@anonymoustoys.com.mx" },
-    {
-        icon: "fa-map-location",
-        text: "2972 Westheimer Rd. Santa Ana, Illinois 85486",
-    },
-];
-
-const shouldShowTestimonialForm = ref(false);
 </script>

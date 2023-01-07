@@ -1974,6 +1974,146 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
 /***/ }),
 
+/***/ "./resources/js/plugins/Formatters.js":
+/*!********************************************!*\
+  !*** ./resources/js/plugins/Formatters.js ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "formatDate": () => (/* binding */ formatDate)
+/* harmony export */ });
+var formatDate = function formatDate(dateStr) {
+  return new Date(dateStr).toLocaleDateString("es", {
+    day: "numeric",
+    year: "2-digit",
+    month: "short",
+    time: "full"
+  });
+};
+
+/***/ }),
+
+/***/ "./resources/js/plugins/Notifications.js":
+/*!***********************************************!*\
+  !*** ./resources/js/plugins/Notifications.js ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "NotificationTypes": () => (/* binding */ NotificationTypes),
+/* harmony export */   "fireNotification": () => (/* binding */ fireNotification),
+/* harmony export */   "useNotification": () => (/* binding */ useNotification)
+/* harmony export */ });
+var NotificationTypes = {
+  PRODUCT_CREATED: {
+    type: "success",
+    message: "Producto creado con éxito"
+  },
+  PRODUCT_UPDATED: {
+    type: "success",
+    message: "¡Actualizó con éxito los datos del producto!"
+  },
+  PRODUCT_DELETED: {
+    type: "success",
+    message: "¡Eliminado el producto con éxito!"
+  },
+  CAROUSEL_IMAGE_CREATED: {
+    type: "success",
+    message: "¡Artículo agregado!"
+  },
+  CAROUSEL_IMAGE_DELETED: {
+    type: "success",
+    message: "¡Artículo eliminado con éxito!"
+  },
+  CAROUSEL_IMAGE_UPDATED: {
+    type: "success",
+    message: "¡Artículo actualizado con éxito!"
+  },
+  STAFF_CREATED: {
+    type: "success",
+    message: "¡Personal creado con éxito!"
+  },
+  STAFF_UPDATED: {
+    type: "success",
+    message: "¡El personal se actualizó con éxito!"
+  },
+  STAFF_DELETED: {
+    type: "success",
+    message: "¡Personal creado con éxito!"
+  },
+  LOGIN_SUCCESS: {
+    type: "success",
+    message: "¡Ingresó exitosamente!"
+  },
+  ADMIN_REGISTERED: {
+    type: "success",
+    message: "¡Administrador registrado con éxito!"
+  },
+  ADMIN_UPDATED: {
+    type: "success",
+    message: "¡Administrador actualizado con éxito!"
+  },
+  CONTACT_MESSAGE_DELETED: {
+    type: "success",
+    message: "¡El mensaje fue eliminado con éxito!"
+  },
+  REVIEW_DELETED: {
+    type: "success",
+    message: "¡Eliminó la reseña con éxito!"
+  },
+  POST_CREATED: {
+    type: "success",
+    message: "¡La publicación se creó con éxito!"
+  },
+  POST_DELETED: {
+    type: "success",
+    message: "¡La publicación fue eliminada con éxito!"
+  },
+  GENERAL_ERROR: {
+    type: "error",
+    message: "¡Ocurrió un error inesperado!"
+  },
+  INVALID_CREDENTIALS: {
+    type: "error",
+    message: "Verifique sus credenciales y vuelva a intentarlo."
+  },
+  USER_EXISTS: {
+    type: "error",
+    message: "Este correo electrónico ha sido tomado."
+  },
+  ITEM_ADDED: {
+    type: "compact",
+    message: "Artículo añadido a tu carrito!"
+  },
+  CONTACT_MESSAGE_ADDED: {
+    type: "compact",
+    message: "¡El mensaje nos llegó! Responderemos pronto."
+  },
+  REVIEW_ADDED: {
+    type: "compact",
+    message: "¡Gracias por tu reseña!"
+  }
+};
+var EVENT_NAME = "notificationreq";
+
+function fire(type) {
+  window.dispatchEvent(new CustomEvent(EVENT_NAME, {
+    detail: type
+  }));
+}
+
+function useNotification() {
+  return {
+    fire: fire
+  };
+}
+var fireNotification = fire;
+
+/***/ }),
+
 /***/ "./resources/js/components/admin/user/AddStaffModal.vue":
 /*!**************************************************************!*\
   !*** ./resources/js/components/admin/user/AddStaffModal.vue ***!

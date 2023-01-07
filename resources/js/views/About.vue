@@ -55,8 +55,8 @@
                     is-external
                 ></base-image>
                 <base-image
-                    src="lusture.png"
-                    class="hidden lg:hidden w-10 h-10"
+                    src="sparkle.png"
+                    class="hidden lg:block w-10 h-10"
                 ></base-image>
                 <div class="lg:max-w-md mt-8 lg:mt-0">
                     <h2 class="text-4xl font-semibold font-serif mb-8">

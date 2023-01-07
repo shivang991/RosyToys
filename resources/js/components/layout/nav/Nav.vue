@@ -14,7 +14,7 @@
             </button>
         </div>
         <div
-            class="py-2 bg-sky-600 flex justify-center items-center space-x-8 text-white hidden md:flex"
+            class="py-2 bg-sky-600 justify-center items-center space-x-8 text-white hidden md:flex"
         >
             <router-link
                 v-for="(link, index) in links"
@@ -38,7 +38,6 @@
 import { computed, ref, watch } from "vue";
 import { useStore } from "vuex";
 import NavSearchBox from "./NavSearchBox.vue";
-import NavCart from "./NavCart.vue";
 import NavMobile from "./NavMobile.vue";
 import BaseImage from "@/components/global/BaseImage.vue";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";

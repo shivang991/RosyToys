@@ -25,22 +25,6 @@ const routes = [
                 component: () => import("../views/Admin/ProductManager.vue"),
             },
             {
-                path: "carousel",
-                name: "CarouselManager",
-                component: () => import("../views/Admin/CarouselManager.vue"),
-            },
-            {
-                path: "post",
-                name: "PostCreator",
-                component: () => import("../views/Admin/PostCreator.vue"),
-            },
-            {
-                path: "service",
-                name: "CustomerServiceManager",
-                component: () =>
-                    import("../views/Admin/CustomerServiceManager.vue"),
-            },
-            {
                 path: "user",
                 name: "UserManager",
                 component: () => import("../views/Admin/UserManager.vue"),
@@ -70,32 +54,10 @@ const routes = [
         component: () => import("../views/Admin/Login.vue"),
         meta: { isLayoutDisabled: true },
     },
-
     {
         path: "/products",
         name: "Productos",
         component: () => import("../views/Products.vue"),
-    },
-    {
-        path: "/product/:id",
-        name: "ProductDetail",
-        component: () => import("../views/ProductDetail.vue"),
-    },
-    {
-        path: "/cart",
-        name: "Cart",
-        component: () => import("../views/Cart.vue"),
-    },
-    {
-        path: "/request-checkout",
-        name: "RequestCheckout",
-        component: () => import("../views/RequestCheckout.vue"),
-    },
-    {
-        path: "/checkout",
-        name: "Checkout",
-        component: () => import("../views/Checkout.vue"),
-        meta: { isLayoutDisabled: true },
     },
 ];
 
