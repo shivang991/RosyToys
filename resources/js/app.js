@@ -1,9 +1,3 @@
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
-
 import "./bootstrap";
 
 import { createApp } from "vue";
@@ -22,30 +16,10 @@ import {
     faRightFromBracket,
     faPlus,
     faPen,
-    faChevronDown,
-    faArrowRight,
-    faEnvelope,
-    faHeadset,
-    faMoneyCheckDollar,
-    faUpload,
-    faFaceSmile,
-    faStar,
-    faExclamationTriangle,
-    faShoppingCart,
-    faBars,
+    faChevronDown, faUpload, faBars,
     faTimes,
-    faChevronRight,
-    faPhone,
-    faMapLocation,
-    faCheck,
-    faCheckSquare,
-    faMinus,
-    faCartShopping,
-    faTrash,
-    faExpand,
-    faPlay,
-    faQuoteLeft,
-    faSearch,
+    faChevronRight, faCheck,
+    faCheckSquare, faSearch,
     faArrowLeft
 } from "@fortawesome/free-solid-svg-icons";
 import {
@@ -54,42 +28,40 @@ import {
     faFacebook,
     faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
-import { faStar as faStarOutlined } from "@fortawesome/free-regular-svg-icons";
 
 library.add(
-    faArrowRight,
+    // faArrowRight,
     faArrowLeft,
     faSearch,
-    faPlay,
-    faTrash,
-    faCartShopping,
+    // faPlay,
+    // faTrash,
+    // faCartShopping,
     faPlus,
-    faMinus,
+    // faMinus,
     faCheck,
     faCheckSquare,
     faRightFromBracket,
     faChevronDown,
     faChevronRight,
-    faArrowRight,
-    faEnvelope,
-    faHeadset,
-    faMoneyCheckDollar,
-    faFaceSmile,
+    // faArrowRight,
+    // faEnvelope,
+    // faHeadset,
+    // faMoneyCheckDollar,
+    // faFaceSmile,
     faTwitter,
     faInstagram,
     faFacebook,
     faYoutube,
-    faStar,
-    faExclamationTriangle,
-    faShoppingCart,
+    // faStar,
+    // faExclamationTriangle,
+    // faShoppingCart,
     faBars,
     faTimes,
-    faPhone,
-    faMapLocation,
-    faPlus,
+    // faPhone,
+    // faMapLocation,
     faPen,
     faUpload,
-    faExpand,
-    faQuoteLeft,
-    faStarOutlined
+    // faExpand,
+    // faQuoteLeft,
+    // faStarOutlined
 );
