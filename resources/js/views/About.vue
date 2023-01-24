@@ -2,7 +2,7 @@
     <div>
         <base-image src="about_top.jpg" class="w-full"></base-image>
         <div class="py-12">
-            <p class="lg:max-w-2xl px-4 mx-auto max-w-xl mb-20">
+            <p class="w-11/12 lg:w-1/2 mx-auto mb-20">
                 Somos una empresa familiar de reciente creación con capital 100%
                 mexicano , nos dedicamos a la venta y distribución de juguete
                 económico para todo México Actualmente contamos con tiendas
@@ -12,9 +12,9 @@
                 nuestros clientes.
             </p>
             <div
-                class="lg:flex w-11/12 lg:w-3/4 mx-auto lg:space-x-8 justify-center mb-20"
+                class="lg:flex w-11/12 lg:w-1/2 mx-auto lg:space-x-8 justify-center mb-20"
             >
-                <div class="lg:max-w-md mb-8 lg:mb-0">
+                <div class="mb-8 lg:mb-0">
                     <h2 class="text-4xl font-semibold font-serif mb-8">
                         Nuestra misión
                     </h2>
@@ -32,7 +32,7 @@
                 </div>
             </div>
             <div
-                class="lg:flex w-11/12 lg:w-3/4 mx-auto lg:space-x-8 justify-center mb-20"
+                class="lg:flex w-11/12 lg:w-1/2 mx-auto lg:space-x-8 justify-center mb-20"
             >
                 <base-image
                     class="w-full lg:w-80 rounded-md h-80 object-cover"
@@ -42,7 +42,7 @@
                     src="sparkle.png"
                     class="hidden lg:block w-10 h-10"
                 ></base-image>
-                <div class="lg:max-w-md mt-8 lg:mt-0">
+                <div class="mt-8 lg:mt-0">
                     <h2 class="text-4xl font-semibold font-serif mb-8">
                         Nuestra visión
                     </h2>

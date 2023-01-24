@@ -655,7 +655,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var _hoisted_1 = {
   key: 0,
-  "class": "grid sm:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-8 md:gap-y-20 mb-12 px-4 sm:px-8"
+  "class": "grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 xl:gap-20 mb-12 px-4 sm:px-8"
 };
 var _hoisted_2 = {
   key: 0,

@@ -1,13 +1,17 @@
 <template>
     <div>
-        <div class="sm:py-8 sm:flex">
-            <div class="sm:w-1/2">
+        <div class="sm:py-8 grid gap-8 sm:grid-cols-2">
+            <div class="row-start-1 col-start-1">
                 <BaseImage
                     src="contact.jpg"
-                    class="object-cover w-full h-40 sm:h-full"
+                    class="object-cover w-full opacity-10 sm:opacity-100 rounded-r-md"
+                    :style="{ height: `${contactFormHeight}px` }"
                 ></BaseImage>
             </div>
-            <div class="sm:max-w-md py-8 sm:py-20 md:ml-20 px-8">
+            <div
+                class="row-start-1 col-start-1 sm:col-start-2 py-8 sm:py-20 px-8 relative h-max"
+                ref="contactFormEl"
+            >
                 <h2 class="text-4xl mb-4 font-semibold">
                     Nos encanta saber de nuestros clientes
                 </h2>
@@ -26,7 +30,7 @@
                 <ContactForm></ContactForm>
             </div>
         </div>
-        <div class="max-w-4xl mx-8 py-8 lg:mx-auto">
+        <div class="mx-4 sm:mx-20 py-8">
             <p class="space-x-2 mb-4 text-2xl font-semibold">
                 <span class="text-sky-600">Número telefónico: </span>
                 <span>5572833923 , 5528496221, 5513718174</span>
@@ -47,4 +51,19 @@
 import ContactForm from "@/components/contact/ContactForm.vue";
 import ContactMap from "@/components/contact/ContactMap.vue";
 import BaseImage from "@/components/global/BaseImage.vue";
+import { watch, ref } from "vue";
+
+const contactFormEl = ref(null);
+const contactFormHeight = ref(0);
+
+watch(contactFormEl, (newVal) => {
+    const computeContactFormHeight = () => {
+        const { height } = newVal.getBoundingClientRect();
+        console.log(height);
+        contactFormHeight.value = height;
+    };
+    computeContactFormHeight();
+    window.addEventListener("resize", computeContactFormHeight);
+    return () => window.removeEventListener("resize", computeContactFormHeight);
+});
 </script>

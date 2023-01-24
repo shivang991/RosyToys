@@ -1,7 +1,7 @@
 <template>
     <nav class="bg-gray-100">
         <div class="bg-primary flex md:justify-center">
-            <div class="h-24 py-2">
+            <div class="h-40 py-2">
                 <BaseImage src="logo.png" class="h-full" />
             </div>
             <button

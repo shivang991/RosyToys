@@ -29,7 +29,7 @@ class ProductController extends Controller
         $add_filter('brand');
         return $productBuilder
             ->select('id', 'title', 'price', 'image_url', 'is_limited_edition', 'is_low_stock', 'is_promoted')
-            ->paginate(6);
+            ->paginate(12);
     }
     public function indexRandom()
     {

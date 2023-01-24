@@ -48,17 +48,17 @@ var _hoisted_1 = {
 };
 
 var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
-  "class": "lg:max-w-2xl px-4 mx-auto max-w-xl mb-20"
+  "class": "w-11/12 lg:w-1/2 mx-auto mb-20"
 }, " Somos una empresa familiar de reciente creación con capital 100% mexicano , nos dedicamos a la venta y distribución de juguete económico para todo México Actualmente contamos con tiendas física Ubicada en la Mercado Sonora en la Ciudad de México y nuestra Bodega en la Ciudad de México, nos distinguimos por por ofrecer el mejor servicio, surtido y una gran experiencia a nuestros clientes. ", -1
 /* HOISTED */
 );
 
 var _hoisted_3 = {
-  "class": "lg:flex w-11/12 lg:w-3/4 mx-auto lg:space-x-8 justify-center mb-20"
+  "class": "lg:flex w-11/12 lg:w-1/2 mx-auto lg:space-x-8 justify-center mb-20"
 };
 
 var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "lg:max-w-md mb-8 lg:mb-0"
+  "class": "mb-8 lg:mb-0"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
   "class": "text-4xl font-semibold font-serif mb-8"
 }, " Nuestra misión "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, " Somos una empresa rentable dedicada a la comercialización de juguete económico comprometida a productos satisfacer las necesidades del consumidor ")], -1
@@ -69,11 +69,11 @@ var _hoisted_5 = {
   "class": "lg:w-80 h-80"
 };
 var _hoisted_6 = {
-  "class": "lg:flex w-11/12 lg:w-3/4 mx-auto lg:space-x-8 justify-center mb-20"
+  "class": "lg:flex w-11/12 lg:w-1/2 mx-auto lg:space-x-8 justify-center mb-20"
 };
 
 var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "lg:max-w-md mt-8 lg:mt-0"
+  "class": "mt-8 lg:mt-0"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
   "class": "text-4xl font-semibold font-serif mb-8"
 }, " Nuestra visión "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, " Juguetes Rosy se proyecta como una empresa familiar ágil y eficiente mas exitosas de Méxicoy tener una distribuidora a nivel nacional de juguetes. ")], -1

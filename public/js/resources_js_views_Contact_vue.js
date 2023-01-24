@@ -249,6 +249,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_contact_ContactForm_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/components/contact/ContactForm.vue */ "./resources/js/components/contact/ContactForm.vue");
 /* harmony import */ var _components_contact_ContactMap_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/components/contact/ContactMap.vue */ "./resources/js/components/contact/ContactMap.vue");
 /* harmony import */ var _components_global_BaseImage_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/components/global/BaseImage.vue */ "./resources/js/components/global/BaseImage.vue");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
 
 
 
@@ -257,10 +259,31 @@ __webpack_require__.r(__webpack_exports__);
   setup: function setup(__props, _ref) {
     var expose = _ref.expose;
     expose();
+    var contactFormEl = (0,vue__WEBPACK_IMPORTED_MODULE_3__.ref)(null);
+    var contactFormHeight = (0,vue__WEBPACK_IMPORTED_MODULE_3__.ref)(0);
+    (0,vue__WEBPACK_IMPORTED_MODULE_3__.watch)(contactFormEl, function (newVal) {
+      var computeContactFormHeight = function computeContactFormHeight() {
+        var _newVal$getBoundingCl = newVal.getBoundingClientRect(),
+            height = _newVal$getBoundingCl.height;
+
+        console.log(height);
+        contactFormHeight.value = height;
+      };
+
+      computeContactFormHeight();
+      window.addEventListener("resize", computeContactFormHeight);
+      return function () {
+        return window.removeEventListener("resize", computeContactFormHeight);
+      };
+    });
     var __returned__ = {
+      contactFormEl: contactFormEl,
+      contactFormHeight: contactFormHeight,
       ContactForm: _components_contact_ContactForm_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
       ContactMap: _components_contact_ContactMap_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
-      BaseImage: _components_global_BaseImage_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
+      BaseImage: _components_global_BaseImage_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
+      watch: vue__WEBPACK_IMPORTED_MODULE_3__.watch,
+      ref: vue__WEBPACK_IMPORTED_MODULE_3__.ref
     };
     Object.defineProperty(__returned__, '__isScriptSetup', {
       enumerable: false,
@@ -446,13 +469,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "sm:py-8 sm:flex"
+  "class": "sm:py-8 grid gap-8 sm:grid-cols-2"
 };
 var _hoisted_2 = {
-  "class": "sm:w-1/2"
+  "class": "row-start-1 col-start-1"
 };
 var _hoisted_3 = {
-  "class": "sm:max-w-md py-8 sm:py-20 md:ml-20 px-8"
+  "class": "row-start-1 col-start-1 sm:col-start-2 py-8 sm:py-20 px-8 relative h-max",
+  ref: "contactFormEl"
 };
 
 var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
@@ -473,7 +497,7 @@ var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 );
 
 var _hoisted_6 = {
-  "class": "max-w-4xl mx-8 py-8 lg:mx-auto"
+  "class": "mx-4 sm:mx-20 py-8"
 };
 
 var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
@@ -495,8 +519,15 @@ var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BaseImage"], {
     src: "contact.jpg",
-    "class": "object-cover w-full h-40 sm:h-full"
-  })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [_hoisted_4, _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["ContactForm"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [_hoisted_7, _hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["ContactMap"])])]);
+    "class": "object-cover w-full opacity-10 sm:opacity-100 rounded-r-md",
+    style: (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeStyle)({
+      height: "".concat($setup.contactFormHeight, "px")
+    })
+  }, null, 8
+  /* PROPS */
+  , ["style"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [_hoisted_4, _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["ContactForm"])], 512
+  /* NEED_PATCH */
+  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [_hoisted_7, _hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["ContactMap"])])]);
 }
 
 /***/ }),

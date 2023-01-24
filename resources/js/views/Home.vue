@@ -51,16 +51,19 @@
                 class="px-8 py-12 rounded-lg bg-primary flex space-x-8 justify-between items-start"
             >
                 <div>
-                    <h4 class="text-2xl text-sky-600 mb-4 font-semibold">
-                        ¿Buscas algo que no esta a la vista ? ¿Te gustaria
-                        realizar un pedido grande?
-                    </h4>
+                    <div class="text-2xl text-sky-600 mb-4 font-semibold">
+                        <h4>¿Buscas algo que no esta a la vista ?</h4>
+                        <h4>¿Te gustaria realizar un pedido grande?</h4>
+                    </div>
                     <p class="text-sky-600">
                         Puedes contactarnos dando clic en el boton para que
                         podamos atenderte
                     </p>
                 </div>
-                <router-link :to="{name:'Contacto'}" class="border px-4 py-2 font-serif rounded-md bg-white">
+                <router-link
+                    :to="{ name: 'Contacto' }"
+                    class="border px-4 py-2 font-serif rounded-md bg-white"
+                >
                     Contacto
                 </router-link>
             </div>
