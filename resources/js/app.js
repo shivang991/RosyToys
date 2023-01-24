@@ -20,7 +20,8 @@ import {
     faTimes,
     faChevronRight, faCheck,
     faCheckSquare, faSearch,
-    faArrowLeft
+    faArrowLeft,
+    faEnvelope
 } from "@fortawesome/free-solid-svg-icons";
 import {
     faTwitter,
@@ -44,7 +45,7 @@ library.add(
     faChevronDown,
     faChevronRight,
     // faArrowRight,
-    // faEnvelope,
+    faEnvelope,
     // faHeadset,
     // faMoneyCheckDollar,
     // faFaceSmile,

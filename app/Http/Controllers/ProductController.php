@@ -33,7 +33,7 @@ class ProductController extends Controller
     }
     public function indexRandom()
     {
-        return Response::json(Product::inRandomOrder()->where('is_promoted', true)->select('title', 'image_url', 'id')->paginate(4));
+        return Response::json(Product::inRandomOrder()->where('is_promoted', true)->select('title', 'image_url', 'price', 'id')->paginate(4));
     }
     public function store()
     {

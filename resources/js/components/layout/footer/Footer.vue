@@ -22,23 +22,14 @@
                 </ul>
             </div>
             <div>
-                <h5 class="text-xl text-white font-semibold mb-4">
-                    Get in touch
+                <h5 class="text-xl text-white font-semibold mb-2">
+                    Ponerse en contacto
                 </h5>
-                <table class="text-white">
-                    <tr>
-                        <td>Phone</td>
-                        <td class="pl-4 text-blue-100">022-20277564</td>
-                    </tr>
-                    <tr>
-                        <td>Service Center</td>
-                        <td class="pl-4 text-blue-100">0811-233-8899</td>
-                    </tr>
-                    <tr>
-                        <td>Customer Service</td>
-                        <td class="pl-4 text-blue-100">0811-235-9988</td>
-                    </tr>
-                </table>
+                <ul class="text-sky-100 tracking-wider">
+                    <li>5572833923</li>
+                    <li>5528496221</li>
+                    <li>5513718174</li>
+                </ul>
             </div>
             <div class="sm:block hidden">
                 <h4 class="text-xl font-semibold mb-4 text-slate-200">Menu</h4>
@@ -62,20 +53,16 @@ import BaseImage from "@/components/global/BaseImage.vue";
 
 const socialMediaLinks = [
     {
-        href: "#",
+        href: "mailto:jugueteria.rosy@gmail.com",
+        icon: "fa-envelope",
+    },
+    {
+        href: "https://www.instagram.com/jugueteria.rosy/",
         icon: "fa-brands fa-instagram",
     },
     {
-        href: "#",
-        icon: "fa-brands fa-twitter",
-    },
-    {
-        href: "#",
+        href: "https://www.facebook.com/profile.php?id=100088553618713",
         icon: "fa-brands fa-facebook",
-    },
-    {
-        href: "#",
-        icon: "fa-brands fa-youtube",
     },
 ];
 
