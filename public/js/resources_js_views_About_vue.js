@@ -60,7 +60,7 @@ var _hoisted_3 = {
 var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "mb-8 lg:mb-0"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
-  "class": "text-4xl font-semibold font-serif mb-8"
+  "class": "text-4xl font-semibold mb-8"
 }, " Nuestra misión "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, " Somos una empresa rentable dedicada a la comercialización de juguete económico comprometida a productos satisfacer las necesidades del consumidor ")], -1
 /* HOISTED */
 );
@@ -75,7 +75,7 @@ var _hoisted_6 = {
 var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "mt-8 lg:mt-0"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
-  "class": "text-4xl font-semibold font-serif mb-8"
+  "class": "text-4xl font-semibold mb-8"
 }, " Nuestra visión "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, " Juguetes Rosy se proyecta como una empresa familiar ágil y eficiente mas exitosas de Méxicoy tener una distribuidora a nivel nacional de juguetes. ")], -1
 /* HOISTED */
 );

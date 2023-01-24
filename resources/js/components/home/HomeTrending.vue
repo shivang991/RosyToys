@@ -1,6 +1,6 @@
 <template>
     <div class="py-8" v-if="trendingProducts">
-        <h2 class="text-4xl mb-12 font-serif text-center">
+        <h2 class="text-4xl mb-12 text-center">
             Tendencia este mes 🔥
         </h2>
         <div class="grid grid-cols-2 gap-4 lg:gap-8">
@@ -14,7 +14,7 @@
                     class="w-full lg:w-40 h-40 rounded object-cover mb-8 lg:mb-0"
                 ></BaseImage>
                 <div class="flex-grow">
-                    <h5 class="text-xl font-serif mb-8">{{ prod.title }}</h5>
+                    <h5 class="text-xl mb-8">{{ prod.title }}</h5>
                     <h4 class="text-2xl font-semibold">${{ prod.price }}</h4>
                 </div>
             </div>

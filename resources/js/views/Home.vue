@@ -21,7 +21,7 @@
             </div>
             <div class="col-start-1 row-start-1 px-4 py-20 relative">
                 <h2
-                    class="text-4xl text-center font-serif max-w-lg mx-auto mb-1"
+                    class="text-4xl text-center max-w-lg mx-auto mb-1"
                 >
                     ¿Estas buscando la mejor opcion de juguete por mayoreo?
                 </h2>
@@ -38,7 +38,7 @@
                 </p>
                 <router-link
                     :to="{ name: 'Productos' }"
-                    class="text-xl bg-sky-600 w-max text-white rounded-md py-2 px-8 font-serif mx-auto block"
+                    class="text-xl bg-sky-600 w-max text-white rounded-md py-2 px-8 mx-auto block"
                 >
                     Ver Productos
                 </router-link>
@@ -62,7 +62,7 @@
                 </div>
                 <router-link
                     :to="{ name: 'Contacto' }"
-                    class="border px-4 py-2 font-serif rounded-md bg-white"
+                    class="border px-4 py-2 rounded-md bg-white"
                 >
                     Contacto
                 </router-link>

@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="mb-20">
-            <h4 class="text-2xl text-sky-600 font-serif mb-8 text-center">
+            <h4 class="text-2xl text-sky-600 mb-8 text-center">
                 Tenemos la mejor variedad del mercado
             </h4>
             <div
@@ -36,7 +36,7 @@
                     <p>{{ ad.description }}</p>
                     <router-link
                         :to="{ name: 'Productos' }"
-                        class="block mt-4 pb-1 border-b-2 border-black font-serif w-max"
+                        class="block mt-4 pb-1 border-b-2 border-black w-max"
                     >
                         Ver Productos
                     </router-link>

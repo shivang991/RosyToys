@@ -15,7 +15,7 @@
                 class="lg:flex w-11/12 lg:w-1/2 mx-auto lg:space-x-8 justify-center mb-20"
             >
                 <div class="mb-8 lg:mb-0">
-                    <h2 class="text-4xl font-semibold font-serif mb-8">
+                    <h2 class="text-4xl font-semibold mb-8">
                         Nuestra misión
                     </h2>
                     <p>
@@ -43,7 +43,7 @@
                     class="hidden lg:block w-10 h-10"
                 ></base-image>
                 <div class="mt-8 lg:mt-0">
-                    <h2 class="text-4xl font-semibold font-serif mb-8">
+                    <h2 class="text-4xl font-semibold mb-8">
                         Nuestra visión
                     </h2>
                     <p>
