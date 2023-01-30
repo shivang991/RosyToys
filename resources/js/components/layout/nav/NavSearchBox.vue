@@ -4,7 +4,7 @@
             type="text"
             ref="searchInputEl"
             placeholder="Search"
-            class="outline-primary bg-white shadow pl-4 py-2 translate-x-8 rounded-full transition-all duration-300 text-gray-500"
+            class="outline-primary bg-white shadow pl-4 py-2 translate-x-8 rounded-full transition-all duration-300 text-gray-600"
             :class="shouldShowSearch ? 'w-60' : 'w-0'"
             @input="handleInput"
         />

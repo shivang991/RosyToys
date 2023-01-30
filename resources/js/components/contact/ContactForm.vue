@@ -3,7 +3,7 @@
         <div class="space-y-4 w-full">
             <base-text-field
                 v-model="fields.name"
-                placeholder="Your Name"
+                placeholder="Tu nombre"
                 label="Nombre"
                 :is-invalid="invalidFields.has('name')"
             />
@@ -11,13 +11,13 @@
                 type="email"
                 placeholder="you@company.com"
                 v-model="fields.email"
-                label="Email"
+                label="Tu Correo"
                 :is-invalid="invalidFields.has('email')"
             />
             <base-text-field
                 v-model="fields.phone"
-                placeholder="+1 (555) 000-0000"
-                label="Phone number"
+                placeholder="55 0000 0000"
+                label="Número de Teléfonor"
                 type="tel"
                 :min="10"
                 :max="10"
@@ -25,7 +25,7 @@
             />
             <base-text-field
                 v-model="fields.message"
-                placeholder="Tell us a little about the project..."
+                placeholder="Estamos para atender tu solicitud"
                 label="¿Cómo podemos ayudar?"
                 is-text-area
                 :is-invalid="invalidFields.has('message')"

@@ -4,8 +4,10 @@
             class="w-11/12 md:w-3/4 mx-auto flex flex-col sm:flex-row items-center sm:items-start justify-between"
         >
             <div class="mb-12 sm:mb-0">
-                <BaseImage src="logo.png" class="w-40"></BaseImage>
-                <RouterLink class="text-white mt-2 mb-4" :to="{ name: 'AdminLogin' }"
+                <BaseImage src="logo.png" class="h-24"></BaseImage>
+                <RouterLink
+                    class="text-white mt-2 mb-4"
+                    :to="{ name: 'AdminLogin' }"
                     >Entrar en el panel de administración</RouterLink
                 >
                 <ul class="flex space-x-4 mt-4">
@@ -13,6 +15,7 @@
                         <a
                             :href="link.href"
                             class="text-sky-900 w-8 h-8 bg-white rounded-full flex items-center justify-center"
+                            target="_blank"
                         >
                             <FontAwesomeIcon
                                 :icon="link.icon"
@@ -25,11 +28,19 @@
                 <h5 class="text-xl text-white font-semibold mb-2">
                     Ponerse en contacto
                 </h5>
-                <ul class="text-sky-100 tracking-wider">
-                    <li>5572833923</li>
-                    <li>5528496221</li>
-                    <li>5513718174</li>
-                </ul>
+                <div
+                    class="text-sky-100 tracking-widest text-lg flex flex-col"
+                >
+                    <a href="tel:(+52)-5572833923" class="hover:underline">
+                        5572833923
+                    </a>
+                    <a href="tel:(+52)-5528496221" class="hover:underline">
+                        5528496221
+                    </a>
+                    <a href="tel:(+52)-5513718174" class="hover:underline">
+                        5513718174
+                    </a>
+                </div>
             </div>
             <div class="sm:block hidden">
                 <h4 class="text-xl font-semibold mb-4 text-slate-200">Menu</h4>
@@ -53,8 +64,8 @@ import BaseImage from "@/components/global/BaseImage.vue";
 
 const socialMediaLinks = [
     {
-        href: "mailto:jugueteria.rosy@gmail.com",
-        icon: "fa-envelope",
+        href: "https://wa.me/send?phone=5215572833923",
+        icon: "fa-brands fa-whatsapp",
     },
     {
         href: "https://www.instagram.com/jugueteria.rosy/",

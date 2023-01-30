@@ -329,7 +329,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
       return $setup.fields.name = $event;
     }),
-    placeholder: "Your Name",
+    placeholder: "Tu nombre",
     label: "Nombre",
     "is-invalid": $setup.invalidFields.has('name')
   }, null, 8
@@ -341,7 +341,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
       return $setup.fields.email = $event;
     }),
-    label: "Email",
+    label: "Tu Correo",
     "is-invalid": $setup.invalidFields.has('email')
   }, null, 8
   /* PROPS */
@@ -350,8 +350,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
       return $setup.fields.phone = $event;
     }),
-    placeholder: "+1 (555) 000-0000",
-    label: "Phone number",
+    placeholder: "55 0000 0000",
+    label: "Número de Teléfonor",
     type: "tel",
     min: 10,
     max: 10,
@@ -363,7 +363,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "onUpdate:modelValue": _cache[3] || (_cache[3] = function ($event) {
       return $setup.fields.message = $event;
     }),
-    placeholder: "Tell us a little about the project...",
+    placeholder: "Estamos para atender tu solicitud",
     label: "¿Cómo podemos ayudar?",
     "is-text-area": "",
     "is-invalid": $setup.invalidFields.has('message')
@@ -469,65 +469,42 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "sm:py-8 grid gap-8 sm:grid-cols-2"
+  "class": "mx-4 sm:mx-20 sm:py-8 grid gap-8 sm:grid-cols-3"
 };
 var _hoisted_2 = {
   "class": "row-start-1 col-start-1"
 };
 var _hoisted_3 = {
-  "class": "row-start-1 col-start-1 sm:col-start-2 py-8 sm:py-20 px-8 relative h-max",
+  "class": "row-start-1 col-start-1 sm:col-start-2 sm:col-span-2 py-8 sm:py-20 px-8 relative h-max",
   ref: "contactFormEl"
 };
 
-var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
-  "class": "text-4xl mb-4 font-semibold"
-}, " Nos encanta saber de nuestros clientes ", -1
-/* HOISTED */
-);
+var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<h2 class=\"text-4xl mb-4 font-semibold\"> Nos encanta saber de nuestros clientes </h2><div class=\"mb-8 flex gap-2 flex-wrap\"><p class=\"py-2 px-4 rounded-md bg-sky-100 w-max text-sm\"><span>Nuestro correo electrónico:</span><a href=\"mailto:jugueteria.rosy@gmail.com\" class=\"text-sky-600 hover:underline\"> jugueteria.rosy@gmail.com </a></p><h4 class=\"py-2 px-4 rounded-md bg-sky-100 w-max text-sm\"><span> Números telefónicos:</span><a href=\"tel:(+52)-5572833923\" class=\"text-sky-600 hover:underline\"> 5572833923, </a><a href=\"tel:(+52)-5528496221\" class=\"text-sky-600 hover:underline\"> 5528496221, </a><a href=\"tel:(+52)-5513718174\" class=\"text-sky-600 hover:underline\"> 5513718174 </a></h4></div><p class=\"text-gray-600 text-lg mb-4\"> ..o dejar un mensaje directamente: </p>", 3);
 
-var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
-  "class": "mb-8"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "text-gray-600"
-}, " Puede comunicarse con nosotros en cualquier momento a través de "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "mailto:jugueteria.rosy@gmail.com",
-  "class": "text-sky-600"
-}, " jugueteria.rosy@gmail.com ")], -1
-/* HOISTED */
-);
-
-var _hoisted_6 = {
+var _hoisted_7 = {
   "class": "mx-4 sm:mx-20 py-8"
 };
 
-var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
-  "class": "space-x-2 mb-4 text-2xl font-semibold"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "text-sky-600"
-}, "Número telefónico: "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "5572833923 , 5528496221, 5513718174")], -1
-/* HOISTED */
-);
-
 var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
   "class": "space-x-2 mb-4"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "flex-grow w-24 text-sky-600"
-}, " Visítanos en: "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, " Sucursal uno Mercado del sonora pasillo 6 local 147 Bodega Ubicada en Sur 105 No. 1522, C.P. 15900 Ciudad México ")], -1
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, " Visítanos en: "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "text-sky-600"
+}, " Sucursal uno Mercado del sonora pasillo 6 local 147 Bodega Ubicada en Sur 105 No. 1522, C.P. 15900 Ciudad México ")], -1
 /* HOISTED */
 );
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BaseImage"], {
     src: "contact.jpg",
-    "class": "object-cover w-full opacity-10 sm:opacity-100 rounded-r-md",
+    "class": "object-cover w-full opacity-10 sm:opacity-100 rounded-md",
     style: (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeStyle)({
       height: "".concat($setup.contactFormHeight, "px")
     })
   }, null, 8
   /* PROPS */
-  , ["style"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [_hoisted_4, _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["ContactForm"])], 512
+  , ["style"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["ContactForm"])], 512
   /* NEED_PATCH */
-  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [_hoisted_7, _hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["ContactMap"])])]);
+  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [_hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["ContactMap"])])]);
 }
 
 /***/ }),

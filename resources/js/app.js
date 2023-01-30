@@ -21,17 +21,18 @@ import {
     faChevronRight, faCheck,
     faCheckSquare, faSearch,
     faArrowLeft,
-    faEnvelope
 } from "@fortawesome/free-solid-svg-icons";
 import {
     faTwitter,
     faInstagram,
     faFacebook,
     faYoutube,
+    faWhatsapp
 } from "@fortawesome/free-brands-svg-icons";
 
 library.add(
     // faArrowRight,
+    faWhatsapp,
     faArrowLeft,
     faSearch,
     // faPlay,
@@ -45,7 +46,6 @@ library.add(
     faChevronDown,
     faChevronRight,
     // faArrowRight,
-    faEnvelope,
     // faHeadset,
     // faMoneyCheckDollar,
     // faFaceSmile,
