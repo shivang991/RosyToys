@@ -9,7 +9,7 @@
             />
             <base-text-field
                 type="email"
-                placeholder="you@company.com"
+                placeholder="tucorreo@ejemplo.com"
                 v-model="fields.email"
                 label="Tu Correo"
                 :is-invalid="invalidFields.has('email')"

@@ -336,7 +336,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* PROPS */
   , ["modelValue", "is-invalid"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BaseTextField"], {
     type: "email",
-    placeholder: "you@company.com",
+    placeholder: "tucorreo@ejemplo.com",
     modelValue: $setup.fields.email,
     "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
       return $setup.fields.email = $event;
@@ -469,7 +469,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "mx-4 sm:mx-20 sm:py-8 grid gap-8 sm:grid-cols-3"
+  "class": "mx-4 sm:mx-20 py-8 grid gap-8 sm:grid-cols-3"
 };
 var _hoisted_2 = {
   "class": "row-start-1 col-start-1"
@@ -479,7 +479,7 @@ var _hoisted_3 = {
   ref: "contactFormEl"
 };
 
-var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<h2 class=\"text-4xl mb-4 font-semibold\"> Nos encanta saber de nuestros clientes </h2><div class=\"mb-8 flex gap-2 flex-wrap\"><p class=\"py-2 px-4 rounded-md bg-sky-100 w-max text-sm\"><span>Nuestro correo electrónico:</span><a href=\"mailto:jugueteria.rosy@gmail.com\" class=\"text-sky-600 hover:underline\"> jugueteria.rosy@gmail.com </a></p><h4 class=\"py-2 px-4 rounded-md bg-sky-100 w-max text-sm\"><span> Números telefónicos:</span><a href=\"tel:(+52)-5572833923\" class=\"text-sky-600 hover:underline\"> 5572833923, </a><a href=\"tel:(+52)-5528496221\" class=\"text-sky-600 hover:underline\"> 5528496221, </a><a href=\"tel:(+52)-5513718174\" class=\"text-sky-600 hover:underline\"> 5513718174 </a></h4></div><p class=\"text-gray-600 text-lg mb-4\"> ..o dejar un mensaje directamente: </p>", 3);
+var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<h2 class=\"text-4xl mb-4 font-semibold\"> Nos encanta saber de nuestros clientes </h2><div class=\"hidden mb-8 sm:flex gap-2 flex-wrap\"><p class=\"py-2 px-4 rounded-md bg-sky-100 w-max text-sm\"><span>Nuestro correo electrónico:</span><a href=\"mailto:jugueteria.rosy@gmail.com\" class=\"text-sky-600 hover:underline\"> jugueteria.rosy@gmail.com </a></p><h4 class=\"py-2 px-4 rounded-md bg-sky-100 w-max text-sm\"><span> Números telefónicos:</span><a href=\"tel:(+52)-5572833923\" class=\"text-sky-600 hover:underline\"> 5572833923, </a><a href=\"tel:(+52)-5528496221\" class=\"text-sky-600 hover:underline\"> 5528496221, </a><a href=\"tel:(+52)-5513718174\" class=\"text-sky-600 hover:underline\"> 5513718174 </a></h4></div><p class=\"hidden sm:block text-gray-600 text-lg mb-4\"> ..o dejar un mensaje directamente: </p>", 3);
 
 var _hoisted_7 = {
   "class": "mx-4 sm:mx-20 py-8"

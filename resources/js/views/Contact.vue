@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="mx-4 sm:mx-20 sm:py-8 grid gap-8 sm:grid-cols-3">
+        <div class="mx-4 sm:mx-20 py-8 grid gap-8 sm:grid-cols-3">
             <div class="row-start-1 col-start-1">
                 <BaseImage
                     src="contact.jpg"
@@ -15,7 +15,7 @@
                 <h2 class="text-4xl mb-4 font-semibold">
                     Nos encanta saber de nuestros clientes
                 </h2>
-                <div class="mb-8 flex gap-2 flex-wrap">
+                <div class="hidden mb-8 sm:flex gap-2 flex-wrap">
                     <p class="py-2 px-4 rounded-md bg-sky-100 w-max text-sm">
                         <span>Nuestro correo electrónico:</span>
                         <a
@@ -47,7 +47,7 @@
                         </a>
                     </h4>
                 </div>
-                <p class="text-gray-600 text-lg mb-4">
+                <p class="hidden sm:block text-gray-600 text-lg mb-4">
                     ..o dejar un mensaje directamente:
                 </p>
                 <ContactForm></ContactForm>
