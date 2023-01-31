@@ -20,9 +20,7 @@
                 ></BaseImage>
             </div>
             <div class="col-start-1 row-start-1 px-4 py-20 relative">
-                <h2
-                    class="text-4xl text-center max-w-lg mx-auto mb-1"
-                >
+                <h2 class="text-4xl text-center max-w-lg mx-auto mb-1">
                     ¿Estas buscando la mejor opcion de juguete por mayoreo?
                 </h2>
                 <div class="h-4 flex justify-center mb-8">
@@ -38,7 +36,7 @@
                 </p>
                 <router-link
                     :to="{ name: 'Productos' }"
-                    class="text-xl bg-sky-600 w-max text-white rounded-md py-2 px-8 mx-auto block"
+                    class="text-xl bg-sky-600 w-max text-white rounded-md py-2 px-8 mx-auto block text-center"
                 >
                     Ver Productos
                 </router-link>
@@ -48,9 +46,9 @@
         <HomeTrending></HomeTrending>
         <div class="py-12 sm:w-3/4 mx-auto">
             <div
-                class="px-8 py-12 rounded-lg bg-primary flex space-x-8 justify-between items-start"
+                class="px-4 sm:px-8 py-12 rounded-lg bg-primary sm:flex sm:space-x-8 justify-between items-start"
             >
-                <div>
+                <div class="mb-8 sm:mb-0">
                     <div class="text-2xl text-sky-600 mb-4 font-semibold">
                         <h4>¿Buscas algo que no esta a la vista ?</h4>
                         <h4>¿Te gustaria realizar un pedido grande?</h4>

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <base-image src="about_top.jpg" class="w-full"></base-image>
+        <base-image src="about_top.jpg" class="w-full h-60 object-cover"></base-image>
         <div class="py-20">
             <h2 class="text-4xl font-semibold mb-4 text-center">Nosotros</h2>
             <ul class="w-11/12 lg:w-1/2 mx-auto mb-32 list-disc list-inside text-lg space-y-4">
