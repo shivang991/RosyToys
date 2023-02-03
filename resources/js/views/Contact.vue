@@ -78,7 +78,6 @@ const contactFormHeight = ref(0);
 watch(contactFormEl, (newVal) => {
     const computeContactFormHeight = () => {
         const { height } = newVal.getBoundingClientRect();
-        console.log(height);
         contactFormHeight.value = height;
     };
     computeContactFormHeight();

@@ -266,7 +266,6 @@ __webpack_require__.r(__webpack_exports__);
         var _newVal$getBoundingCl = newVal.getBoundingClientRect(),
             height = _newVal$getBoundingCl.height;
 
-        console.log(height);
         contactFormHeight.value = height;
       };
 

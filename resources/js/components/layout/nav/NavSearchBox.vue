@@ -29,7 +29,6 @@
 <script setup>
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { ref, computed } from "vue";
-import { useRouter } from "vue-router";
 import { useStore } from "vuex";
 
 defineProps({

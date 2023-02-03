@@ -26,7 +26,7 @@ class ProductController extends Controller
         };
 
         // $add_filter('application');
-        $add_filter('brand');
+        $add_filter('category');
         return $productBuilder
             ->select('id', 'title', 'price', 'image_url', 'is_promoted')
             ->paginate(12);
@@ -44,6 +44,7 @@ class ProductController extends Controller
             'brand' => 'required',
             'image' => 'required|image',
             'is_promoted' => 'required|boolean',
+            'category' => 'required'
         ]);
         $imgPath = Request::file('image')->store('products');
 
@@ -73,6 +74,7 @@ class ProductController extends Controller
             'price' => 'required|numeric',
             'brand' => 'required',
             'is_promoted' => 'boolean',
+            'category' => 'required'
         ]);
 
         $image = Request::file('image');
@@ -88,6 +90,7 @@ class ProductController extends Controller
         $product->price = $data['price'];
         $product->brand = $data['brand'];
         $product->is_promoted = $data['is_promoted'];
+        $product->category = $data['category'];
         $product->save();
 
         return Response::json(['message' => 'success']);

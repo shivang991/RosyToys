@@ -1,40 +1,46 @@
 <template>
-    <form
-        @submit.prevent="executeSearch"
-        class="flex flex-grow focus-within:ring rounded-md overflow-hidden"
+    <div
+        class="flex flex-grow focus-within:ring rounded-md overflow-hidden bg-gray-100"
     >
         <input
             type="text"
-            class="flex-grow bg-gray-100 outline-none px-4"
+            class="flex-grow outline-none px-4 bg-transparent"
             placeholder="Búsqueda"
-            v-model="searchQuery"
+            @input="handleInput"
         />
-        <button
-            class="w-10 h-10 px-4 bg-sky-600 text-white disabled:opacity-50 text-sm grid place-content-center"
+        <p
+            class="w-10 h-10 px-4 text-gray-600 disabled:opacity-50 text-sm grid place-content-center"
             :disabled="isLoading"
         >
             <span
                 v-if="isLoading"
-                class="block w-4 h-4 border-2 rounded-full border-white border-b-transparent animate-spin"
+                class="block w-4 h-4 border-2 rounded-full border-gray-600 border-b-transparent animate-spin"
             ></span>
             <FontAwesomeIcon v-else icon="fa fa-search"></FontAwesomeIcon>
-        </button>
-    </form>
+        </p>
+    </div>
 </template>
 
 <script setup>
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-import { computed } from "@vue/reactivity";
-import { ref } from "vue";
+import { computed } from "vue";
 import { useStore } from "vuex";
 
 const store = useStore();
 
-const searchQuery = ref("");
 const isLoading = computed(() => store.state.products.isLoading);
 
-function executeSearch() {
-    store.commit("products/SET_QUERY", searchQuery.value);
-    store.dispatch("products/refetch");
+let throttleId = null;
+
+function handleInput(event) {
+    const inputValue = event.target.value;
+    clearTimeout(throttleId);
+    throttleId = setTimeout(
+        () => {
+            store.commit("products/SET_QUERY", inputValue);
+            store.dispatch("products/refetch");
+        },
+        1000 // 1 sec
+    );
 }
 </script>

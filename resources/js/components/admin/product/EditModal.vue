@@ -35,6 +35,22 @@
                         label="Brand"
                     ></BaseTextField>
                 </div>
+                <div>
+                    <p class="mb-2">Categoría</p>
+                    <select
+                        v-model="fields.category"
+                        class="px-4 w-full py-2 bg-gray-100 cursor-pointer outline-none rounded-md focus:ring"
+                    >
+                        <option
+                            v-for="(category, index) in categoryOptions"
+                            :key="index"
+                            :value="category"
+
+                        >
+                            {{ category }}
+                        </option>
+                    </select>
+                </div>
                 <div class="flex space-x-2">
                     <input
                         type="checkbox"
@@ -68,6 +84,7 @@ import { reactive, ref, watch } from "vue";
 import useAxios from "@/plugins/Axios";
 import { fireNotification, NotificationTypes } from "@/plugins/Notifications";
 import { useStore } from "vuex";
+import { categoryOptions } from "@/store/products";
 
 const props = defineProps({
     shouldShow: {
@@ -91,6 +108,7 @@ const fields = reactive({
     price: "",
     brand: "",
     isPromoted: false,
+    category: categoryOptions[0],
 });
 
 const isFetchingProduct = ref(false);
@@ -151,6 +169,7 @@ watch(
             fields.price = String(newProduct.price);
             fields.brand = newProduct.brand;
             fields.isPromoted = Boolean(newProduct.is_promoted);
+            fields.category = newProduct.category
             productImgSrc.value = newProduct.image_url;
             isFetchingProduct.value = false;
             lastProductId = props.productId;

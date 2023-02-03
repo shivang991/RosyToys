@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h5 class="font-semibold text-xl mb-2">{{ label }}</h5>
+        <!-- <h5 class="font-semibold text-xl mb-2">{{ label }}</h5> -->
         <ul class="px-2 space-y-2">
             <li
                 class="flex items-center space-x-2"
@@ -24,7 +24,7 @@
 <script setup>
 const props = defineProps({
     options: { type: Array, required: true },
-    label: { type: String, required: true },
+    // label: { type: String, required: true },
     modelValue: { type: Array, default: () => [] },
 });
 const emit = defineEmits(["update:modelValue"]);

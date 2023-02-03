@@ -34,6 +34,22 @@
                         label="Marca"
                     ></BaseTextField>
                 </div>
+                <div>
+                    <p class="mb-2">Categoría</p>
+                    <select
+                        v-model="fields.category"
+                        class="px-4 w-full py-2 bg-gray-100 cursor-pointer outline-none rounded-md focus:ring"
+                    >
+                        <option
+                            v-for="(category, index) in categoryOptions"
+                            :key="index"
+                            :value="category"
+                            :selected="index === 0"
+                        >
+                            {{ category }}
+                        </option>
+                    </select>
+                </div>
                 <div class="flex space-x-2">
                     <input
                         type="checkbox"
@@ -67,6 +83,7 @@ import { reactive, ref } from "vue";
 import useAxios from "@/plugins/Axios";
 import { fireNotification, NotificationTypes } from "@/plugins/Notifications";
 import { useStore } from "vuex";
+import { categoryOptions } from "@/store/products";
 
 defineProps({
     shouldShow: {
@@ -82,6 +99,7 @@ const fields = reactive({
     price: "",
     brand: "",
     isPromoted: false,
+    category: categoryOptions[0],
 });
 
 const invalidFields = reactive(new Set());
@@ -90,6 +108,7 @@ const isLoading = ref(false);
 
 const axios = useAxios();
 const store = useStore();
+
 function handleSubmit() {
     invalidFields.clear();
     // Validation: All fields except booleans required

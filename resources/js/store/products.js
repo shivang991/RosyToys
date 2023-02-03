@@ -1,5 +1,14 @@
 import { Axios } from "@/plugins/Axios";
 
+export const categoryOptions = [
+    "Mayoreo",
+    "Menudeo",
+    "Temporada",
+    "Tendencia",
+    "Favoritas de los Clientes",
+    "Niños",
+];
+
 export default {
     namespaced: true,
     state: {

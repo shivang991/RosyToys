@@ -25,7 +25,6 @@
                     v-for="(filter, key) in filters"
                     :key="key"
                     :options="filter.options"
-                    :label="filter.label"
                     v-model="input[key]"
                 ></productos-filters-multiselect>
                 <div class="my-8" v-if="Object.keys(filters).length">
@@ -48,12 +47,13 @@
 </template>
 
 <script setup>
-import { useAxios } from "@/plugins/Axios";
+// import { useAxios } from "@/plugins/Axios";
 import { reactive, ref } from "vue";
 import ProductosFiltersMultiselect from "./ProductosFiltersMultiselect.vue";
 // import ProductosFiltersPrice from './ProductosFiltersPrice.vue';
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { useStore } from "vuex";
+import { categoryOptions } from "@/store/products";
 
 const input = reactive({
     brand: [],
@@ -72,24 +72,29 @@ function clearFilters() {
 }
 
 // Fetch choices for filters from server
-const axios = useAxios();
-const filters = reactive({});
-axios.get("/api/choices/brands").then((res) => {
-    filters.brand = {
-        label: "Marcas",
-        options: res.data,
-    };
+// const axios = useAxios();
+const filters = reactive({
+    category: {
+        label: "Categoría",
+        options: categoryOptions,
+    },
 });
 
+// axios.get("/api/choices/brands").then((res) => {
+//     filters.brand = {
+//         label: "Marcas",
+//         options: res.data,
+//     };
+// });
+
 const isScreenWide = ref(window.innerWidth > 768);
+
 window.addEventListener(
     "resize",
     () => (isScreenWide.value = window.innerWidth > 768)
 );
 const shouldShowFiltersDropdown = ref(false);
-
 const filterContainerEl = ref(null);
-
 function toggleFilters() {
     if (!filterContainerEl.value) return;
     shouldShowFiltersDropdown.value = !shouldShowFiltersDropdown.value;
