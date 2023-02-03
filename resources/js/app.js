@@ -5,10 +5,7 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 
-createApp(App)
-    .use(store)
-    .use(router)
-    .mount("#app");
+createApp(App).use(store).use(router).mount("#app");
 
 // Icons
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -16,18 +13,23 @@ import {
     faRightFromBracket,
     faPlus,
     faPen,
-    faChevronDown, faUpload, faBars,
+    faChevronDown,
+    faUpload,
+    faBars,
     faTimes,
-    faChevronRight, faCheck,
-    faCheckSquare, faSearch,
+    faChevronRight,
+    faCheck,
+    faCheckSquare,
+    faSearch,
     faArrowLeft,
+    faExclamationTriangle,
 } from "@fortawesome/free-solid-svg-icons";
 import {
     faTwitter,
     faInstagram,
     faFacebook,
     faYoutube,
-    faWhatsapp
+    faWhatsapp,
 } from "@fortawesome/free-brands-svg-icons";
 
 library.add(
@@ -54,14 +56,14 @@ library.add(
     faFacebook,
     faYoutube,
     // faStar,
-    // faExclamationTriangle,
+    faExclamationTriangle,
     // faShoppingCart,
     faBars,
     faTimes,
     // faPhone,
     // faMapLocation,
     faPen,
-    faUpload,
+    faUpload
     // faExpand,
     // faQuoteLeft,
     // faStarOutlined

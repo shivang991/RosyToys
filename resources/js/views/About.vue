@@ -1,23 +1,22 @@
 <template>
     <div>
-        <base-image src="about_top.jpg" class="w-full h-60 object-cover"></base-image>
+        <base-image
+            src="about_top.jpg"
+            class="w-full h-60 object-cover"
+        ></base-image>
         <div class="py-20">
             <h2 class="text-4xl font-semibold mb-4 text-center">Nosotros</h2>
-            <ul class="w-11/12 lg:w-1/2 mx-auto mb-32 list-disc list-inside text-lg space-y-4">
-                <li>
-                    Somos una empresa familiar de reciente creación con capital
-                    100% mexicano , nos dedicamos a la venta y distribución de
-                    juguete económico para todo tipo de evento y epoca del año
-                    con cobertura en todo México.
-                </li>
-                <li>
-                    Actualmente contamos con tiendas física Ubicada en la
-                    Mercado Sonora en la Ciudad de México y nuestra Bodega en la
-                    Ciudad de México, nos distinguimos por por ofrecer el mejor
-                    servicio, surtido y una gran experiencia a nuestros
-                    clientes.
-                </li>
-            </ul>
+            <p class="w-11/12 lg:w-1/2 mx-auto mb-32 text-lg text-center">
+                Somos una empresa familiar de reciente creación con capital 100%
+                mexicano, nos dedicamos a la venta y distribución de juguete
+                económico para todo tipo de evento y época del año con cobertura
+                en todo México.
+                <br />
+                Actualmente contamos con tienda física Ubicada en el Mercado
+                Sonora y nuestra Bodega en la Ciudad de México, nos distinguimos
+                por ofrecer el mejor servicio, surtido y una gran experiencia a
+                nuestros clientes.
+            </p>
             <div
                 class="lg:flex w-11/12 lg:w-1/2 mx-auto lg:space-x-8 justify-center mb-20"
             >
@@ -26,7 +25,7 @@
                     <p>
                         Somos una empresa rentable dedicada a la
                         comercialización de juguete económico comprometida a
-                        productos satisfacer las necesidades del consumidor
+                        satisfacer las necesidades del consumidor.
                     </p>
                 </div>
                 <div class="lg:w-80 h-80">
@@ -51,7 +50,7 @@
                     <h2 class="text-4xl font-semibold mb-8">Nuestra visión</h2>
                     <p>
                         Juguetes Rosy se proyecta como una empresa familiar ágil
-                        y eficiente mas exitosas de Méxicoy tener una
+                        y eficiente más exitosa de México y tener una
                         distribuidora a nivel nacional de juguetes.
                     </p>
                 </div>

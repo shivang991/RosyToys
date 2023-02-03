@@ -1,13 +1,13 @@
 <template>
     <div v-if="data">
         <div class="flex mb-8 justify-between px-12">
-            <h5 class="text-xl text-slate-900 py-2">Staff:</h5>
+            <h5 class="text-xl py-2">Empleados / Usuarios:</h5>
             <div class="flex">
                 <button
                     class="px-4 flex items-center space-x-2 text-sky-600 border border-r-transparent border-sky-100 rounded-l-md"
                     @click="shouldShowAddModal = true"
                 >
-                    <span>Add</span>
+                    <span>Agregar</span>
                     <FontAwesomeIcon
                         icon="fa fa-plus"
                         class="text-sm"
@@ -18,7 +18,7 @@
                     :disabled="selectedStaff === null"
                     @click="shouldShowEditModal = true"
                 >
-                    <span class="group-disabled:opacity-50">Edit</span>
+                    <span class="group-disabled:opacity-50">Editar</span>
                     <FontAwesomeIcon
                         icon="fa fa-pen"
                         class="text-sm group-disabled:opacity-50"
@@ -29,7 +29,7 @@
                     :disabled="selectedStaff === null"
                     @click="shouldShowRemoveModal = true"
                 >
-                    <span class="group-disabled:opacity-50">Remove</span>
+                    <span class="group-disabled:opacity-50">Eliminar</span>
                     <FontAwesomeIcon
                         icon="fa fa-times"
                         class="text-sm group-disabled:opacity-50"
@@ -38,21 +38,21 @@
             </div>
         </div>
         <div class="grid">
-            <div class="col-start-1 row-start-1 h-16 bg-slate-200"></div>
+            <div class="col-start-1 row-start-1 h-16 bg-sky-100"></div>
             <table class="mx-12 col-start-1 row-start-1">
-                <tr class="text-slate-900 h-16 px-12">
+                <tr class="h-16 px-12">
                     <th></th>
-                    <th class="text-left px-4">Name</th>
-                    <th class="text-left px-4">Email</th>
-                    <th class="text-left px-4">Created</th>
+                    <th class="text-left px-4">Nombre</th>
+                    <th class="text-left px-4">Correo</th>
+                    <th class="text-left px-4">Creado en</th>
                 </tr>
                 <tr
                     v-for="(staff, index) in data"
                     :key="index"
-                    class="hover:bg-slate-100 cursor-pointer border-b"
+                    class="hover:bg-sky-100 cursor-pointer border-b"
                     :class="
                         selectedStaff === staff
-                            ? 'border-transparent bg-slate-100 shadow rounded'
+                            ? 'border-transparent bg-sky-100 shadow rounded'
                             : 'border-sky-600'
                     "
                     @click="selectedStaff = staff"

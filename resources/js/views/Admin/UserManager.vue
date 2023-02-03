@@ -1,9 +1,11 @@
 <template>
     <div class="mt-8 py-8 w-11/12 lg:w-3/4 mx-auto bg-white rounded-md shadow">
         <div class="mb-12 px-12">
-            <h4 class="font-semibold mb-8 text-2xl">User Manager</h4>
+            <h4 class="font-semibold mb-8 text-2xl">
+                Administrador de usuarios
+            </h4>
             <div class="mb-12">
-                <h5 class="text-slate-900 mb-4 text-xl">Your profile:</h5>
+                <h5 class="mb-4 text-xl">Tu Perfil:</h5>
                 <div class="flex space-x-4 items-center">
                     <BaseImage
                         v-if="myProfile.profile_image_url"
@@ -23,7 +25,7 @@
                             class="text-sky-600 hover:underline"
                             @click="shouldShowEditMeModal = true"
                         >
-                            Edit
+                            Editar
                         </button>
                     </div>
                 </div>

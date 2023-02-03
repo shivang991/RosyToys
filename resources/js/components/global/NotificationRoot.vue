@@ -2,7 +2,7 @@
     <Teleport to="#app-modals">
         <Transition name="modal">
             <div
-                class="fixed mt-8 w-80 mx-auto z-20 bg-slate-100 shadow-xl rounded-md overflow-hidden"
+                class="fixed mt-8 w-80 mx-auto z-20 bg-sky-100 shadow-xl rounded-md overflow-hidden"
                 v-if="shouldShowNotification"
             >
                 <div
@@ -12,7 +12,7 @@
                     <p class="text-pink-700">
                         <FontAwesomeIcon icon="fa fa-check"></FontAwesomeIcon>
                     </p>
-                    <p class="font-semibold text-slate-200">
+                    <p class="font-semibold text-sky-100">
                         {{ data.message }}
                     </p>
                 </div>
@@ -20,7 +20,7 @@
                     <div class="w-full flex justify-end">
                         <button
                             @click="setData(null, null)"
-                            class="px-4 py-2 text-xl text-slate-900"
+                            class="px-4 py-2 text-xl"
                         >
                             <FontAwesomeIcon
                                 icon="fa fa-times"
@@ -45,12 +45,12 @@
                         v-else
                         class="pb-8 flex space-x-4 px-8 border-b-2 border-slate-500"
                     >
-                        <p class="text-slate-900">
+                        <p>
                             <FontAwesomeIcon
                                 icon="fa fa-check"
                             ></FontAwesomeIcon>
                         </p>
-                        <p class="text-slate-900">
+                        <p>
                             {{ data.message }}
                         </p>
                     </div>

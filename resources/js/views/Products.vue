@@ -2,7 +2,7 @@
     <div class="py-12">
         <div class="md:flex md:space-x-4">
             <productos-filters></productos-filters>
-            <div>
+            <div class="flex-grow">
                 <productos-list></productos-list>
                 <product-pagination></product-pagination>
             </div>

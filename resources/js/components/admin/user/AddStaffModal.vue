@@ -9,12 +9,12 @@
                     :is-invalid="invalidFields.has('image')"
                     v-model="fields.image"
                     class="w-40 h-40 object-cover rounded-full shadow mx-auto"
-                    label="Profile Image"
+                    label="Imagen de perfil"
                 ></BaseImageInput>
                 <div class="flex space-x-4">
                     <BaseTextField
                         v-model="fields.name"
-                        label="Name"
+                        label="Nombre"
                         :min="4"
                         :max="24"
                         :is-invalid="invalidFields.has('name')"
@@ -22,7 +22,7 @@
                     <BaseTextField
                         :is-invalid="invalidFields.has('email')"
                         v-model="fields.email"
-                        label="Email"
+                        label="Correo"
                     ></BaseTextField>
                 </div>
                 <div class="flex space-x-4">
@@ -31,17 +31,17 @@
                         v-model="fields.password"
                         type="password"
                         :min="6"
-                        label="Password"
+                        label="Contraseña"
                     ></BaseTextField>
                     <BaseTextField
                         :is-invalid="invalidFields.has('passwordConfirm')"
                         v-model="fields.passwordConfirm"
                         type="password"
-                        label="Confirm Password"
+                        label="Confirmar contraseña"
                     ></BaseTextField>
                 </div>
                 <div>
-                    <p class="mb-2 text-slate-500">Access:</p>
+                    <p class="mb-2 text-slate-500">Acceso:</p>
                     <div class="grid grid-cols-2 gap-x-4">
                         <div
                             class="flex space-x-2 items-center"
@@ -69,7 +69,7 @@
                     v-if="isLoading"
                 >
                 </span>
-                <span v-else> Create </span>
+                <span v-else> Crear </span>
             </button>
         </form>
     </base-modal>

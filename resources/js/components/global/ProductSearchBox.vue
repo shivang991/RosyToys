@@ -1,6 +1,6 @@
 <template>
     <div
-        class="flex bg-slate-100 px-4 py-2 rounded-md focus-within:ring-2 ring-sky-600 items-center"
+        class="flex bg-sky-100 px-4 py-2 rounded-md focus-within:ring-2 ring-sky-600 items-center"
     >
         <input
             type="text"

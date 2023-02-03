@@ -2,7 +2,7 @@
     <Teleport to="#app-modals">
         <Transition name="modal" @afterEnter="shouldShowContent = true">
             <div
-                class="bg-gradient-to-b from-transparent to-slate-100 grid w-full justify-center z-10"
+                class="bg-gradient-to-b from-transparent to-sky-100 grid w-full justify-center z-10"
                 :style="{ height: `${bgHeight}px` }"
                 v-if="shouldShow"
             >
@@ -13,7 +13,7 @@
                     >
                         <div class="flex justify-end">
                             <button
-                                class="text-xl text-slate-900 p-4"
+                                class="text-xl p-4"
                                 @click="shouldShowContent = false"
                             >
                                 <FontAwesomeIcon

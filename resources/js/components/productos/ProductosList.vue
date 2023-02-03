@@ -14,12 +14,20 @@
             :isLowStock="!!product.is_low_stock"
             :isPromoted="!!product.is_promoted"
         ></productos-list-item>
+
         <div
-            class="flex space-x-4 text-xl items-center p-4 text-center justify-center bg-slate-100 text-slate-900 rounded-lg shadow-lg"
+            class="col-span-4 p-4 bg-sky-100 rounded-lg"
             v-if="!products.length"
         >
-            <FontAwesomeIcon icon="fa-exclamation-triangle" />
-            <p>Lo sentimos, no se pudo encontrar ningún producto.</p>
+            <div
+                class="flex space-x-4 text-xl items-center justify-center mb-4"
+            >
+                <FontAwesomeIcon icon="fa-exclamation-triangle" />
+                <p>Lo sentimos, no se pudo encontrar ningún producto.</p>
+            </div>
+            <button class="text-sky-600 hover:underline w-full text-center" @click="removeSearchQuery">
+                Mostrar todos los productos
+            </button>
         </div>
     </div>
     <div v-else class="h-96 flex items-center justify-center">
@@ -36,5 +44,12 @@ import { useStore } from "vuex";
 import { computed } from "vue";
 
 const store = useStore();
+
 const products = computed(() => store.state.products.data);
+
+function removeSearchQuery() {
+    store.commit("products/SET_QUERY", "");
+    store.dispatch("products/refetch");
+}
+
 </script>

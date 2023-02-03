@@ -14,7 +14,7 @@
             </button>
         </div>
         <div
-            class="py-2 bg-sky-600 justify-center items-center space-x-8 text-white hidden md:flex"
+            class="h-16 bg-sky-600 justify-center items-center space-x-8 text-white hidden md:flex"
         >
             <router-link
                 v-for="(link, index) in links"

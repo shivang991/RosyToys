@@ -76,7 +76,7 @@ __webpack_require__.r(__webpack_exports__);
       image: "admin_customer_service_manager.png",
       route: "CustomerServiceManager"
     }, {
-      title: "Product Manager",
+      title: "Administrador de Productos",
       image: "admin_product_manager.png",
       route: "ProductManager"
     }].filter(function (m) {
@@ -164,13 +164,13 @@ var _hoisted_1 = {
 
 var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", {
   "class": "text-xl text-center"
-}, "Product Manager", -1
+}, "Administrador de Productos", -1
 /* HOISTED */
 );
 
 var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", {
   "class": "text-xl text-center"
-}, "User Manager", -1
+}, "Administrador de Usuarios", -1
 /* HOISTED */
 );
 
@@ -284,7 +284,7 @@ var _hoisted_2 = {
   "class": "font-semibold mb-8 text-2xl text-center"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h4", _hoisted_2, "Welcome, " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.profile.name), 1
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h4", _hoisted_2, "Bienvenido, " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.profile.name), 1
   /* TEXT */
   ), $setup.profile && $setup.profile.role === 'admin' ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)($setup["AdminDashboard"], {
     key: 0

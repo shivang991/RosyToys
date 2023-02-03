@@ -9,29 +9,29 @@
                     :is-invalid="invalidFields.has('image')"
                     v-model="fields.image"
                     class="w-full h-40 object-cover"
-                    label="Product Image"
+                    label="Imagen del Producto"
                 ></BaseImageInput>
                 <BaseTextField
                     v-model="fields.title"
-                    label="Product Name"
+                    label="Nombre"
                     :is-invalid="invalidFields.has('title')"
                 ></BaseTextField>
                 <BaseTextField
                     :is-invalid="invalidFields.has('description')"
                     v-model="fields.description"
-                    label="Description"
+                    label="Descripción"
                     is-text-area
                 ></BaseTextField>
                 <div class="flex space-x-4">
                     <BaseTextField
                         :is-invalid="invalidFields.has('price')"
                         v-model="fields.price"
-                        label="Price"
+                        label="Precio MXN"
                     ></BaseTextField>
                     <BaseTextField
                         :is-invalid="invalidFields.has('brand')"
                         v-model="fields.brand"
-                        label="Brand"
+                        label="Marca"
                     ></BaseTextField>
                 </div>
                 <div class="grid grid-cols-2">
@@ -71,7 +71,7 @@
                     v-if="isLoading"
                 >
                 </span>
-                <span v-else> Create </span>
+                <span v-else> Agregar </span>
             </button>
         </form>
     </base-modal>

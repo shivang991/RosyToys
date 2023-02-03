@@ -54,8 +54,8 @@
             </div>
         </div>
         <div class="mx-4 sm:mx-20 py-8">
-            <p class="space-x-2 mb-4">
-                <span> Visítanos en: </span>
+            <p class="space-x-2 mb-4 text-center">
+                <span class="font-semibold"> Visítanos en: </span>
                 <span class="text-sky-600">
                     Sucursal uno Mercado del sonora pasillo 6 local 147 Bodega
                     Ubicada en Sur 105 No. 1522, C.P. 15900 Ciudad México

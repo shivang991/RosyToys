@@ -1,20 +1,20 @@
 <template>
     <div v-if="data">
         <table class="mb-4">
-            <caption class="text-xl text-slate-900 text-left">
+            <caption class="text-xl text-left">
                 Admins:
             </caption>
-            <tr class="text-slate-900 h-10 px-12">
+            <tr class="h-10 px-12">
                 <th></th>
-                <th class="text-left px-4">Name</th>
-                <th class="text-left px-4">Email</th>
-                <th class="text-left px-4">Joined</th>
+                <th class="text-left px-4">Nombre</th>
+                <th class="text-left px-4">Correo</th>
+                <th class="text-left px-4">Se unió el</th>
             </tr>
             <tr
                 v-for="(admin, index) in data"
                 :key="index"
                 :class="{
-                    'bg-slate-100 shadow rounded': myUserId === admin.id,
+                    'bg-sky-100 shadow rounded': myUserId === admin.id,
                 }"
             >
                 <td class="px-4 py-2">
@@ -41,7 +41,7 @@
             :to="{ name: 'AdminRegister' }"
             class="text-sky-600 hover:underline"
         >
-            Register a new account
+        Registre una nueva cuenta
         </router-link>
     </div>
 </template>

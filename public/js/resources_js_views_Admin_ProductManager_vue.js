@@ -1002,7 +1002,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           return $setup.fields.image = $event;
         }),
         "class": "w-full h-40 object-cover",
-        label: "Product Image"
+        label: "Imagen del Producto"
       }, null, 8
       /* PROPS */
       , ["is-invalid", "modelValue"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BaseTextField"], {
@@ -1010,7 +1010,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
           return $setup.fields.title = $event;
         }),
-        label: "Product Name",
+        label: "Nombre",
         "is-invalid": $setup.invalidFields.has('title')
       }, null, 8
       /* PROPS */
@@ -1020,7 +1020,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
           return $setup.fields.description = $event;
         }),
-        label: "Description",
+        label: "Descripción",
         "is-text-area": ""
       }, null, 8
       /* PROPS */
@@ -1030,7 +1030,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         "onUpdate:modelValue": _cache[3] || (_cache[3] = function ($event) {
           return $setup.fields.price = $event;
         }),
-        label: "Price"
+        label: "Precio MXN"
       }, null, 8
       /* PROPS */
       , ["is-invalid", "modelValue"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BaseTextField"], {
@@ -1039,7 +1039,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         "onUpdate:modelValue": _cache[4] || (_cache[4] = function ($event) {
           return $setup.fields.brand = $event;
         }),
-        label: "Brand"
+        label: "Marca"
       }, null, 8
       /* PROPS */
       , ["is-invalid", "modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
@@ -1070,7 +1070,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         "class": "bg-sky-500 py-2 mt-8 text-white rounded-md w-full",
         disabled: $setup.isLoading,
         type: "submit"
-      }, [$setup.isLoading ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_12)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_13, " Create "))], 8
+      }, [$setup.isLoading ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_12)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_13, " Agregar "))], 8
       /* PROPS */
       , _hoisted_11)], 40
       /* PROPS, HYDRATE_EVENTS */
@@ -1179,7 +1179,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
           return $setup.fields.title = $event;
         }),
-        label: "Product Name"
+        label: "Nombre"
       }, null, 8
       /* PROPS */
       , ["modelValue"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BaseTextField"], {
@@ -1187,7 +1187,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
           return $setup.fields.description = $event;
         }),
-        label: "Description",
+        label: "Descripción",
         "is-text-area": ""
       }, null, 8
       /* PROPS */
@@ -1196,7 +1196,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         "onUpdate:modelValue": _cache[3] || (_cache[3] = function ($event) {
           return $setup.fields.price = $event;
         }),
-        label: "Price"
+        label: "Precio MXN"
       }, null, 8
       /* PROPS */
       , ["modelValue"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BaseTextField"], {
@@ -1235,7 +1235,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         "class": "bg-sky-600 py-2 mt-8 text-white rounded-md w-full",
         disabled: $setup.isFormSubmitting,
         type: "submit"
-      }, [$setup.isFormSubmitting ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_15)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_16, " Update "))], 8
+      }, [$setup.isFormSubmitting ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_15)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_16, " Modificar "))], 8
       /* PROPS */
       , _hoisted_14)], 40
       /* PROPS, HYDRATE_EVENTS */
@@ -1267,10 +1267,10 @@ var _hoisted_1 = {
   "class": "px-4 pb-8 max-w-xs"
 };
 var _hoisted_2 = {
-  "class": "text-slate-900 mb-8 text-center"
+  "class": "mb-8 text-center"
 };
 
-var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "Are you sure you want to delete the product:", -1
+var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "¿Estás seguro de querer borrar este producto? :", -1
 /* HOISTED */
 );
 
@@ -1300,7 +1300,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         "class": "bg-sky-600 py-2 text-white rounded-md w-full",
         disabled: $setup.isLoading,
         type: "submit"
-      }, [$setup.isLoading ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_6)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_7, " Yes "))], 8
+      }, [$setup.isLoading ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_6)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_7, " Si "))], 8
       /* PROPS */
       , _hoisted_5)])];
     }),
@@ -1477,7 +1477,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [$props.shouldShow ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
         key: 0,
-        "class": "bg-gradient-to-b from-transparent to-slate-100 grid w-full justify-center z-10",
+        "class": "bg-gradient-to-b from-transparent to-sky-100 grid w-full justify-center z-10",
         style: (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeStyle)({
           height: "".concat($setup.bgHeight, "px")
         })
@@ -1489,7 +1489,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       }, {
         "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
           return [$setup.shouldShowContent ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-            "class": "text-xl text-slate-900 p-4",
+            "class": "text-xl p-4",
             onClick: _cache[0] || (_cache[0] = function ($event) {
               return $setup.shouldShowContent = false;
             })
@@ -1677,7 +1677,7 @@ var _hoisted_2 = {
 
 var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h4", {
   "class": "font-semibold mb-8 text-2xl"
-}, "Product Manager", -1
+}, "Administrador de Productos", -1
 /* HOISTED */
 );
 
@@ -1688,7 +1688,7 @@ var _hoisted_5 = {
   "class": "flex"
 };
 
-var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "Add", -1
+var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "Agregar", -1
 /* HOISTED */
 );
 
@@ -1696,7 +1696,7 @@ var _hoisted_7 = ["disabled"];
 
 var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "group-disabled:opacity-50"
-}, "Edit", -1
+}, "Editar", -1
 /* HOISTED */
 );
 
@@ -1704,7 +1704,7 @@ var _hoisted_9 = ["disabled"];
 
 var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "group-disabled:opacity-50"
-}, "Remove", -1
+}, "Eliminar", -1
 /* HOISTED */
 );
 
@@ -1727,13 +1727,13 @@ var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
   "class": "h-16 mb-8"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", {
   "class": "text-left px-2 w-16"
-}, "Id"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", {
+}, "SKU"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", {
   "class": "text-left px-2"
-}, "Image"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", {
+}, "Imagen"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", {
   "class": "text-left px-2"
-}, "Name"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", {
+}, "Nombre"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", {
   "class": "text-left px-2"
-}, "Price"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", {
+}, "Precio (MXN)"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", {
   "class": "text-left px-2"
 })], -1
 /* HOISTED */

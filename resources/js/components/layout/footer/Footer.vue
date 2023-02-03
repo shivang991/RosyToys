@@ -4,7 +4,7 @@
             class="w-11/12 md:w-3/4 mx-auto flex flex-col sm:flex-row items-center sm:items-start justify-between"
         >
             <div class="mb-12 sm:mb-0">
-                <BaseImage src="logo.png" class="h-24"></BaseImage>
+                <BaseImage src="logo.png" class="h-32"></BaseImage>
                 <RouterLink
                     class="text-white mt-2 mb-4"
                     :to="{ name: 'AdminLogin' }"
@@ -26,7 +26,7 @@
             </div>
             <div>
                 <h5 class="text-xl text-white font-semibold mb-2">
-                    Ponerse en contacto
+                    Llamanos
                 </h5>
                 <div
                     class="text-sky-100 tracking-widest text-lg flex flex-col"
@@ -43,12 +43,12 @@
                 </div>
             </div>
             <div class="sm:block hidden">
-                <h4 class="text-xl font-semibold mb-4 text-slate-200">Menu</h4>
+                <h4 class="text-xl font-semibold mb-4 text-sky-100">Ir A</h4>
                 <ul>
                     <li v-for="(link, index) in internalLinks" :key="index">
                         <router-link
                             :to="{ name: link.route }"
-                            class="text-slate-200"
+                            class="text-sky-100"
                             >{{ link.title }}</router-link
                         >
                     </li>

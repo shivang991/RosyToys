@@ -4,7 +4,7 @@
             <router-link
                 :to="{ name: 'AdminDashboard' }"
                 class="font-semibold text-white ml-2 mr-auto text-xl"
-                >Control Panel</router-link
+                >Panel de Administración</router-link
             >
             <div class="flex space-x-2">
                 <button
@@ -14,12 +14,12 @@
                     <FontAwesomeIcon
                         icon="fa fa-right-from-bracket"
                     ></FontAwesomeIcon>
-                    <span>Logout</span>
+                    <span>Cerrar Sesión</span>
                 </button>
                 <router-link
                     :to="{ name: 'Home' }"
                     class="py-1 px-4 border rounded-md border-white text-white"
-                    >Home</router-link
+                    >Inicio</router-link
                 >
             </div>
         </div>

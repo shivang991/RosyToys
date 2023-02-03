@@ -1,5 +1,5 @@
 <template>
-    <div class="flex">
+    <div :class="$route.name === 'Productos' ? 'flex' : 'hidden'">
         <input
             type="text"
             ref="searchInputEl"
@@ -49,15 +49,19 @@ function toggleSearchBox() {
 }
 
 let throttleId = null;
-const router = useRouter();
 const store = useStore();
 const isLoading = computed(() => store.state.products.isLoading);
+
+store.watch(
+    (state) => state.products.searchQuery,
+    (newQuery) => searchInputEl.value && (searchInputEl.value.value = newQuery)
+);
+
 function handleInput(event) {
     const inputValue = event.target.value;
     clearTimeout(throttleId);
     throttleId = setTimeout(
         () => {
-            router.push({ name: "Productos" });
             store.commit("products/SET_QUERY", inputValue);
             store.dispatch("products/refetch");
         },

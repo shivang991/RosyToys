@@ -1,9 +1,9 @@
 <template>
     <div class="mt-24 max-w-xl mx-4 md:mx-auto">
-        <h1 class="text-4xl text-slate-900 font-bold mb-2">Control Panel Login</h1>
+        <h1 class="text-4xl font-bold mb-2">Panel de Administradores</h1>
         <p class="mb-12 flex space-x-2">
             <span>¿No eres administrador o personal?</span>
-            <router-link class="text-sky-600 hover:underline" :to="{ name: 'Home' }">Ir al casa</router-link>
+            <router-link class="text-sky-600 hover:underline" :to="{ name: 'Home' }">Ir al Inicio</router-link>
         </p>
         <login-form></login-form>
     </div>

@@ -992,7 +992,7 @@ var _hoisted_4 = {
 
 var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
   "class": "mb-2 text-slate-500"
-}, "Access:", -1
+}, "Acceso:", -1
 /* HOISTED */
 );
 
@@ -1029,7 +1029,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           return $setup.fields.image = $event;
         }),
         "class": "w-40 h-40 object-cover rounded-full shadow mx-auto",
-        label: "Profile Image"
+        label: "Imagen de perfil"
       }, null, 8
       /* PROPS */
       , ["is-invalid", "modelValue"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BaseTextField"], {
@@ -1037,7 +1037,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
           return $setup.fields.name = $event;
         }),
-        label: "Name",
+        label: "Nombre",
         min: 4,
         max: 24,
         "is-invalid": $setup.invalidFields.has('name')
@@ -1049,7 +1049,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
           return $setup.fields.email = $event;
         }),
-        label: "Email"
+        label: "Correo"
       }, null, 8
       /* PROPS */
       , ["is-invalid", "modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BaseTextField"], {
@@ -1060,7 +1060,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         }),
         type: "password",
         min: 6,
-        label: "Password"
+        label: "Contraseña"
       }, null, 8
       /* PROPS */
       , ["is-invalid", "modelValue"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BaseTextField"], {
@@ -1070,7 +1070,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           return $setup.fields.passwordConfirm = $event;
         }),
         type: "password",
-        label: "Confirm Password"
+        label: "Confirmar contraseña"
       }, null, 8
       /* PROPS */
       , ["is-invalid", "modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [_hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.staffAccessOptions, function (option, index) {
@@ -1095,7 +1095,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         "class": "bg-sky-600 py-2 mt-8 text-white rounded-md w-full",
         disabled: $setup.isLoading,
         type: "submit"
-      }, [$setup.isLoading ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_10)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_11, " Create "))], 8
+      }, [$setup.isLoading ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_10)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_11, " Crear "))], 8
       /* PROPS */
       , _hoisted_9)], 40
       /* PROPS, HYDRATE_EVENTS */
@@ -1131,20 +1131,20 @@ var _hoisted_2 = {
 };
 
 var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("caption", {
-  "class": "text-xl text-slate-900 text-left"
+  "class": "text-xl text-left"
 }, " Admins: ", -1
 /* HOISTED */
 );
 
 var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", {
-  "class": "text-slate-900 h-10 px-12"
+  "class": "h-10 px-12"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", {
   "class": "text-left px-4"
-}, "Name"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", {
+}, "Nombre"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", {
   "class": "text-left px-4"
-}, "Email"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", {
+}, "Correo"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", {
   "class": "text-left px-4"
-}, "Joined")], -1
+}, "Se unió el")], -1
 /* HOISTED */
 );
 
@@ -1161,7 +1161,7 @@ var _hoisted_8 = {
   "class": "px-4"
 };
 
-var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Register a new account ");
+var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Registre una nueva cuenta ");
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_router_link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("router-link");
@@ -1170,7 +1170,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("tr", {
       key: index,
       "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)({
-        'bg-slate-100 shadow rounded': $setup.myUserId === admin.id
+        'bg-sky-100 shadow rounded': $setup.myUserId === admin.id
       })
     }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_5, [admin.profile_image_url ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)($setup["BaseImage"], {
       key: 0,
@@ -1260,7 +1260,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           return $setup.fields.image = $event;
         }),
         "class": "w-40 h-40 object-cover rounded-full shadow mx-auto",
-        label: "Profile Image"
+        label: "Imagen de perfil"
       }, null, 8
       /* PROPS */
       , ["default-src", "modelValue"]), $setup.profileImgUrl ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", {
@@ -1273,7 +1273,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
           return $setup.fields.name = $event;
         }),
-        label: "Name",
+        label: "Nombre",
         min: 4,
         max: 24,
         "is-invalid": $setup.invalidFields.has('name')
@@ -1283,7 +1283,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         "class": "bg-sky-600 py-2 mt-8 text-white rounded-md w-full",
         disabled: $setup.isSubimitting,
         type: "submit"
-      }, [$setup.isSubimitting ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_6)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_7, " Update "))], 8
+      }, [$setup.isSubimitting ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_6)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_7, " Actualizar "))], 8
       /* PROPS */
       , _hoisted_5)], 40
       /* PROPS, HYDRATE_EVENTS */
@@ -1375,7 +1375,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           return $setup.fields.image = $event;
         }),
         "class": "w-40 h-40 object-cover rounded-full shadow mx-auto",
-        label: "Profile Image"
+        label: "Imagen de perfil"
       }, null, 8
       /* PROPS */
       , ["default-src", "modelValue"]), $setup.profileImgUrl ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", {
@@ -1388,7 +1388,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
           return $setup.fields.name = $event;
         }),
-        label: "Name",
+        label: "Nombre",
         min: 4,
         max: 24,
         "is-invalid": $setup.invalidFields.has('name')
@@ -1416,7 +1416,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         "class": "bg-sky-600 py-2 mt-8 text-white rounded-md w-full",
         disabled: $setup.isSubimitting,
         type: "submit"
-      }, [$setup.isSubimitting ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_13)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_14, " Update "))], 8
+      }, [$setup.isSubimitting ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_13)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_14, " Actualizar "))], 8
       /* PROPS */
       , _hoisted_12)], 40
       /* PROPS, HYDRATE_EVENTS */
@@ -1448,10 +1448,10 @@ var _hoisted_1 = {
   "class": "px-4 pb-8 max-w-xs"
 };
 var _hoisted_2 = {
-  "class": "text-slate-900 mb-8 text-center"
+  "class": "mb-8 text-center"
 };
 
-var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "Are you sure you want to delete the staff:", -1
+var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "¿Estás seguro de querer borrar este usuario?:", -1
 /* HOISTED */
 );
 
@@ -1483,7 +1483,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         "class": "bg-sky-600 py-2 text-white rounded-md w-full",
         disabled: $setup.isLoading,
         type: "submit"
-      }, [$setup.isLoading ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_6)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_7, " Yes "))], 8
+      }, [$setup.isLoading ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_6)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_7, " Si "))], 8
       /* PROPS */
       , _hoisted_5)])];
     }),
@@ -1517,8 +1517,8 @@ var _hoisted_2 = {
 };
 
 var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", {
-  "class": "text-xl text-slate-900 py-2"
-}, "Staff:", -1
+  "class": "text-xl py-2"
+}, "Empleados / Usuarios:", -1
 /* HOISTED */
 );
 
@@ -1526,7 +1526,7 @@ var _hoisted_4 = {
   "class": "flex"
 };
 
-var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "Add", -1
+var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "Agregar", -1
 /* HOISTED */
 );
 
@@ -1534,7 +1534,7 @@ var _hoisted_6 = ["disabled"];
 
 var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "group-disabled:opacity-50"
-}, "Edit", -1
+}, "Editar", -1
 /* HOISTED */
 );
 
@@ -1542,7 +1542,7 @@ var _hoisted_8 = ["disabled"];
 
 var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "group-disabled:opacity-50"
-}, "Remove", -1
+}, "Eliminar", -1
 /* HOISTED */
 );
 
@@ -1551,7 +1551,7 @@ var _hoisted_10 = {
 };
 
 var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "col-start-1 row-start-1 h-16 bg-slate-200"
+  "class": "col-start-1 row-start-1 h-16 bg-sky-100"
 }, null, -1
 /* HOISTED */
 );
@@ -1561,14 +1561,14 @@ var _hoisted_12 = {
 };
 
 var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("tr", {
-  "class": "text-slate-900 h-16 px-12"
+  "class": "h-16 px-12"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", {
   "class": "text-left px-4"
-}, "Name"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", {
+}, "Nombre"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", {
   "class": "text-left px-4"
-}, "Email"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", {
+}, "Correo"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("th", {
   "class": "text-left px-4"
-}, "Created")], -1
+}, "Creado en")], -1
 /* HOISTED */
 );
 
@@ -1627,7 +1627,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   , _hoisted_8)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [_hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("table", _hoisted_12, [_hoisted_13, ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.data, function (staff, index) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("tr", {
       key: index,
-      "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["hover:bg-slate-100 cursor-pointer border-b", $setup.selectedStaff === staff ? 'border-transparent bg-slate-100 shadow rounded' : 'border-sky-600']),
+      "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["hover:bg-sky-100 cursor-pointer border-b", $setup.selectedStaff === staff ? 'border-transparent bg-sky-100 shadow rounded' : 'border-sky-600']),
       onClick: function onClick($event) {
         return $setup.selectedStaff = staff;
       }
@@ -1809,7 +1809,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [$props.shouldShow ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
         key: 0,
-        "class": "bg-gradient-to-b from-transparent to-slate-100 grid w-full justify-center z-10",
+        "class": "bg-gradient-to-b from-transparent to-sky-100 grid w-full justify-center z-10",
         style: (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeStyle)({
           height: "".concat($setup.bgHeight, "px")
         })
@@ -1821,7 +1821,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       }, {
         "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
           return [$setup.shouldShowContent ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-            "class": "text-xl text-slate-900 p-4",
+            "class": "text-xl p-4",
             onClick: _cache[0] || (_cache[0] = function ($event) {
               return $setup.shouldShowContent = false;
             })
@@ -1912,7 +1912,7 @@ var _hoisted_2 = {
 
 var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h4", {
   "class": "font-semibold mb-8 text-2xl"
-}, "User Manager", -1
+}, " Administrador de usuarios ", -1
 /* HOISTED */
 );
 
@@ -1921,8 +1921,8 @@ var _hoisted_4 = {
 };
 
 var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", {
-  "class": "text-slate-900 mb-4 text-xl"
-}, "Your profile:", -1
+  "class": "mb-4 text-xl"
+}, "Tu Perfil:", -1
 /* HOISTED */
 );
 
@@ -1953,7 +1953,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onClick: _cache[0] || (_cache[0] = function ($event) {
       return $setup.shouldShowEditMeModal = true;
     })
-  }, " Edit ")])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["AdminsTable"], {
+  }, " Editar ")])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["AdminsTable"], {
     data: $setup.adminUsers
   }, null, 8
   /* PROPS */

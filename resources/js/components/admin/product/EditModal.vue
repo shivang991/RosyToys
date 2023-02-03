@@ -18,17 +18,17 @@
                 ></BaseImageInput>
                 <BaseTextField
                     v-model="fields.title"
-                    label="Product Name"
+                    label="Nombre"
                 ></BaseTextField>
                 <BaseTextField
                     v-model="fields.description"
-                    label="Description"
+                    label="Descripción"
                     is-text-area
                 ></BaseTextField>
                 <div class="flex space-x-4">
                     <BaseTextField
                         v-model="fields.price"
-                        label="Price"
+                        label="Precio MXN"
                     ></BaseTextField>
                     <BaseTextField
                         v-model="fields.brand"
@@ -73,7 +73,7 @@
                     v-if="isFormSubmitting"
                 >
                 </span>
-                <span v-else> Update </span>
+                <span v-else> Modificar </span>
             </button>
         </form>
     </base-modal>

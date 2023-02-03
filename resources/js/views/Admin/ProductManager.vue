@@ -1,7 +1,7 @@
 <template>
     <div class="mt-8 py-8 w-11/12 lg:w-3/4 mx-auto rounded-md shadow">
         <div class="px-12 mb-8">
-            <h4 class="font-semibold mb-8 text-2xl">Product Manager</h4>
+            <h4 class="font-semibold mb-8 text-2xl">Administrador de Productos</h4>
             <div class="flex space-x-8">
                 <SearchBox></SearchBox>
                 <div class="flex">
@@ -9,7 +9,7 @@
                         @click="shouldShowAddProductModal = true"
                         class="px-4 flex items-center space-x-2 text-sky-600 border border-r-transparent border-sky-100 rounded-l-md"
                     >
-                        <span>Add</span>
+                        <span>Agregar</span>
                         <FontAwesomeIcon
                             icon="fa fa-plus"
                             class="text-sm"
@@ -20,7 +20,7 @@
                         @click="shouldShowEditProductModal = true"
                         class="px-4 flex items-center space-x-2 text-sky-600 border border-sky-100 group"
                     >
-                        <span class="group-disabled:opacity-50">Edit</span>
+                        <span class="group-disabled:opacity-50">Editar</span>
                         <FontAwesomeIcon
                             icon="fa fa-pen"
                             class="text-sm group-disabled:opacity-50"
@@ -31,7 +31,7 @@
                         @click="shouldShowRemoveProductModal = true"
                         class="px-4 flex items-center space-x-2 text-red-600 border border-red-100 border-l-transparent rounded-r-md group"
                     >
-                        <span class="group-disabled:opacity-50">Remove</span>
+                        <span class="group-disabled:opacity-50">Eliminar</span>
                         <FontAwesomeIcon
                             icon="fa fa-times"
                             class="text-sm group-disabled:opacity-50"
@@ -47,10 +47,10 @@
                 class="w-3/4 mx-auto col-start-1 row-start-1"
             >
                 <tr class="h-16 mb-8">
-                    <th class="text-left px-2 w-16">Id</th>
-                    <th class="text-left px-2">Image</th>
-                    <th class="text-left px-2">Name</th>
-                    <th class="text-left px-2">Price</th>
+                    <th class="text-left px-2 w-16">SKU</th>
+                    <th class="text-left px-2">Imagen</th>
+                    <th class="text-left px-2">Nombre</th>
+                    <th class="text-left px-2">Precio (MXN)</th>
                     <th class="text-left px-2"></th>
                 </tr>
                 <tr class="h-4"></tr>

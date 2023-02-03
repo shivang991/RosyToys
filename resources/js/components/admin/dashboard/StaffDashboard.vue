@@ -44,7 +44,7 @@ const visibleLinks = [
         route: "CustomerServiceManager",
     },
     {
-        title: "Product Manager",
+        title: "Administrador de Productos",
         image: "admin_product_manager.png",
         route: "ProductManager",
     },

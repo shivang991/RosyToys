@@ -315,7 +315,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       return $setup.fields.name = $event;
     }),
     "is-invalid": $setup.invalidFields.has('name'),
-    label: "Name"
+    label: "Nombre"
   }, null, 8
   /* PROPS */
   , ["modelValue", "is-invalid"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BaseTextField"], {
@@ -324,7 +324,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       return $setup.fields.email = $event;
     }),
     "is-invalid": $setup.invalidFields.has('email'),
-    label: "Email"
+    label: "Correo"
   }, null, 8
   /* PROPS */
   , ["modelValue", "is-invalid"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BaseTextField"], {
@@ -334,7 +334,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       return $setup.fields.password = $event;
     }),
     "is-invalid": $setup.invalidFields.has('password'),
-    label: "Password",
+    label: "Contraseña",
     type: "password"
   }, null, 8
   /* PROPS */
@@ -344,7 +344,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       return $setup.fields.passwordConfirm = $event;
     }),
     "is-invalid": $setup.invalidFields.has('passwordConfirm'),
-    label: "Comfirm password",
+    label: "Confirmar contraseña",
     type: "password"
   }, null, 8
   /* PROPS */
