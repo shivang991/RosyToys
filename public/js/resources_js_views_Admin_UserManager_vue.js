@@ -220,6 +220,7 @@ __webpack_require__.r(__webpack_exports__);
     var props = __props;
     var fields = (0,vue__WEBPACK_IMPORTED_MODULE_3__.reactive)({
       name: "",
+      password: "",
       image: null
     });
     var profileImgUrl = (0,vue__WEBPACK_IMPORTED_MODULE_3__.ref)(null);
@@ -241,7 +242,7 @@ __webpack_require__.r(__webpack_exports__);
       }
     });
 
-    function deletingProfileImage() {
+    function deleteProfileImage() {
       if (!isDeletingProfileImage.value) {
         isDeletingProfileImage.value = true;
         axios.authDelete("/api/user/admin/image").then(function (response) {
@@ -264,6 +265,7 @@ __webpack_require__.r(__webpack_exports__);
       isSubimitting.value = true;
       axios.postMultipart("/api/user/admin/update/", {
         name: fields.name,
+        password: fields.password,
         image: fields.image
       }).then(function (response) {
         if (response.data.message === "success") {
@@ -293,7 +295,7 @@ __webpack_require__.r(__webpack_exports__);
       store: store,
       adminProfile: adminProfile,
       axios: axios,
-      deletingProfileImage: deletingProfileImage,
+      deleteProfileImage: deleteProfileImage,
       handleSubmit: handleSubmit,
       BaseTextField: _components_global_BaseTextField_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
       BaseImageInput: _components_global_BaseImageInput_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
@@ -360,7 +362,8 @@ __webpack_require__.r(__webpack_exports__);
     var props = __props;
     var fields = (0,vue__WEBPACK_IMPORTED_MODULE_3__.reactive)({
       name: "",
-      image: null
+      image: null,
+      password: ""
     });
     var profileImgUrl = (0,vue__WEBPACK_IMPORTED_MODULE_3__.ref)(null);
     var isDeletingProfileImage = (0,vue__WEBPACK_IMPORTED_MODULE_3__.ref)(false);
@@ -399,6 +402,7 @@ __webpack_require__.r(__webpack_exports__);
       isSubimitting.value = true;
       axios.postMultipart("/api/user/staff/update/".concat(props.staff.id), {
         name: fields.name,
+        password: fields.password,
         image: fields.image
       }).then(function (response) {
         if (response.data.message === "success") {
@@ -1158,7 +1162,7 @@ var _hoisted_7 = {
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)($setup["BaseModal"], {
     "should-show": $props.shouldShow,
-    onClose: _cache[2] || (_cache[2] = function ($event) {
+    onClose: _cache[3] || (_cache[3] = function ($event) {
       return $setup.emit('update:shouldShow', false);
     })
   }, {
@@ -1178,7 +1182,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       /* PROPS */
       , ["default-src", "modelValue"]), $setup.profileImgUrl ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", {
         key: 0,
-        onClick: $setup.deletingProfileImage,
+        onClick: $setup.deleteProfileImage,
         type: "button",
         "class": "mt-2 py-1 px-2 border border-sky-600 rounded-md text-sky-600"
       }, [$setup.isDeletingProfileImage ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_3)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_4, " Quita la imagen "))])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BaseTextField"], {
@@ -1190,6 +1194,19 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         min: 4,
         max: 24,
         "is-invalid": $setup.invalidFields.has('name')
+      }, null, 8
+      /* PROPS */
+      , ["modelValue", "is-invalid"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BaseTextField"], {
+        modelValue: $setup.fields.password,
+        "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
+          return $setup.fields.password = $event;
+        }),
+        label: "Contraseña (opcional)",
+        type: "password",
+        placeholder: "Nueva contraseña",
+        min: 6,
+        max: 24,
+        "is-invalid": $setup.invalidFields.has('password')
       }, null, 8
       /* PROPS */
       , ["modelValue", "is-invalid"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
@@ -1246,7 +1263,7 @@ var _hoisted_7 = {
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)($setup["BaseModal"], {
     "should-show": $props.shouldShow,
-    onClose: _cache[2] || (_cache[2] = function ($event) {
+    onClose: _cache[3] || (_cache[3] = function ($event) {
       return $setup.emit('update:shouldShow', false);
     })
   }, {
@@ -1278,6 +1295,19 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         min: 4,
         max: 24,
         "is-invalid": $setup.invalidFields.has('name')
+      }, null, 8
+      /* PROPS */
+      , ["modelValue", "is-invalid"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BaseTextField"], {
+        modelValue: $setup.fields.password,
+        "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
+          return $setup.fields.password = $event;
+        }),
+        label: "Contraseña (opcional)",
+        type: "password",
+        placeholder: "Nueva contraseña",
+        min: 6,
+        max: 24,
+        "is-invalid": $setup.invalidFields.has('password')
       }, null, 8
       /* PROPS */
       , ["modelValue", "is-invalid"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {

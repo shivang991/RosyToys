@@ -13,7 +13,7 @@
                         label="Imagen de perfil"
                     ></BaseImageInput>
                     <button
-                        @click="deletingProfileImage"
+                        @click="deleteProfileImage"
                         v-if="profileImgUrl"
                         type="button"
                         class="mt-2 py-1 px-2 border border-sky-600 rounded-md text-sky-600"
@@ -32,6 +32,15 @@
                     :min="4"
                     :max="24"
                     :is-invalid="invalidFields.has('name')"
+                ></BaseTextField>
+                <BaseTextField
+                    v-model="fields.password"
+                    label="Contraseña (opcional)"
+                    type="password"
+                    placeholder="Nueva contraseña"
+                    :min="6"
+                    :max="24"
+                    :is-invalid="invalidFields.has('password')"
                 ></BaseTextField>
             </div>
             <button
@@ -69,6 +78,7 @@ const emit = defineEmits(["update:shouldShow", "success"]);
 
 const fields = reactive({
     name: "",
+    password: "",
     image: null,
 });
 
@@ -92,7 +102,7 @@ watch(
     }
 );
 
-function deletingProfileImage() {
+function deleteProfileImage() {
     if (!isDeletingProfileImage.value) {
         isDeletingProfileImage.value = true;
         axios.authDelete("/api/user/admin/image").then((response) => {
@@ -118,6 +128,7 @@ function handleSubmit() {
     axios
         .postMultipart("/api/user/admin/update/", {
             name: fields.name,
+            password: fields.password,
             image: fields.image,
         })
         .then((response) => {

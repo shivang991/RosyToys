@@ -33,6 +33,15 @@
                     :max="24"
                     :is-invalid="invalidFields.has('name')"
                 ></BaseTextField>
+                <BaseTextField
+                    v-model="fields.password"
+                    label="Contraseña (opcional)"
+                    type="password"
+                    placeholder="Nueva contraseña"
+                    :min="6"
+                    :max="24"
+                    :is-invalid="invalidFields.has('password')"
+                ></BaseTextField>
             </div>
             <button
                 class="bg-sky-600 py-2 mt-8 text-white rounded-md w-full"
@@ -73,6 +82,7 @@ const emit = defineEmits(["update:shouldShow", "success"]);
 const fields = reactive({
     name: "",
     image: null,
+    password: "",
 });
 
 const profileImgUrl = ref(null);
@@ -118,6 +128,7 @@ function handleSubmit() {
     axios
         .postMultipart(`/api/user/staff/update/${props.staff.id}`, {
             name: fields.name,
+            password: fields.password,
             image: fields.image,
         })
         .then((response) => {

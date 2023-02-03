@@ -77,6 +77,7 @@ class AdminController extends Controller
     {
         $data = Request::validate([
             'name' => 'required|min:4|max:24',
+            'password' => 'required|min:6'
         ]);
         $user = Auth::user();
         $image = Request::file('image');
@@ -89,6 +90,10 @@ class AdminController extends Controller
             $user->profile_image_path = $imgPath;
         }
         $user->name = $data['name'];
+
+        if ($data['password'])
+            $user->password = Hash::make($data['password']);
+
         $user->save();
         return Response::json(['message' => 'success', 'profile' => $user]);
     }

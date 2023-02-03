@@ -19,28 +19,20 @@ class StaffController extends Controller
         $this->middleware('admin')->except('show');
     }
 
-    private function _getValidatedData(bool $shouldValidateEmailPass)
-    {
-        $fields = [
-            'name' => 'required|min:4|max:24',
-        ];
-
-        if ($shouldValidateEmailPass) {
-            $fields['password'] = 'required|min:6';
-            $fields['email'] = 'required|email|unique:users';
-        }
-
-        return collect(Request::validate($fields));
-    }
-
     public function store()
     {
-        $data = $this->_getValidatedData(true);
+        $data = Request::validate([
+            'name' => 'required|min:4|max:24',
+            'password' => 'required|min:6',
+            'email' => 'required|email|unique:users'
+        ]);
 
-        $userAttributes = $data->only('name', 'email')->merge([
+        $userAttributes = [
+            'name' => $data['email'],
+            'email' => $data['name'],
+            'role' => 'staff',
             'password' => Hash::make($data['password']),
-            'role' => 'staff'
-        ])->toArray();
+        ];
 
         $image = Request::file('image');
         if ($image) {
@@ -92,7 +84,12 @@ class StaffController extends Controller
 
     public function update(User $user)
     {
-        $data = $this->_getValidatedData(false);
+        $data = Request::validate(
+            [
+                'name' => 'required|min:4|max:24',
+                'password' => 'min:6',
+            ]
+        );
         $image = Request::file('image');
         if ($image) {
             if ($user->profile_image_path)
@@ -102,6 +99,10 @@ class StaffController extends Controller
             $user->profile_image_url = $imgUrl;
             $user->profile_image_path = $imgPath;
         }
+
+        if ($data['password'])
+            $user->password = Hash::make($data['password']);
+
         $user->name = $data['name'];
         $user->save();
         return Response::json(['message' => 'success']);

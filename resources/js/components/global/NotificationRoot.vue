@@ -2,7 +2,8 @@
     <Teleport to="#app-modals">
         <Transition name="modal">
             <div
-                class="fixed mt-8 w-80 mx-auto z-20 bg-sky-100 shadow-xl rounded-md overflow-hidden"
+                class="fixed mt-8 w-80 mx-auto z-20 shadow-xl rounded-md overflow-hidden"
+                :class="data.type === 'error' ? 'bg-red-50' : 'bg-sky-100'"
                 v-if="shouldShowNotification"
             >
                 <div
