@@ -29,7 +29,7 @@
                     <button
                         :disabled="selectedProductId === null"
                         @click="shouldShowRemoveProductModal = true"
-                        class="px-4 flex items-center space-x-2 text-red-600 border border-red-100 border-l-transparent rounded-r-md group"
+                        class="px-4 flex items-center space-x-2 text-red-600 border border-red-50 border-l-transparent rounded-r-md group"
                     >
                         <span class="group-disabled:opacity-50">Eliminar</span>
                         <FontAwesomeIcon
@@ -51,7 +51,6 @@
                     <th class="text-left px-2">Imagen</th>
                     <th class="text-left px-2">Nombre</th>
                     <th class="text-left px-2">Precio (MXN)</th>
-                    <th class="text-left px-2"></th>
                 </tr>
                 <tr class="h-4"></tr>
                 <tr
@@ -79,28 +78,8 @@
                             class="w-full h-24 mx-auto object-cover"
                         ></BaseImage>
                     </td>
-                    <td class="px-2">{{ product.title }}</td>
+                    <td class="px-2 w-full">{{ product.title }}</td>
                     <td class="px-2">${{ product.price }}</td>
-                    <td class="px-2 py-4 space-y-2 flex flex-col items-end">
-                        <p
-                            v-if="product.is_limited_edition"
-                            class="text-sm bg-gray-200 text-gray-600 border border-gray-600 px-2 rounded-full py-1 w-max"
-                        >
-                            Limited Edition
-                        </p>
-                        <p
-                            v-if="product.is_low_stock"
-                            class="text-sm bg-red-50 text-red-600 border border-red-600 px-2 rounded-full py-1 w-max"
-                        >
-                            Low stock
-                        </p>
-                        <p
-                            v-if="product.is_promoted"
-                            class="text-sm text-sky-600 border border-sky-600 px-2 rounded-full py-1 w-max"
-                        >
-                            Promoted
-                        </p>
-                    </td>
                 </tr>
             </table>
         </div>

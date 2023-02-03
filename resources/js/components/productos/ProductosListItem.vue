@@ -7,28 +7,6 @@
             :src="imgSrc"
             class="w-40 h-40 object-cover mb-4 rounded mx-auto"
         />
-        <div
-            class="flex flex-col items-start mb-4 space-y-2"
-        >
-            <p
-                class="px-2 text-sm bg-red-50 border border-red-600 text-red-600 rounded-full"
-                v-if="isLowStock"
-            >
-                Existencias bajas
-            </p>
-            <p
-                class="px-2 text-sm bg-white text-slate-500 rounded-full border border-slate-500"
-                v-if="isLimited"
-            >
-                Edición limitada
-            </p>
-            <p
-                class="px-2 text-sm bg-white text-sky-600 rounded-full border border-sky-600"
-                v-if="isPromoted"
-            >
-                Promocionado
-            </p>
-        </div>
         <div class="flex justify-between space-x-8">
             <p class="leading-none">
                 {{ title }}

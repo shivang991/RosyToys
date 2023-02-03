@@ -1512,7 +1512,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   })], 8
   /* PROPS */
   , _hoisted_6), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-    "class": "px-4 flex items-center space-x-2 text-red-600 border border-red-100 border-l-transparent rounded-r-md group",
+    "class": "px-4 flex items-center space-x-2 text-red-600 border border-red-50 border-l-transparent rounded-r-md group",
     disabled: $setup.selectedStaff === null,
     onClick: _cache[2] || (_cache[2] = function ($event) {
       return $setup.shouldShowRemoveModal = true;

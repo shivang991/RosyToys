@@ -35,34 +35,15 @@
                         label="Brand"
                     ></BaseTextField>
                 </div>
-            </div>
-            <div class="grid grid-cols-2">
-                <div class="flex space-x-2">
-                    <input
-                        type="checkbox"
-                        class="accent-sky-600"
-                        v-model="fields.isLimitedEdition"
-                    />
-                    <label>Limited edition</label>
-                </div>
-                <div class="flex space-x-2">
-                    <input
-                        type="checkbox"
-                        class="accent-sky-600"
-                        v-model="fields.isLowStock"
-                    />
-                    <label>Low stock</label>
-                </div>
                 <div class="flex space-x-2">
                     <input
                         type="checkbox"
                         class="accent-sky-600"
                         v-model="fields.isPromoted"
                     />
-                    <label>Promoted</label>
+                    <label>Tendencia</label>
                 </div>
             </div>
-
             <button
                 class="bg-sky-600 py-2 mt-8 text-white rounded-md w-full"
                 :disabled="isFormSubmitting"
@@ -109,8 +90,6 @@ const fields = reactive({
     description: "",
     price: "",
     brand: "",
-    isLimitedEdition: false,
-    isLowStock: false,
     isPromoted: false,
 });
 
@@ -140,8 +119,6 @@ function handleSubmit() {
     axios
         .postMultipart(`/api/product/update/${props.productId}`, {
             ...data,
-            is_limited_edition: Number(isLimitedEdition),
-            is_low_stock: Number(isLowStock),
             is_promoted: Number(isPromoted),
         })
         .then((response) => {
@@ -173,8 +150,6 @@ watch(
             fields.description = newProduct.description;
             fields.price = String(newProduct.price);
             fields.brand = newProduct.brand;
-            fields.isLimitedEdition = Boolean(newProduct.is_limited_edition);
-            fields.isLowStock = Boolean(newProduct.is_low_stock);
             fields.isPromoted = Boolean(newProduct.is_promoted);
             productImgSrc.value = newProduct.image_url;
             isFetchingProduct.value = false;

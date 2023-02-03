@@ -25,7 +25,7 @@
                     ></FontAwesomeIcon>
                 </button>
                 <button
-                    class="px-4 flex items-center space-x-2 text-red-600 border border-red-100 border-l-transparent rounded-r-md group"
+                    class="px-4 flex items-center space-x-2 text-red-600 border border-red-50 border-l-transparent rounded-r-md group"
                     :disabled="selectedStaff === null"
                     @click="shouldShowRemoveModal = true"
                 >

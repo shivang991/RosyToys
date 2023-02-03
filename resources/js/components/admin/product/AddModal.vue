@@ -34,31 +34,13 @@
                         label="Marca"
                     ></BaseTextField>
                 </div>
-                <div class="grid grid-cols-2">
-                    <div class="flex space-x-2">
-                        <input
-                            type="checkbox"
-                            class="accent-sky-600"
-                            v-model="fields.isLimitedEdition"
-                        />
-                        <label>Limited edition</label>
-                    </div>
-                    <div class="flex space-x-2">
-                        <input
-                            type="checkbox"
-                            class="accent-sky-600"
-                            v-model="fields.isLowStock"
-                        />
-                        <label>Low stock</label>
-                    </div>
-                    <div class="flex space-x-2">
-                        <input
-                            type="checkbox"
-                            class="accent-sky-600"
-                            v-model="fields.isPromoted"
-                        />
-                        <label>Promoted</label>
-                    </div>
+                <div class="flex space-x-2">
+                    <input
+                        type="checkbox"
+                        class="accent-sky-600"
+                        v-model="fields.isPromoted"
+                    />
+                    <label>Tendencia</label>
                 </div>
             </div>
             <button
@@ -84,6 +66,7 @@ import BaseModal from "@/components/global/BaseModal.vue";
 import { reactive, ref } from "vue";
 import useAxios from "@/plugins/Axios";
 import { fireNotification, NotificationTypes } from "@/plugins/Notifications";
+import { useStore } from "vuex";
 
 defineProps({
     shouldShow: {
@@ -98,8 +81,6 @@ const fields = reactive({
     description: "",
     price: "",
     brand: "",
-    isLimitedEdition: false,
-    isLowStock: false,
     isPromoted: false,
 });
 
@@ -108,7 +89,7 @@ const invalidFields = reactive(new Set());
 const isLoading = ref(false);
 
 const axios = useAxios();
-
+const store = useStore();
 function handleSubmit() {
     invalidFields.clear();
     // Validation: All fields except booleans required
@@ -128,8 +109,6 @@ function handleSubmit() {
     axios
         .postMultipart("/api/product/create", {
             ...data,
-            is_limited_edition: Number(isLimitedEdition),
-            is_low_stock: Number(isLowStock),
             is_promoted: Number(isPromoted),
         })
         .then((response) => {
@@ -139,11 +118,10 @@ function handleSubmit() {
                 fields.price = "";
                 fields.brand = "";
                 fields.description = "";
-                fields.isLimitedEdition = false;
-                fields.isLowStock = false;
                 fields.isPromoted = false;
                 emit("update:shouldShow", false);
                 fireNotification(NotificationTypes.PRODUCT_CREATED);
+                store.dispatch("products/refetch");
             }
         })
         .catch((error) => {
