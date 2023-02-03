@@ -41,10 +41,10 @@ class LoginController extends Controller
             $staffAbilites = $user->staffAbilities()->first();
 
             if ($staffAbilites) {
-                if ($staffAbilites->carouselManager) array_push($tokenAbilites, 'carouselManager');
+                // if ($staffAbilites->carouselManager) array_push($tokenAbilites, 'carouselManager');
                 if ($staffAbilites->productManager) array_push($tokenAbilites, 'productManager');
-                if ($staffAbilites->customerServiceManager) array_push($tokenAbilites, 'customerServiceManager');
-                if ($staffAbilites->postCreator) array_push($tokenAbilites, 'postCreator');
+                // if ($staffAbilites->customerServiceManager) array_push($tokenAbilites, 'customerServiceManager');
+                // if ($staffAbilites->postCreator) array_push($tokenAbilites, 'postCreator');
             }
             $token = $user->createToken('api token', $tokenAbilites);
 

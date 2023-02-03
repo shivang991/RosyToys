@@ -12,10 +12,7 @@ class StaffAbilities extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        'carouselManager',
         'productManager',
-        'customerServiceManager',
-        'postCreator'
     ];
 
 

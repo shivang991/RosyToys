@@ -40,24 +40,6 @@
                         label="Confirmar contraseña"
                     ></BaseTextField>
                 </div>
-                <div>
-                    <p class="mb-2 text-slate-500">Acceso:</p>
-                    <div class="grid grid-cols-2 gap-x-4">
-                        <div
-                            class="flex space-x-2 items-center"
-                            v-for="(option, index) in staffAccessOptions"
-                            :key="index"
-                        >
-                            <input
-                                type="checkbox"
-                                v-model="accessInput"
-                                :value="option"
-                                class="accent-sky-600"
-                            />
-                            <p class="capitalize">{{ option }}</p>
-                        </div>
-                    </div>
-                </div>
             </div>
             <button
                 class="bg-sky-600 py-2 mt-8 text-white rounded-md w-full"
@@ -82,7 +64,6 @@ import BaseModal from "@/components/global/BaseModal.vue";
 import { reactive, ref } from "vue";
 import useAxios from "@/plugins/Axios";
 import { fireNotification, NotificationTypes } from "@/plugins/Notifications";
-import { staffAccessOptions } from "@/store/auth";
 
 defineProps({
     shouldShow: {
@@ -98,8 +79,6 @@ const fields = reactive({
     email: "",
     image: null,
 });
-
-const accessInput = ref(new Set());
 
 const invalidFields = reactive(new Set());
 
@@ -129,12 +108,6 @@ function handleSubmit() {
             email: fields.email,
             image: fields.image,
             password: fields.password,
-            ...Object.fromEntries(
-                staffAccessOptions.map((v) => [
-                    v,
-                    Number(accessInput.value.has(v)),
-                ])
-            ),
         })
         .then((response) => {
             if (response.data.message === "success") {
@@ -143,7 +116,6 @@ function handleSubmit() {
                 fields.email = "";
                 fields.password = "";
                 fields.passwordConfirm = "";
-                accessInput.value = [];
                 emit("update:shouldShow", false);
                 emit("success");
                 fireNotification(NotificationTypes.STAFF_CREATED);

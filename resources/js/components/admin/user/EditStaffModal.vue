@@ -3,12 +3,7 @@
         :should-show="shouldShow"
         @close="emit('update:shouldShow', false)"
     >
-        <div class="py-8 flex justify-center w-80" v-if="isFetchingStaffAccess">
-            <div
-                class="w-8 h-8 border-4 border-sky-600 border-b-transparent rounded-full animate-spin"
-            ></div>
-        </div>
-        <form class="px-4 pb-8" @submit.prevent="handleSubmit" v-else>
+        <form class="px-4 pb-8" @submit.prevent="handleSubmit">
             <div class="space-y-8">
                 <div>
                     <BaseImageInput
@@ -18,7 +13,7 @@
                         label="Imagen de perfil"
                     ></BaseImageInput>
                     <button
-                        @click="deletingProfileImage"
+                        @click="deleteProfileImage"
                         v-if="profileImgUrl"
                         type="button"
                         class="mt-2 py-1 px-2 border border-sky-600 rounded-md text-sky-600"
@@ -38,24 +33,6 @@
                     :max="24"
                     :is-invalid="invalidFields.has('name')"
                 ></BaseTextField>
-                <div>
-                    <p class="mb-2 text-slate-500">Access:</p>
-                    <div class="grid grid-cols-2 gap-x-4">
-                        <div
-                            class="flex space-x-2 items-center"
-                            v-for="(permissionKey, index) in staffAccessOptions"
-                            :key="index"
-                        >
-                            <input
-                                type="checkbox"
-                                v-model="accessInput"
-                                :value="permissionKey"
-                                class="accent-sky-600"
-                            />
-                            <p class="capitalize">{{ permissionKey }}</p>
-                        </div>
-                    </div>
-                </div>
             </div>
             <button
                 class="bg-sky-600 py-2 mt-8 text-white rounded-md w-full"
@@ -80,7 +57,6 @@ import BaseModal from "@/components/global/BaseModal.vue";
 import { reactive, ref, watch } from "vue";
 import useAxios from "@/plugins/Axios";
 import { fireNotification, NotificationTypes } from "@/plugins/Notifications";
-import { staffAccessOptions } from "@/store/auth";
 
 const props = defineProps({
     shouldShow: {
@@ -101,10 +77,8 @@ const fields = reactive({
 
 const profileImgUrl = ref(null);
 const isDeletingProfileImage = ref(false);
-const accessInput = ref(new Set());
 const invalidFields = reactive(new Set());
 const isSubimitting = ref(false);
-const isFetchingStaffAccess = ref(false);
 const axios = useAxios();
 
 watch(
@@ -115,26 +89,11 @@ watch(
             fields.name = currentStaff.name;
             fields.image = null;
             profileImgUrl.value = currentStaff.profile_image_url;
-            isFetchingStaffAccess.value = true;
-            accessInput.value.clear();
-            axios
-                .authGet(`/api/user/staff/${currentStaff.id}`)
-                .then((response) => {
-                    if (response.data) {
-                        Object.entries(response.data).forEach(
-                            ([key, value]) => {
-                                if (value && staffAccessOptions.includes(key))
-                                    accessInput.value.add(key);
-                            }
-                        );
-                        isFetchingStaffAccess.value = false;
-                    }
-                });
         }
     }
 );
 
-function deletingProfileImage() {
+function deleteProfileImage() {
     if (!isDeletingProfileImage.value) {
         isDeletingProfileImage.value = true;
         axios
@@ -160,12 +119,6 @@ function handleSubmit() {
         .postMultipart(`/api/user/staff/update/${props.staff.id}`, {
             name: fields.name,
             image: fields.image,
-            ...Object.fromEntries(
-                staffAccessOptions.map((v) => [
-                    v,
-                    Number(accessInput.value.has(v)),
-                ])
-            ),
         })
         .then((response) => {
             if (response.data.message === "success") {

@@ -23,11 +23,6 @@ class StaffController extends Controller
     {
         $fields = [
             'name' => 'required|min:4|max:24',
-            // Access
-            'carouselManager' => 'boolean',
-            'productManager' => 'boolean',
-            'customerServiceManager' => 'boolean',
-            'postCreator' => 'boolean'
         ];
 
         if ($shouldValidateEmailPass) {
@@ -56,7 +51,8 @@ class StaffController extends Controller
         }
 
         $abilities = new StaffAbilities(
-            $data->only('carouselManager', 'productManager', 'customerServiceManager', 'postCreator')->toArray()
+            ['productManager' => true]
+            // $data->only('carouselManager', 'productManager', 'customerServiceManager', 'postCreator')->toArray()
         );
 
         User::create($userAttributes)->staffAbilities()->save($abilities);
@@ -91,7 +87,6 @@ class StaffController extends Controller
             if (!$abilties) return Response::json([]);
             return Response::json($abilties);
         }
-
         return Response::json(['message' => 'unauthenticated'], 401);
     }
 
@@ -109,11 +104,6 @@ class StaffController extends Controller
         }
         $user->name = $data['name'];
         $user->save();
-
-        $abilities = $user->staffAbilities()->first();
-        if ($abilities)
-            $abilities->update($data->only('carouselManager', 'productManager', 'customerServiceManager', 'postCreator')->toArray());
-
         return Response::json(['message' => 'success']);
     }
 }

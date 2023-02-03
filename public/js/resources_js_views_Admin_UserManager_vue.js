@@ -17,13 +17,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 /* harmony import */ var _plugins_Axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/plugins/Axios */ "./resources/js/plugins/Axios.js");
 /* harmony import */ var _plugins_Notifications__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/plugins/Notifications */ "./resources/js/plugins/Notifications.js");
-/* harmony import */ var _store_auth__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/store/auth */ "./resources/js/store/auth.js");
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -35,7 +28,6 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
 
 
 
@@ -63,7 +55,6 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
       email: "",
       image: null
     });
-    var accessInput = (0,vue__WEBPACK_IMPORTED_MODULE_3__.ref)(new Set());
     var invalidFields = (0,vue__WEBPACK_IMPORTED_MODULE_3__.reactive)(new Set());
     var isLoading = (0,vue__WEBPACK_IMPORTED_MODULE_3__.ref)(false);
     var axios = (0,_plugins_Axios__WEBPACK_IMPORTED_MODULE_4__["default"])();
@@ -85,21 +76,18 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
       if (fields.password !== fields.passwordConfirm) invalidFields.add("passwordConfirm");
       if (invalidFields.size) return;
       isLoading.value = true;
-      axios.postMultipart("/api/user/staff/create", _objectSpread({
+      axios.postMultipart("/api/user/staff/create", {
         name: fields.name,
         email: fields.email,
         image: fields.image,
         password: fields.password
-      }, Object.fromEntries(_store_auth__WEBPACK_IMPORTED_MODULE_6__.staffAccessOptions.map(function (v) {
-        return [v, Number(accessInput.value.has(v))];
-      })))).then(function (response) {
+      }).then(function (response) {
         if (response.data.message === "success") {
           fields.image = null;
           fields.name = "";
           fields.email = "";
           fields.password = "";
           fields.passwordConfirm = "";
-          accessInput.value = [];
           emit("update:shouldShow", false);
           emit("success");
           (0,_plugins_Notifications__WEBPACK_IMPORTED_MODULE_5__.fireNotification)(_plugins_Notifications__WEBPACK_IMPORTED_MODULE_5__.NotificationTypes.STAFF_CREATED);
@@ -114,7 +102,6 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
     var __returned__ = {
       fields: fields,
-      accessInput: accessInput,
       invalidFields: invalidFields,
       isLoading: isLoading,
       axios: axios,
@@ -127,8 +114,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
       ref: vue__WEBPACK_IMPORTED_MODULE_3__.ref,
       useAxios: _plugins_Axios__WEBPACK_IMPORTED_MODULE_4__["default"],
       fireNotification: _plugins_Notifications__WEBPACK_IMPORTED_MODULE_5__.fireNotification,
-      NotificationTypes: _plugins_Notifications__WEBPACK_IMPORTED_MODULE_5__.NotificationTypes,
-      staffAccessOptions: _store_auth__WEBPACK_IMPORTED_MODULE_6__.staffAccessOptions
+      NotificationTypes: _plugins_Notifications__WEBPACK_IMPORTED_MODULE_5__.NotificationTypes
     };
     Object.defineProperty(__returned__, '__isScriptSetup', {
       enumerable: false,
@@ -347,26 +333,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 /* harmony import */ var _plugins_Axios__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @/plugins/Axios */ "./resources/js/plugins/Axios.js");
 /* harmony import */ var _plugins_Notifications__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/plugins/Notifications */ "./resources/js/plugins/Notifications.js");
-/* harmony import */ var _store_auth__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/store/auth */ "./resources/js/store/auth.js");
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
-
 
 
 
@@ -398,10 +364,8 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
     });
     var profileImgUrl = (0,vue__WEBPACK_IMPORTED_MODULE_3__.ref)(null);
     var isDeletingProfileImage = (0,vue__WEBPACK_IMPORTED_MODULE_3__.ref)(false);
-    var accessInput = (0,vue__WEBPACK_IMPORTED_MODULE_3__.ref)(new Set());
     var invalidFields = (0,vue__WEBPACK_IMPORTED_MODULE_3__.reactive)(new Set());
     var isSubimitting = (0,vue__WEBPACK_IMPORTED_MODULE_3__.ref)(false);
-    var isFetchingStaffAccess = (0,vue__WEBPACK_IMPORTED_MODULE_3__.ref)(false);
     var axios = (0,_plugins_Axios__WEBPACK_IMPORTED_MODULE_4__["default"])();
     (0,vue__WEBPACK_IMPORTED_MODULE_3__.watch)(function () {
       return props.shouldShow;
@@ -412,24 +376,10 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
         fields.name = currentStaff.name;
         fields.image = null;
         profileImgUrl.value = currentStaff.profile_image_url;
-        isFetchingStaffAccess.value = true;
-        accessInput.value.clear();
-        axios.authGet("/api/user/staff/".concat(currentStaff.id)).then(function (response) {
-          if (response.data) {
-            Object.entries(response.data).forEach(function (_ref2) {
-              var _ref3 = _slicedToArray(_ref2, 2),
-                  key = _ref3[0],
-                  value = _ref3[1];
-
-              if (value && _store_auth__WEBPACK_IMPORTED_MODULE_6__.staffAccessOptions.includes(key)) accessInput.value.add(key);
-            });
-            isFetchingStaffAccess.value = false;
-          }
-        });
       }
     });
 
-    function deletingProfileImage() {
+    function deleteProfileImage() {
       if (!isDeletingProfileImage.value) {
         isDeletingProfileImage.value = true;
         axios.authDelete("/api/user/staff/image/".concat(props.staff.id)).then(function (response) {
@@ -447,12 +397,10 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
       if (!fields.name) invalidFields.add("name");
       if (invalidFields.size) return;
       isSubimitting.value = true;
-      axios.postMultipart("/api/user/staff/update/".concat(props.staff.id), _objectSpread({
+      axios.postMultipart("/api/user/staff/update/".concat(props.staff.id), {
         name: fields.name,
         image: fields.image
-      }, Object.fromEntries(_store_auth__WEBPACK_IMPORTED_MODULE_6__.staffAccessOptions.map(function (v) {
-        return [v, Number(accessInput.value.has(v))];
-      })))).then(function (response) {
+      }).then(function (response) {
         if (response.data.message === "success") {
           emit("update:shouldShow", false);
           emit("success");
@@ -472,12 +420,10 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
       fields: fields,
       profileImgUrl: profileImgUrl,
       isDeletingProfileImage: isDeletingProfileImage,
-      accessInput: accessInput,
       invalidFields: invalidFields,
       isSubimitting: isSubimitting,
-      isFetchingStaffAccess: isFetchingStaffAccess,
       axios: axios,
-      deletingProfileImage: deletingProfileImage,
+      deleteProfileImage: deleteProfileImage,
       handleSubmit: handleSubmit,
       BaseTextField: _components_global_BaseTextField_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
       BaseImageInput: _components_global_BaseImageInput_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
@@ -487,8 +433,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
       watch: vue__WEBPACK_IMPORTED_MODULE_3__.watch,
       useAxios: _plugins_Axios__WEBPACK_IMPORTED_MODULE_4__["default"],
       fireNotification: _plugins_Notifications__WEBPACK_IMPORTED_MODULE_5__.fireNotification,
-      NotificationTypes: _plugins_Notifications__WEBPACK_IMPORTED_MODULE_5__.NotificationTypes,
-      staffAccessOptions: _store_auth__WEBPACK_IMPORTED_MODULE_6__.staffAccessOptions
+      NotificationTypes: _plugins_Notifications__WEBPACK_IMPORTED_MODULE_5__.NotificationTypes
     };
     Object.defineProperty(__returned__, '__isScriptSetup', {
       enumerable: false,
@@ -989,32 +934,18 @@ var _hoisted_3 = {
 var _hoisted_4 = {
   "class": "flex space-x-4"
 };
-
-var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
-  "class": "mb-2 text-slate-500"
-}, "Acceso:", -1
-/* HOISTED */
-);
-
+var _hoisted_5 = ["disabled"];
 var _hoisted_6 = {
-  "class": "grid grid-cols-2 gap-x-4"
-};
-var _hoisted_7 = ["value"];
-var _hoisted_8 = {
-  "class": "capitalize"
-};
-var _hoisted_9 = ["disabled"];
-var _hoisted_10 = {
   key: 0,
   "class": "h-4 block w-4 border-2 my-1 rounded-full border-b-transparent border-white animate-spin mx-auto"
 };
-var _hoisted_11 = {
+var _hoisted_7 = {
   key: 1
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)($setup["BaseModal"], {
     "should-show": $props.shouldShow,
-    onClose: _cache[6] || (_cache[6] = function ($event) {
+    onClose: _cache[5] || (_cache[5] = function ($event) {
       return $setup.emit('update:shouldShow', false);
     })
   }, {
@@ -1073,31 +1004,13 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         label: "Confirmar contraseña"
       }, null, 8
       /* PROPS */
-      , ["is-invalid", "modelValue"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [_hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.staffAccessOptions, function (option, index) {
-        return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
-          "class": "flex space-x-2 items-center",
-          key: index
-        }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-          type: "checkbox",
-          "onUpdate:modelValue": _cache[5] || (_cache[5] = function ($event) {
-            return $setup.accessInput = $event;
-          }),
-          value: option,
-          "class": "accent-sky-600"
-        }, null, 8
-        /* PROPS */
-        , _hoisted_7), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelCheckbox, $setup.accessInput]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(option), 1
-        /* TEXT */
-        )]);
-      }), 128
-      /* KEYED_FRAGMENT */
-      ))])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+      , ["is-invalid", "modelValue"])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
         "class": "bg-sky-600 py-2 mt-8 text-white rounded-md w-full",
         disabled: $setup.isLoading,
         type: "submit"
-      }, [$setup.isLoading ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_10)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_11, " Crear "))], 8
+      }, [$setup.isLoading ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_6)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_7, " Crear "))], 8
       /* PROPS */
-      , _hoisted_9)], 40
+      , _hoisted_5)], 40
       /* PROPS, HYDRATE_EVENTS */
       , _hoisted_1)];
     }),
@@ -1311,64 +1224,37 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
-var _hoisted_1 = {
-  key: 0,
-  "class": "py-8 flex justify-center w-80"
-};
-
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "w-8 h-8 border-4 border-sky-600 border-b-transparent rounded-full animate-spin"
-}, null, -1
-/* HOISTED */
-);
-
-var _hoisted_3 = [_hoisted_2];
-var _hoisted_4 = ["onSubmit"];
-var _hoisted_5 = {
+var _hoisted_1 = ["onSubmit"];
+var _hoisted_2 = {
   "class": "space-y-8"
 };
-var _hoisted_6 = {
+var _hoisted_3 = {
   key: 0,
   "class": "w-4 block h-4 border-2 my-1 border-b-transparent border-sky-600 animate-spin rounded-full"
 };
-var _hoisted_7 = {
+var _hoisted_4 = {
   key: 1
 };
-
-var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", {
-  "class": "mb-2 text-slate-500"
-}, "Access:", -1
-/* HOISTED */
-);
-
-var _hoisted_9 = {
-  "class": "grid grid-cols-2 gap-x-4"
-};
-var _hoisted_10 = ["value"];
-var _hoisted_11 = {
-  "class": "capitalize"
-};
-var _hoisted_12 = ["disabled"];
-var _hoisted_13 = {
+var _hoisted_5 = ["disabled"];
+var _hoisted_6 = {
   key: 0,
   "class": "h-4 block w-4 border-2 my-1 rounded-full border-b-transparent border-white animate-spin mx-auto"
 };
-var _hoisted_14 = {
+var _hoisted_7 = {
   key: 1
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)($setup["BaseModal"], {
     "should-show": $props.shouldShow,
-    onClose: _cache[3] || (_cache[3] = function ($event) {
+    onClose: _cache[2] || (_cache[2] = function ($event) {
       return $setup.emit('update:shouldShow', false);
     })
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [$setup.isFetchingStaffAccess ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, _hoisted_3)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("form", {
-        key: 1,
+      return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
         "class": "px-4 pb-8",
         onSubmit: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)($setup.handleSubmit, ["prevent"])
-      }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BaseImageInput"], {
+      }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BaseImageInput"], {
         "default-src": $setup.profileImgUrl,
         modelValue: $setup.fields.image,
         "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
@@ -1380,10 +1266,10 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       /* PROPS */
       , ["default-src", "modelValue"]), $setup.profileImgUrl ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", {
         key: 0,
-        onClick: $setup.deletingProfileImage,
+        onClick: $setup.deleteProfileImage,
         type: "button",
         "class": "mt-2 py-1 px-2 border border-sky-600 rounded-md text-sky-600"
-      }, [$setup.isDeletingProfileImage ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_6)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_7, " Quita la imagen "))])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BaseTextField"], {
+      }, [$setup.isDeletingProfileImage ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_3)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_4, " Quita la imagen "))])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BaseTextField"], {
         modelValue: $setup.fields.name,
         "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
           return $setup.fields.name = $event;
@@ -1394,33 +1280,15 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         "is-invalid": $setup.invalidFields.has('name')
       }, null, 8
       /* PROPS */
-      , ["modelValue", "is-invalid"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [_hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.staffAccessOptions, function (permissionKey, index) {
-        return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
-          "class": "flex space-x-2 items-center",
-          key: index
-        }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-          type: "checkbox",
-          "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
-            return $setup.accessInput = $event;
-          }),
-          value: permissionKey,
-          "class": "accent-sky-600"
-        }, null, 8
-        /* PROPS */
-        , _hoisted_10), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelCheckbox, $setup.accessInput]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(permissionKey), 1
-        /* TEXT */
-        )]);
-      }), 128
-      /* KEYED_FRAGMENT */
-      ))])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+      , ["modelValue", "is-invalid"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
         "class": "bg-sky-600 py-2 mt-8 text-white rounded-md w-full",
         disabled: $setup.isSubimitting,
         type: "submit"
-      }, [$setup.isSubimitting ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_13)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_14, " Actualizar "))], 8
+      }, [$setup.isSubimitting ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_6)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_7, " Actualizar "))], 8
       /* PROPS */
-      , _hoisted_12)], 40
+      , _hoisted_5)], 40
       /* PROPS, HYDRATE_EVENTS */
-      , _hoisted_4))];
+      , _hoisted_1)];
     }),
     _: 1
     /* STABLE */
@@ -1627,7 +1495,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   , _hoisted_8)])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [_hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("table", _hoisted_12, [_hoisted_13, ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.data, function (staff, index) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("tr", {
       key: index,
-      "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["hover:bg-sky-100 cursor-pointer border-b", $setup.selectedStaff === staff ? 'border-transparent bg-sky-100 shadow rounded' : 'border-sky-600']),
+      "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["hover:bg-sky-100 cursor-pointer border-b", $setup.selectedStaff === staff ? 'border-transparent shadow rounded' : 'border-sky-600']),
       onClick: function onClick($event) {
         return $setup.selectedStaff = staff;
       }

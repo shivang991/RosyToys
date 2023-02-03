@@ -52,7 +52,7 @@
                     class="hover:bg-sky-100 cursor-pointer border-b"
                     :class="
                         selectedStaff === staff
-                            ? 'border-transparent bg-sky-100 shadow rounded'
+                            ? 'border-transparent shadow rounded'
                             : 'border-sky-600'
                     "
                     @click="selectedStaff = staff"
