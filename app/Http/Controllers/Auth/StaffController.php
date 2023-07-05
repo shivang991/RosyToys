@@ -28,8 +28,8 @@ class StaffController extends Controller
         ]);
 
         $userAttributes = [
-            'name' => $data['email'],
-            'email' => $data['name'],
+            'name' => $data['name'],
+            'email' => $data['email'],
             'role' => 'staff',
             'password' => Hash::make($data['password']),
         ];

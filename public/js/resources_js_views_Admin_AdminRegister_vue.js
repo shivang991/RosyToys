@@ -473,18 +473,6 @@ var NotificationTypes = {
     type: "success",
     message: "¡Eliminado el producto con éxito!"
   },
-  CAROUSEL_IMAGE_CREATED: {
-    type: "success",
-    message: "¡Artículo agregado!"
-  },
-  CAROUSEL_IMAGE_DELETED: {
-    type: "success",
-    message: "¡Artículo eliminado con éxito!"
-  },
-  CAROUSEL_IMAGE_UPDATED: {
-    type: "success",
-    message: "¡Artículo actualizado con éxito!"
-  },
   STAFF_CREATED: {
     type: "success",
     message: "¡Personal creado con éxito!"
@@ -495,7 +483,7 @@ var NotificationTypes = {
   },
   STAFF_DELETED: {
     type: "success",
-    message: "¡Personal creado con éxito!"
+    message: "¡Personal eliminado con éxito!"
   },
   LOGIN_SUCCESS: {
     type: "success",
@@ -509,22 +497,6 @@ var NotificationTypes = {
     type: "success",
     message: "¡Administrador actualizado con éxito!"
   },
-  CONTACT_MESSAGE_DELETED: {
-    type: "success",
-    message: "¡El mensaje fue eliminado con éxito!"
-  },
-  REVIEW_DELETED: {
-    type: "success",
-    message: "¡Eliminó la reseña con éxito!"
-  },
-  POST_CREATED: {
-    type: "success",
-    message: "¡La publicación se creó con éxito!"
-  },
-  POST_DELETED: {
-    type: "success",
-    message: "¡La publicación fue eliminada con éxito!"
-  },
   GENERAL_ERROR: {
     type: "error",
     message: "¡Ocurrió un error inesperado!"
@@ -537,17 +509,9 @@ var NotificationTypes = {
     type: "error",
     message: "Este correo electrónico ha sido tomado."
   },
-  ITEM_ADDED: {
-    type: "compact",
-    message: "Artículo añadido a tu carrito!"
-  },
   CONTACT_MESSAGE_ADDED: {
     type: "compact",
     message: "¡El mensaje nos llegó! Responderemos pronto."
-  },
-  REVIEW_ADDED: {
-    type: "compact",
-    message: "¡Gracias por tu reseña!"
   }
 };
 var EVENT_NAME = "notificationreq";
@@ -579,13 +543,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _RegisterForm_vue_vue_type_template_id_6123b2f2__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./RegisterForm.vue?vue&type=template&id=6123b2f2 */ "./resources/js/components/admin/RegisterForm.vue?vue&type=template&id=6123b2f2");
 /* harmony import */ var _RegisterForm_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./RegisterForm.vue?vue&type=script&setup=true&lang=js */ "./resources/js/components/admin/RegisterForm.vue?vue&type=script&setup=true&lang=js");
-/* harmony import */ var C_Users_National_Desktop_programs_WebDevelopment_Projects_RosyToys_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var C_Users_User_Desktop_programs_web_projects_RosyToys_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,C_Users_National_Desktop_programs_WebDevelopment_Projects_RosyToys_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_RegisterForm_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_RegisterForm_vue_vue_type_template_id_6123b2f2__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/admin/RegisterForm.vue"]])
+const __exports__ = /*#__PURE__*/(0,C_Users_User_Desktop_programs_web_projects_RosyToys_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_RegisterForm_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_RegisterForm_vue_vue_type_template_id_6123b2f2__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/admin/RegisterForm.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -606,13 +570,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _BaseTextField_vue_vue_type_template_id_8d07f18a__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./BaseTextField.vue?vue&type=template&id=8d07f18a */ "./resources/js/components/global/BaseTextField.vue?vue&type=template&id=8d07f18a");
 /* harmony import */ var _BaseTextField_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./BaseTextField.vue?vue&type=script&setup=true&lang=js */ "./resources/js/components/global/BaseTextField.vue?vue&type=script&setup=true&lang=js");
-/* harmony import */ var C_Users_National_Desktop_programs_WebDevelopment_Projects_RosyToys_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var C_Users_User_Desktop_programs_web_projects_RosyToys_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,C_Users_National_Desktop_programs_WebDevelopment_Projects_RosyToys_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_BaseTextField_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_BaseTextField_vue_vue_type_template_id_8d07f18a__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/global/BaseTextField.vue"]])
+const __exports__ = /*#__PURE__*/(0,C_Users_User_Desktop_programs_web_projects_RosyToys_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_BaseTextField_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_BaseTextField_vue_vue_type_template_id_8d07f18a__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/global/BaseTextField.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -633,13 +597,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _AdminRegister_vue_vue_type_template_id_9d05b43a__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AdminRegister.vue?vue&type=template&id=9d05b43a */ "./resources/js/views/Admin/AdminRegister.vue?vue&type=template&id=9d05b43a");
 /* harmony import */ var _AdminRegister_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AdminRegister.vue?vue&type=script&setup=true&lang=js */ "./resources/js/views/Admin/AdminRegister.vue?vue&type=script&setup=true&lang=js");
-/* harmony import */ var C_Users_National_Desktop_programs_WebDevelopment_Projects_RosyToys_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var C_Users_User_Desktop_programs_web_projects_RosyToys_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,C_Users_National_Desktop_programs_WebDevelopment_Projects_RosyToys_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_AdminRegister_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_AdminRegister_vue_vue_type_template_id_9d05b43a__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/views/Admin/AdminRegister.vue"]])
+const __exports__ = /*#__PURE__*/(0,C_Users_User_Desktop_programs_web_projects_RosyToys_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_AdminRegister_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_AdminRegister_vue_vue_type_template_id_9d05b43a__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/views/Admin/AdminRegister.vue"]])
 /* hot reload */
 if (false) {}
 

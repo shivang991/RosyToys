@@ -11,18 +11,6 @@ export const NotificationTypes = {
         type: "success",
         message: "¡Eliminado el producto con éxito!",
     },
-    CAROUSEL_IMAGE_CREATED: {
-        type: "success",
-        message: "¡Artículo agregado!",
-    },
-    CAROUSEL_IMAGE_DELETED: {
-        type: "success",
-        message: "¡Artículo eliminado con éxito!",
-    },
-    CAROUSEL_IMAGE_UPDATED: {
-        type: "success",
-        message: "¡Artículo actualizado con éxito!",
-    },
     STAFF_CREATED: {
         type: "success",
         message: "¡Personal creado con éxito!",
@@ -33,7 +21,7 @@ export const NotificationTypes = {
     },
     STAFF_DELETED: {
         type: "success",
-        message: "¡Personal creado con éxito!",
+        message: "¡Personal eliminado con éxito!",
     },
     LOGIN_SUCCESS: {
         type: "success",
@@ -47,22 +35,6 @@ export const NotificationTypes = {
         type: "success",
         message: "¡Administrador actualizado con éxito!",
     },
-    CONTACT_MESSAGE_DELETED: {
-        type: "success",
-        message: "¡El mensaje fue eliminado con éxito!",
-    },
-    REVIEW_DELETED: {
-        type: "success",
-        message: "¡Eliminó la reseña con éxito!",
-    },
-    POST_CREATED: {
-        type: "success",
-        message: "¡La publicación se creó con éxito!",
-    },
-    POST_DELETED: {
-        type: "success",
-        message: "¡La publicación fue eliminada con éxito!",
-    },
     GENERAL_ERROR: {
         type: "error",
         message: "¡Ocurrió un error inesperado!",
@@ -75,18 +47,9 @@ export const NotificationTypes = {
         type: "error",
         message: "Este correo electrónico ha sido tomado.",
     },
-
-    ITEM_ADDED: {
-        type: "compact",
-        message: "Artículo añadido a tu carrito!",
-    },
     CONTACT_MESSAGE_ADDED: {
         type: "compact",
         message: "¡El mensaje nos llegó! Responderemos pronto.",
-    },
-    REVIEW_ADDED: {
-        type: "compact",
-        message: "¡Gracias por tu reseña!",
     },
 };
 

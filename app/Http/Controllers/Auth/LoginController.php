@@ -21,6 +21,8 @@ class LoginController extends Controller
             'password' => 'required',
         ]);
 
+        error_log(json_encode($validData));
+
         if (!Auth::attempt($validData)) {
             return Response::json(['message' => 'unauthenticated'], 401);
         }
