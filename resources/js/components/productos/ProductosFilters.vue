@@ -15,7 +15,7 @@
             class="duration-500 overflow-hidden h-0 md:h-max rounded-md bg-white shadow-lg"
             ref="filterContainerEl"
         >
-            <div class="px-12 py-8 md:w-80">
+            <div class="p-8 md:w-64">
                 <h4
                     class="text-2xl font-semibold pb-2 mb-4 border-b border-gray-600"
                 >

@@ -1682,7 +1682,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var _hoisted_1 = {
   key: 0,
-  "class": "bg-gradient-to-b from-transparent to-sky-100 grid w-full justify-center z-10 min-h-screen"
+  "class": "bg-gradient-to-b from-transparent to-sky-100 grid w-full justify-center z-10 absolute min-h-full pointer-events-auto"
 };
 var _hoisted_2 = {
   key: 0,

@@ -16,8 +16,8 @@
     </script>
 </head>
 
-<body>
-    <div id="app-modals" class="w-full absolute flex justify-center"></div>
+<body class="relative">
+    <div id="app-modals" class="w-full min-h-full pointer-events-none absolute flex justify-center"></div>
     <div id="app">
     </div>
 </body>

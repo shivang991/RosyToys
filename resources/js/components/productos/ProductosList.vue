@@ -1,10 +1,12 @@
 <template>
     <div
         v-if="products"
-        class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 xl:gap-20 mb-12 px-4 sm:px-8"
+        class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mb-12 px-4 sm:px-8"
     >
+        <product-detail-modal v-model="currentShowingProductId" />
         <productos-list-item
             v-for="product in products"
+            @click="currentShowingProductId = product.id"
             :key="product.id"
             :id="product.id"
             :imgSrc="product.image_url"
@@ -25,7 +27,10 @@
                 <FontAwesomeIcon icon="fa-exclamation-triangle" />
                 <p>Lo sentimos, no se pudo encontrar ningún producto.</p>
             </div>
-            <button class="text-sky-600 hover:underline w-full text-center" @click="removeSearchQuery">
+            <button
+                class="text-sky-600 hover:underline w-full text-center"
+                @click="removeSearchQuery"
+            >
                 Mostrar todos los productos
             </button>
         </div>
@@ -41,15 +46,17 @@
 import ProductosListItem from "./ProductosListItem.vue";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { useStore } from "vuex";
-import { computed } from "vue";
+import { computed, ref } from "vue";
+import ProductDetailModal from "./ProductDetailModal.vue";
 
 const store = useStore();
 
 const products = computed(() => store.state.products.data);
 
+const currentShowingProductId = ref(null);
+
 function removeSearchQuery() {
     store.commit("products/SET_QUERY", "");
     store.dispatch("products/refetch");
 }
-
 </script>

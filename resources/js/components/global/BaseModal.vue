@@ -2,7 +2,7 @@
     <Teleport to="#app-modals">
         <Transition name="fade" @afterEnter="shouldShowContent = true">
             <div
-                class="bg-gradient-to-b from-transparent to-sky-100 grid w-full justify-center z-10 min-h-screen"
+                class="bg-gradient-to-b from-transparent to-sky-100 grid w-full justify-center z-10 absolute min-h-full pointer-events-auto"
                 v-if="shouldShow"
             >
                 <Transition name="modal" @afterLeave="emit('close')">

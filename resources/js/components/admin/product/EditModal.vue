@@ -15,12 +15,6 @@
                     v-model="fields.image"
                     :initial-srcs="productImages"
                 />
-                <!-- <BaseImageInput
-                    :default-src="productImgSrc"
-                    class="w-full h-40 object-cover"
-                    label="Product Image"
-                    v-model="fields.image"
-                ></BaseImageInput> -->
                 <BaseTextField
                     v-model="fields.title"
                     label="Nombre"
@@ -128,20 +122,7 @@ const axios = useAxios();
 const store = useStore();
 
 /**
- * @typedef ProductData
- * @property {number} id
- * @property {string} title
- * @property {string} description
- * @property {string} brand
- * @property {string} category
- * @property {number} price
- * @property {{id : number, src : string}[]} images
- * @property {string} created_at
- * @property {string} updated_at
- */
-
-/**
- * @type {ProductData}
+ * @type {import('@/components/productos/ProductDetailModal.vue').ProductData}
  */
 let lastProduct = null;
 
@@ -244,7 +225,7 @@ watch(
             isFetchingProduct.value = true;
 
             /**
-             * @type {{ data: ProductData }}
+             * @type {{ data: import('@/components/productos/ProductDetailModal.vue').ProductData }}
              */
             const { data: newProduct } = await axios.get(
                 `/api/product/${props.productId}`

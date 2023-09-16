@@ -257,20 +257,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
     var axios = (0,_plugins_Axios__WEBPACK_IMPORTED_MODULE_3__["default"])();
     var store = (0,vuex__WEBPACK_IMPORTED_MODULE_7__.useStore)();
     /**
-     * @typedef ProductData
-     * @property {number} id
-     * @property {string} title
-     * @property {string} description
-     * @property {string} brand
-     * @property {string} category
-     * @property {number} price
-     * @property {{id : number, src : string}[]} images
-     * @property {string} created_at
-     * @property {string} updated_at
-     */
-
-    /**
-     * @type {ProductData}
+     * @type {import('@/components/productos/ProductDetailModal.vue').ProductData}
      */
 
     var lastProduct = null;
@@ -397,7 +384,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
                 isFetchingProduct.value = true;
                 /**
-                 * @type {{ data: ProductData }}
+                 * @type {{ data: import('@/components/productos/ProductDetailModal.vue').ProductData }}
                  */
 
                 _context.next = 6;
@@ -1336,7 +1323,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         "initial-srcs": $setup.productImages
       }, null, 8
       /* PROPS */
-      , ["modelValue", "initial-srcs"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <BaseImageInput\r\n                    :default-src=\"productImgSrc\"\r\n                    class=\"w-full h-40 object-cover\"\r\n                    label=\"Product Image\"\r\n                    v-model=\"fields.image\"\r\n                ></BaseImageInput> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BaseTextField"], {
+      , ["modelValue", "initial-srcs"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BaseTextField"], {
         modelValue: $setup.fields.title,
         "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
           return $setup.fields.title = $event;
@@ -1531,7 +1518,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var _hoisted_1 = {
   key: 0,
-  "class": "bg-gradient-to-b from-transparent to-sky-100 grid w-full justify-center z-10 min-h-screen"
+  "class": "bg-gradient-to-b from-transparent to-sky-100 grid w-full justify-center z-10 absolute min-h-full pointer-events-auto"
 };
 var _hoisted_2 = {
   key: 0,

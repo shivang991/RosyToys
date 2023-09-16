@@ -1,5 +1,5 @@
 <template>
-    <div
+    <button
         class="shadow-lg hover:shadow-xl cursor-pointer px-4 py-12 rounded-md"
     >
         <BaseImage
@@ -13,7 +13,7 @@
             </p>
             <h5 class="font-semibold text-xl">${{ price }}</h5>
         </div>
-    </div>
+    </button>
 </template>
 
 <script setup>
@@ -49,5 +49,4 @@ const props = defineProps({
         required: true,
     },
 });
-
 </script>
