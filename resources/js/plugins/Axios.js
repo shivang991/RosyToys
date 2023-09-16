@@ -5,11 +5,20 @@ axios.defaults.headers = { accept: "application/json" };
 
 const postMultipart = (state, url, data) => {
     const multipartData = new FormData();
+
     Object.entries(data).forEach(([key, value]) => {
         if (Array.isArray(value)) {
             for (let i = 0; i < value.length; i++)
                 multipartData.append(`${key}[]`, value[i]);
-        } else if (typeof value !== "undefined" || value !== null)
+            return;
+        }
+        if (value instanceof Object) {
+            Object.entries(value).forEach(([innerKey, innerValue]) => {
+                multipartData.append(`${key}[${innerKey}]`, innerValue);
+            });
+            return;
+        }
+        if (typeof value !== "undefined" || value !== null)
             multipartData.append(key, value);
     });
     return axios.post(url, multipartData, {

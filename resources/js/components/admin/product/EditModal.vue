@@ -10,12 +10,17 @@
         </div>
         <form v-else class="px-4 pb-8" @submit.prevent="handleSubmit">
             <div class="space-y-8">
-                <BaseImageInput
+                <BaseMultiImageInput
+                    label="Imagen del Producto"
+                    v-model="fields.image"
+                    :initial-srcs="productImages"
+                />
+                <!-- <BaseImageInput
                     :default-src="productImgSrc"
                     class="w-full h-40 object-cover"
                     label="Product Image"
                     v-model="fields.image"
-                ></BaseImageInput>
+                ></BaseImageInput> -->
                 <BaseTextField
                     v-model="fields.title"
                     label="Nombre"
@@ -45,7 +50,6 @@
                             v-for="(category, index) in categoryOptions"
                             :key="index"
                             :value="category"
-
                         >
                             {{ category }}
                         </option>
@@ -78,13 +82,13 @@
 
 <script setup>
 import BaseTextField from "@/components/global/BaseTextField.vue";
-import BaseImageInput from "@/components/global/BaseImageInput.vue";
 import BaseModal from "@/components/global/BaseModal.vue";
 import { reactive, ref, watch } from "vue";
 import useAxios from "@/plugins/Axios";
 import { fireNotification, NotificationTypes } from "@/plugins/Notifications";
 import { useStore } from "vuex";
 import { categoryOptions } from "@/store/products";
+import BaseMultiImageInput from "@/components/global/BaseMultiImageInput.vue";
 
 const props = defineProps({
     shouldShow: {
@@ -99,10 +103,8 @@ const props = defineProps({
 
 const emit = defineEmits(["update:shouldShow"]);
 
-let lastProductId = null;
-
 const fields = reactive({
-    image: null,
+    image: [],
     title: "",
     description: "",
     price: "",
@@ -111,20 +113,46 @@ const fields = reactive({
     category: categoryOptions[0],
 });
 
+/**
+ * @type {import('vue').Ref<string[]>}
+ */
+const productImages = ref([]);
+
 const isFetchingProduct = ref(false);
 const isFormSubmitting = ref(false);
-const productImgSrc = ref(null);
+
 const invalidFields = reactive(new Set());
 
 const axios = useAxios();
 
 const store = useStore();
 
+/**
+ * @typedef ProductData
+ * @property {number} id
+ * @property {string} title
+ * @property {string} description
+ * @property {string} brand
+ * @property {string} category
+ * @property {number} price
+ * @property {{id : number, src : string}[]} images
+ * @property {string} created_at
+ * @property {string} updated_at
+ */
+
+/**
+ * @type {ProductData}
+ */
+let lastProduct = null;
+
 function handleSubmit() {
     invalidFields.clear();
-    // Validation: All fields except image and booleans required
+    // Validation: Atleast 1 product image required
+    if (!fields["image"].length) invalidFields.add("image");
+
+    // Validation: All fields except booleans required
     Object.entries(fields).forEach(([key, val]) => {
-        if (key === "image" || key.startsWith("is")) return;
+        if (key.startsWith("is")) return;
         if (!val) invalidFields.add(key);
     });
     // Validation: Price should be numeric
@@ -133,15 +161,68 @@ function handleSubmit() {
     if (invalidFields.size) return;
 
     isFormSubmitting.value = true;
-    const { isLimitedEdition, isLowStock, isPromoted, ...data } = fields;
+    const { isPromoted, image, ...data } = fields;
+
+    //
+    // compute changed, removed or newly added images
+    //
+
+    /**
+     * Mapping of image id to new file for images changed by user
+     * @type {Record<number,Blob>}
+     */
+    const changedImages = {};
+
+    /**
+     * ids of images deleted
+     * @type {number[]}
+     */
+    const removedImages = [];
+
+    /**
+     * @type {(number|Blob)[]}
+     */
+    const fieldImages = [...fields.image];
+
+    lastProduct.images.forEach(({ id }, index) => {
+        // check if image was untouched
+        if (fieldImages.some((img) => img === id)) return;
+
+        // check whether image was deleted or changed
+        const fileIndex = fieldImages
+            .slice(0, index + 1)
+            .findIndex((img) => img instanceof Blob);
+
+        // image was deleted
+        if (fileIndex === -1) {
+            removedImages.push(id);
+            return;
+        }
+
+        // image was changed
+        changedImages[id] = fieldImages[fileIndex];
+
+        // remove "Blob" from fieldImages array as we go
+        fieldImages[fileIndex] = id;
+        return;
+    });
+
+    /**
+     * @type {Blob[]}
+     */
+    const newImages = fieldImages.filter((img) => img instanceof Blob);
+
     axios
         .postMultipart(`/api/product/update/${props.productId}`, {
             ...data,
+            changed_images: changedImages,
+            removed_images: removedImages,
+            new_images: newImages,
             is_promoted: Number(isPromoted),
         })
         .then((response) => {
             if (response.data.message === "success") {
-                lastProductId = null; // Should refetch next time (with updated data)
+                lastProduct = null; // Should refetch next time (with updated data)
                 store.dispatch("products/refetch");
                 emit("update:shouldShow", false);
                 fireNotification(NotificationTypes.PRODUCT_UPDATED);
@@ -158,9 +239,13 @@ function handleSubmit() {
 watch(
     () => props.shouldShow,
     async (newVal) => {
-        if (lastProductId === props.productId) return;
+        if (lastProduct?.id === props.productId) return;
         if (newVal) {
             isFetchingProduct.value = true;
+
+            /**
+             * @type {{ data: ProductData }}
+             */
             const { data: newProduct } = await axios.get(
                 `/api/product/${props.productId}`
             );
@@ -169,10 +254,15 @@ watch(
             fields.price = String(newProduct.price);
             fields.brand = newProduct.brand;
             fields.isPromoted = Boolean(newProduct.is_promoted);
-            fields.category = newProduct.category
-            productImgSrc.value = newProduct.image_url;
+            fields.category = newProduct.category;
+
+            // useful when later checking for deleted and changed images
+            fields.image = newProduct.images.map(({ id }) => id);
+
+            productImages.value = newProduct.images.map(({ src }) => src);
+
             isFetchingProduct.value = false;
-            lastProductId = props.productId;
+            lastProduct = newProduct;
         }
     }
 );

@@ -1,9 +1,8 @@
 <template>
     <Teleport to="#app-modals">
-        <Transition name="modal" @afterEnter="shouldShowContent = true">
+        <Transition name="fade" @afterEnter="shouldShowContent = true">
             <div
-                class="bg-gradient-to-b from-transparent to-sky-100 grid w-full justify-center z-10"
-                :style="{ height: `${bgHeight}px` }"
+                class="bg-gradient-to-b from-transparent to-sky-100 grid w-full justify-center z-10 min-h-screen"
                 v-if="shouldShow"
             >
                 <Transition name="modal" @afterLeave="emit('close')">
@@ -31,7 +30,7 @@
 
 <script setup>
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
-import { ref, watch } from "vue";
+import { ref } from "vue";
 
 const props = defineProps({
     shouldShow: {
@@ -43,13 +42,4 @@ const props = defineProps({
 const emit = defineEmits(["close"]);
 
 const shouldShowContent = ref(false);
-
-const bgHeight = ref(0);
-
-watch(
-    () => props.shouldShow,
-    (newVal) => {
-        if (newVal) bgHeight.value = document.body.scrollHeight;
-    }
-);
 </script>

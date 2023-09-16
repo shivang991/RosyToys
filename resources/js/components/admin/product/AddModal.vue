@@ -5,12 +5,11 @@
     >
         <form class="px-4 pb-8" @submit.prevent="handleSubmit">
             <div class="space-y-8">
-                <BaseImageInput
-                    :is-invalid="invalidFields.has('image')"
-                    v-model="fields.image"
-                    class="w-full h-40 object-cover"
+                <BaseMultiImageInput
                     label="Imagen del Producto"
-                ></BaseImageInput>
+                    :is-invalid="invalidFields.has('image')"
+                    v-model="fields['image']"
+                />
                 <BaseTextField
                     v-model="fields.title"
                     label="Nombre"
@@ -60,7 +59,7 @@
                 </div>
             </div>
             <button
-                class="bg-sky-500 py-2 mt-8 text-white rounded-md w-full"
+                class="bg-sky-600 py-2 mt-8 text-white rounded-md w-full"
                 :disabled="isLoading"
                 type="submit"
             >
@@ -77,13 +76,13 @@
 
 <script setup>
 import BaseTextField from "@/components/global/BaseTextField.vue";
-import BaseImageInput from "@/components/global/BaseImageInput.vue";
 import BaseModal from "@/components/global/BaseModal.vue";
 import { reactive, ref } from "vue";
 import useAxios from "@/plugins/Axios";
 import { fireNotification, NotificationTypes } from "@/plugins/Notifications";
 import { useStore } from "vuex";
 import { categoryOptions } from "@/store/products";
+import BaseMultiImageInput from "@/components/global/BaseMultiImageInput.vue";
 
 defineProps({
     shouldShow: {
@@ -93,7 +92,7 @@ defineProps({
 });
 
 const fields = reactive({
-    image: null,
+    image: [],
     title: "",
     description: "",
     price: "",
@@ -111,9 +110,13 @@ const store = useStore();
 
 function handleSubmit() {
     invalidFields.clear();
-    // Validation: All fields except booleans required
+
+    // Validation: Atleast 1 product image required
+    if (!fields["image"].length) invalidFields.add("image");
+
+    // Validation: All fields except booleans and images
     Object.entries(fields).forEach(([key, val]) => {
-        if (key.startsWith("is")) return;
+        if (key.startsWith("is") || key === "image") return;
         if (!val) invalidFields.add(key);
     });
     // Validation: Price should be numeric
@@ -132,7 +135,7 @@ function handleSubmit() {
         })
         .then((response) => {
             if (response.data.message === "success") {
-                fields.image = null;
+                fields.image = [];
                 fields.title = "";
                 fields.price = "";
                 fields.brand = "";

@@ -3,7 +3,7 @@
         <input type="file" v-show="false" ref="inputEl" @change="handleInput" />
         <label
             class="py-1 px-2 rounded-t-md text-white"
-            :class="isInvalid ? 'bg-red-600' : 'bg-sky-500'"
+            :class="isInvalid ? 'bg-red-600' : 'bg-sky-600'"
             >{{ label }}</label
         >
         <div v-if="imgSrc || defaultSrc">
@@ -16,7 +16,7 @@
             <button
                 v-if="!!modelValue"
                 @click.prevent.stop="clearImage"
-                class="py-1 text-sky-500 px-2 border border-sky-600 rounded-md mt-2"
+                class="py-1 text-sky-600 px-2 border border-sky-600 rounded-md mt-2"
             >
                 Quita la imagen
             </button>
@@ -38,7 +38,7 @@
             </p>
             <p class="text-gray-600 mb-2">Suelta un archivo o</p>
             <button
-                class="text-sky-500 hover:underline"
+                class="text-sky-600 hover:underline"
                 @click.prevent="$refs.inputEl.click()"
             >
                 Haga clic para navegar

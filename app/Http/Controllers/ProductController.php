@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Image;
 use App\Models\Product;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Response;
@@ -11,7 +12,9 @@ class ProductController extends Controller
 {
     public function __construct()
     {
-        $this->middleware(['auth:sanctum', 'ability:productManager,server:update'])->except(['index', 'indexRandom', 'show']);
+        $this
+            ->middleware(['auth:sanctum', 'ability:productManager,server:update'])
+            ->except(['index', 'indexRandom', 'show']);
     }
 
     public function index()
@@ -27,10 +30,23 @@ class ProductController extends Controller
 
         // $add_filter('application');
         $add_filter('category');
-        return $productBuilder
-            ->select('id', 'title', 'price', 'image_url', 'is_promoted')
+
+        $products = $productBuilder
+            ->select('id', 'title', 'price', 'is_promoted')
+            ->with('previewImage')
+            ->latest('id')
             ->paginate(12);
+
+        // flatten the response
+        $products->transform(function (Product $product) {
+            return array_merge(
+                $product->only('id', 'title', 'price', 'is_promoted'),
+                ['image_url' => $product->previewImage->src]
+            );
+        });
+        return $products;
     }
+
     public function indexRandom()
     {
         return Response::json(Product::inRandomOrder()->where('is_promoted', true)->select('title', 'image_url', 'price', 'id')->paginate(4));
@@ -42,27 +58,31 @@ class ProductController extends Controller
             'description' => 'required',
             'price' => 'required|numeric',
             'brand' => 'required',
-            'image' => 'required|image',
             'is_promoted' => 'required|boolean',
-            'category' => 'required'
+            'category' => 'required',
+            'image' => 'required|array',
+            'image.*' => 'image'
         ]);
-        $imgPath = Request::file('image')->store('products');
 
-        $imgUrl = Storage::url($imgPath);
+        $product = Product::create($data);
 
-        $productAttrs = collect($data)
-            ->merge([
-                'image_path' => $imgPath,
-                'image_url' => $imgUrl,
-            ])
-            ->toArray();
+        // store product images
+        $images = Request::file('image');
 
-        Product::create($productAttrs);
+        foreach ($images as $image) {
+            $key = $image->store('products');
+            $product->images()->create([
+                'key' => $key,
+                'src' => Storage::url($key)
+            ]);
+        }
+
         return Response::json(['message' => 'success']);
     }
 
     public function show(Product $product)
     {
+        $product->load('images:id,imagable_id,imagable_type,src');
         return Response::json($product);
     }
 
@@ -74,24 +94,44 @@ class ProductController extends Controller
             'price' => 'required|numeric',
             'brand' => 'required',
             'is_promoted' => 'boolean',
-            'category' => 'required'
+            'category' => 'required',
+
+            // image related fields
+            'new_images' => 'array|nullable',
+            'new_images.*' => 'image',
+            'changed_images' => 'array|nullable',
+            'changed_images.*' => 'image',
+            'removed_images' => 'array|nullable',
+            'removed_images.*' => 'numeric', // id of images to remove
         ]);
 
-        $image = Request::file('image');
-        if ($image) {
-            Storage::delete($product->image_path);
-            $imgPath = $image->store('products');
-            $imgUrl = Storage::url($imgPath);
-            $product->image_url = $imgUrl;
-            $product->image_path = $imgPath;
+        $product->update($data);
+
+        // remove specified images
+        $removed_images = $data['removed_images'] ?? [];
+        foreach ($removed_images as $id) Image::select('id', 'key')->find($id)->delete();
+
+        // update already existing images
+        $changed_images = Request::file('changed_images') ?? [];
+        foreach ($changed_images as $id => $new_image) {
+            $image = $product->images()->find($id);
+            Storage::delete($image->key);
+
+            $new_key = $new_image->store('products');
+            $image->update([
+                'key' => $new_key,
+                'src' => Storage::url($new_key)
+            ]);
         }
-        $product->title = $data['title'];
-        $product->description = $data['description'];
-        $product->price = $data['price'];
-        $product->brand = $data['brand'];
-        $product->is_promoted = $data['is_promoted'];
-        $product->category = $data['category'];
-        $product->save();
+        // add new images
+        $new_images = Request::file('new_images') ?? [];
+        foreach ($new_images as $image) {
+            $key = $image->store('products');
+            $product->images()->create([
+                'key' => $key,
+                'src' => Storage::url($key)
+            ]);
+        }
 
         return Response::json(['message' => 'success']);
     }

@@ -745,20 +745,12 @@ __webpack_require__.r(__webpack_exports__);
     expose();
     var props = __props;
     var shouldShowContent = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)(false);
-    var bgHeight = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)(0);
-    (0,vue__WEBPACK_IMPORTED_MODULE_1__.watch)(function () {
-      return props.shouldShow;
-    }, function (newVal) {
-      if (newVal) bgHeight.value = document.body.scrollHeight;
-    });
     var __returned__ = {
       props: props,
       emit: emit,
       shouldShowContent: shouldShowContent,
-      bgHeight: bgHeight,
       FontAwesomeIcon: _fortawesome_vue_fontawesome__WEBPACK_IMPORTED_MODULE_0__.FontAwesomeIcon,
-      ref: vue__WEBPACK_IMPORTED_MODULE_1__.ref,
-      watch: vue__WEBPACK_IMPORTED_MODULE_1__.watch
+      ref: vue__WEBPACK_IMPORTED_MODULE_1__.ref
     };
     Object.defineProperty(__returned__, '__isScriptSetup', {
       enumerable: false,
@@ -1633,7 +1625,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }, null, 544
   /* HYDRATE_EVENTS, NEED_PATCH */
   ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, false]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", {
-    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["py-1 px-2 rounded-t-md text-white", $props.isInvalid ? 'bg-red-600' : 'bg-sky-500'])
+    "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(["py-1 px-2 rounded-t-md text-white", $props.isInvalid ? 'bg-red-600' : 'bg-sky-600'])
   }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.label), 3
   /* TEXT, CLASS */
   ), $setup.imgSrc || $props.defaultSrc ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
@@ -1647,7 +1639,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   , _hoisted_3), !!$props.modelValue ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", {
     key: 0,
     onClick: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)($setup.clearImage, ["prevent", "stop"]),
-    "class": "py-1 text-sky-500 px-2 border border-sky-600 rounded-md mt-2"
+    "class": "py-1 text-sky-600 px-2 border border-sky-600 rounded-md mt-2"
   }, " Quita la imagen ", 8
   /* PROPS */
   , _hoisted_4)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", (0,vue__WEBPACK_IMPORTED_MODULE_0__.mergeProps)({
@@ -1665,7 +1657,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toHandlers)($setup.dragEvtHandlers)), [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["FontAwesomeIcon"], {
     icon: "fa fa-upload"
   })]), _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-    "class": "text-sky-500 hover:underline",
+    "class": "text-sky-600 hover:underline",
     onClick: _cache[1] || (_cache[1] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function ($event) {
       return _ctx.$refs.inputEl.click();
     }, ["prevent"]))
@@ -1690,35 +1682,33 @@ __webpack_require__.r(__webpack_exports__);
 
 var _hoisted_1 = {
   key: 0,
-  "class": "z-20 bg-white my-8 shadow-xl rounded-md overflow-hidden max-w-lg h-max"
+  "class": "bg-gradient-to-b from-transparent to-sky-100 grid w-full justify-center z-10 min-h-screen"
 };
 var _hoisted_2 = {
+  key: 0,
+  "class": "z-20 bg-white my-8 shadow-xl rounded-md overflow-hidden max-w-lg h-max"
+};
+var _hoisted_3 = {
   "class": "flex justify-end"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Teleport, {
     to: "#app-modals"
   }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(vue__WEBPACK_IMPORTED_MODULE_0__.Transition, {
-    name: "modal",
+    name: "fade",
     onAfterEnter: _cache[2] || (_cache[2] = function ($event) {
       return $setup.shouldShowContent = true;
     })
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [$props.shouldShow ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", {
-        key: 0,
-        "class": "bg-gradient-to-b from-transparent to-sky-100 grid w-full justify-center z-10",
-        style: (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeStyle)({
-          height: "".concat($setup.bgHeight, "px")
-        })
-      }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(vue__WEBPACK_IMPORTED_MODULE_0__.Transition, {
+      return [$props.shouldShow ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(vue__WEBPACK_IMPORTED_MODULE_0__.Transition, {
         name: "modal",
         onAfterLeave: _cache[1] || (_cache[1] = function ($event) {
           return $setup.emit('close');
         })
       }, {
         "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-          return [$setup.shouldShowContent ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+          return [$setup.shouldShowContent ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
             "class": "text-xl p-4",
             onClick: _cache[0] || (_cache[0] = function ($event) {
               return $setup.shouldShowContent = false;
@@ -1730,9 +1720,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         _: 3
         /* FORWARDED */
 
-      })], 4
-      /* STYLE */
-      )) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)];
+      })])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)];
     }),
     _: 3
     /* FORWARDED */
