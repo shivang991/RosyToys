@@ -6,7 +6,7 @@
         <product-detail-modal v-model="currentShowingProductId" />
         <productos-list-item
             v-for="product in products"
-            @click="currentShowingProductId = product.id"
+            @more-click="currentShowingProductId = product.id"
             :key="product.id"
             :id="product.id"
             :imgSrc="product.image_url"

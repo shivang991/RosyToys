@@ -562,11 +562,14 @@ __webpack_require__.r(__webpack_exports__);
       required: true
     }
   },
+  emits: ["more-click"],
   setup: function setup(__props, _ref) {
-    var expose = _ref.expose;
+    var expose = _ref.expose,
+        emit = _ref.emit;
     expose();
     var props = __props;
     var __returned__ = {
+      emit: emit,
       props: props,
       BaseImage: _global_BaseImage_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
     };
@@ -1078,7 +1081,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* PROPS */
   , ["modelValue"]), ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($setup.products, function (product) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)($setup["ProductosListItem"], {
-      onClick: function onClick($event) {
+      onMoreClick: function onMoreClick($event) {
         return $setup.currentShowingProductId = product.id;
       },
       key: product.id,
@@ -1091,7 +1094,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       isPromoted: !!product.is_promoted
     }, null, 8
     /* PROPS */
-    , ["onClick", "id", "imgSrc", "price", "title", "isLimited", "isLowStock", "isPromoted"]);
+    , ["onMoreClick", "id", "imgSrc", "price", "title", "isLimited", "isLowStock", "isPromoted"]);
   }), 128
   /* KEYED_FRAGMENT */
   )), !$setup.products.length ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["FontAwesomeIcon"], {
@@ -1117,19 +1120,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "shadow-lg hover:shadow-xl cursor-pointer px-4 py-12 rounded-md"
+  "class": "shadow-lg px-4 py-4 rounded-md"
 };
 var _hoisted_2 = {
-  "class": "flex justify-between space-x-8"
+  "class": "flex justify-between space-x-2 mb-4 items-center"
 };
 var _hoisted_3 = {
-  "class": "leading-none"
+  "class": "text-sm truncate"
 };
 var _hoisted_4 = {
-  "class": "font-semibold text-xl"
+  "class": "font-semibold"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BaseImage"], {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BaseImage"], {
     isExternal: "",
     src: $props.imgSrc,
     "class": "w-40 h-40 object-cover mb-4 rounded mx-auto"
@@ -1137,9 +1140,14 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* PROPS */
   , ["src"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.title), 1
   /* TEXT */
-  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", _hoisted_4, "$" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.price), 1
+  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_4, "$" + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.price), 1
   /* TEXT */
-  )])]);
+  )]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    "class": "bg-gray-100 text-gray-600 py-2 px-4 font-semibold rounded ml-auto block",
+    onClick: _cache[0] || (_cache[0] = function ($event) {
+      return $setup.emit('more-click');
+    })
+  }, " Ver más ")]);
 }
 
 /***/ }),
