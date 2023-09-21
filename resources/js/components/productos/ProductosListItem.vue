@@ -30,10 +30,7 @@ const props = defineProps({
         type: Number,
         required: true,
     },
-    imgSrc: {
-        type: String,
-        required: true,
-    },
+    imgSrc: { type: String },
     title: {
         type: String,
         required: true,

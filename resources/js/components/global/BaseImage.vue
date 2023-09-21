@@ -1,7 +1,7 @@
 <template>
     <transition name="fade">
         <img
-            :src="processedSrc"
+            :src="processedSrc ?? '/images/noimage.svg'"
             :alt="alt"
             v-show="isLoaded"
             @load="isLoaded = true"
@@ -17,10 +17,7 @@ const props = defineProps({
         type: Boolean,
         default: false,
     },
-    src: {
-        type: String,
-        required: true,
-    },
+    src: { type: String },
     alt: {
         type: String,
         default: "",

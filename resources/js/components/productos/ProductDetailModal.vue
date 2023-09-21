@@ -12,7 +12,7 @@
         <div v-else class="w-96">
             <base-image
                 is-external
-                :src="currentViewingImg.src"
+                :src="currentViewingImg?.src"
                 class="h-48 w-full object-cover mb-2"
             />
             <div class="flex gap-2 justify-center px-2 flex-wrap">
@@ -91,7 +91,7 @@ const isLoading = ref(false);
 const product = ref(null);
 
 /**
- * @type {import('vue').Ref<ProductData["images"][number]>}
+ * @type {import('vue').Ref<ProductData["images"][number]|null>}
  */
 const currentViewingImg = ref(null);
 

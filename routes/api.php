@@ -42,7 +42,6 @@ Route::prefix("/user")->group(function () {
 
 Route::prefix('/product')->group(function () {
     Route::get('/all', [ProductController::class, 'index']);
-    Route::get('/random', [ProductController::class, 'indexRandom']);
     Route::get('/{product}', [ProductController::class, 'show']);
     Route::post('/create', [ProductController::class, 'store']);
     Route::post('/update/{product}', [ProductController::class, 'update']);

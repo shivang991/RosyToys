@@ -14,24 +14,30 @@ class ProductController extends Controller
     {
         $this
             ->middleware(['auth:sanctum', 'ability:productManager,server:update'])
-            ->except(['index', 'indexRandom', 'show']);
+            ->except(['index', 'show']);
     }
 
     public function index()
     {
         $searchInput = Request::query('search');
-        $productBuilder = Product::where('title', 'LIKE', "$searchInput%");
 
-        $add_filter = function (string $field) use ($productBuilder) {
+        $is_promoted_only = Request::query('is_promoted');
+
+        $product_builder = Product::where('title', 'LIKE', "$searchInput%")
+
+            // set whether to select all products or only promoted products
+            ->when($is_promoted_only, fn ($q) => $q->where('is_promoted', true));
+
+        $add_filter = function (string $field) use ($product_builder) {
             $input = Request::query($field);
             if (is_array($input))
-                $productBuilder = $productBuilder->whereIn($field, $input);
+                $product_builder = $product_builder->whereIn($field, $input);
         };
 
         // $add_filter('application');
         $add_filter('category');
 
-        $products = $productBuilder
+        $products = $product_builder
             ->select('id', 'title', 'price', 'is_promoted')
             ->with('previewImage')
             ->latest('id')
@@ -41,16 +47,12 @@ class ProductController extends Controller
         $products->transform(function (Product $product) {
             return array_merge(
                 $product->only('id', 'title', 'price', 'is_promoted'),
-                ['image_url' => $product->previewImage->src]
+                ['image_url' => $product->previewImage?->src]
             );
         });
         return $products;
     }
 
-    public function indexRandom()
-    {
-        return Response::json(Product::inRandomOrder()->where('is_promoted', true)->select('title', 'image_url', 'price', 'id')->paginate(4));
-    }
     public function store()
     {
         $data = Request::validate([

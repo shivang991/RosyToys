@@ -14,6 +14,7 @@
                     label="Imagen del Producto"
                     v-model="fields.image"
                     :initial-srcs="productImages"
+                    :is-invalid="invalidFields.has('image')"
                 />
                 <BaseTextField
                     v-model="fields.title"

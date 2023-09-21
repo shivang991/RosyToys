@@ -1320,10 +1320,11 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
           return $setup.fields.image = $event;
         }),
-        "initial-srcs": $setup.productImages
+        "initial-srcs": $setup.productImages,
+        "is-invalid": $setup.invalidFields.has('image')
       }, null, 8
       /* PROPS */
-      , ["modelValue", "initial-srcs"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BaseTextField"], {
+      , ["modelValue", "initial-srcs", "is-invalid"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BaseTextField"], {
         modelValue: $setup.fields.title,
         "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
           return $setup.fields.title = $event;

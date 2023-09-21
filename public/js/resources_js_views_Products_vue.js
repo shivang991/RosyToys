@@ -165,7 +165,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
     var product = (0,vue__WEBPACK_IMPORTED_MODULE_2__.ref)(null);
     /**
-     * @type {import('vue').Ref<ProductData["images"][number]>}
+     * @type {import('vue').Ref<ProductData["images"][number]|null>}
      */
 
     var currentViewingImg = (0,vue__WEBPACK_IMPORTED_MODULE_2__.ref)(null);
@@ -538,8 +538,7 @@ __webpack_require__.r(__webpack_exports__);
       required: true
     },
     imgSrc: {
-      type: String,
-      required: true
+      type: String
     },
     title: {
       type: String,
@@ -843,9 +842,11 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     })
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      var _$setup$currentViewin;
+
       return [$setup.isLoading ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, _hoisted_3)) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_4, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["BaseImage"], {
         "is-external": "",
-        src: $setup.currentViewingImg.src,
+        src: (_$setup$currentViewin = $setup.currentViewingImg) === null || _$setup$currentViewin === void 0 ? void 0 : _$setup$currentViewin.src,
         "class": "h-48 w-full object-cover mb-2"
       }, null, 8
       /* PROPS */

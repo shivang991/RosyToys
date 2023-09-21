@@ -1,8 +1,6 @@
 <template>
     <div class="py-8" v-if="trendingProducts">
-        <h2 class="text-4xl mb-12 text-center">
-            Tendencia este mes 🔥
-        </h2>
+        <h2 class="text-4xl mb-12 text-center">Tendencia este mes 🔥</h2>
         <div class="grid grid-cols-2 gap-4 lg:gap-8">
             <div
                 class="lg:flex lg:space-x-4 px-8 py-4 rounded-md shadow-xl"
@@ -31,7 +29,7 @@ const trendingProducts = ref(null);
 
 const axios = useAxios();
 
-axios.get("/api/product/random").then((res) => {
+axios.get("/api/product/all?is_promoted=1").then((res) => {
     trendingProducts.value = res.data.data;
 });
 </script>
