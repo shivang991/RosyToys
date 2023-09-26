@@ -1,7 +1,7 @@
 <template>
     <div
         v-if="products"
-        class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mb-12 px-4 sm:px-8"
+        class="sm:grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mb-12 px-4 sm:px-8"
     >
         <product-detail-modal v-model="currentShowingProductId" />
         <productos-list-item

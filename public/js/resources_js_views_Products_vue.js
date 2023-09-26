@@ -793,7 +793,7 @@ var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 var _hoisted_3 = [_hoisted_2];
 var _hoisted_4 = {
   key: 1,
-  "class": "w-96"
+  "class": "w-72 sm:w-96"
 };
 var _hoisted_5 = {
   "class": "flex gap-2 justify-center px-2 flex-wrap"
@@ -1046,7 +1046,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var _hoisted_1 = {
   key: 0,
-  "class": "grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mb-12 px-4 sm:px-8"
+  "class": "sm:grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mb-12 px-4 sm:px-8"
 };
 var _hoisted_2 = {
   key: 0,

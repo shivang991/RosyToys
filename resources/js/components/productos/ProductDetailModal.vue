@@ -9,7 +9,7 @@
             ></div>
         </div>
 
-        <div v-else class="w-96">
+        <div v-else class="w-72 sm:w-96">
             <base-image
                 is-external
                 :src="currentViewingImg?.src"
